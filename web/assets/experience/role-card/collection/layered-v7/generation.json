@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-08",
+  "adopted": [
+    {
+      "id": "shira_v5_lounger",
+      "kind": "subject",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_lounger/subject.png",
+      "sha256": "fd4d00c5b3e2af7bef7f6cbac7e2c714d718f733a3396ad818f26f1b720cd8bc",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Edit the transparent adult fantasy character illustration, keep her modest opaque burgundy embroidered dress, natural face, crossed knees, cheek-resting hand, other hand on knee and the entire wooden rocking chair exactly. Make ONE small pose adjustment: rotate the upper crossed leg at its ankle so the lower surface of that raised foot faces toward the camera, toes lightly upward; keep natural anatomy and a relaxed seaside sitting posture. The lower leg continues down naturally. No enlargement, no recentering. Keep true transparent RGBA full 1024x1536 canvas; all hair, wings, chair runners and feet remain intact. No extra objects, no text, no backdrop. This is a nonsexual illustrated pose correction, preserve existing garment coverage.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_lounger",
+      "kind": "background",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_lounger/background.png",
+      "sha256": "64e0afbbb7dd46a2ec2776b6c37a20d8e5ac437f410058cf941181773224a9fe",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Background plate for a vertical illustrated card. Remove ONLY the whole woman, horns, wings, tail, the entire rocking chair and its draped fabric from the reference. Reconstruct their hidden area as smooth pale beach sand with subtle natural sand texture. Also remove the near foreground blurred flowers/foliage and small shells, so these can be separate layers. Retain exactly the pale blue sky, turquoise sea and soft waves, distant palm coast, left canopy curtain and small table. Fine refined anime scenery painting; keep original horizon, camera angle and scale. Central lower beach calm and open, no people, chair or large decor, no dramatic gold lighting, no text. Fully opaque full 1024x1536 canvas.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_lounger",
+      "kind": "effects",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_lounger/effects.png",
+      "sha256": "2028261aebe5f8ac6ae91eb22e06232b05c92c506ff5beccae4bf74c4d627ee4",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: background-extraction. Produce ONLY the few foreground white plumeria flowers and green leaves near the bottom-left edge, and the small pale shells on the lower sand of the reference, isolated on a genuinely transparent 1024x1536 full canvas. Keep these decorative objects in their original peripheral canvas positions and small original scale. Remove woman, chair, sand, ocean, sky, table, curtain, all other pixels. Crisp lightly painted contours with natural sunny pale colors, no rectangular shadow patches, no full background, no glow, no text. Sparse separate decorations, not a collage.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_stars",
+      "kind": "subject",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_stars/subject.png",
+      "sha256": "8f86d952803c2b1e612b4e2e10eaabdd249e122a672e67b90af7d0170b726bb0",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: background-extraction. Make a genuinely transparent 1024x1536 RGBA full-canvas sprite for a layered card. The reference is an edit target. Preserve the adult woman's exact natural face, entire connected body and detailed original outfit. Preserve pose and hand ownership; no independent limbs, no recropping, no zoom or enlargement, no backdrop, no colored haze, no checkerboard, no text. Extract only the entire burgundy-haired adult fantasy woman with elegant horns, small bat wings, heart-tipped tail, opaque embroidered burgundy dress and both red shoes. Retain her fully airborne sitting posture, bent knees and both shoe toes raised, one hand gently near cheek and other open to the side. Keep the modest high neckline and extend skirt folds naturally over the upper thighs. There is NO chair, no ground and no furniture. Remove all stars and sky. Refined polished anime painting with anatomical volume.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_stars",
+      "kind": "background",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_stars/background.webp",
+      "sha256": "10bd9fb802e12118566ba25c0215d892d1affad2007bc4e7cf65c69b7756ee69",
+      "generator": "previous built-in imagegen, reused reviewed background",
+      "prompt": "See collection/generation-v5.json for shira_v5_stars background",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_stars",
+      "kind": "effects",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_stars/effects.png",
+      "sha256": "830058567b596e42d9f4afae308faa69ebbf868e869e4e67303a876183949b13",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: stylized-concept. Create a sparse independent transparent decoration layer matching the reference's burgundy fantasy star card. ONLY two thin deep burgundy silk ribbon arcs and a few tiny ivory star-shaped charms, at the LEFT and RIGHT peripheral lower corners of a 1024x1536 canvas, leaving the whole middle x=.28-.78 y=.15-.78 empty. Gentle curved fabric, restrained silver embroidery, natural shadows, no rainbow bands or glitter overlay. These are freely floating scene ornaments, not attached limbs or clothing cutouts. Do not draw character, moon, sky, furniture or lettering. Genuine RGBA transparency, complete small objects with crisp painted contours, quiet fine anime illustration.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_volley",
+      "kind": "subject",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_volley/subject.png",
+      "sha256": "cae5c690a8e94974c85b4d00e66610ff16988fcc0a26fcea37244baad3de2f11",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: background-extraction. Make a genuinely transparent 1024x1536 RGBA full-canvas sprite for a layered card. The reference is an edit target. Preserve the adult woman's exact natural face, entire connected body and detailed original outfit. Preserve pose and hand ownership; no independent limbs, no recropping, no zoom or enlargement, no backdrop, no colored haze, no checkerboard, no text. Extract the complete adult red-haired fantasy beach volleyball player, horns, small wings, tail and the yellow-white-blue volleyball above her raised left-side hand, as in the source. Keep her opaque burgundy short-sleeve high-neck athletic swim dress, natural jumping action, entire raised arm, complete ball and both feet. Remove all water/splashes, beach, sky, palms and foreground leaves. Keep complete connected silhouette, preserve proportions and an athletic nonsexual action.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_volley",
+      "kind": "background",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_volley/background.png",
+      "sha256": "9bbeb63882ef571da88293158cddea0cfa195cd7cb44c3c9c70127b58906bb38",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Produce only the beach background from reference: remove woman, ball, horns/wings/tail and all splashes. Keep original pale blue sky, white clouds and quiet turquoise bay, simplify glitter. Reconstruct water and wet sand. Adjust shoreline so thin calm shallow water covers the ground at x=.6-.75 y=.78-.84, the foot-contact area of our smaller player; sand is only the lowest 10 percent. Quiet natural illustrated scene. No foreground branches, no person, no text. Full opaque 1024x1536 canvas.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "shira_v5_volley",
+      "kind": "effects",
+      "file": "web/assets/experience/role-card/collection/layered-v7/shira_v5_volley/effects.png",
+      "sha256": "a3e6a3ebabde9332b9babd3b3ff874c62755ce9b0504cad4ae2c34bf9bb45a0c",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Generate ONLY two small translucent shallow-water splash arcs and a few droplets on true transparent 1024x1536 canvas. Place low arcs around x=.43 y=.80 and x=.71 y=.83, matching the two feet of a smaller volleyball player; heights less than .06 of canvas. Keep the center and upper 70 percent empty. Fine naturally sunlit turquoise/white water, clear lightly illustrated contours. No person, no ball, no sea background, no sand, no foam rectangle, no glow or text. Sparse low peripheral droplets, not a giant wave.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "koka_v5_stars",
+      "kind": "subject",
+      "file": "web/assets/experience/role-card/collection/layered-v7/koka_v5_stars/subject.png",
+      "sha256": "dff6c300a7892c6d93fc6528b2eec008ca23c266e4bedb076153ec42d6de2406",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: background-extraction. Make a genuinely transparent 1024x1536 RGBA full-canvas sprite for a layered card. The reference is an edit target. Preserve the adult woman's exact natural face, entire connected body and detailed original outfit. Preserve pose and hand ownership; no independent limbs, no recropping, no zoom or enlargement, no backdrop, no colored haze, no checkerboard, no text. Extract the adult blonde twin-tail woman with ivory hair bows, modest opaque pink knit cardigan and layered plaid skirt, white stockings and shoes, the entire supported wicker chair and cushions, plus the rabbit paper lantern held by her hand. Preserve her seated crossed-knee pose, relaxed face, hand holding lamp and other hand resting on chair arm. Woman/chair/lamp one intact physically coherent object; fully visible legs of chair. Remove all terrace tiles, balustrade, sky, plants, free butterflies and other floor lanterns.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "koka_v5_stars",
+      "kind": "background",
+      "file": "web/assets/experience/role-card/collection/layered-v7/koka_v5_stars/background.png",
+      "sha256": "96ac5e73993b28f0e5ed2778f5acb3e74fa1b2a667492f05efc71cbdb7a6b6bb",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Produce ONLY the empty nighttime balcony environment from the reference: remove entire woman, wicker chair, hand lantern and free butterflies. Retain sky, crescent, distant town/lake, balustrade, ivy columns and the tiled balcony floor with warm natural lantern light. Reconstruct removed objects' areas seamlessly. The balcony floor must occupy the lower 45 percent and have believable perspective for a supported chair. Remove near bottom-left out-of-focus flowers so these don't duplicate foreground sprites. Fully opaque 1024x1536 fine anime scenery painting. No human, no chair, no text.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "koka_v5_stars",
+      "kind": "effects",
+      "file": "web/assets/experience/role-card/collection/layered-v7/koka_v5_stars/effects.png",
+      "sha256": "63fd0fa41d193b9cc559e8e7db7cf4f9e9cd6144ad019ddc4f8a99b8db76f64e",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Generate ONLY three tiny warm ivory/gold moth-like butterflies and two small pale pink petals, matching the night rabbit paper-lantern reference, on a true transparent full 1024x1536 canvas. Position them at x=.16 y=.37, x=.22 y=.44, x=.83 y=.57, and near the lower corners. Leave the entire face zone and central body zone empty. Their width at most .04 canvas, soft painted warm lighting, no large halos, no spark rain, no luminous haze or square patches. No person, lamp, chair, terrace or sky, no text.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "koka_v5_sword",
+      "kind": "subject",
+      "file": "web/assets/experience/role-card/collection/layered-v7/koka_v5_sword/subject.png",
+      "sha256": "223f9ed4f2cc344246d995d91819c41ea39066005ae3bb716aa84315a75f7238",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: background-extraction. Make a genuinely transparent 1024x1536 RGBA full-canvas sprite for a layered card. The reference is an edit target. Preserve the adult woman's exact natural face, entire connected body and detailed original outfit. Preserve pose and hand ownership; no independent limbs, no recropping, no zoom or enlargement, no backdrop, no colored haze, no checkerboard, no text. Extract the complete adult blonde woman in the modest opaque pink cardigan/plaid skirt, stockings and boots, sword and sheath. CRITICAL: BACK FACES VIEWER, face looks to IMAGE RIGHT. IMAGE RIGHT shoulder and right forearm continuously lead to her RIGHT HAND holding sword hilt at right. Sword crosses diagonally to LOWER LEFT corner. Her LEFT HAND, at image-left, stabilizes the sheath. Keep lifted rear knee and planted boot, whole sword tip, hand ownership exact. Remove all garden, petals, glowing arcs, floor, background, free ribbons; keep the small attached hilt ornament. No turning to face viewer.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "koka_v5_sword",
+      "kind": "background",
+      "file": "web/assets/experience/role-card/collection/layered-v7/koka_v5_sword/background.png",
+      "sha256": "cf9e85abec784975a678b23911adad033933cac34487b1f63196e4d6b431eb56",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Extract only the quiet warm dusk garden background, removing whole woman, sword, sheath, flying petals, glowing swing arcs and near foreground blurred flowers. Reconstruct a clear dry stone terrace in the center with natural steps and original perspective. Keep original climbing roses at side columns, distant lit castle, soft blue sky with pale peach dusk clouds. No flashy glow, no people or weapons, no text. Floor spans lower 40 percent, supporting a planted boot. Full opaque 1024x1536 fine polished anime background painting.",
+      "copyUnchanged": true
+    },
+    {
+      "id": "koka_v5_sword",
+      "kind": "effects",
+      "file": "web/assets/experience/role-card/collection/layered-v7/koka_v5_sword/effects.png",
+      "sha256": "fa460bd52051fb6342ba044647d8de25ea8e4769d053aab242901ca78452d996",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Create ONLY a few fine rose petals and ONE very thin small dust/petal motion arc at the lower-left corner of a 1024x1536 true transparent full canvas, matching the source right-hand sword swing. The motion arc runs obliquely from x=.18 y=.75 toward x=.40 y=.68, aligned with the sword's lower-left pointing tip. Leave head, hair, body and central sword area empty; no broad bright magic bands. Natural pink petals, sparse warm dusk paint. No woman, weapon, garden, opaque glow patch, text or background. Keep every petal complete, maximum 5 percent canvas wide.",
+      "copyUnchanged": true
+    }
+  ],
+  "layers": "real transparent subject, opaque background, real transparent decorations, independent floating name, view-dependent foil/back",
+  "notPixelIdenticalExtraction": true
+}

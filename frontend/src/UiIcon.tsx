@@ -1,0 +1,10 @@
+export function UiIcon({name,className=''}:{name:string;className?:string}){
+ const paths:Record<string,string>={left:'m14 6-6 6 6 6',right:'m10 6 6 6-6 6',down:'m6 9 6 6 6-6',up:'m6 15 6-6 6 6',close:'m6 6 12 12M18 6 6 18',back:'M19 12H5m6-6-6 6 6 6',home:'m3 10 9-7 9 7v10H3ZM9 20v-7h6v7',settings:'M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8',link:'m9 15 6-6M10 7l2-2a5 5 0 0 1 7 7l-2 2M14 17l-2 2a5 5 0 0 1-7-7l2-2',cart:'M3 3h2l3 12h11l2-9H6M9 20h.01M18 20h.01',work:'M3 7h18v13H3ZM8 7V4h8v3M3 12h18m-9-2v4',volume:'m11 4-5 4H3v8h3l5 4ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14',sun:'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1',image:'M3 3h18v18H3Zm0 14 6-6 4 4 4-5 4 5M8 7h.01',plus:'M12 5v14M5 12h14',message:'M3 4h18v13H8l-5 4V4ZM7 8h10m-10 5h6',user:'M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8M4 21v-2a8 8 0 0 1 16 0v2',moments:'M12 3v4m0 10v4M3 12h4m10 0h4M6 6l3 3m6 6 3 3M6 18l3-3m6-6 3-3',more:'M5 12h.01M12 12h.01M19 12h.01'};
+ paths.camera='M3 7h5l2-3h4l2 3h5v13H3ZM12 10a4 4 0 1 0 0 8 4 4 0 0 0 0-8';paths.search='M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14m5 12 6 6';
+ paths.expand='M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5';
+ paths.check='m5 12 4 4L19 6';paths.trash='M3 6h18M8 6V3h8v3M6 6l1 15h10l1-15M10 10v7m4-7v7';paths.download='M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5';paths.restore='M3 11a9 9 0 1 1 2 7M3 4v7h7';paths.clock='M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7v5l3 2';paths.building='M5 21V3h14v18M9 7h1m4 0h1m-6 4h1m4 0h1M10 21v-6h4v6';paths.pin='M12 22s8-8 8-14a8 8 0 0 0-16 0c0 6 8 14 8 14ZM12 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6';
+ paths.car='M3 11l2-6h14l2 6v8H3v-8ZM3 11h18M6 15h2m8 0h2M6 19v2m12-2v2';
+ paths.users='M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8M2 21v-2a7 7 0 0 1 14 0v2M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v1';
+ paths.minus='M5 12h14';paths.forward=paths.right;
+ return <svg className={'ui-icon '+className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]||paths.more}/></svg>;
+}

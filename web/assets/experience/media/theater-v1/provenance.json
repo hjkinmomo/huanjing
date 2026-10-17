@@ -1,0 +1,18 @@
+{
+  "created": "2026-10-06",
+  "generator": "OpenAI imagegen",
+  "assets": {
+    "shira-ornament": "844f41be-a2db-43f6-bfea-0381b65b2156",
+    "koka-ornament": "d70081af-f6e8-4e2f-8975-1df20b2995ee",
+    "shuyun-ornament": "fcdc5219-8b77-4617-90f6-829ae753a953",
+    "shira-scene": "8f03e96f-9044-46c0-988f-cb4663c06aff",
+    "koka-scene": "6b48b403-3efd-4fc8-a39c-0aa73a6c5aa8",
+    "shuyun-scene": "fb91efd0-50f7-4f00-9ba7-c119897c52e8"
+  },
+  "direction": {
+    "shira": "Burgundy roses, satin ribbons, fine gold filigree; rainy night glass conservatory with piano and unaddressed envelope.",
+    "koka": "Cream bows, paper rabbit charm, strawberry flowers; hilltop lantern fair at dusk with rabbit lantern and town lookout.",
+    "shuyun": "Indigo and silver ginkgo, paper fibers and bookmark; historic reading room adjoining disused railway platform in night rain, blank notebook and pressed flower."
+  },
+  "constraints": "Ornaments have transparent centers, no typography. Scenes have no people or text. Original outputs copied without bitmap edits."
+}

@@ -1,0 +1,9 @@
+export const CARD_MATERIALS:ReadonlyArray<{id:'pearl'|'silver'|'original'|'gold'|'glitter'|'iridescent';label:string;code:number}>;
+export const CARD_DISPLAYS:ReadonlyArray<{id:string;label:string;description:string;ink?:string;accent?:string;asset?:string;nameAt?:number[];nameBox?:number[];namePolygon?:number[][];corner?:number[][];assemblyOverrides?:ReadonlyArray<{sourceBox:number[];rect?:number[];depth?:number;limit?:number}>}>;
+export const DISPLAY_DEPTH:number;
+export const DISPLAY_EDGE_SCALE:number;
+export function displayEdgeUV(value:number):number;
+export function normalizeCardDisplay(id?:unknown):string;
+export function cardDisplayAsset(id:string):string;
+export function selectedCardDisplay(state:{display?:Record<string,Record<string,unknown>>},role:{id:string}):string;
+export function changeCardDisplay(state:{display?:Record<string,Record<string,unknown>>},role:{id:string},id:string):void;

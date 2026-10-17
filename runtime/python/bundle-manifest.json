@@ -1,0 +1,8 @@
+{
+  "format": 1,
+  "platform": "Windows x64",
+  "python": "3.12",
+  "optionalOffice": true,
+  "license": "LICENSE.txt",
+  "externalRuntimeRequired": false
+}

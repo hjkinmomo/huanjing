@@ -1,0 +1,19 @@
+{
+  "id": "hermes-shira-project5-v2",
+  "displayName": "Hermes Shira Project 5 v2",
+  "description": "Validated Shira desktop companion with native directional running, jumping, failed reaction, task rows, and 16 look directions.",
+  "spriteVersionNumber": 2,
+  "spritesheetPath": "spritesheet.webp",
+  "atlas": {
+    "columns": 8,
+    "rows": 11,
+    "cellWidth": 192,
+    "cellHeight": 208,
+    "width": 1536,
+    "height": 2288
+  },
+  "nativeExtensions": {
+    "gift": "../r17/shira_coffee_00.png",
+    "task": "../r17/shira_work_00.png"
+  }
+}

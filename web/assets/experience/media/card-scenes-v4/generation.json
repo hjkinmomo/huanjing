@@ -1,0 +1,205 @@
+{
+  "intent": "每张卡一个情境。姿态、道具、光线、透视、前景须属于同一地点和动作。",
+  "references": [
+    {
+      "url": "https://wiki.hoyolab.com/pc/genshin/entry/2812?lang=fr-fr",
+      "lesson": "观察妮露官方水元素立绘：手势、衣摆和水流形成同向弧线。只有水相关动作才使用水花。"
+    },
+    {
+      "url": "https://mail.creativeuncut.com/gallery-47/ww-jinhsi-splash-art.html",
+      "lesson": "观察今汐立绘：环绕主体的大轮廓围合画面，前后遮挡形成层次；不用堆叠无关小物。"
+    }
+  ],
+  "themes": {
+    "shira_v3_talk": {
+      "label": "花房共语",
+      "theme": "garden",
+      "time": "day",
+      "prop": "roses",
+      "pose": "开放手掌自然交谈，微风方向与枝叶一致",
+      "background": "garden",
+      "ornaments": [
+        "rose-branch"
+      ]
+    },
+    "shira_v3_tea": {
+      "label": "窗边茶歇",
+      "theme": "cafe",
+      "time": "day",
+      "prop": "tea",
+      "pose": "捧着杯碟，安静站在窗边",
+      "background": "tea-window",
+      "ornaments": [
+        "cafe-flowers"
+      ]
+    },
+    "koka_v3_talk": {
+      "label": "春风街角",
+      "theme": "street",
+      "time": "day",
+      "prop": "leaves",
+      "pose": "开放手掌，短裙和双马尾顺微风方向",
+      "background": "spring-street",
+      "ornaments": [
+        "spring-leaves"
+      ]
+    },
+    "koka_v3_lantern": {
+      "label": "提灯同行",
+      "theme": "lantern",
+      "time": "night",
+      "prop": "bunny-lantern",
+      "pose": "看向手里的纸兔子灯，暖光来自手持灯",
+      "background": "lantern-path",
+      "ornaments": [
+        "paper-lantern"
+      ]
+    },
+    "shuyun_v3_talk": {
+      "label": "手记书店",
+      "theme": "bookshop",
+      "time": "day",
+      "prop": "notebook",
+      "pose": "持手记解释，背景书架与前景书脊呼应",
+      "background": "quiet-bookshop",
+      "ornaments": [
+        "books-corner"
+      ]
+    },
+    "shuyun_v3_read": {
+      "label": "窗边阅览",
+      "theme": "reading",
+      "time": "day",
+      "prop": "open-book",
+      "pose": "低头翻页，轻微偏身，安静暖色环境",
+      "background": "reading-window",
+      "ornaments": [
+        "books-corner"
+      ]
+    }
+  },
+  "assets": [
+    {
+      "id": "books-corner",
+      "prompt": "Use case: stylized-concept. Asset: genuinely transparent PNG foreground corner for an anime quiet reading collectible card. Two small closed navy cloth-bound books with subtle silver botanical embossing (NO readable title) and one ivory page edge, resting naturally at an angle on the tiny corner of a walnut shelf seen from human eye-level. A short navy ribbon bookmark emerges from the pages and hangs DOWNWARD in a gentle curve, attached inside the book. Precise delicate hand-painted anime illustration, soft left window daylight, coherent grounded scale, quiet paper/wood materials. No flying pages or books, flowers, lamps, lanterns, splashes, person, background, text, UI, watermark or glow/halo. One compact grounded desk-edge object, plenty of true alpha outside.",
+      "kind": "ornament",
+      "file": "ornaments/books-corner.png",
+      "sourceImage": "exec-bb7dbd6c-167c-4a70-8596-094310cd919d.png",
+      "sha256": "c2ca8ab709b1b051dc1397020bc1d65b344905cc251119b4ff409230a7b4d96c",
+      "width": 1310,
+      "height": 1200
+    },
+    {
+      "id": "bunny-lantern",
+      "prompt": "Use case: stylized-concept. Asset: genuine transparent PNG foreground for an anime night-path collectible card. One small ivory handmade rabbit-shaped paper lantern with two short paper ears and a subtle warm amber light INSIDE, suspended by one thin dark pink cord running straight upward to the top edge of the image. Rounded ribbed paper body, tiny dark eyes and a simple pink nose, small dusty pink tassel below. Refined anime hand-painted illustration, cool blue subtle rimlight on outer paper at right and warm paper texture, practical lamp not neon magic. Vertical string makes attachment clear. No background, opaque halo, projected light cone, other lamps, books, roses, water, people, text, UI or watermark. Keep all edges genuinely transparent and clean.",
+      "kind": "ornament",
+      "file": "ornaments/bunny-lantern.png",
+      "sourceImage": "exec-9e48c951-9d51-4af4-a980-ec8d85d6f88c.png",
+      "sha256": "d24ff7ea9dfed1d6efcca49c22feae0b395c090f1c33da00fd76c413b163d71f",
+      "width": 1145,
+      "height": 1374
+    },
+    {
+      "id": "cafe-flowers",
+      "prompt": "Use case: stylized-concept. Asset: transparent PNG foreground layer for a refined anime cafe tea card. A modest small clear fluted glass vase holding three pale ivory/blush roses, a few sage leaves, sitting on a narrow crescent of walnut tabletop visible ONLY beneath the vase. Three-quarter eye-level natural perspective, soft neutral daylight from upper-left, fine hand-painted anime illustration matching an ivory cafe window, delicate glass and petals, calm everyday scale. One grounded tabletop corner ornament rather than floating flowers. No teacup to duplicate a woman's held cup, no books, lanterns, splash, ribbons, magic. Genuinely transparent background outside the vase and tiny wooden shelf edge, no colored halo, no text/watermark.",
+      "kind": "ornament",
+      "file": "ornaments/cafe-flowers.png",
+      "sourceImage": "exec-d4295771-4b57-40bd-a7e3-9d4bbcb3f33c.png",
+      "sha256": "02843f3b12166ba1243e148d51ed94a850cee8dd51bbeca80af51e06428384c5",
+      "width": 1145,
+      "height": 1374
+    },
+    {
+      "id": "garden",
+      "kind": "background",
+      "prompt": "Use case: stylized-concept. Asset: refined anime collectible character card BACKGROUND ONLY, portrait 2:3. A small glass conservatory corner with muted ivory frames, pale blue sky outside and a few realistic dusty rose plants with dark sage leaves along the left and right edges. One confident curved rose stem at left reaches gently toward the center at hand height, echoing a character extending an open palm. Style: elegant hand-painted anime game splash illustration with delicate precise lines and coherent soft daylight, restrained medium detail, no photorealistic 3D furniture. Ground plane: empty pale limestone paving and low rose pots at extreme corners, clear unobstructed standing space from center x28%-73% and y28%-90%, eye-level camera, horizon around y55%, a full-body adult woman will stand with feet near x50%,y87%. Keep central face area y15%-35% simple. Curved plants frame a loose asymmetric oval, not symmetrical stickers. No person, no human silhouette, no water/splashes, no lanterns, no paper/book motifs, no extreme purple or gold glow, no text, no UI or watermark. The entire scene must belong to one quiet flower-room conversation.",
+      "file": "backgrounds/garden.webp",
+      "sourceImage": "exec-4044b1a4-0e2a-4086-a807-be7be829a937.png",
+      "sha256": "92dc1b9420c88ac7d1a535a573cb17f689445f0013866dba7cc74a4806b25bbd",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "koka-lantern-night",
+      "kind": "character",
+      "prompt": "Use case: lighting-weather / identity-preserve. Edit the supplied full-body original adult fictional anime woman holding a rabbit paper lantern. Preserve her exact face identity, clearly adult appearance, blonde twin tails and cream bows, pink cardigan/blouse/check skirt, socks, shoes, complete full-body silhouette, hand and leg pose, the held rabbit lantern shape, framing and original transparency. Change ONLY lighting to match a quiet blue-grey night path: soft cool blue ambient rim light on hair and cardigan outer right edges; warm amber light comes from the rabbit lantern in her hands at image-left, gently illuminating nearby fingertips, underside of her chin and the left edge of the blouse. Keep painted skin natural and image clearly readable; do not underexpose. Refined delicate anime game illustration, restrained contrast, no neon purple/gold wash. Do not add scenery, floating lamp duplicates, water, paper, extra ribbons, magic or halo. Keep the entire transparent background genuinely alpha; no colored gradient sheet behind her. Full head to shoes entirely visible.",
+      "reference": "story-library-v3/characters/koka/lantern.png",
+      "file": "characters/koka-lantern-night.png",
+      "sourceImage": "exec-5e338513-92b6-4179-bec8-a1867626413a.png",
+      "sha256": "acc7fc07adb0a923e0a99e5ce76c6459edc3da37c4aea34b12b59116fa276b4f",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "lantern-path",
+      "prompt": "Use case: stylized-concept. Asset: portrait 2:3 background only for a refined anime character collectible card. Delicate hand-painted anime game illustration with consistent precise linework, muted colors and eye-level perspective, medium detail. A full-body adult woman will be layered over central x28%-74%,y13%-90%, feet near x50%,y87%. Keep this entire silhouette corridor empty with unobstructed floor, no foreground furniture crossing the standing position, simple central face area. Surrounding elements form a gentle asymmetric curve, no people or silhouettes, no text/UI/watermark, no floating magical papers or water splashes, no garish purple or gold. A quiet hillside lane after dusk, blue-grey sky still luminous, soft cool moonlight. Two small handmade ivory rabbit paper lanterns hang by visible cords from a tree branch ONLY near upper-right edge; one lantern in far background by a rustic rail. Muted green leaves and tiny pale flowers at the far corners, stone pathway curves gently into distance. Warm light comes from actual lanterns, not arbitrary glow. A woman holding her own rabbit lantern will occupy center. The nearest lamp is on the right, her handheld lamp will be at center-left, balance these two lights. No extravagant festival palace, no oversize sun, no airborne ornaments without support.",
+      "kind": "background",
+      "file": "backgrounds/lantern-path.webp",
+      "sourceImage": "exec-4a3e039d-0538-41e1-ae4e-55a87d468cea.png",
+      "sha256": "bc492c06921eb5c469cb0d60669171b096c804f9e9ecba4c19908c134d33ca02",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "quiet-bookshop",
+      "prompt": "Use case: stylized-concept. Asset: portrait 2:3 background only for a refined anime character collectible card. Delicate hand-painted anime game illustration with consistent precise linework, muted colors and eye-level perspective, medium detail. A full-body adult woman will be layered over central x28%-74%,y13%-90%, feet near x50%,y87%. Keep this entire silhouette corridor empty with unobstructed floor, no foreground furniture crossing the standing position, simple central face area. Surrounding elements form a gentle asymmetric curve, no people or silhouettes, no text/UI/watermark, no floating magical papers or water splashes, no garish purple or gold. A quiet traditional neighbourhood bookshop, sage ivory walls and walnut book shelves grouped along far sides, morning pale blue daylight from a high left window. Restrained navy-and-cream cloth book covers with subtle botanical embossing, no readable lettering. A narrow writing desk with closed notebook is tucked entirely at far lower-right, no chair in foreground. A few green leaves outside the window, no roses or lanterns indoors. The central open warm wooden floor and clean background area allow a navy embroidered qipao woman holding a notebook to converse. Warm paper, cool navy, natural wood palette.",
+      "kind": "background",
+      "file": "backgrounds/quiet-bookshop.webp",
+      "sourceImage": "exec-027fb7c9-12a5-4e76-b414-002594a0e6db.png",
+      "sha256": "2675c96ce88f8a343480155d64dc4b46ac9be897fdc7ff37674241d63214a92c",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "reading-window",
+      "prompt": "Use case: stylized-concept. Asset: portrait 2:3 background only for a refined anime character collectible card. Delicate hand-painted anime game illustration with consistent precise linework, muted colors and eye-level perspective, medium detail. A full-body adult woman will be layered over central x28%-74%,y13%-90%, feet near x50%,y87%. Keep this entire silhouette corridor empty with unobstructed floor, no foreground furniture crossing the standing position, simple central face area. Surrounding elements form a gentle asymmetric curve, no people or silhouettes, no text/UI/watermark, no floating magical papers or water splashes, no garish purple or gold. An old station reading room in a calm afternoon, large rectangular window at left showing pale blue sky and ordinary leafy trees; modest ivory walls and walnut bookshelves. A reading desk with one open ivory book occupies ONLY the far bottom-left corner, an angled stack of navy cloth-covered books at far right. Human eye-level perspective, no foreground chair, no book table across the center. A navy embroidered qipao woman will stand centered reading her own open book. Soft light falls from left onto the pages. Interior is attractive and lived-in with only a few useful details, not a palace/library cathedral. No lanterns, flying books, water, magic ribbons or unrelated flowers.",
+      "kind": "background",
+      "file": "backgrounds/reading-window.webp",
+      "sourceImage": "exec-3d8a78a4-83ac-400c-bf50-6064a6119014.png",
+      "sha256": "01306f33742c8067888fef75f01570858d66918a122bcceb9325b368a1110401",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "rose-branch",
+      "prompt": "Use case: stylized-concept. Asset: one genuinely transparent PNG foreground illustration layer for an anime glass conservatory character card. A single slender curving rose stem coming from bottom-left and reaching diagonally upward toward the right, with exactly two muted dusty pink roses, one bud and 5 dark sage leaves. Elegant hand-painted anime linework, soft daylight from upper-left, realistic thin green-brown stem and restrained fresh petals. The stem forms an open C curve, no symmetric wreath; no vase, ribbon, lantern, paper, water or fantasy particles. Crisp high-quality transparent edges, absolutely no background, no colored halo or glow, no shadows cast onto a background. Compact botanical element designed to occupy the card edge rather than cover the character's face. No person, text or watermark.",
+      "kind": "ornament",
+      "file": "ornaments/rose-branch.png",
+      "sourceImage": "exec-27eb9fc3-fded-495b-9680-ab5dc2baab44.png",
+      "sha256": "ea0beecf85834d8c4952b288d1e951e1d463a427dba100d0cdee75f6203ddb27",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "spring-leaves",
+      "prompt": "Use case: stylized-concept. Asset: genuine transparent PNG foreground leaf layer for a refined anime spring street collectible card. A coherent breeze carrying exactly four small fresh sage-green tree leaves and three small pale pink blossom petals in a loose diagonal arc from bottom-left to upper-right, natural motion with all leaf stems following the same left-to-right breeze. Delicate hand-painted anime lines, soft diffuse sunlight from upper-left, subtle material detail; this is a small everyday wind movement, not a magical wave or swirling tornado. No stems/vines, water, lantern, book, hearts, glitter or characters. Preserve plenty of transparent negative space, no background/color halo/shadow sheet, no text/watermark.",
+      "kind": "ornament",
+      "file": "ornaments/spring-leaves.png",
+      "sourceImage": "exec-f387f12a-b3cd-4df2-a899-ec5ad9b51886.png",
+      "sha256": "77978895fc898db784a0107da12e6602e0964b2b0bac07d39d47951f07f41296",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "spring-street",
+      "prompt": "Use case: stylized-concept. Asset: portrait 2:3 BACKGROUND ONLY for a refined anime collectible character card, delicate hand-painted anime game illustration, medium detail and coherent eye-level perspective, NOT photorealistic or glossy 3D. The focal full-body adult character will be composited in the central x28%-73%, y12%-90%; keep this entire silhouette corridor empty, and leave floor at feet y87% clear with no furniture crossing it. Asymmetric surrounding elements frame a relaxed oval, gentle diffuse lighting. No people, human silhouettes, readable text, logo, UI, magical effects, water splashes, floating pages or unrelated lanterns, no saturated purple or overblown gold. A sunny spring pedestrian street corner, pale blue sky and white clouds, small ivory-and-sage buildings, stone paving. A flowering branch with tiny pale pink blossoms curves down from upper-left, leafy tree at far right, scattered 2 or 3 leaves near lower-left edge from the same tree. Light breeze flows left-to-right. The central clear walkway belongs to a woman with a bag greeting someone. Subtle shop awning at far left, no tables/chairs in the foreground, no large decorative objects in the center, muted clean natural green and cream palette.",
+      "kind": "background",
+      "file": "backgrounds/spring-street.webp",
+      "sourceImage": "exec-1dc71dfa-d736-4573-aea3-7d5da996c249.png",
+      "sha256": "922099482278b023bb0b2280365cc804003c8c88a271b947977de5711f6ac82d",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "tea-window",
+      "prompt": "Use case: stylized-concept. Asset: portrait 2:3 BACKGROUND ONLY for a refined anime collectible character card, delicate hand-painted anime game illustration, medium detail and coherent eye-level perspective, NOT photorealistic or glossy 3D. The focal full-body adult character will be composited in the central x28%-73%, y12%-90%; keep this entire silhouette corridor empty, and leave floor at feet y87% clear with no furniture crossing it. Asymmetric surrounding elements frame a relaxed oval, gentle diffuse lighting. No people, human silhouettes, readable text, logo, UI, magical effects, water splashes, floating pages or unrelated lanterns, no saturated purple or overblown gold. A warm quiet tea cafe window alcove, cream wall and natural walnut wood, outside pale blue daytime sky and modest street. Window on left, a small tea table just at far lower-left edge holding one ivory teapot and a small glass vase of pale roses; keep table narrow and completely out of central standing area. No chair in foreground. Top right a restrained pendant shade, soft textile curtain as a curved border at right. Sunlight from left is soft, human eye-level, everyday charming place to drink tea, matching a woman holding a cup and saucer, rose pink and burgundy accents only in tiny flowers.",
+      "kind": "background",
+      "file": "backgrounds/tea-window.webp",
+      "sourceImage": "exec-dfafdef7-7987-41e0-853f-ce81420d5da7.png",
+      "sha256": "90c72e007002ca588a09fbd31f95ce5610dd8b4cfe5fd48f63420fbb6cd7db37",
+      "width": 1024,
+      "height": 1536
+    }
+  ],
+  "tool": "built-in image_gen"
+}

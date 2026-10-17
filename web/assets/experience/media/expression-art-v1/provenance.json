@@ -1,0 +1,187 @@
+{
+  "generator": "OpenAI builtin imagegen",
+  "assets": [
+    {
+      "name": "memory-back",
+      "transparent_background": false,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/play-painted-v2/memory-back.png"
+      ],
+      "prompt": "Redesign this memory-game card BACK as a restrained elegant square texture. Preserve the exquisite hand-painted material quality but remove ALL ornate floral wreaths, scrollwork and gems. Deep muted plum cotton-paper background fills entire square canvas, fine subtle paper grain. One tiny cream envelope with a burgundy wax rose seal in the middle, occupying only 28 percent of width. One very fine softly aged gold double-line square border with plain gently rounded corners, inset 5 percent. Large calm empty space. Flat straight-on orthographic card surface, no perspective, no cast shadow, no text. Polished premium stationery, delicately painted, not flat vector. Full bleed square image, opaque.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-97349b18-3693-4fef-9c22-b634dec2d9a4.png",
+      "sha256": "acc940325d7b63df62ab005712f73f0a0d2b84a82f4d172714346b7cfc5a871e"
+    },
+    {
+      "name": "klotski-entry",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/puzzle.png",
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/memory.png"
+      ],
+      "prompt": "Create a matching hand-painted game menu object illustration for a Chinese Klotski sliding-block puzzle, in exactly the tactile gouache/watercolor antique ivory paper and warm wooden material style of these reference game menu assets. One complete compact wooden rectangular tray viewed slightly from above, cream and dusty sage wood blocks of different lengths, one large burgundy square block bearing a simple tiny gold flower motif, two small empty cells near bottom. Recognizable Klotski, not nine identical jigsaw tiles. Subtle worn gilded edge, natural wood grain and soft dimensional shading. Entire object visible centered with 8 percent margin, clear at small 112px icon size, no writing/numbers/characters, no surrounding scene or extra props. Transparent background cutout. Not flat vector or photorealistic.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-f3b36b7d-ea0e-4f4c-9f3f-234b2208c944.png",
+      "sha256": "d4ff4030fecf57f005d406db15b3d0c5151ddca24911db191a7c07233fbb5bee"
+    },
+    {
+      "name": "piano-entry",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/puzzle.png",
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/memory.png"
+      ],
+      "prompt": "Create a matching hand-painted game menu object illustration for a cozy piano room, in exactly the tactile gouache/watercolor antique ivory paper style of these reference game menu assets. A complete miniature elegant walnut grand piano in muted plum lacquer, lid partially open, ivory and dark keys visibly accurate, graceful small legs, a single delicate cream flower and two sage leaves beside the music stand. Small warm gold details, rich finely painted wood grain, soft three-dimensional shading. Entire piano visible centered with 8 percent margin, readable silhouette at 112px menu size, no background scene, no text, no musical symbols scattered around. Transparent background cutout. Premium cozy storybook object, not flat vector or photorealistic.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-61f1efde-dfa7-402e-adda-eb0407aac4a0.png",
+      "sha256": "09a815915a2571b517bce78f8b2187eedaf529b1a44c90ca0db72db5343cad64"
+    },
+    {
+      "name": "shira-comfort",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: A gentle comforting expression, attentive soft eyes and relaxed closed lips, one hand extended palm upward as a quiet offer of company. NO smile laugh or tears, no heart-shaped hand gesture. Remove the reference's old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No text, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shira-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-a700315a-d8a1-4b84-8322-4eab2a763751.png",
+      "sha256": "633d22dc3cbe2a298c312c81fadc79796d4cb56ce0b2f1c065aaef1113238331"
+    },
+    {
+      "name": "koka-comfort",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: A gentle comforting expression, attentive soft eyes and relaxed closed lips, one hand extended palm upward as a quiet offer of company. NO smile laugh or tears, no heart-shaped hand gesture. Remove the reference's old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No text, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/koka-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-0f4b1c44-b063-4ea1-88d9-6c09154f4797.png",
+      "sha256": "3e0cec03fc394550981160735e1476df857e06286cbf191f318190a015c350f4"
+    },
+    {
+      "name": "shuyun-comfort",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: A gentle comforting expression, attentive soft eyes and relaxed closed lips, one hand extended palm upward as a quiet offer of company. NO smile laugh or tears, no heart-shaped hand gesture. Remove the reference's old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No text, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shuyun-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-dff08e73-a063-4d30-b58b-876c0b803ca2.png",
+      "sha256": "ea25fa3c639069ebaedbf5cea3b588befd91bd0f86dfea0a965633f7403f2784"
+    },
+    {
+      "name": "shira-thinking",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Clearly thoughtful: eyes looking slightly upward to the side, one index finger resting lightly near chin, a tiny muted question-mark-shaped curl above head (no words). Subtle furrowed brows, closed lips. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shira-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-992b7dbe-5c49-46e4-9711-8f893aefefe6.png",
+      "sha256": "651bfe7c1c591629bf9b40ad0e2bfe36ecdd50a60f216771eb99990ab0d1fe21"
+    },
+    {
+      "name": "koka-thinking",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Clearly thoughtful: eyes looking slightly upward to the side, one index finger resting lightly near chin, a tiny muted question-mark-shaped curl above head (no words). Subtle furrowed brows, closed lips. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/koka-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-e2bc4fc0-9c34-4073-af25-b2da716105ce.png",
+      "sha256": "9ff81ffc13e31988e1d7928858a8ba0b9e67b7353a1126aac2f928925e1918e8"
+    },
+    {
+      "name": "shuyun-thinking",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Clearly thoughtful: eyes looking slightly upward to the side, one index finger resting lightly near chin, a tiny muted question-mark-shaped curl above head (no words). Subtle furrowed brows, closed lips. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shuyun-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-778bc390-a68b-4350-bc66-d2bc5f8292eb.png",
+      "sha256": "8a34ded90386d83f3777779f18cdbddf6648cd07d8b8ec2f61f25cbc61764c21"
+    },
+    {
+      "name": "shira-surprised",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Friendly genuine surprise: widened eyes, lifted brows, small open rounded mouth, one hand near cheek. No terror, no exaggerated screaming. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shira-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-82cefc17-1d79-4c23-a745-1117b6927097.png",
+      "sha256": "b216bf22fd0c30e9ff81dcbffcbbfb68c152f9861e97afcee8953d1bc879680d"
+    },
+    {
+      "name": "koka-surprised",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Friendly genuine surprise: widened eyes, lifted brows, small open rounded mouth, one hand near cheek. No terror, no exaggerated screaming. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/koka-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-cd95ff35-00ee-40ef-b61a-c5821d001823.png",
+      "sha256": "038499097696f243f42d7db7ad0e675e9d1d66c292a6fc184dd8984956eaa386"
+    },
+    {
+      "name": "shuyun-surprised",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Friendly genuine surprise: widened eyes, lifted brows, small open rounded mouth, one hand near cheek. No terror, no exaggerated screaming. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shuyun-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-518de28d-d92a-4a79-91a7-d298d6857873.png",
+      "sha256": "0be21d4bd57307bc29301bc3b23fd70250ccf71ff6bf9b95e127cd2ac04ee702"
+    },
+    {
+      "name": "koka-shy",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Soft bashful expression: pink cheeks, gaze gently averted, small reserved closed smile, hands held together at chest, a single tiny pink heart beside head. Not seductive. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/koka-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-1bcb858c-718e-4734-85a7-80a8e551d2ec.png",
+      "sha256": "2585758bd5291d2fe400a8709d6cae8ccdbcd368371bebdf7c644c25fe11b0ef"
+    },
+    {
+      "name": "shuyun-shy",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Soft bashful expression: pink cheeks, gaze gently averted, small reserved closed smile, hands held together at chest, a single tiny pink heart beside head. Not seductive. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shuyun-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-b403d550-fc04-4620-961f-c833e6958ad6.png",
+      "sha256": "3c3b2734af468cfcc4c48a8ae75efc18e5b6033820599a2752dea0e3ace4fe20"
+    },
+    {
+      "name": "koka-sleepy",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Peaceful bedtime expression: sleepy half-closed eyes, small relaxed mouth, cheek leaning on a tiny cream cushion held in arms, one small crescent moon beside head. No words. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/koka-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-5508016e-c844-44f5-9bf4-640067f9eaa8.png",
+      "sha256": "64e0ddbd271bc1a5e7fced97f72fe0c51be9bd67ceb9723c6c3e65bcf9040256"
+    },
+    {
+      "name": "shira-shy",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Soft bashful expression: pink cheeks, gaze gently averted, small reserved closed smile, hands held together at chest, a single tiny pink heart beside head. Not seductive. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shira-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-67b381f8-35cb-408f-b8f3-4871accddd89.png",
+      "sha256": "2f483a7ef1536df4163c448e72fa0f39e44fb54bc8e6d508e48b8d6fb2da17ef"
+    },
+    {
+      "name": "shuyun-sleepy",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Peaceful bedtime expression: sleepy half-closed eyes, small relaxed mouth, cheek leaning on a tiny cream cushion held in arms, one small crescent moon beside head. No words. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shuyun-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-210ad743-ba7f-40ff-ba97-57e39c10cc24.png",
+      "sha256": "c6f01475a3dd27378af1a62f29a81c4572820b61d34fcd4b9d166ec31ad3a062"
+    },
+    {
+      "name": "shira-sleepy",
+      "prompt": "Create ONE new transparent die-cut chat sticker of the EXACT SAME character as the reference. Preserve her hairstyle, hair and eye colors, clothing, signature accessories, adult chibi bust proportions, detailed delicate anime painting and clean thin white sticker border. Change pose AND facial expression: Peaceful bedtime expression: sleepy half-closed eyes, small relaxed mouth, cheek leaning on a tiny cream cushion held in arms, one small crescent moon beside head. No words. Remove old held props if necessary for this pose. Entire hair, hands and torso inside frame with breathing room. Clear emotional silhouette at 140px, face dominant. No words, no background, no rectangular panel, no extra people. High quality cohesive companion sticker set.",
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "E:/Hermes-Project-5-独立版-20261004/web/assets/experience/media/social-play-v1/shira-smile.png"
+      ],
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a11056-f27d-77f1-95a4-f13ec4cd410e\\exec-3c20499d-e24c-4e51-a6e2-b244e914de81.png",
+      "sha256": "1b0263ad41e4a5e265071f8fb8afee1d789bffcacc5a45d638a337af8b7a8956"
+    }
+  ]
+}

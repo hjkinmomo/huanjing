@@ -1,0 +1,123 @@
+/* Shira: blackberry / rose. Modular frame and individually positioned petals.
+   Manual themes and other characters never enter this scope. */
+.page-back-button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 36px; padding: 6px 9px; flex-shrink: 0; font: inherit; font-size: 12px; }
+.page-back-button[hidden] { display: none !important; }
+.page-back-button > span:first-child { font-size: 18px; line-height: 1; }
+.portrait-lower { display: contents; }
+.portrait-pet-mount:empty { display: none; }
+html[data-character-layout="shira"] {
+  --shira-rail: clamp(300px, 25vw, 340px);
+  --shira-pet-height: 170px;
+  --shira-portrait-width: 100%;
+}
+html[data-character-layout="shira"] .portrait-panel {
+  display: grid; grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto; align-content: start;
+  padding-bottom: 12px; gap: 12px; overflow-y: auto;
+}
+html[data-character-layout="shira"] .role-portrait-panel { grid-column: 1; grid-row: 1; width: 100%; min-height: 0; max-height: none; height: auto; margin: 0; }
+html[data-character-layout="shira"] .portrait-lower {
+  display: grid; grid-column: 1; grid-row: 2;
+  grid-template-columns: minmax(0, 1fr) var(--shira-pet-height); gap: 10px; align-items: center;
+}
+html[data-character-layout="shira"] .portrait-backpack { grid-column: 1; grid-row: 1; grid-template-columns: minmax(0, 1fr); gap: 8px; align-self: start; }
+html[data-character-layout="shira"] .portrait-pet-mount { grid-column: 2; min-width: 0; padding-top: 4px; }
+html[data-character-layout="shira"] .portrait-lower:has(.portrait-pet-mount:empty) { grid-template-columns: minmax(0, 1fr); }
+html[data-character-layout="shira"] .portrait-backpack-items { min-height: 32px; }
+html[data-character-layout="shira"] :is(.portrait-relationship-card, .portrait-card-inner, .portrait-card-front) { height: auto; }
+html[data-character-layout="shira"] .portrait-card-front { grid-template-rows: auto auto; }
+html[data-character-layout="shira"] #portraitFlipTarget { aspect-ratio: 1 / 1.618; height: auto; width: 100%; }
+html[data-character-layout="shira"] .portrait-card-back { height: 100%; overflow-y: auto; }
+html[data-character-layout="shira"] .shell:has(#chat.is-active) .pet-dock {
+  width: var(--shira-pet-height); height: calc(var(--shira-pet-height) + 16px);
+  position: relative; inset: auto !important; transform: none !important; margin: 0;
+}
+html[data-character-layout="shira"] #portraitPetMount .pet-actions { left: auto; right: 0; transform: none; }
+html[data-character-layout="shira"] .shell:has(#chat.is-active) .pet-stage {
+  --pet-atlas-cell-h: var(--shira-pet-height);
+  --pet-atlas-cell-w: calc(var(--shira-pet-height) * .9263);
+  width: var(--shira-pet-height); height: var(--shira-pet-height);
+}
+html[data-character-layout="shira"] .shell:has(#chat.is-active) #deskPet { width: var(--pet-atlas-cell-w); height: var(--pet-atlas-cell-h); }
+html[data-character-theme="shira-nocturne"] {
+  --canvas: #21121e; --paper: #21121e;
+  --surface: #301f2b; --panel: #301f2b; --surface-subtle: #3b2634;
+  --ink: #f5e8ee; --text-primary: #f5e8ee;
+  --muted: #cbb4c1; --text-secondary: #cbb4c1; --text-tertiary: #baa0b1;
+  --divider: #604051; --line: #604051; --wine: #e9abc2; --accent: #e9abc2;
+  --shira-selected: #542d42; --shira-button: #85405f;
+  --shira-ornament-color: #c298af; --shira-ornament-opacity: .52;
+  --shira-flower-opacity: .66; --shira-flower-filter: saturate(.72) sepia(.12);
+  --shira-frame: url('./shira-materials/accents-v3/frame.png');
+  --shira-single-one: url('./shira-materials/accents-v3/petal-1.png');
+  --shira-single-two: url('./shira-materials/accents-v3/petal-2.png');
+  --shira-single-three: url('./shira-materials/accents-v3/petal-3.png');
+  --shira-single-four: url('./shira-materials/accents-v3/petal-4.png');
+  --shira-single-five: url('./shira-materials/accents-v3/petal-5.png');
+  --shira-wing-heart: url('./shira-materials/motifs-v4/wing-heart.svg');
+  --shira-sigil: url('./shira-materials/motifs-v4/succubus-sigil.svg');
+}
+html[data-character-theme="shira-nocturne"] .content { background: radial-gradient(ellipse at 90% 20%, #482034 0, transparent 58%), var(--canvas); }
+html[data-character-theme="shira-nocturne"] .chat-panel.is-active { background: transparent; }
+html[data-character-theme="shira-nocturne"] .sidebar { background: linear-gradient(180deg, #301c29, #241722); }
+html[data-character-theme="shira-nocturne"] .topbar { background: #2d1a27; border-bottom-color: #573447; }
+html[data-character-theme="shira-nocturne"] #conversationSurface { background: #2b1b28; border: 0; border-radius: 14px; padding: 18px; isolation: isolate; }
+html[data-character-theme="shira-nocturne"] #messages {
+  background: var(--shira-wing-heart) right 12px top 22% / 100px 76px no-repeat,
+    linear-gradient(155deg, #33202e, #291c29);
+}
+html[data-character-theme="shira-nocturne"] .conversation-toolbar { background: #32212e; border-bottom-color: #553747; padding-inline: 22px; }
+html[data-character-theme="shira-nocturne"] #chatForm { background: #35202e; border-top-color: #694255; padding: 14px 16px; }
+html[data-character-theme="shira-nocturne"] #chatInput { background: #251923; border-color: #755064; }
+html[data-character-theme="shira-nocturne"] .message { background: #432b3b; border-color: #785269; border-left-color: #c89ab0; }
+html[data-character-theme="shira-nocturne"] .message.user { background: #65354d; border-color: #98637f; }
+html[data-character-theme="shira-nocturne"] .message.is-sticker { background: transparent; border-color: transparent; }
+html[data-character-theme="shira-nocturne"] .portrait-backpack { background: #352230; border-color: #745063; }
+html[data-character-theme="shira-nocturne"] .portrait-wrap { border-color: #b1889c; }
+/* A single nine-slice frame replaces the old edge + corner stack. No center fill. */
+html[data-character-theme="shira-nocturne"] #conversationSurface::before {
+  content: ""; position: absolute; inset: 8px; width: auto; height: auto;
+  border: 36px solid transparent; border-image: var(--shira-frame) 96 / 36px / 0 stretch;
+  background: none; mask: none; -webkit-mask: none; transform: none;
+  opacity: .90; z-index: 3; pointer-events: none;
+}
+/* Individual petal in reserved right gutter, far from all four frame corners. */
+html[data-character-theme="shira-nocturne"] #conversationSurface::after {
+  width: 20px; height: 30px; right: 34px; top: 36%;
+  background: var(--shira-single-one) center / contain no-repeat;
+  animation: shira-single-drift 17s ease-in-out infinite;
+}
+/* The small heart divider is separate from the outer frame and the typing area. */
+html[data-character-theme="shira-nocturne"] #chatForm::before { width: 114px; height: 38px; top: -19px; left: calc(50% - 57px); opacity: .48; }
+html[data-character-theme="shira-nocturne"] .character-daynight::before {
+  width: 24px; height: 28px; left: 18px; bottom: calc(100% + 40px);
+  background-image: var(--shira-single-two); transform: rotate(-26deg);
+}
+html[data-character-theme="shira-nocturne"] .character-daynight::after {
+  content: ""; position: absolute; width: 33px; height: 18px; right: 20px; bottom: calc(100% + 20px);
+  pointer-events: none; background: var(--shira-single-three) center / contain no-repeat;
+  opacity: var(--shira-flower-opacity); filter: var(--shira-flower-filter); transform: rotate(18deg);
+}
+/* Flat thematic watermarks. Low-alpha SVG strokes; no light effects or opaque background. */
+html[data-character-theme="shira-nocturne"] .sidebar { position: relative; isolation: isolate; }
+html[data-character-theme="shira-nocturne"] .sidebar::before {
+  content: ""; position: absolute; pointer-events: none; z-index: -1;
+  left: 18px; right: 18px; top: 45%; height: 180px;
+  background: var(--shira-sigil) center / contain no-repeat;
+}
+html[data-character-theme="shira-nocturne"] .sidebar::after {
+  content: ""; position: absolute; pointer-events: none; z-index: -1;
+  left: 28px; top: calc(45% + 146px); width: 24px; height: 26px;
+  background: var(--shira-single-five) center / contain no-repeat;
+  opacity: .54; filter: var(--shira-flower-filter); transform: rotate(-32deg);
+}
+/* Removed the empty companion side column and the artwork used to fill it. */
+html[data-character-theme="shira-nocturne"] .portrait-panel::before,
+html[data-character-theme="shira-nocturne"] .portrait-panel::after { content: none; }
+@keyframes shira-single-drift { 0%,100% { transform: translateY(-4px) rotate(-12deg); } 50% { transform: translateY(7px) rotate(6deg); } }
+@media (prefers-reduced-motion: reduce) { html[data-character-theme="shira-nocturne"] #conversationSurface::after { animation: none; } }
+@media (max-width: 1050px) {
+  html[data-character-layout="shira"] { --shira-rail: 280px; --shira-pet-height: 154px; }
+  .page-back-button { padding-inline: 6px; }
+  .page-back-button > span:last-child { display: none; }
+}

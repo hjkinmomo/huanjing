@@ -1,0 +1,21 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": [
+    {
+      "id": "bunny",
+      "prompt": "Use case: illustration-story. Asset type: square sliding-picture-puzzle artwork for a cozy companion game. Generate a complete square image, not puzzle tiles, no grid, no text, no numbers, no watermark. Simple polished storybook gouache illustration with large recognizable shapes, crisp silhouettes, subtle paper texture and warm friendly colors. Avoid intricate clutter and large featureless areas: each area in a 3x3 subdivision should have a distinct clue or continuation. Full-bleed composition, no frame. Scene: one cream-colored rabbit sitting in a sunny garden, large pink tulips, a winding path and a pale green watering can. Rabbit lower left, tulips center-right, rounded trees and small clouds across the top. Easy-to-read shapes, gentle sage green and peach palette."
+    },
+    {
+      "id": "lighthouse",
+      "prompt": "Use case: illustration-story. Asset type: square sliding-picture-puzzle artwork for a cozy companion game. Generate a complete square image, not puzzle tiles, no grid, no text, no numbers, no watermark. Simple polished storybook gouache illustration with large recognizable shapes, crisp silhouettes, subtle paper texture and warm friendly colors. Avoid intricate clutter and large featureless areas: each area in a 3x3 subdivision should have a distinct clue or continuation. Full-bleed composition, no frame. Scene: a red-roofed white lighthouse above a turquoise sea, curved golden beach, a small sailboat and rounded white clouds. Simple navy and coral accents. Lighthouse occupies middle-left, boat right, beach arcs through the bottom. Charming quiet seaside, clearly readable at small size."
+    },
+    {
+      "id": "cottage",
+      "prompt": "Use case: illustration-story. Asset type: square sliding-picture-puzzle artwork for a cozy companion game. Generate a complete square image, not puzzle tiles, no grid, no text, no numbers, no watermark. Simple polished storybook gouache illustration with large recognizable shapes, crisp silhouettes, subtle paper texture and warm friendly colors. Avoid intricate clutter and large featureless areas: each area in a 3x3 subdivision should have a distinct clue or continuation. Full-bleed composition, no frame. Scene: a tiny lavender-roofed cottage under a crescent moon, glowing amber windows, a curving path, rounded pine trees and several large stars. Deep indigo and lavender with warm gold. Cottage centered lower-right, moon upper-left, clouds upper-right. Cozy peaceful night, simple substantial shapes."
+    },
+    {
+      "id": "bunny-easy",
+      "prompt": "Use case: illustration-story. Square artwork for an easy 3x3 sliding puzzle. An extremely simple charming flat children's picture-book illustration: a large cream bunny with two long ears in a peach flowerpot garden. Only eight or nine large bold shapes: bunny, three oversize tulips, a round sun, one cloud, a watering can, a curving path, green ground. Vector-like flat color with very light paper grain. Thick rounded clean contours, pastel sage green, peach pink and cream. Almost no tiny details, no realistic painting, no intricate vegetation, no photorealism, no watercolor shading, no texture-filled foliage. Large overlapping shapes span several tiles, each of the nine subdivisions has a recognizable clue. Full bleed square, no grid, no numbers, no lettering, no watermark."
+    }
+  ]
+}

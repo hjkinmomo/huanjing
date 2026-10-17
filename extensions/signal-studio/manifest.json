@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "signal-studio",
+  "name": "Signal Studio",
+  "version": "1.0.0",
+  "description": "A focused multi-color workspace skin with cool paper surfaces and high-contrast action colors.",
+  "type": "theme",
+  "riskLevel": "R0",
+  "defaultEnabled": true,
+  "capabilities": ["theme.tokens"],
+  "themeTokens": {
+    "--ink": "#17241f",
+    "--muted": "#61736c",
+    "--paper": "#f5f7f6",
+    "--panel": "#e8efed",
+    "--line": "#bdcbc7",
+    "--wine": "#a52a45",
+    "--plum": "#263b54",
+    "--amber": "#c18a2c",
+    "--green": "#28745a"
+  }
+}

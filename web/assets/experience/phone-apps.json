@@ -1,0 +1,114 @@
+[
+  {
+    "id": "chat",
+    "name": "微聊",
+    "view": "chat",
+    "icon": "chat",
+    "enabled": true
+  },
+  {
+    "id": "games",
+    "name": "游戏",
+    "view": "games",
+    "icon": "games",
+    "enabled": true
+  },
+  {
+    "id": "shop",
+    "name": "淘乐乐",
+    "view": "shop",
+    "icon": "shop",
+    "enabled": true
+  },
+  {
+    "id": "map",
+    "name": "地图",
+    "view": "map",
+    "icon": "map",
+    "enabled": true
+  },
+  {
+    "id": "travel",
+    "name": "轻途出行",
+    "view": "travel",
+    "icon": "car",
+    "enabled": true
+  },
+  {
+    "id": "status",
+    "name": "此刻",
+    "view": "status",
+    "icon": "status",
+    "enabled": true
+  },
+  {
+    "id": "bag",
+    "name": "背包",
+    "view": "bag",
+    "icon": "bag",
+    "enabled": true
+  },
+  {
+    "id": "delivery",
+    "name": "美兔",
+    "view": "delivery",
+    "icon": "delivery",
+    "enabled": true
+  },
+  {
+    "id": "journal",
+    "name": "行迹绑定",
+    "view": "journal",
+    "icon": "link",
+    "enabled": true
+  },
+  {
+    "id": "work",
+    "view": "work",
+    "name": "兼职",
+    "icon": "work",
+    "enabled": true
+  },
+  {
+    "id": "schedule",
+    "name": "日程",
+    "view": "schedule",
+    "icon": "schedule",
+    "enabled": true
+  },
+  {
+    "id": "camera",
+    "name": "拍照",
+    "view": "camera",
+    "icon": "camera",
+    "enabled": true
+  },
+  {
+    "id": "album",
+    "name": "相册",
+    "view": "album",
+    "icon": "album",
+    "enabled": true
+  },
+  {
+    "id": "notes",
+    "name": "备忘录",
+    "view": "notes",
+    "icon": "notes",
+    "enabled": true
+  },
+  {
+    "id": "wallet",
+    "name": "账本",
+    "view": "wallet",
+    "icon": "wallet",
+    "enabled": true
+  },
+  {
+    "id": "settings",
+    "view": "settings",
+    "name": "设置",
+    "icon": "settings",
+    "enabled": true
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "creator": "Kenney",
+  "license": "CC0-1.0",
+  "sourcePage": "https://kenney.nl/assets/particle-pack",
+  "files": [
+    {
+      "upstream": "PNG (Transparent)/light_01.png",
+      "file": "glow.png",
+      "bytes": 93470,
+      "sha256": "caedcc5df5bcac4470244d2520d6a64b45b20c1ccf4d918da516c55e3fa365a6",
+      "source": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip"
+    },
+    {
+      "upstream": "PNG (Transparent)/star_04.png",
+      "file": "sparkle.png",
+      "bytes": 30613,
+      "sha256": "6485ac16c773663bd39346f3bedae04465ac14c661eb47cc5cfa935cdbf6c2ec",
+      "source": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip"
+    },
+    {
+      "upstream": "PNG (Transparent)/circle_05.png",
+      "file": "ring.png",
+      "bytes": 65336,
+      "sha256": "925b8ac284436f74f9cadf0ecd058da1c08fba65c098e4e34fd220603022f02e",
+      "source": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip"
+    },
+    {
+      "upstream": "PNG (Transparent)/magic_03.png",
+      "file": "sigil.png",
+      "bytes": 58093,
+      "sha256": "c2ef5fe86cd2fd08e5b9768389ab6580b346c391db3c7c09fc9b0a63e00ec4ce",
+      "source": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip"
+    },
+    {
+      "upstream": "License.txt",
+      "file": "License-Kenney.txt",
+      "bytes": 651,
+      "sha256": "f9e70b81d8cc07c4e07c9f2eff1d94fd371a06070b18cb67c651c41158ec2975",
+      "source": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip"
+    }
+  ]
+}

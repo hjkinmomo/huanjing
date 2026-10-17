@@ -1,0 +1,48 @@
+{
+  "schema": "hermes-story-art-candidates/v1",
+  "created": "2026-10-03",
+  "generator": "built-in image_gen",
+  "status": "artwork prepared; no story runtime integration",
+  "assets": [
+    {
+      "id": "shopping-street",
+      "name": "暮色商店街",
+      "use": "逛街入口与地点选择",
+      "file": "shopping-street-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: standalone wide landscape 16:9 visual novel background for a character companion app. One image, no collage. Art direction: carefully painted 2D anime visual-novel environment, matte gouache-like brushwork, tasteful architectural detail, believable perspective, restrained edges and natural materials; not a glossy 3D render, not a photo. Shared palette: warm ivory, walnut brown, muted burgundy accents and soft dusty-blue dusk, moderate saturation. Eye-level composition, open middle-ground where separately rendered character sprites can stand; quiet lower fifth for an overlaid dialogue box, but paint the whole environment, no blank UI band. No foreground people or characters, no words, no letters, no logos, no UI, no frames, no watermarks. Scene: A welcoming pedestrian shopping street at blue hour after light rain. Small bookshop, gift boutique and corner cafe along the street; warm display windows, stone paving with subtle reflections, a few tasteful potted plants. Street leads gently into depth; intimate neighborhood outing, not a giant mall or extravagant fantasy city. Clear walkable foreground and balanced space for sprites.",
+      "candidate": true,
+      "characterBakedIn": false,
+      "uiBakedIn": false
+    },
+    {
+      "id": "gift-boutique",
+      "name": "街角礼品店",
+      "use": "挑选礼物与浏览商品",
+      "file": "gift-boutique-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: standalone wide landscape 16:9 visual novel background for a character companion app. One image, no collage. Art direction: carefully painted 2D anime visual-novel environment, matte gouache-like brushwork, tasteful architectural detail, believable perspective, restrained edges and natural materials; not a glossy 3D render, not a photo. Shared palette: warm ivory, walnut brown, muted burgundy accents and soft dusty-blue dusk, moderate saturation. Eye-level composition, open middle-ground where separately rendered character sprites can stand; quiet lower fifth for an overlaid dialogue box, but paint the whole environment, no blank UI band. No foreground people or characters, no words, no letters, no logos, no UI, no frames, no watermarks. Scene: Interior of a small tasteful gift boutique at early evening. Walnut shelving and a low display counter show a modest selection of ribbon-wrapped gifts, ceramic cups, notebooks and small accessories; one warm shop window. Plausible merchandising, no excessive clutter. Open center aisle, main interesting display to the left, unobstructed middle-right for a character sprite. Refined cozy atmosphere suitable for selecting a gift together.",
+      "candidate": true,
+      "characterBakedIn": false,
+      "uiBakedIn": false
+    },
+    {
+      "id": "bookshop",
+      "name": "灯下书店",
+      "use": "书店停留与共同阅读",
+      "file": "bookshop-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: standalone wide landscape 16:9 visual novel background for a character companion app. One image, no collage. Art direction: carefully painted 2D anime visual-novel environment, matte gouache-like brushwork, tasteful architectural detail, believable perspective, restrained edges and natural materials; not a glossy 3D render, not a photo. Shared palette: warm ivory, walnut brown, muted burgundy accents and soft dusty-blue dusk, moderate saturation. Eye-level composition, open middle-ground where separately rendered character sprites can stand; quiet lower fifth for an overlaid dialogue box, but paint the whole environment, no blank UI band. No foreground people or characters, no words, no letters, no logos, no UI, no frames, no watermarks. Scene: Interior of a quiet neighborhood bookshop in late afternoon. Walnut bookcases, neatly varied books with unlettered spines, a curated low book display, tall window with dusty-blue twilight, restrained reading chair and small lamp. Open central aisle for a sprite, shelves have believable depth. Calm, literary, lived-in and inviting, not a cavernous library, no magical sparkles.",
+      "candidate": true,
+      "characterBakedIn": false,
+      "uiBakedIn": false
+    },
+    {
+      "id": "cafe",
+      "name": "窗边咖啡店",
+      "use": "逛街休息与自由聊天",
+      "file": "cafe-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: standalone wide landscape 16:9 visual novel background for a character companion app. One image, no collage. Art direction: carefully painted 2D anime visual-novel environment, matte gouache-like brushwork, tasteful architectural detail, believable perspective, restrained edges and natural materials; not a glossy 3D render, not a photo. Shared palette: warm ivory, walnut brown, muted burgundy accents and soft dusty-blue dusk, moderate saturation. Eye-level composition, open middle-ground where separately rendered character sprites can stand; quiet lower fifth for an overlaid dialogue box, but paint the whole environment, no blank UI band. No foreground people or characters, no words, no letters, no logos, no UI, no frames, no watermarks. Scene: Interior of a small street-corner cafe at dusk, as seen from beside a table for two. A small round walnut table with two simple ceramic cups at the left foreground, window onto the muted blue shopping street, discreet cafe counter and warm lamps further back, upholstered seat with a muted burgundy accent. Open middle-right area for a standing character sprite, quiet bottom edge. Relaxed conversational warmth, not an opulent restaurant.",
+      "candidate": true,
+      "characterBakedIn": false,
+      "uiBakedIn": false
+    }
+  ]
+}

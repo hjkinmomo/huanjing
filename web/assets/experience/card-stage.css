@@ -1,0 +1,34 @@
+/* Display surround stays separate from the illustration and its 3D material. */
+:root .chat-page:has(>.role-roster){grid-template-columns:var(--roster-width) minmax(0,1fr) 296px}
+:root .chat-page:has(>.role-roster):has(>.portrait-scene[hidden]){grid-template-columns:var(--roster-width) minmax(0,1fr)}
+:root .chat-page:has(>.role-roster) .role-card-art{height:auto;aspect-ratio:2/3;overflow:hidden;background:transparent;border-radius:18px;isolation:isolate}
+.role-card-art .role-card-frame,.role-card-art .card-original{z-index:1}
+.role-card-toolbar .card-buttons{width:100%;display:flex;justify-content:center;gap:calc(6px * var(--space-scale,1))}
+.role-card-toolbar .card-appearance{width:100%;display:flex;align-items:center;justify-content:space-between;gap:calc(10px * var(--space-scale,1));padding:calc(2px * var(--space-scale,1)) calc(4px * var(--space-scale,1))}
+.card-stage-label{display:flex;align-items:center;gap:calc(6px * var(--space-scale,1));font-size:calc(var(--text-size,16px) * 0.6875);color:var(--muted);margin:0}
+.card-stage-label select{max-width:98px;font-size:calc(var(--text-size,16px) * 0.6875);padding:calc(5px * var(--space-scale,1)) calc(7px * var(--space-scale,1))}
+.role-card-toolbar .card-hint{text-align:center;font-size:calc(var(--text-size,16px) * 0.625);line-height:1.6}
+.mobile-card-dialog{height:fit-content;max-height:calc(100dvh - 32px);overflow-y:auto;background:var(--surface)}
+.mobile-card-dialog .role-card{flex:none;height:auto;border:0}
+.mobile-card-dialog .role-card-art{flex:none;height:auto;aspect-ratio:2/3;max-height:calc(100dvh - 270px);background:transparent;isolation:isolate;border-radius:18px}
+.mobile-card-dialog .card-appearance{padding-inline:calc(8px * var(--space-scale,1))}.mobile-card-dialog .card-stage-label select{min-height:44px}
+.roster-chevron{transform-origin:15.5px 12px;transform:rotate(180deg);transition:transform .2s ease}
+.role-roster[data-collapsed=true] .roster-chevron{transform:rotate(0deg)}
+.scene-dock[data-side=above] .dock-chevron{transform:rotate(180deg)}
+.scene-dock[data-side=above][data-open=true] .dock-chevron{transform:rotate(0deg)}
+@media(max-width:1380px){:root .chat-page:has(>.role-roster){grid-template-columns:var(--roster-width) minmax(0,1fr) 264px}}
+@media(max-width:1150px){:root .chat-page:has(>.role-roster){grid-template-columns:var(--roster-width) minmax(0,1fr)}}
+@media(max-width:760px){:root .chat-page:has(>.role-roster),:root .chat-page:has(>.role-roster):has(>.portrait-scene[hidden]){grid-template-columns:minmax(0,1fr)}.roster-chevron{transform:rotate(-90deg)}.role-roster[data-collapsed=true] .roster-chevron{transform:rotate(90deg)}}
+
+/* Palette controls belong to each role's card, not global theme settings. */
+.card-fx-options{display:flex;align-items:center;justify-content:space-between;gap:calc(6px * var(--space-scale,1));width:100%;padding:calc(2px * var(--space-scale,1)) calc(4px * var(--space-scale,1));flex-wrap:wrap}
+.card-palette-label{display:flex;align-items:center;gap:calc(6px * var(--space-scale,1));color:var(--muted);font-size:calc(var(--text-size,16px) * 0.6875);margin:0}
+.card-palette-label select{font-size:calc(var(--text-size,16px) * 0.6875);max-width:104px;padding:calc(5px * var(--space-scale,1)) calc(7px * var(--space-scale,1))}
+.card-drag-fx{display:flex;align-items:center;gap:calc(4px * var(--space-scale,1));font-size:calc(var(--text-size,16px) * 0.625);color:var(--muted);margin:0;white-space:nowrap}
+.card-drag-fx input{width:13px;height:13px;margin:0;accent-color:var(--accent)}
+.card-fx-color{width:30px;height:28px;padding:calc(2px * var(--space-scale,1));border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer}
+.mobile-card-dialog .card-fx-options{padding-inline:calc(8px * var(--space-scale,1))}.mobile-card-dialog .card-palette-label select{min-height:40px}
+.mobile-card-dialog .role-card-art{max-height:calc(100dvh - 310px)}
+@media(prefers-reduced-motion:reduce){.roster-chevron{transition:none}}
+:root[data-reduced=true] .roster-chevron,:root[data-reduced=true] .dock-chevron{transition:none}
+

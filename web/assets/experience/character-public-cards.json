@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "source": "user-authorized-editable-public-draft-20261015",
+  "note": "仅公开姓名及可核对的职业；未知身份和公开关系留空，不从私聊、私密设定或好感数据补全。两种模式分别保存覆盖值。",
+  "roles": {
+    "shira": {
+      "name": "希拉",
+      "identity": "企业经营者",
+      "relation": ""
+    },
+    "koka": {
+      "name": "可卡",
+      "identity": "",
+      "relation": ""
+    },
+    "shuyun": {
+      "name": "书韵",
+      "identity": "大学教师",
+      "relation": ""
+    },
+    "ansera": {
+      "name": "安瑟拉",
+      "identity": "",
+      "relation": ""
+    },
+    "huangzhao": {
+      "name": "凰昭",
+      "identity": "",
+      "relation": ""
+    },
+    "xingxia": {
+      "name": "星夏",
+      "identity": "",
+      "relation": ""
+    },
+    "hupo": {
+      "name": "琥珀",
+      "identity": "",
+      "relation": ""
+    },
+    "sylvie": {
+      "name": "茜尔维",
+      "identity": "",
+      "relation": ""
+    },
+    "eve": {
+      "name": "伊芙",
+      "identity": "",
+      "relation": ""
+    },
+    "rin": {
+      "name": "凛",
+      "identity": "",
+      "relation": ""
+    },
+    "mianmian": {
+      "name": "绵绵",
+      "identity": "",
+      "relation": ""
+    },
+    "youzi": {
+      "name": "柚子",
+      "identity": "",
+      "relation": ""
+    },
+    "mulan": {
+      "name": "沐澜",
+      "identity": "",
+      "relation": ""
+    }
+  }
+}

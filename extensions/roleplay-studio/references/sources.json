@@ -1,0 +1,19 @@
+{
+  "repo": "Drifting12345/LLMwiki4rolePlay",
+  "commit": "71ee9780796580c8fabe8dd8bbc4e75440b58188",
+  "files": [
+    {
+      "file": "LLMwiki4roleplay.SKILL.md",
+      "url": "https://api.github.com/repos/Drifting12345/LLMwiki4rolePlay/contents/.claude/skills/LLMwiki4roleplay/SKILL.md?ref=71ee9780796580c8fabe8dd8bbc4e75440b58188",
+      "sha256": "4f9b6665701aa093a2c735f16d85e4e7052c9412a1dfe1bdda4ceaf0f86c58cd",
+      "bytes": 11300
+    },
+    {
+      "file": "LLMwiki4roleplay.LICENSE",
+      "url": "https://api.github.com/repos/Drifting12345/LLMwiki4rolePlay/contents/LICENSE?ref=71ee9780796580c8fabe8dd8bbc4e75440b58188",
+      "sha256": "ca939e963595747cfeb3eb42d3215a03cf3ffb72f14b77c4b0ca4131a5ede55a",
+      "bytes": 1070
+    }
+  ],
+  "use": "Downloaded reference only. No external scripts executed. Project instructions independently specialized for existing role cards and scoped lessons."
+}

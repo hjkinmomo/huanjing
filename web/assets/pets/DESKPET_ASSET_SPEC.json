@@ -1,0 +1,79 @@
+{
+  "batch": "r16",
+  "frameSize": [200, 250],
+  "roles": ["shira", "koka", "rikka", "rem"],
+  "naming": {
+    "folder": "assets/pets/{role}/r16/",
+    "frame": "{role}_{assetName}_{frameIndex:00}.png",
+    "contactSheet": "assets/generated/r16_{role}_deskpet_contact_sheet.png",
+    "previewGif": "assets/generated/r16_deskpet_previews/{role}_{assetName}.gif"
+  },
+  "actions": {
+    "idle": {
+      "assetName": "idle",
+      "frameCount": 8,
+      "frameDurationsMs": [3600, 1800, 120, 160, 4200, 2200, 130, 5200],
+      "motionRule": "quiet breathing with sparse blink only; no walking or waving"
+    },
+    "walk": {
+      "assetName": "walk",
+      "frameCount": 8,
+      "frameDurationsMs": [150, 145, 150, 145, 150, 145, 150, 145],
+      "motionRule": "clear alternating steps, stable bottom anchor, direction handled by state machine"
+    },
+    "sleep": {
+      "assetName": "sleep",
+      "frameCount": 8,
+      "frameDurationsMs": [500, 650, 820, 1100, 1500, 2600, 5200, 30000],
+      "motionRule": "fall asleep transition, then hold a stable sleep frame"
+    },
+    "wake": {
+      "assetName": "wake",
+      "frameCount": 8,
+      "frameDurationsMs": [220, 260, 300, 360, 440, 560, 700, 820],
+      "motionRule": "drowsy wake transition into standing idle"
+    },
+    "drag": {
+      "assetName": "drag",
+      "frameCount": 8,
+      "frameDurationsMs": [115, 115, 115, 115, 115, 115, 115, 115],
+      "motionRule": "held and off-balance, anchored to pointer"
+    },
+    "fall": {
+      "assetName": "fall",
+      "frameCount": 8,
+      "frameDurationsMs": [95, 105, 115, 130, 150, 175, 205, 240],
+      "motionRule": "airborne gravity fall only, no dust or floor effect"
+    },
+    "land": {
+      "assetName": "land",
+      "frameCount": 8,
+      "frameDurationsMs": [120, 150, 190, 250, 340, 460, 620, 820],
+      "motionRule": "impact crouch into recovery, then idle"
+    },
+    "edge": {
+      "assetName": "edge",
+      "frameCount": 8,
+      "frameDurationsMs": [320, 360, 420, 520, 720, 900, 1400, 2200],
+      "motionRule": "real right-edge cling/reveal behavior, hold last frame"
+    },
+    "peek": {
+      "assetName": "peek",
+      "frameCount": 8,
+      "frameDurationsMs": [130, 150, 180, 220, 280, 340, 420, 520],
+      "motionRule": "peek out from screen edge and return to edge hold"
+    },
+    "return": {
+      "assetName": "return",
+      "frameCount": 8,
+      "frameDurationsMs": [140, 155, 175, 210, 260, 340, 460, 620],
+      "motionRule": "walk away from edge or thrown position into idle"
+    },
+    "reminder": {
+      "assetName": "reminder",
+      "frameCount": 8,
+      "frameDurationsMs": [180, 200, 230, 260, 500, 640, 780, 940],
+      "motionRule": "task reminder gesture with no floating icons, punctuation, or UI"
+    }
+  }
+}

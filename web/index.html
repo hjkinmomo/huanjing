@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="zh-CN" data-font-scale="medium" data-portrait-frame="holographic">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hermes Project 5</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/app.css?v=companion-closure-v1">
+  <link rel="stylesheet" href="./assets/shira-theme.css?v=1">
+  <link rel="stylesheet" href="./assets/shira-layout.css?v=romance-v3">
+  <link rel="stylesheet" href="./assets/shira-romance.css?v=portrait-stack-v6">
+  <link rel="stylesheet" href="./assets/experience-return.css?v=1">
+</head>
+<body>
+  <main class="shell">
+    <aside class="sidebar" aria-label="角色">
+      <div class="brand">
+        <span class="brand-mark">H5</span>
+        <div>
+          <strong>Hermes</strong>
+          <small>Project 5</small>
+        </div>
+      </div>
+      <div class="role-list" id="roleList"></div>
+      <nav class="destination-nav" aria-label="主要功能" role="tablist" aria-orientation="vertical">
+        <button type="button" class="space-tab is-active" data-destination="chat" data-default-panel="chat" role="tab" aria-selected="true" aria-controls="chat"><span aria-hidden="true">◌</span>聊天</button>
+        <button type="button" class="space-tab" data-destination="work" data-default-panel="tasks" role="tab" aria-selected="false" aria-controls="tasks"><span aria-hidden="true">▤</span>工作</button>
+        <button type="button" class="space-tab" data-destination="life" data-default-panel="moments" role="tab" aria-selected="false" aria-controls="moments"><span aria-hidden="true">◇</span>生活</button>
+        <button type="button" class="space-tab" data-destination="characters" data-default-panel="creatorWorkspace" role="tab" aria-selected="false" aria-controls="creatorWorkspace"><span aria-hidden="true">✦</span>角色</button>
+      </nav>
+      <div class="sidebar-utility">
+        <button type="button" class="space-tab" data-destination="settings" data-default-panel="settings" aria-selected="false" aria-controls="settings"><span aria-hidden="true">⌁</span>设置</button>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div class="topbar-context">
+          <div class="role-head">
+            <a id="experienceReturn" class="page-back-button" hidden></a>
+            <button id="pageBackButton" class="page-back-button" type="button" aria-label="返回上一页" title="返回上一页" hidden><span aria-hidden="true">←</span><span>返回</span></button>
+            <img id="roleAvatar" alt="" width="50" height="50" loading="eager" decoding="async" fetchpriority="high">
+            <span class="creator-avatar-mark" id="creatorAvatarMark" aria-hidden="true" hidden>HC</span>
+            <div>
+              <h1 id="roleName">希拉</h1>
+              <p id="roleMood">深夜工作搭档</p>
+            </div>
+          </div>
+        </div>
+        <div id="characterTopActions" class="character-top-actions"></div>
+        <nav class="tabs" id="spaceSubnav" aria-label="空间内模块">
+          <div class="space-tab-group" data-destination-group="chat" role="tablist" aria-label="陪伴聊天模块">
+            <button type="button" class="tab is-active" id="tab-chat" role="tab" aria-controls="chat" aria-selected="true" data-panel="chat">对话</button>
+          </div>
+          <div class="space-tab-group" data-destination-group="work" role="tablist" aria-label="工作模块" hidden>
+            <button type="button" class="tab" id="tab-tasks" role="tab" aria-controls="tasks" aria-selected="false" data-panel="tasks">任务</button>
+            <button type="button" class="tab" id="tab-schedule" role="tab" aria-controls="schedule" aria-selected="false" data-panel="schedule">日程</button>
+          </div>
+          <div class="space-tab-group" data-destination-group="life" role="tablist" aria-label="生活模块" hidden>
+            <button type="button" class="tab" id="tab-moments" role="tab" aria-controls="moments" aria-selected="false" data-panel="moments">姐妹动态</button>
+            <button type="button" class="tab" id="tab-games" role="tab" aria-controls="games" aria-selected="false" data-panel="games" data-role-only-action>小游戏</button>
+            <button type="button" class="tab" id="tab-shop" role="tab" aria-controls="shop" aria-selected="false" data-panel="shop" data-role-only-action>商店与礼物</button>
+          </div>
+          <div class="space-tab-group" data-destination-group="characters" role="tablist" aria-label="角色模块" hidden>
+            <button type="button" class="tab" id="tab-creatorWorkspace" role="tab" aria-controls="creatorWorkspace" aria-selected="false" data-panel="creatorWorkspace">创建角色</button>
+            <button type="button" class="tab" id="tab-rolekit" role="tab" aria-controls="rolekit" aria-selected="false" data-panel="rolekit">人物与世界书</button>
+          </div>
+          <div class="space-tab-group" data-destination-group="settings" role="tablist" aria-label="设置模块" hidden>
+            <button type="button" class="tab" id="tab-settings" role="tab" aria-controls="settings" aria-selected="false" data-panel="settings">设置</button>
+            <button type="button" class="tab" id="tab-extensions" role="tab" aria-controls="extensions" aria-selected="false" data-panel="extensions">扩展</button>
+          </div>
+        </nav>
+      </header>
+
+      <div class="content">
+        <section class="panel chat-panel is-active" id="chat" role="tabpanel" aria-labelledby="tab-chat" tabindex="0" aria-label="单聊">
+          <div class="portrait-panel">
+            <div class="role-portrait-panel" id="rolePortraitPanel">
+              <section class="portrait-relationship-card" id="portraitRelationshipCard" aria-label="角色立绘与关系摘要">
+                <div class="portrait-card-inner" id="portraitCardInner">
+                  <div class="portrait-card-face portrait-card-front" id="portraitRelationshipFront" data-portrait-face="front">
+                    <button type="button" class="portrait-wrap portrait-flip-target" id="portraitFlipTarget" aria-label="查看当前角色关系摘要" aria-pressed="false" aria-controls="portraitRelationshipBack">
+                      <span class="portrait-backdrop" aria-hidden="true"><img id="rolePortraitBackdrop" alt="" loading="eager" decoding="async" fetchpriority="high"></span>
+                      <span class="portrait-foreground"><img id="rolePortrait" alt="" loading="eager" decoding="async" fetchpriority="high"></span>
+                      <span class="portrait-stage-caption" id="portraitStageCaption">当前情绪</span>
+                    </button>
+                    <button type="button" class="portrait-flip-button" id="portraitFlipButton" aria-pressed="false" aria-controls="portraitRelationshipBack">查看关系摘要</button>
+                  </div>
+                  <section class="portrait-card-face portrait-card-back" id="portraitRelationshipBack" data-portrait-face="back" aria-label="角色关系摘要" aria-live="polite" aria-hidden="true">
+                    <div class="portrait-relationship-heading">
+                      <div>
+                        <p>关系摘要</p>
+                        <h2 id="portraitRelationshipTitle">当前角色</h2>
+                      </div>
+                      <button type="button" class="portrait-flip-button" id="portraitFlipReturn" aria-label="返回角色立绘" aria-pressed="true" aria-controls="portraitRelationshipFront">返回立绘</button>
+                    </div>
+                    <dl class="portrait-relationship-data" id="portraitRelationshipData"></dl>
+                    <div class="portrait-relationship-reasons" id="portraitRelationshipReasons" aria-label="最近关系变化"></div>
+                  </section>
+                </div>
+              </section>
+            </div>
+            <div class="portrait-lower" id="portraitCompanionFooter">
+            <section class="portrait-backpack" id="portraitBackpack" aria-labelledby="portraitBackpackTitle">
+              <div class="portrait-backpack-heading"><h2 id="portraitBackpackTitle">背包</h2><span>已购礼物</span></div>
+              <div class="portrait-backpack-items" id="portraitBackpackItems"></div>
+              <button type="button" class="secondary-action portrait-backpack-shop" data-open-panel="shop">商店</button>
+            </section>
+            <div id="portraitPetMount" class="portrait-pet-mount"></div>
+            </div>
+            <section class="creator-project-panel" id="creatorProjectPanel" aria-labelledby="creatorProjectTitle" hidden>
+              <p class="creator-kicker">当前角色设计工作项</p>
+              <h2 id="creatorProjectTitle">角色圣经提案</h2>
+              <div class="creator-project-status" id="creatorProjectStatus" aria-live="polite">等待 Agent Runtime</div>
+              <dl class="creator-project-meta">
+                <div><dt>工作项</dt><dd id="creatorWorkItemId">work-creator-primary</dd></div>
+                <div><dt>会话</dt><dd id="creatorSessionId">creator:work-creator-primary:primary</dd></div>
+              </dl>
+              <div class="creator-proposal-empty" id="creatorProposalEmpty">
+                发送一条角色设计要求后，这里会出现可审阅的字段差异。
+              </div>
+              <div class="creator-proposal" id="creatorProposal" hidden>
+                <div class="creator-proposal-heading">
+                  <strong id="creatorProposalTitle">待审阅修订</strong>
+                  <span id="creatorProposalState">待确认</span>
+                </div>
+                <div class="creator-diff-list" id="creatorProposalDiff"></div>
+                <div class="creator-proposal-actions">
+                  <button type="button" class="secondary-action" id="creatorProposalReject">拒绝提案</button>
+                  <button type="button" id="creatorProposalAccept">接受并创建修订</button>
+                </div>
+                <p class="creator-mutation-truth" id="creatorMutationTruth">只有“接受”会写入不可变修订。</p>
+              </div>
+            </section>
+          </div>
+          <div class="chat-conversation-host" id="chatConversationHost">
+          <div class="conversation has-page-decoration" id="conversationSurface">
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_chat_compass_divider.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="conversation-toolbar">
+              <span class="chat-reply-mode-notice" id="chatReplyModeNotice">正在检查聊天 Provider…</span>
+              <button type="button" class="secondary-action" id="memoryInspectorToggle" aria-expanded="false" aria-controls="memoryInspector">记忆</button>
+            </div>
+            <div class="messages" id="messages"></div>
+            <section class="expression-picker" id="expressionPicker" role="dialog" aria-modal="false" aria-label="表情与贴纸" hidden>
+              <div class="expression-picker-head">
+                <div><strong>表情</strong><small>手动立绘会保持到下一条角色回复</small></div>
+                <label class="auto-expression-toggle" for="autoExpressionToggle"><input id="autoExpressionToggle" type="checkbox" checked><span>自动表情</span></label>
+              </div>
+              <div class="portrait-expression-options">
+                <span>立绘情绪</span>
+                <div class="portrait-switch" id="portraitSwitch" aria-label="情绪立绘"></div>
+              </div>
+              <div class="expression-groups" role="tablist" aria-label="贴纸分组">
+                <button type="button" class="is-active" data-expression-group="recent" role="tab" aria-selected="true">最近</button>
+                <button type="button" data-expression-group="role" role="tab" aria-selected="false">角色</button>
+                <button type="button" data-expression-group="situation" role="tab" aria-selected="false">情境</button>
+              </div>
+              <div class="sticker-tray" id="stickerTray" aria-label="最近使用的贴纸"></div>
+            </section>
+            <form class="composer" id="chatForm">
+              <p class="composer-help" id="chatComposerHelp">粘贴设定或提出角色设计问题；回复不会直接修改产物。</p>
+              <div class="chat-attachment-tray" id="chatAttachmentTray" aria-live="polite" hidden></div>
+              <input id="chatImageInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden>
+              <button type="button" class="secondary-action expression-picker-button" id="expressionPickerButton" aria-expanded="false" aria-controls="expressionPicker" title="表情与贴纸">表情</button>
+              <button type="button" class="secondary-action chat-image-button" id="chatImageButton" title="添加图片">图片</button>
+              <input id="chatInput" autocomplete="off" aria-label="聊天输入" placeholder="请描述要设计的角色或设定">
+              <button type="submit" id="chatSubmitButton">发送设计请求</button>
+            </form>
+          </div>
+          </div>
+          <aside class="memory-inspector" id="memoryInspector" aria-label="当前角色记忆" hidden>
+            <div id="roleMemoryPanel">
+              <h2>当前记忆</h2>
+              <div class="conversation-journal-bar" id="conversationJournalBar" aria-live="polite">
+                <div>
+                  <strong>Runtime 会话</strong>
+                  <span id="conversationJournalStatus">等待 Agent Runtime</span>
+                </div>
+                <div class="conversation-journal-actions">
+                  <button type="button" class="secondary-action" id="conversationJournalRefresh">刷新</button>
+                  <button type="button" class="secondary-action" id="conversationJournalClear">清空当前对话</button>
+                </div>
+              </div>
+              <div id="memoryList"></div>
+              <div class="chat-context-card" id="chatContextCard">
+                <img id="chatContextVisual" src="./assets/ui/r32_chat_context_assembly_v1.png" alt="" loading="eager" decoding="async" fetchpriority="high">
+                <div class="chat-context-summary" id="chatContextSummary">等待第一条消息。</div>
+                <div class="chat-context-grid" id="chatContextGrid"></div>
+              </div>
+            </div>
+            <section class="creator-source-shelf" id="creatorSourceShelf" aria-labelledby="creatorSourceTitle" hidden>
+              <p class="creator-kicker">当前上下文</p>
+              <h2 id="creatorSourceTitle">可见来源架</h2>
+              <p class="creator-runtime-truth" id="creatorRuntimeStatus" aria-live="polite">等待 Agent Runtime</p>
+              <label class="creator-approval-check creator-model-consent" for="creatorModelConsent">
+                <input id="creatorModelConsent" type="checkbox">
+                <span>仅本次：允许把已启用的可见来源发送给已配置的聊天模型。不勾选则使用本地创作回复。</span>
+              </label>
+              <label class="creator-source-field" for="creatorPastedText">
+                <span>粘贴文章 / 设定文本</span>
+                <textarea id="creatorPastedText" rows="5" placeholder="原文先作为浏览器草稿；在线时只持久化来源元数据与哈希。"></textarea>
+              </label>
+              <button type="button" id="creatorPastedAttach">加入来源架</button>
+              <details class="creator-knowledge-form" open>
+                <summary>加入已批准的知识检索结果</summary>
+                <label for="creatorKnowledgeTitle">结果标题</label>
+                <input id="creatorKnowledgeTitle" placeholder="例：角色设定研究笔记">
+                <label for="creatorKnowledgePath">来源路径 / 定位</label>
+                <input id="creatorKnowledgePath" placeholder="notes.md#line=24">
+                <label for="creatorKnowledgeExcerpt">已批准引用片段</label>
+                <textarea id="creatorKnowledgeExcerpt" rows="3"></textarea>
+                <label class="creator-approval-check" for="creatorKnowledgeApproved">
+                  <input id="creatorKnowledgeApproved" type="checkbox">
+                  <span>我已检查并批准这条检索结果进入当前工作项</span>
+                </label>
+                <button type="button" id="creatorKnowledgeAttach">加入已批准结果</button>
+              </details>
+              <div class="creator-source-list" id="creatorSourceList" aria-live="polite"></div>
+            </section>
+          </aside>
+        </section>
+
+        <section class="panel creator-workspace" id="creatorWorkspace" role="tabpanel" aria-labelledby="tab-creatorWorkspace" tabindex="0" aria-label="角色创建" hidden>
+          <header class="creator-workspace-heading">
+            <h2>角色创建</h2>
+            <button type="button" class="secondary-action" data-open-panel="rolekit">人物与世界书</button>
+          </header>
+          <div class="creator-workspace-grid">
+            <div id="creatorProjectHost"></div>
+            <div id="creatorConversationHost"></div>
+            <div id="creatorSourceHost"></div>
+          </div>
+          <button type="button" class="creator-steward" id="creatorSteward" aria-expanded="false" aria-controls="creatorStewardMenu">✦<span>创作管家</span></button>
+          <div class="creator-steward-menu" id="creatorStewardMenu" hidden>
+            <button type="button" data-creator-helper="extract">拆解文本</button>
+            <button type="button" data-creator-helper="personality">整理人格</button>
+            <button type="button" data-creator-helper="lore">提取世界书</button>
+            <button type="button" data-creator-helper="dialogue">生成对话样例</button>
+          </div>
+        </section>
+
+        <section class="panel character-workspace" id="rolekit" role="tabpanel" aria-labelledby="tab-rolekit" tabindex="0" aria-label="角色卡" hidden>
+          <header class="character-workspace-heading">
+            <div><h2>角色编辑</h2><p>编辑当前角色；每次存档都会形成一条新的不可变修订。</p></div>
+            <form class="custom-role-create" id="customRoleCreateForm">
+              <label for="customRoleName">新角色</label>
+              <input id="customRoleName" maxlength="40" placeholder="角色名字" required>
+              <input id="customRoleMood" maxlength="60" placeholder="一句定位，例如：旅行搭档">
+              <button type="submit">创建</button>
+              <span id="customRoleCreateState" aria-live="polite"></span>
+            </form>
+            <div class="character-heading-actions">
+              <span class="relationship-role-badge" id="characterWorkspaceRoleBadge">当前角色</span>
+              <button type="button" class="secondary-action" id="customRoleDelete" hidden>删除自建角色</button>
+            </div>
+          </header>
+          <nav class="character-section-nav" id="characterSectionNav" aria-label="角色编辑章节">
+            <button type="button" data-character-section="profile" aria-pressed="true">人物核心</button>
+            <button type="button" data-character-section="relationship" aria-pressed="false">你与角色</button>
+            <button type="button" data-character-section="assets" aria-pressed="false">头像与立绘</button>
+            <button type="button" data-character-section="worldbook" aria-pressed="false">世界书</button>
+            <button type="button" data-character-section="dialogue" aria-pressed="false">对话样例</button>
+            <button type="button" data-character-section="revisions" aria-pressed="false">存档与回档</button>
+          </nav>
+          <div class="character-editor-stage">
+          <form class="character-editor-section" id="roleCardForm" data-character-editor="profile">
+            <div class="character-editor-heading"><span class="eyebrow">Identity</span><h2>人物核心</h2></div>
+            <label>角色称呼<input id="roleCardTitle" placeholder="称呼"></label>
+            <label>人格摘要<textarea id="roleCardPersona" rows="7" placeholder="人格摘要"></textarea></label>
+            <label>当前情境<textarea id="roleCardScenario" rows="5" placeholder="当前情境"></textarea></label>
+            <details class="role-task-persona">
+              <summary>做事风格与主动提议</summary>
+              <label>审美偏好<textarea id="roleTaskAesthetic" rows="3" maxlength="1200" placeholder="留空时根据人格判断，例如偏爱暖色、简洁排版"></textarea></label>
+              <label>做事习惯<textarea id="roleTaskWorkStyle" rows="3" maxlength="1200" placeholder="例如先给出可用版本，再细心打磨；只追问关键问题"></textarea></label>
+              <label>额外创意<select id="roleTaskInitiative"><option value="suggest">可以提议，逐项确认后执行</option><option value="off">只处理我提出的任务</option></select></label>
+            </details>
+            <button type="submit">保存角色卡</button>
+            <p id="roleCardState">等待编辑。</p>
+            <div class="creator-proposal-actions" aria-label="酒馆角色卡导入导出">
+              <button type="button" class="secondary-action" id="roleCardTavernExport" aria-describedby="roleCardTavernState">导出酒馆 V2</button>
+              <button type="button" id="roleCardTavernImportButton" aria-controls="roleCardTavernImport" aria-describedby="roleCardTavernState">选择 JSON 并导入</button>
+            </div>
+            <input id="roleCardTavernImport" type="file" accept=".json,application/json" hidden>
+            <p id="roleCardTavernState" aria-live="polite">仅在本地导入或下载，不会上传或外发。</p>
+            <div class="role-consistency-card" id="roleConsistencyCard" aria-live="polite"></div>
+          </form>
+          <form class="character-editor-section relationship-editor-card" id="userRelationshipForm" data-character-editor="relationship" hidden>
+            <div class="relationship-editor-heading">
+              <div>
+                <h2>你与当前角色</h2>
+              </div>
+              <span class="relationship-role-badge" id="relationshipRoleBadge">当前角色</span>
+            </div>
+            <fieldset class="relationship-fieldset">
+              <legend>你的个人档案</legend>
+              <div class="relationship-form-grid">
+                <label>你的名字<input id="userProfileName" maxlength="60" placeholder="例如：momo"></label>
+                <label>希望角色如何称呼你<input id="userProfileAddress" maxlength="60" placeholder="例如：momo大人 / 你的昵称"></label>
+              </div>
+              <textarea id="userProfilePreferences" rows="3" maxlength="800" placeholder="你的偏好、习惯、希望获得怎样的帮助"></textarea>
+              <textarea id="userProfileBoundaries" rows="3" maxlength="800" placeholder="所有角色都应尊重的边界与不希望触及的话题"></textarea>
+              <label class="toggle privacy-consent-toggle"><input id="userMemoryShareWithModel" type="checkbox">允许发送当前角色已确认的相关记忆（默认关闭）</label><label class="toggle privacy-consent-toggle"><input id="userProfileShareWithModel" type="checkbox">允许在调用已配置的聊天模型时发送这些个人与关系字段</label>
+            </fieldset>
+            <fieldset class="relationship-fieldset">
+              <legend>和当前角色的关系</legend>
+              <div class="relationship-form-grid">
+                <label>关系定位<input id="relationshipLabel" maxlength="60" placeholder="例如：工作搭档 / 朋友 / 恋人"></label>
+                <label>专属称呼<input id="relationshipNickname" maxlength="60" placeholder="这个角色对你的特别称呼"></label>
+              </div>
+              <textarea id="relationshipOrigin" rows="3" maxlength="1000" placeholder="你们如何认识、有哪些已经确认的共同经历"></textarea>
+              <textarea id="relationshipDynamic" rows="3" maxlength="1000" placeholder="希望保持怎样的互动方式与情感距离"></textarea>
+              <textarea id="relationshipBoundaries" rows="3" maxlength="800" placeholder="只针对当前角色的互动边界"></textarea>
+            </fieldset>
+            <button type="submit">保存个人与关系设定</button>
+            <p id="userRelationshipState" aria-live="polite">这些内容仅保存在本机，并作为对话上下文使用；不会随酒馆角色卡导出。</p>
+          </form>
+          <section class="character-editor-section role-asset-card" data-character-editor="assets" aria-labelledby="roleAssetTitle" hidden>
+            <div class="relationship-editor-heading">
+              <div>
+                <h2 id="roleAssetTitle">头像与立绘</h2>
+              </div>
+              <span class="relationship-role-badge" id="roleAssetRoleBadge">当前角色</span>
+            </div>
+            <div class="role-asset-avatar-row">
+              <img id="customAvatarPreview" alt="当前角色头像预览" loading="eager" decoding="async">
+              <div>
+                <strong>自定义头像</strong>
+                <small>PNG、JPG 或 WebP，单张不超过 8 MiB，只保存在本机浏览器。</small>
+                <div class="button-row">
+                  <button type="button" id="customAvatarChooseButton">选择头像</button>
+                  <button type="button" class="secondary-action" id="customAvatarRestoreButton">恢复官方头像</button>
+                </div>
+              </div>
+            </div>
+            <input id="customAvatarInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+            <div class="role-portrait-import-row">
+              <input id="customPortraitLabel" maxlength="60" placeholder="给新立绘命名，例如：雨夜散步">
+              <button type="button" id="customPortraitChooseButton">添加一张立绘</button>
+              <input id="customPortraitInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+            </div>
+            <div class="custom-portrait-grid" id="customPortraitGrid" aria-live="polite"></div>
+            <div class="button-row">
+              <button type="button" class="secondary-action" id="customPortraitClearButton">清空自定义立绘</button>
+            </div>
+            <p id="roleAssetState" aria-live="polite">可为四个现有角色分别添加头像和多张立绘。</p>
+          </section>
+
+          <section class="character-editor-section" data-character-editor="dialogue" hidden>
+            <div class="character-editor-heading"><span class="eyebrow">Dialogue</span><h2>开场与对话样例</h2></div>
+            <label>开场语气<textarea id="roleCardGreeting" rows="5" placeholder="角色第一次见面时会怎样开口"></textarea></label>
+            <label>示例对话<textarea id="roleCardExamples" rows="12" placeholder="每行一条：用户：... / 角色：..."></textarea></label>
+            <button type="submit" form="roleCardForm">保存对话设定</button>
+          </section>
+
+          <section class="character-editor-section" data-character-editor="worldbook" hidden>
+            <div class="character-editor-heading"><span class="eyebrow">Lorebook</span><h2>世界书</h2></div>
+            <div class="worldbook-browser">
+              <aside>
+                <div id="worldbookEntryList"></div>
+                <button type="button" id="worldbookEntryAdd">新增条目</button>
+              </aside>
+              <form id="worldbookEntryEditor">
+                <label>触发词<input id="worldbookEntryKeys" placeholder="多个触发词用逗号分隔"></label>
+                <label>优先级<input id="worldbookEntryPriority" type="number" min="0" max="1000"></label>
+                <div class="worldbook-toggle-row">
+                  <label><input id="worldbookEntryEnabled" type="checkbox">启用</label>
+                  <label><input id="worldbookEntrySelective" type="checkbox">选择性触发</label>
+                  <label><input id="worldbookEntryConstant" type="checkbox">常驻</label>
+                </div>
+                <label>世界书内容<textarea id="worldbookEntryContent" rows="10"></textarea></label>
+                <div class="button-row">
+                  <button type="submit">保存条目</button>
+                  <button type="button" class="secondary-action" id="worldbookEntryDuplicate">复制条目</button>
+                  <button type="button" class="secondary-action" id="worldbookEntryArchive">停用条目</button>
+                </div>
+              </form>
+            </div>
+            <details class="worldbook-primary-compat">
+              <summary>酒馆主条目兼容字段</summary>
+              <label>主触发词<input id="roleCardTrigger" placeholder="世界书触发词"></label>
+              <label>主条目<textarea id="roleCardLore" rows="3" placeholder="世界书条目"></textarea></label>
+              <button type="submit" form="roleCardForm">同步主条目</button>
+            </details>
+            <label class="worldbook-match-preview">命中预览<textarea id="worldbookMatchInput" rows="3" placeholder="输入一段对话，查看会触发哪些条目"></textarea></label>
+            <div id="worldbookMatchResult" aria-live="polite"></div>
+          </section>
+
+          <section class="character-editor-section" data-character-editor="revisions" hidden>
+            <div class="character-editor-heading"><span class="eyebrow">Archive</span><h2>存档与回档</h2></div>
+            <div id="characterRevisionList"></div>
+            <div class="button-row">
+              <button type="button" id="characterRevisionSave">保存新修订</button>
+              <button type="button" class="secondary-action" id="characterRevisionRestore" disabled>恢复为新修订</button>
+            </div>
+            <div id="characterRevisionImpact" aria-live="polite">选择旧修订后，会先显示影响范围。</div>
+            <p id="characterRevisionState" aria-live="polite"></p>
+          </section>
+          </div>
+
+          <aside class="character-preview-column" aria-label="角色编辑辅助信息">
+          <section class="character-editor-preview-card" aria-labelledby="characterEditorPreviewTitle">
+            <div class="character-editor-preview-heading">
+              <img id="characterEditorPreviewAvatar" alt="" loading="eager" decoding="async">
+              <div><span class="eyebrow">当前角色</span><h3 id="characterEditorPreviewTitle">角色概览</h3></div>
+            </div>
+            <dl id="characterEditorPreviewData"></dl>
+          </section>
+          <details class="stack-card rolekit-memory has-page-decoration" id="roleMemoryAdvanced">
+            <summary><strong>高级：记忆管理</strong><span>检索、归档与冲突处理</span></summary>
+            <h2>记忆</h2>
+            <img class="rolekit-visual" src="./assets/ui/r11_memory_archive_v1.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
+            <div class="memory-tools">
+              <input id="memorySearchInput" placeholder="检索记忆">
+              <select id="memorySourceFilter" aria-label="记忆来源过滤">
+                <option value="all">全部来源</option>
+                <option value="project">项目</option>
+                <option value="chat">聊天</option>
+                <option value="task">任务</option>
+                <option value="gift">礼物</option>
+                <option value="game">游戏</option>
+                <option value="schedule">日程</option>
+                <option value="image">生图</option>
+                <option value="lore">世界书</option>
+              </select>
+              <select id="memoryScopeFilter" aria-label="记忆范围">
+                <option value="role">当前角色</option>
+                <option value="shared">安全共享</option>
+                <option value="all">全部角色</option>
+              </select>
+              <button type="button" id="memorySearchButton">检索</button>
+            </div>
+            <div class="memory-search-result" id="memorySearchResult"></div>
+            <section class="memory-conflict-panel" id="memoryConflictPanel" aria-live="polite">
+              <div class="memory-conflict-heading">
+                <div>
+                  <strong>矛盾处理</strong>
+                  <span id="memoryConflictSummary">等待 Agent Runtime</span>
+                </div>
+                <button type="button" class="secondary-action" id="memoryConflictRefresh">刷新</button>
+              </div>
+              <div class="memory-conflict-draft" id="memoryConflictDraft"></div>
+              <div class="memory-conflict-history" id="memoryConflictHistory"></div>
+            </section>
+            <div class="typed-memory-list" id="typedMemoryList"></div>
+          </details>
+          </aside>
+        </section>
+
+        <section class="panel" id="tasks" role="tabpanel" aria-labelledby="tab-tasks" tabindex="0" aria-label="任务" hidden>
+          <header class="work-focus-heading"><h2>任务</h2><span>先记下要做的事，需要时再让角色帮忙。</span></header>
+          <section class="personal-task-board" aria-labelledby="personalTaskTitle">
+            <form id="personalTaskForm" class="personal-task-form">
+              <h3 id="personalTaskTitle">我的清单</h3>
+              <input id="personalTaskInput" maxlength="160" placeholder="添加一件要完成的事" required>
+              <select id="personalTaskPriority" aria-label="任务优先级"><option value="normal">普通</option><option value="high">重要</option><option value="low">稍后</option></select>
+              <input id="personalTaskDue" type="date" aria-label="截止日期">
+              <button type="submit" id="personalTaskSubmit">添加</button>
+              <button type="button" class="secondary-action" id="personalTaskCancel" hidden>取消</button>
+            </form>
+            <div class="personal-task-list" id="personalTaskList" aria-live="polite"></div>
+          </section>
+          <div class="task-grid" id="taskGrid"></div>
+          <details class="work-advanced" id="workAdvanced">
+            <summary>高级工具与审批</summary>
+            <div class="work-advanced-body">
+          <div class="task-grid task-utility-grid" id="taskUtilityGrid"></div>
+          <article class="stack-card agent-platform-card" id="agentPlatformCard">
+            <div class="agent-platform-heading">
+              <div class="has-page-decoration decoration-heading">
+                <img class="page-decoration" src="./assets/decorations/r80/r80_decor_agent_pulse_badge.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="eyebrow">Hermes Agent</span>
+                <h2>智能体平台</h2>
+              </div>
+              <span class="agent-platform-state" id="agentPlatformState">本地运行</span>
+            </div>
+            <div class="agent-platform-grid" id="agentPlatformStatus"></div>
+            <div class="agent-run-status" id="agentRunStatus" aria-live="polite">
+              <div class="has-page-decoration-left">
+                <img class="page-decoration page-decoration-left" src="./assets/decorations/r80/r80_decor_checkpoint_knot.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <strong id="agentRunTitle">没有正在运行的智能体任务</strong>
+                <span id="agentRunPhase">运行任务后，这里会显示模型规划、工具调用与完成状态。</span>
+              </div>
+              <button type="button" class="secondary-action" id="agentRunCancel" hidden>取消运行</button>
+            </div>
+            <div class="agent-platform-section approval-inbox-section">
+              <div class="approval-inbox-heading">
+                <div>
+                  <h3>动作审批</h3>
+                  <span id="agentApprovalSummary">等待 Agent Runtime</span>
+                </div>
+                <button type="button" class="secondary-action" id="agentApprovalRefresh">刷新</button>
+              </div>
+              <div class="approval-inbox" id="agentApprovalInbox" aria-live="polite"></div>
+            </div>
+            <div class="agent-platform-section">
+              <h3>主动消息</h3>
+              <div class="agent-control-row">
+                <label class="agent-toggle"><input id="proactiveEnabled" type="checkbox">启用</label>
+                <select id="proactiveInterval" aria-label="主动消息最短间隔">
+                  <option value="180">3 小时</option>
+                  <option value="240">4 小时</option>
+                  <option value="360">6 小时</option>
+                  <option value="720">12 小时</option>
+                </select>
+                <input id="proactiveQuietStart" type="time" aria-label="勿扰开始">
+                <input id="proactiveQuietEnd" type="time" aria-label="勿扰结束">
+                <button type="button" id="proactiveRunNow">立即检查</button>
+              </div>
+              <div class="agent-inline-status" id="proactiveStatus">等待调度。</div>
+            </div>
+            <div class="agent-platform-section computer-control-section">
+              <h3>电脑桥接</h3>
+              <div class="agent-control-row computer-bridge-row">
+                <input id="computerBridgeUrl" placeholder="http://127.0.0.1:8797" aria-label="电脑桥接地址">
+                <input id="computerBridgeToken" type="password" placeholder="会话令牌" autocomplete="off" aria-label="电脑桥接会话令牌">
+                <select id="computerApprovalPolicy" aria-label="电脑操作审批策略">
+                  <option value="ask_every_time">每次批准</option>
+                  <option value="observe_only">仅观察</option>
+                </select>
+                <button type="button" id="computerBridgeProbe">检测</button>
+              </div>
+              <div class="agent-control-row computer-action-row">
+                <select id="computerActionType" aria-label="电脑操作类型">
+                  <option value="screen_capture">读取屏幕</option>
+                  <option value="open_url">打开网址</option>
+                  <option value="open_path">打开路径</option>
+                  <option value="read_text_file">读取文件</option>
+                  <option value="write_text_file">写入文件</option>
+                  <option value="mouse_move">移动鼠标</option>
+                  <option value="mouse_click">点击鼠标</option>
+                  <option value="type_text">输入文字</option>
+                  <option value="key_press">按键</option>
+                </select>
+                <input id="computerActionTarget" placeholder="目标 / 路径 / 坐标" aria-label="电脑操作目标">
+                <input id="computerActionValue" placeholder="内容 / 参数" aria-label="电脑操作内容">
+                <button type="button" id="computerActionQueue">加入队列</button>
+              </div>
+              <div class="agent-inline-status" id="computerBridgeStatus">桥接未检测。</div>
+              <div class="computer-action-queue" id="computerActionQueueList"></div>
+            </div>
+          </article>
+          <div class="tool-health-grid" id="toolHealth" aria-label="工具状态"></div>
+          <article class="stack-card module-visual-card failure-audit-card has-page-decoration" id="failureAuditCard">
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_research_source_ribbon.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <h2>故障审计</h2>
+            <div class="module-visual-frame">
+              <img id="failureAuditVisual" src="./assets/ui/r27_failure_recovery_audit_v1.png" alt="故障恢复审计插画" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <p id="failureAuditSummary">等待强制审计。</p>
+            <div class="failure-audit-grid" id="failureAuditGrid"></div>
+            <button type="button" id="failureAuditRun">强制审计</button>
+          </article>
+            </div>
+          </details>
+        </section>
+
+        <section class="panel split-panel schedule-panel" id="schedule" role="tabpanel" aria-labelledby="tab-schedule" tabindex="0" aria-label="日程" hidden>
+          <form class="stack-card schedule-form-card has-page-decoration" id="scheduleForm">
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_schedule_calendar_sprig.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <h2>日程</h2>
+            <input id="scheduleTitle" placeholder="事项">
+            <input id="scheduleTime" type="datetime-local">
+            <select id="scheduleLead" aria-label="提醒提前量">
+              <option value="0">准时提醒</option>
+              <option value="5">提前 5 分钟</option>
+              <option value="15">提前 15 分钟</option>
+              <option value="30">提前 30 分钟</option>
+              <option value="60">提前 1 小时</option>
+            </select>
+            <textarea id="scheduleNote" rows="3" placeholder="提醒备注"></textarea>
+            <div class="button-row">
+              <button type="submit" id="scheduleSubmit">加入</button>
+              <button type="button" id="scheduleCancelEdit">取消编辑</button>
+            </div>
+            <p id="scheduleFormState">提醒会写入记忆，并在触发时唤起桌宠。</p>
+          </form>
+          <div class="stack-card schedule-status-card">
+            <h2>提醒状态</h2>
+            <img id="scheduleReminderVisual" src="./assets/ui/r24_schedule_reminder_state_v1.png" alt="" hidden loading="lazy" decoding="async" fetchpriority="low">
+            <div class="schedule-status-grid" id="scheduleStatusGrid"></div>
+            <button type="button" class="secondary-action" id="scheduleNotificationEnable">启用 Windows 通知</button>
+          </div>
+          <div class="stack-card list-card schedule-list-card" id="scheduleList"></div>
+        </section>
+
+        <section class="panel moments-panel" id="moments" role="tabpanel" aria-labelledby="tab-moments" tabindex="0" hidden>
+          <header class="page-heading"><div><h2>姐妹动态</h2><p>只显示真实生活事件与用户发布的内容。</p></div></header>
+          <form class="moment-composer" id="momentComposer">
+            <label for="momentText">分享今天</label>
+            <textarea id="momentText" maxlength="4000" rows="3" placeholder="写一点想和姐妹们分享的事"></textarea>
+            <div class="moment-composer-actions">
+              <input id="momentMedia" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden>
+              <button type="button" class="secondary-action" id="momentMediaChoose">添加图片</button>
+              <button type="submit">发布</button>
+            </div>
+            <div class="moment-media-preview" id="momentMediaPreview" aria-live="polite"></div>
+            <p id="momentComposerState" aria-live="polite"></p>
+          </form>
+          <div class="ui-state" data-ui-state="loading" hidden>正在恢复动态…</div>
+          <div class="ui-state" data-ui-state="empty">还没有动态。你可以发布第一条，或等待一次真实互动。</div>
+          <div class="ui-state" data-ui-state="error" hidden><span>动态恢复失败。</span><button type="button" id="momentsRetry">重试</button></div>
+          <div class="moments-feed" id="momentsFeed" aria-live="polite"></div>
+          <aside class="moments-presence" aria-label="姐妹状态">
+            <h3>姐妹</h3>
+            <div id="momentsPresenceList"></div>
+          </aside>
+        </section>
+
+        <section class="panel split-panel" id="shop" role="tabpanel" aria-labelledby="tab-shop" tabindex="0" aria-label="商店" hidden>
+          <div class="stack-card has-page-decoration shop-wallet-card">
+            <h2>金币</h2>
+            <div class="coin-row">
+              <img class="coin-icon" src="./assets/shop/r14_coin_icon_v2.png" alt="" loading="lazy" decoding="async" fetchpriority="low">
+              <span id="coinCount">120</span><small>可用</small>
+            </div>
+            <p class="shop-state" id="shopState">先购买礼物，再从库存送给当前角色。</p>
+          </div>
+          <div class="stack-card has-page-decoration shop-inventory-card">
+            <h2>库存</h2>
+            <div class="inventory-grid" id="inventoryGrid"></div>
+          </div>
+          <div class="stack-card gift-reaction-card" id="giftReactionCard">
+            <h2>礼物反应</h2>
+            <div class="gift-reaction" id="giftReaction"></div>
+          </div>
+          <div class="stack-card gift-history-card" id="giftHistoryCard">
+            <h2>礼物履历</h2>
+            <div class="gift-history-stage">
+              <img class="gift-history-visual" id="giftHistoryVisual" src="./assets/shop/r30_gift_history_ledger_v1.png" alt="" loading="eager" decoding="async" fetchpriority="high">
+              <div class="gift-history-markers" id="giftHistoryMarkers" aria-label="礼物履历标记"></div>
+            </div>
+            <div class="gift-history-list" id="giftHistoryList"></div>
+          </div>
+          <div class="shop-grid" id="shopGrid"></div>
+          <div class="stack-card has-page-decoration affection-card">
+            <h2>好感</h2>
+            <div class="affection-list" id="affectionList"></div>
+          </div>
+        </section>
+
+        <section class="panel games-panel" id="games" role="tabpanel" aria-labelledby="tab-games" tabindex="0" aria-label="小游戏" hidden>
+          <div class="game-launcher" id="gameLauncher" tabindex="-1">
+            <header class="game-lounge-header">
+              <div><span class="eyebrow">和她玩一会儿</span><h2>游戏室</h2></div>
+              <div class="game-lounge-wallet"><span>今日所得</span><strong id="gameTodayCoins">0</strong><small>金币</small></div>
+            </header>
+            <article class="game-featured" id="gameFeatured">
+              <img id="gameFeaturedImage" src="./assets/decorations/r80/r80_decor_snake_berry_badge.png" alt="贪吃蛇游戏图标">
+              <div class="game-featured-copy">
+                <span class="eyebrow" id="gameFeaturedEyebrow">短局 · 键盘</span>
+                <h3 id="gameFeaturedTitle">贪吃蛇</h3>
+                <p id="gameFeaturedDescription">吃到目标草莓，避开边界和障碍。每一局都会重新安排食物。</p>
+                <div class="game-featured-stats"><span>最佳 <b id="gameFeaturedBest">—</b></span><span>难度 <b id="gameFeaturedDifficulty">标准</b></span></div>
+                <button type="button" id="gameFeaturedLaunch" data-game-launch="snake">开始游戏</button>
+              </div>
+            </article>
+            <nav class="game-shelf" aria-label="选择小游戏">
+              <button type="button" class="is-selected" data-game-preview="snake"><img src="./assets/decorations/r80/r80_decor_snake_berry_badge.png" alt=""><span><strong>贪吃蛇</strong><small>方向键 / WASD</small></span><em data-game-best="snake">—</em></button>
+              <button type="button" data-game-preview="memory"><img src="./assets/decorations/r80/r80_decor_memory_card_star.png" alt=""><span><strong>记忆翻牌</strong><small>方向键 / 回车</small></span><em data-game-best="memory">—</em></button>
+              <button type="button" data-game-preview="shooter"><img src="./assets/decorations/r80/r80_decor_shooter_constellation.png" alt=""><span><strong>星轨守护</strong><small>A / D · 空格 / J</small></span><em data-game-best="shooter">—</em></button>
+              <button type="button" data-game-preview="bond"><img src="./assets/decorations/r80/r80_decor_bond_pair_bow.png" alt=""><span><strong>羁绊配对</strong><small>方向键 / 回车</small></span><em data-game-best="bond">—</em></button>
+            </nav>
+            <div class="game-lounge-summary">
+              <span><small>最近成绩</small><strong id="gameRecentResult">还没有记录</strong></span>
+              <span><small>完成局数</small><strong id="gameCompletedCount">0 局</strong></span>
+              <span><small>陪伴角色</small><strong id="gameCompanionName">希拉</strong></span>
+            </div>
+          </div>
+          <div class="game-session-bar" id="gameSessionBar" hidden>
+            <button type="button" class="secondary-action" data-game-back>返回游戏室</button>
+            <div><strong id="gameSessionTitle">本局</strong><p id="gameControlHelp">选择游戏后显示操作说明。</p></div>
+            <div class="game-session-actions"><button type="button" class="secondary-action" data-game-pause>暂停</button><button type="button" class="secondary-action" data-game-restart>重开</button></div>
+          </div>
+          <div class="game-card snake-game has-page-decoration" data-game-surface="snake" tabindex="0" hidden>
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_snake_berry_badge.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="game-title">
+              <h2>贪吃蛇</h2>
+              <span id="snakeScore">0</span>
+            </div>
+            <canvas id="snakeCanvas" width="320" height="320" aria-label="贪吃蛇棋盘"></canvas>
+            <div class="game-controls">
+              <button type="button" data-snake="start">开始</button>
+              <button type="button" data-snake="pause">暂停</button>
+              <button type="button" data-snake="reset">重开</button>
+            </div>
+            <div class="direction-pad" aria-label="方向">
+              <button type="button" data-dir="up" aria-label="向上">↑</button>
+              <button type="button" data-dir="left" aria-label="向左">←</button>
+              <button type="button" data-dir="right" aria-label="向右">→</button>
+              <button type="button" data-dir="down" aria-label="向下">↓</button>
+            </div>
+            <small id="snakeState">准备</small>
+          </div>
+          <div class="game-card memory-game has-page-decoration" data-game-surface="memory" tabindex="0" hidden>
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_memory_card_star.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="game-title">
+              <h2>记忆翻牌</h2>
+              <span id="memoryScore">0/4</span>
+            </div>
+            <div class="memory-board" id="memoryBoard"></div>
+            <div class="game-controls">
+              <button type="button" id="memoryReset">重开</button>
+            </div>
+            <small id="memoryState">准备</small>
+          </div>
+          <div class="game-card shooter-game has-page-decoration" data-game-surface="shooter" tabindex="0" hidden>
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_shooter_constellation.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="game-title">
+              <h2>星轨守护</h2>
+              <span id="shooterScore">0/9</span>
+            </div>
+            <canvas id="shooterCanvas" width="480" height="270" aria-label="星轨守护射击场"></canvas>
+            <div class="shooter-meter" aria-label="星轨守护状态">
+              <span>波次 <b id="shooterWave">1/3</b></span>
+              <span>护盾 <b id="shooterHp">3/3</b></span>
+              <span>连击 <b id="shooterCombo">0</b></span>
+              <span>发射 <b id="shooterShots">0</b></span>
+            </div>
+            <div class="game-controls">
+              <button type="button" data-shooter="start">开始</button>
+              <button type="button" data-shooter="pause">暂停</button>
+              <button type="button" data-shooter="left">左移</button>
+              <button type="button" data-shooter="fire">发射</button>
+              <button type="button" data-shooter="right">右移</button>
+              <button type="button" data-shooter="reset">重开</button>
+            </div>
+            <small id="shooterState">准备</small>
+          </div>
+          <div class="game-card bond-game has-page-decoration" data-game-surface="bond" tabindex="0" hidden>
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_bond_pair_bow.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="game-title">
+              <h2>羁绊配对</h2>
+              <span id="bondScore">0/4</span>
+            </div>
+            <div class="bond-board" id="bondBoard" aria-label="角色和礼物配对棋盘"></div>
+            <div class="game-controls">
+              <button type="button" id="bondReset">重开</button>
+            </div>
+            <small id="bondState">准备</small>
+          </div>
+          <details class="stack-card game-tuning-card" data-game-support hidden>
+            <summary>难度、战术与历史</summary>
+            <div class="game-setting-grid">
+              <label>
+                <span>难度</span>
+                <select id="gameDifficulty" aria-label="游戏难度">
+                  <option value="relaxed">舒缓</option>
+                  <option value="normal">标准</option>
+                  <option value="hard">进阶</option>
+                </select>
+              </label>
+              <label class="toggle"><input id="gameEffectsToggle" type="checkbox"> 动效</label>
+              <label class="toggle"><input id="gameCoachToggle" type="checkbox"> 策略</label>
+            </div>
+            <div class="game-strategy-panel" id="gameStrategyPanel" aria-live="polite"></div>
+            <div class="game-history-list" id="gameHistoryList"></div>
+          </details>
+          <div class="game-settlement" data-game-support hidden aria-live="polite">
+            <div class="game-feedback" id="gameFeedback" data-outcome="idle">
+              <img id="gameFeedbackImage" src="./assets/games/r19_game_reward_feedback_v1.png" alt="小游戏结算反馈插画" loading="eager" decoding="async" fetchpriority="high" style="background-image:url('./assets/games/r19_game_reward_feedback_v1.png')">
+              <div class="game-feedback-copy">
+                <span id="gameFeedbackEyebrow">等待游戏结果</span>
+                <strong id="gameFeedbackTitle">还没有开始</strong>
+                <p id="gameResult">还没有开始。</p>
+                <small id="gameFeedbackMeta">本局结束后只记录一次结算与角色回应。</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel split-panel image-panel" id="image" role="tabpanel" aria-labelledby="tab-image" tabindex="0" aria-label="生图" hidden>
+          <form class="stack-card image-composer-card has-page-decoration" id="imageForm">
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_prompt_spark_quill.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <h2>生图</h2>
+            <select id="imageRole"></select>
+            <div class="prompt-template-grid" id="promptTemplates"></div>
+            <textarea id="imagePrompt" rows="5" placeholder="描述想要的画面"></textarea>
+            <div class="button-row">
+              <button type="submit">生成图片</button>
+              <button type="button" id="imageClearDraft">清空</button>
+            </div>
+            <p class="route-summary" id="imageRouteSummary">生图后端未配置</p>
+          </form>
+          <div class="module-visual-card image-studio-card has-page-decoration">
+            <img class="page-decoration" src="./assets/decorations/r80/r80_decor_gallery_crystal_pin.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <h2>素材工作台</h2>
+            <div class="module-visual-frame">
+              <img id="imageStudioVisual" src="./assets/ui/r23_image_studio_history_v1.png" alt="生图历史与模板工作台插画" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+            <p id="imageState">生图后端未配置</p>
+          </div>
+          <div class="stack-card image-routing-card">
+            <h2>路由</h2>
+            <div class="image-routing-grid" id="imageRoutingGrid"></div>
+          </div>
+          <div class="stack-card image-history-card">
+            <h2>历史</h2>
+            <div class="image-history" id="imageHistory"></div>
+          </div>
+        </section>
+
+        <section class="panel extension-panel" id="extensions" role="tabpanel" aria-labelledby="tab-extensions" tabindex="0" aria-label="扩展" hidden>
+          <header class="extension-toolbar has-page-decoration">
+            <div>
+              <span class="eyebrow">Personal Agent Platform</span>
+              <h2>扩展与办公</h2>
+            </div>
+            <div class="button-row extension-toolbar-actions">
+              <button type="button" id="themePackageImportButton">导入主题包</button>
+              <input id="themePackageImport" type="file" accept=".json,application/json" hidden>
+              <button type="button" id="extensionRefreshButton">刷新目录</button>
+            </div>
+          </header>
+          <p class="theme-import-state" id="themeImportState" aria-live="polite">主题包仅接受声明式 JSON 色板，可预览并随时恢复默认；不会执行脚本。</p>
+          <div class="theme-preview-actions" id="themePreviewActions" hidden>
+            <button type="button" id="themePreviewCancel" class="secondary-action">取消预览</button>
+            <button type="button" id="themePreviewAccept">应用主题</button>
+          </div>
+          <div class="extension-metrics" id="extensionMetrics"></div>
+          <div class="extension-layout">
+            <section class="extension-catalog" aria-labelledby="extensionCatalogTitle">
+              <div class="section-heading-row">
+                <h3 id="extensionCatalogTitle">扩展包</h3>
+                <span id="extensionCatalogStatus">等待 Runtime。</span>
+              </div>
+              <div class="extension-package-list" id="extensionPackageList"></div>
+            </section>
+            <section class="office-workbench" aria-labelledby="officeWorkbenchTitle">
+              <div class="section-heading-row">
+                <h3 id="officeWorkbenchTitle">办公工作台</h3>
+                <span id="officeCapabilityStatus">DOCX / XLSX / PPTX</span>
+              </div>
+              <form class="office-create-form" id="officeCreateForm">
+                <div class="office-format-control" role="group" aria-label="文件格式">
+                  <label><input type="radio" name="officeFormat" value="docx" checked><span>Word</span></label>
+                  <label><input type="radio" name="officeFormat" value="xlsx"><span>Excel</span></label>
+                  <label><input type="radio" name="officeFormat" value="pptx"><span>PowerPoint</span></label>
+                </div>
+                <input id="officeTitle" maxlength="200" placeholder="文件标题" aria-label="文件标题" required>
+                <textarea id="officeSource" rows="8" placeholder="结构化内容" aria-label="结构化内容" required></textarea>
+                <div class="button-row office-actions">
+                  <button type="submit" id="officeCreateButton">生成文件</button>
+                  <button type="button" id="officeInventoryButton">盘点工作区</button>
+                </div>
+                <p class="office-status" id="officeStatus" aria-live="polite">等待创建。</p>
+              </form>
+              <div class="office-results">
+                <div>
+                  <h4>最近产物</h4>
+                  <div class="office-artifact-list" id="officeArtifactList"></div>
+                </div>
+                <div>
+                  <h4>工作区文件</h4>
+                  <div class="office-inventory-list" id="officeInventoryList"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="panel settings-panel" id="settings" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" aria-label="设置" hidden>
+          <div class="settings-layout">
+            <nav class="settings-category-nav" id="settingsCategoryNav" aria-label="设置分类">
+              <button type="button" data-settings-category="appearance" aria-pressed="true">显示与主题</button>
+              <button type="button" data-settings-category="model" aria-pressed="false">模型</button>
+              <button type="button" data-settings-category="voice" aria-pressed="false">声音</button>
+              <button type="button" data-settings-category="data" aria-pressed="false">本地数据</button>
+              <button type="button" data-settings-category="advanced" aria-pressed="false">高级诊断</button>
+            </nav>
+            <div class="settings-sections">
+              <section class="stack-card appearance-settings-card" id="appearanceSettingsCard" aria-labelledby="appearanceSettingsHeading" data-settings-section="appearance">
+                <h2 id="appearanceSettingsHeading">显示与立绘</h2>
+                <label class="setting-toggle" for="characterThemeEnabled"><span><strong>角色专属主题</strong><small>希拉 · 夜绒。手动应用的主题包优先。</small></span><input id="characterThemeEnabled" type="checkbox" checked></label>
+                <fieldset class="appearance-font-scale-options">
+                  <legend>界面字号</legend>
+                  <label class="appearance-preset-card" data-font-scale-option="small"><input type="radio" name="appearanceFontScale" value="small"><strong>小字号</strong></label>
+                  <label class="appearance-preset-card" data-font-scale-option="medium"><input type="radio" name="appearanceFontScale" value="medium" checked><strong>中字号</strong></label>
+                  <label class="appearance-preset-card" data-font-scale-option="large"><input type="radio" name="appearanceFontScale" value="large"><strong>大字号</strong></label>
+                </fieldset>
+                <fieldset class="appearance-choice-group">
+                  <legend>界面密度</legend>
+                  <label><input type="radio" name="appearanceDensity" value="comfortable" checked>舒适</label>
+                  <label><input type="radio" name="appearanceDensity" value="compact">紧凑</label>
+                </fieldset>
+                <label class="setting-toggle" for="reducedMotionToggle">
+                  <span><strong>减少动态</strong><small>关闭立绘流动和非必要过渡。</small></span>
+                  <input id="reducedMotionToggle" type="checkbox">
+                </label>
+                <div class="appearance-frame-controls">
+                  <strong class="appearance-section-label">立绘效果</strong>
+                  <label class="toggle appearance-frame-toggle"><input id="portraitFrameToggle" type="checkbox" data-portrait-frame-toggle checked>动态立绘框</label>
+                  <label class="appearance-frame-style">效果
+                    <select id="portraitFrameStyle" data-portrait-frame-style>
+                      <option value="holographic">镭射流光</option>
+                      <option value="prism">棱镜虹彩</option>
+                      <option value="pulse">心跳呼吸</option>
+                      <option value="starlight">星点微光</option>
+                    </select>
+                  </label>
+                </div>
+                <p id="appearanceSettingsState" aria-live="polite">当前使用中字号、舒适密度与镭射立绘框。</p>
+              </section>
+
+              <form class="settings-form-shell" id="settingsForm">
+                <section class="stack-card model-settings-card" data-settings-section="model" hidden>
+                  <h2>模型连接</h2>
+                  <fieldset class="provider-group">
+                    <legend>聊天模型</legend>
+                    <input name="provider" aria-label="聊天 provider" placeholder="provider" value="openai-compatible">
+                    <input name="baseUrl" aria-label="聊天 base_url" placeholder="base_url，例如 https://api.deepseek.com">
+                    <input name="apiKey" type="password" aria-label="聊天 api_key" placeholder="输入新密钥；留空保持现有凭据">
+                    <div class="credential-row"><small data-credential-status="chat">未配置</small><button type="button" data-credential-delete="chat">删除密钥</button></div>
+                    <input name="model" aria-label="聊天 model" placeholder="model" value="deepseek v4 flash">
+                  </fieldset>
+                  <details class="provider-secondary-settings">
+                    <summary>其他接口</summary>
+                    <fieldset class="provider-group image-provider-group">
+                      <legend>生图 Provider</legend>
+                      <input name="imageProvider" aria-label="生图 provider" placeholder="provider" value="openai-compatible">
+                      <input name="imageBaseUrl" aria-label="生图 base_url" placeholder="base_url，例如 https://api.openai.com/v1">
+                      <input name="imageApiKey" type="password" aria-label="生图 api_key" placeholder="输入新密钥；留空保持现有凭据">
+                      <div class="credential-row"><small data-credential-status="image">未配置</small><button type="button" data-credential-delete="image">删除密钥</button></div>
+                      <input name="imageModel" aria-label="生图 model" placeholder="image model" value="gpt-image-1">
+                      <input name="imageResponseModel" aria-label="Responses model" placeholder="Responses model" value="gpt-5">
+                    </fieldset>
+                    <fieldset class="provider-group">
+                      <legend>搜索 Provider</legend>
+                      <select name="searchProvider" aria-label="搜索 provider"><option value="brave">Brave Search</option><option value="generic_get">Generic GET</option></select>
+                      <input name="searchEndpoint" aria-label="搜索 endpoint" placeholder="https://api.search.brave.com/res/v1/web/search">
+                      <input name="searchApiKey" type="password" aria-label="搜索 api_key" placeholder="输入新密钥；留空保持现有凭据">
+                      <div class="credential-row"><small data-credential-status="search">未配置</small><button type="button" data-credential-delete="search">删除密钥</button></div>
+                    </fieldset>
+                  </details>
+                  <input name="temperature" type="number" min="0" max="2" step="0.1" placeholder="temperature" value="0.8">
+                  <input name="maxTokens" type="number" min="16" max="8192" step="16" placeholder="max_tokens" value="512">
+                  <label class="toggle"><input name="thinking" type="checkbox">深度思考摘要</label>
+                  <div class="button-row"><button type="submit">保存</button><button type="button" id="providerValidateButton">验证</button></div>
+                </section>
+
+                <section class="stack-card voice-settings-card" data-settings-section="voice" hidden>
+                  <h2>声音</h2>
+                  <fieldset class="provider-group">
+                    <legend>语音 Provider</legend>
+                    <input name="voiceProvider" aria-label="语音 provider" value="xiaomi-mimo">
+                    <input name="voiceBaseUrl" aria-label="语音 base_url" value="https://api.xiaomimimo.com/v1">
+                    <input name="voiceApiKey" type="password" aria-label="语音 api_key" placeholder="输入新密钥；留空保持现有凭据">
+                    <div class="credential-row"><small data-credential-status="voice">未配置</small><button type="button" data-credential-delete="voice">删除密钥</button></div>
+                    <input name="voiceModel" aria-label="语音 model" value="mimo-v2.5-tts">
+                    <select name="voiceName" aria-label="MiMo 预设音色">
+                      <option value="mimo_default">mimo_default</option><option value="冰糖">冰糖</option><option value="茉莉">茉莉</option><option value="苏打">苏打</option><option value="白桦">白桦</option><option value="Mia">Mia</option><option value="Chloe">Chloe</option><option value="Milo">Milo</option><option value="Dean">Dean</option>
+                    </select>
+                    <label>语速 <input name="voiceSpeed" type="number" min="0.5" max="2" step="0.1" value="1"></label>
+                  </fieldset>
+                  <button type="submit">保存声音设置</button>
+                </section>
+              </form>
+
+              <section class="data-settings-section" data-settings-section="data" hidden>
+                <div class="stack-card persistence-card" id="persistenceCard">
+                  <h2>本地恢复</h2>
+                  <div class="persistence-body"><div class="persistence-summary" id="persistenceSummary">待检查</div><div class="persistence-grid" id="persistenceStatus"></div><button type="button" id="recoveryCheckButton">检查</button></div>
+                </div>
+                <div class="stack-card backup-card" id="backupCard">
+                  <h2>备份与恢复</h2>
+                  <section class="runtime-backup-section" aria-labelledby="runtimeBackupTitle">
+                    <div class="runtime-backup-heading"><h3 id="runtimeBackupTitle">Runtime 数据库</h3><button type="button" id="runtimeBackupButton">立即快照</button></div>
+                    <div class="runtime-backup-summary" id="runtimeBackupSummary">等待 Runtime 状态。</div>
+                    <div class="backup-grid runtime-backup-grid" id="runtimeBackupStatus"></div>
+                  </section>
+                  <h3 class="browser-backup-title">浏览器状态</h3>
+                  <div class="backup-summary" id="backupSummary">等待生成备份。</div>
+                  <div class="backup-grid" id="backupStatus"></div>
+                  <textarea id="backupText" rows="8" spellcheck="false" placeholder="生成备份后会出现 JSON；也可以粘贴备份进行预检或导入。"></textarea>
+                  <div class="button-row backup-actions"><button type="button" id="backupExportButton">生成 JSON</button><button type="button" id="backupCopyButton">复制</button><button type="button" id="backupDownloadButton">下载</button><button type="button" id="backupPreviewButton">预检</button><button type="button" id="backupImportButton">导入</button></div>
+                </div>
+                <div class="stack-card settings-status-card"><h2>状态</h2><p id="settingsState">设置保存在本地。</p></div>
+              </section>
+
+              <details class="advanced-settings" id="advancedSettings" data-settings-section="advanced" hidden>
+                <summary><span>高级与诊断</span><small>Runtime 状态与验收信息</small></summary>
+                <div class="advanced-settings-grid">
+                  <div class="stack-card api-validation-card" id="apiValidationCard">
+                    <h2>接口状态</h2>
+                    <div class="api-validation-body"><div class="api-validation-summary" id="apiValidationSummary">待验证</div><div class="api-validation-grid" id="apiValidationGrid"></div></div>
+                  </div>
+                  <div class="stack-card final-gate-card" id="finalGateCard">
+                    <h2>最终闸门</h2>
+                    <div class="final-gate-summary" id="finalGateSummary">等待复核。</div>
+                    <div class="final-gate-grid" id="finalGateGrid"></div>
+                    <div class="final-gate-list" id="finalGateList"></div>
+                    <label class="final-acceptance-confirm"><input type="checkbox" id="finalAcceptanceConfirm"><span>我已完成人工端到端验收</span></label>
+                    <div class="button-row final-gate-actions"><button type="button" id="finalGateAuditButton">复核</button><button type="button" id="finalAcceptanceButton" disabled>记录最终验收</button></div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <aside class="pet-dock" aria-label="桌宠" aria-expanded="false">
+      <div class="pet-stage" role="button" tabindex="0" aria-label="打开桌宠动作菜单">
+        <div class="pet-renderer">
+          <img id="deskPet" alt="希拉桌宠" width="200" height="250" loading="eager" decoding="async" fetchpriority="high">
+          <div id="deskPetSprite" class="desk-pet-sprite" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="pet-actions" aria-label="桌宠动作" aria-hidden="true" inert>
+        <button type="button" data-pet="idle">待机</button>
+        <button type="button" data-pet="walk">走动</button>
+        <button type="button" data-pet="turn">转身</button>
+        <button type="button" data-pet="sleep">睡觉</button>
+        <button type="button" data-pet="wake">叫醒</button>
+        <button type="button" data-pet="drag">拖拽</button>
+        <button type="button" data-pet="thrown">抛出</button>
+        <button type="button" data-pet="jump">跳跃</button>
+        <button type="button" data-pet="fall">坠落</button>
+        <button type="button" data-pet="land">落地</button>
+        <button type="button" data-pet="failed">失败</button>
+        <button type="button" data-pet="edge">贴边</button>
+        <button type="button" data-pet="peek">探头</button>
+        <button type="button" data-pet="return">返回</button>
+        <button type="button" data-pet="reminder">提醒</button>
+        <button type="button" data-pet="task">任务</button>
+        <button type="button" data-pet="review">复核</button>
+        <button type="button" data-pet="gift">收礼</button>
+        <button type="button" data-pet="coffee">咖啡</button>
+        <button type="button" data-pet="work">工作</button>
+        <button type="button" data-pet="rabbit">小焦</button>
+        <button type="button" data-pet="stomp">跺脚</button>
+        <button type="button" data-pet="ritual">仪式</button>
+        <button type="button" data-pet="care">照顾</button>
+      </div>
+      <small id="petState">Shira motion checkpoint</small>
+    </aside>
+  </main>
+  <script src="./assets/experience-return.js?v=role-editor-v1"></script>
+  <script src="./assets/shared-state.js?v=gift-loop-v1"></script>
+  <script src="./assets/gift-catalog.js?v=gift-loop-v1"></script>
+  <script src="./assets/companion_core.js?v=character-workspace-v1"></script>
+  <script src="./assets/game-core.js?v=game-loop-v1"></script>
+  <script src="./assets/character-theme.js?v=portrait-stack-v6"></script>
+  <script src="./assets/panel-history.js?v=1"></script>
+  <script src="./assets/legacy-state-compat.js?v=journeys-20261005"></script>
+  <script src="./assets/app.js?v=journeys-20261005"></script>
+</body>
+</html>

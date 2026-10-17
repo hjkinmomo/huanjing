@@ -1,0 +1,1 @@
+export function floorPlan(locations:any[],parentId:string,actorId?:string):{parent:any;floors:boolean;width:number;height:number;rooms:{place:any;x:number;y:number;w:number;h:number;active:boolean}[];path:any[]};

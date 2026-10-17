@@ -1,0 +1,20 @@
+{
+  "id": "hermes-koka-project5-v2",
+  "displayName": "Hermes Koka Project 5 v2",
+  "description": "Validated Koka desktop companion with native standard motion, Xiaojiao and stomp extensions, and 16 look directions.",
+  "spriteVersionNumber": 2,
+  "spritesheetPath": "spritesheet.webp",
+  "atlas": {
+    "columns": 8,
+    "rows": 11,
+    "cellWidth": 192,
+    "cellHeight": 208,
+    "width": 1536,
+    "height": 2288
+  },
+  "nativeExtensions": {
+    "rabbit": "../r17/koka_rabbit_00.png",
+    "stomp": "../r17/koka_stomp_00.png",
+    "task": "../r64/koka_task_00.png"
+  }
+}

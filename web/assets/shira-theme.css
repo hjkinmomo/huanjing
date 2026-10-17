@@ -1,0 +1,157 @@
+/* Shira / 夜绒 — optional character-scoped skin. Layout and pet mechanics unchanged.
+   Imported theme packages take precedence; removing this scope restores the base UI. */
+html[data-character-theme="shira-nocturne"] {
+  color-scheme: dark;
+  --paper: #19161c;
+  --panel: #28212b;
+  --ink: #f0e6e7;
+  --muted: #bfb0ba;
+  --line: #483643;
+  --wine: #e1a1b3;
+  --plum: #d9b7d9;
+  --amber: #d9b889;
+  --green: #a0c4ad;
+  --canvas: #19161c;
+  --surface: #231d26;
+  --surface-subtle: #2c242e;
+  --text-primary: #f0e6e7;
+  --text-secondary: #bfb0ba;
+  --text-tertiary: #b3a1ad;
+  --divider: #483643;
+  --accent: #e1a1b3;
+  --accent-contrast: #20131a;
+  --focus-ring: #f0b4c6;
+  --danger: #f0a1a6;
+  --success: #a0c4ad;
+  --shadow: none;
+  --shira-selected: #462934;
+  --shira-button: #74354e;
+  --shira-seal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 12 5 5l8 4M24 12l3-7-8 4M16 26C8 21 5 17 8 13c2-3 6-2 8 1 2-3 6-4 8-1 3 4 0 8-8 13Z'/%3E%3C/svg%3E");
+}
+
+/* Shared primitives and quiet, plum-tinted surface elevation. */
+html[data-character-theme] :is(.shell, .workspace, .content, .panel.is-active) { background: var(--canvas); color: var(--ink); }
+html[data-character-theme] :is(.sidebar, .topbar) { background: #211b23; border-color: var(--divider); box-shadow: none; }
+html[data-character-theme] :is(.stack-card, .game-card, .shop-item, .task-card, .memory-strip, .approval-item, .extension-package, .tool-state, .character-editor-preview-card, .rolekit-memory, .portrait-backpack, .creator-source-shelf, .creator-project-panel, .schedule-form-card, .schedule-list-card, .schedule-status-card) {
+  background: var(--surface); color: var(--ink); border-color: var(--divider); box-shadow: none;
+}
+html[data-character-theme] :is(input, textarea, select) { background: #1b171e; color: var(--ink); border-color: #65505f; box-shadow: none; }
+html[data-character-theme] :is(input, textarea)::placeholder { color: #aa95a4; opacity: 1; }
+html[data-character-theme] :is(input[type="checkbox"], input[type="radio"], progress) { accent-color: var(--wine); }
+html[data-character-theme] button { background-color: var(--surface-subtle); color: var(--ink); border-color: var(--divider); box-shadow: none; }
+html[data-character-theme] button:hover { background-color: #3c2a37; color: #f8dce5; border-color: #a7788e; }
+html[data-character-theme] button:disabled { opacity: .5; cursor: not-allowed; }
+html[data-character-theme] :is(button, input, textarea, select, summary, [tabindex]):focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; box-shadow: none; }
+html[data-character-theme] :is(button.is-active, button.is-selected, button[aria-selected="true"], button[aria-pressed="true"], .role-card.is-active, .appearance-preset-card:has(input:checked)) {
+  color: #f5d4df; background: var(--shira-selected); border-color: #9c667d;
+}
+html[data-character-theme] :is(.secondary-action, .tab, .space-tab, .message-voice-button) { background: transparent; color: var(--text-secondary); }
+html[data-character-theme] :is(#chatSubmitButton, #personalTaskSubmit, .character-editor-section > button[type="submit"], #gameFeaturedStart, .moment-composer button[type="submit"]) {
+  background: var(--shira-button); border-color: #aa6a84; color: #fff0f5;
+}
+html[data-character-theme] :is(h1, h2, h3, strong) { color: inherit; }
+html[data-character-theme] :is(.eyebrow, .message-meta, .task-details, .empty-copy, .role-head p, .role-card small) { color: var(--text-secondary); }
+html[data-character-theme] a { color: #e8b7ca; }
+html[data-character-theme] hr { border: 0; border-top: 1px solid var(--divider); }
+html[data-character-theme] ::selection { background: #79445d; color: #fff2f7; }
+html[data-character-theme] * { scrollbar-color: #765366 #211b24; scrollbar-width: thin; }
+html[data-character-theme] ::-webkit-scrollbar { width: 8px; height: 8px; }
+html[data-character-theme] ::-webkit-scrollbar-track { background: #211b24; }
+html[data-character-theme] ::-webkit-scrollbar-thumb { background: #765366; border: 2px solid #211b24; border-radius: 6px; }
+
+/* Shira's seal stays in chrome, never replaces functional text. */
+html[data-character-theme] .brand-mark { font-size: 0; background: #3b2430; border: 1px solid #815068; position: relative; }
+html[data-character-theme] .brand-mark::after { content: ""; width: 27px; height: 27px; display: block; background: #e4a7be; mask: var(--shira-seal) center / contain no-repeat; }
+html[data-character-theme] .sidebar-utility { border-color: var(--divider); }
+html[data-character-theme] .role-card { background: transparent; border-color: transparent; }
+html[data-character-theme] .role-card.is-active { box-shadow: inset 3px 0 #d494ab; }
+html[data-character-theme] :is(.role-card img, #roleAvatar, .message-avatar) { border: 1px solid #896074; }
+html[data-character-theme] .space-tab > span[aria-hidden] { font-size: 0; width: 19px; height: 19px; flex: 0 0 19px; background: currentColor; mask: var(--nav-icon) center / contain no-repeat; }
+html[data-character-theme] [data-destination="chat"] { --nav-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5'%3E%3Cpath d='M5 6h14v11H9l-4 3V6Z'/%3E%3Cpath d='M8 10h8M8 13h5'/%3E%3C/svg%3E"); }
+html[data-character-theme] [data-destination="work"] { --nav-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5'%3E%3Crect x='4' y='6' width='16' height='14' rx='2'/%3E%3Cpath d='M9 6V3h6v3M4 12h16M10 12v3h4v-3'/%3E%3C/svg%3E"); }
+html[data-character-theme] [data-destination="life"] { --nav-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5'%3E%3Cpath d='M12 21C2 14 1 8 5 5c3-2 6 0 7 2 1-2 4-4 7-2 4 3 3 9-7 16Z'/%3E%3C/svg%3E"); }
+html[data-character-theme] [data-destination="characters"] { --nav-icon: var(--shira-seal); }
+html[data-character-theme] [data-destination="settings"] { --nav-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5'%3E%3Cpath d='M5 3v18M12 3v18M19 3v18'/%3E%3Cpath d='M2 8h6M9 16h6M16 8h6' stroke-width='4'/%3E%3C/svg%3E"); }
+
+/* Conversation: parchment text on velvet, asymmetric seams rather than sticker ornaments. */
+html[data-character-theme] :is(.conversation-surface, #conversationSurface, .messages, .chat-form, #chatForm, .chat-mode-bar, .chat-provider-status) { background: var(--canvas); color: var(--text-secondary); border-color: var(--divider); box-shadow: none; }
+html[data-character-theme] .message { background: #2a232e; border: 1px solid #564050; color: #f0e6e7; border-radius: 4px 15px 15px 15px; box-shadow: none; }
+html[data-character-theme] .message.user { background: #482b3b; border-color: #81546c; border-radius: 15px 4px 15px 15px; color: #faeaf0; }
+html[data-character-theme] :is(.message.tone-task, .message.tone-lore, .message.tone-gift, .message.tone-game) { background: #302534; border-inline-start: 2px solid #c89aad; }
+html[data-character-theme] .message.is-sticker { background: transparent; border-color: transparent; }
+html[data-character-theme] :is(.message-content, .message p, .message-text) { color: inherit; }
+html[data-character-theme] :is(.expression-picker, .memory-inspector, .memory-drawer, dialog, [role="dialog"], .image-lightbox-dialog) { background: #2d2430; color: var(--ink); border-color: #79586f; box-shadow: 0 16px 40px #100c1480; }
+html[data-character-theme] :is(.expression-groups button, .expression-picker-head, .memory-pill, .message-attachment, .memory-search-result) { background: var(--surface); color: var(--text-secondary); border-color: var(--divider); }
+html[data-character-theme] :is(.portrait-card-back, .portrait-relationship-data > div, .portrait-relationship-reasons, .relationship-reason-row) { background: var(--surface); color: var(--ink); border-color: var(--divider); }
+html[data-character-theme] .portrait-stage-caption { background: #251620e8; color: #f3dbe6; border: 1px solid #976379; }
+html[data-character-theme] .portrait-backpack-heading { border-bottom: 1px solid var(--divider); }
+html[data-character-theme] :is(.portrait-backpack-heading h2, .portrait-relationship-heading h2)::after { content: "◇"; color: #ca95ac; font-size: .65em; margin-left: .6em; vertical-align: middle; }
+
+/* Editors, work and settings: same materials, no residual cream cards. */
+html[data-character-theme] :is(.settings-category-nav, .character-section-nav, .character-editor-nav, .custom-role-create, .character-workspace-heading, .character-editor-section, .settings-sections, .appearance-preset-card, .setting-toggle, .appearance-choice-group, .appearance-frame-controls, .role-consistency-card, .extension-metric, .computer-action-item, .agent-run-status, .agent-control-row, .personal-task-row, .task-utility-grid, .office-file-row, .creator-project-panel, .creator-source-shelf, .creator-proposal, .creator-source-item) { background-color: var(--surface); color: var(--ink); border-color: var(--divider); box-shadow: none; }
+html[data-character-theme] :is(.settings-category-nav, .character-section-nav, .character-editor-nav) { background: #211b24; }
+html[data-character-theme] :is(.appearance-preset-card.is-active, .appearance-preset-card:has(input:checked)) { background: var(--shira-selected); border-color: #bb8399; }
+html[data-character-theme] :is(.section-heading-row, .work-advanced, .advanced-settings, .personal-task-board, .character-workspace-heading) { border-color: var(--divider); }
+html[data-character-theme] :is(.approval-item-meta, .approval-receipt-state, .tool-state > span, .extension-package-type, .task-tag, .role-consistency-card > span) { background: #342633; color: #e1b5cb; border-color: #69455b; }
+html[data-character-theme] :is(.approval-item.is-failed, .ui-state[data-ui-state="error"]) { border-left-color: var(--danger); }
+html[data-character-theme] :is(pre, code) { color: #e8d7e3; background: #1c1820; }
+html[data-character-theme] .role-task-persona { margin-block: .7rem; padding-block: .8rem; border-block: 1px solid var(--divider); }
+html[data-character-theme] .role-task-persona summary { cursor: pointer; color: var(--wine); margin-bottom: .7rem; }
+html[data-character-theme] .role-task-persona label { display: grid; gap: .4rem; margin-block: .7rem; color: var(--text-secondary); }
+
+/* Shared leisure chrome. Product images and functional game art retain their true colors. */
+html[data-character-theme] :is(.moment-card, .moment-composer, .moment-comment, .moment-comments, .moment-reaction, .moments-filters, .shop-wallet, .gift-history-stage, .gift-history-item, .affection-card, .affection-row, .game-lounge-wallet, .game-shelf > button, .game-lounge-summary, .game-session-bar, .game-feedback, .game-settlement, .game-history-list, .game-strategy-panel) { background: var(--surface); color: var(--ink); border-color: var(--divider); box-shadow: none; }
+html[data-character-theme] .game-featured { background: linear-gradient(115deg, #352330, #241e2c); color: var(--ink); border-color: #725065; box-shadow: none; }
+html[data-character-theme] .game-featured::after { opacity: .08; }
+html[data-character-theme] :is(.game-shelf > button.is-selected, .memory-tile, .bond-card) { background-color: var(--shira-selected); color: var(--ink); border-color: #80536d; }
+html[data-character-theme] :is(.shop-item h3, .game-featured h3, .game-shelf strong, .affection-row strong) { color: var(--ink); }
+html[data-character-theme] :is(.game-featured-stats, .game-shelf small, .moment-meta, .shop-item p) { color: var(--text-secondary); }
+html[data-character-theme] :is(.page-decoration, .section-decoration) { opacity: .65; }
+html[data-character-theme] :is(.affection-track, .relationship-progress, .meter-track) { background: #453042; }
+html[data-character-theme] :is(.affection-fill, .relationship-progress > span, .meter-fill) { background: #c28aa4; }
+
+/* Explicit legacy-ID overrides found during rendered-page review. */
+html[data-character-theme] #tasks > .task-grid .task-card { background: var(--surface); border-color: var(--divider); }
+html[data-character-theme] :is(.conversation-toolbar, .shop-filter-card, .appearance-frame-toggle) { background: var(--surface-subtle); color: var(--ink); border-color: var(--divider); }
+html[data-character-theme] .shop-item :is(.rarity-badge, .rarity-role, .rarity-stage) { background: #493044; color: #f0cee0; border-color: #865c75; }
+html[data-character-theme] :is(input[type="checkbox"], input[type="radio"]) { width: auto; flex: 0 0 auto; }
+html[data-character-theme] .space-tab:not([aria-selected="true"]) { border-color: transparent; }
+html[data-character-theme] .settings-category-nav button:not([aria-pressed="true"]) { background: transparent; }
+html[data-character-theme] .portrait-backpack-heading h2::after,
+html[data-character-theme] .portrait-relationship-heading h2::after { content: ""; display: inline-block; width: 5px; height: 5px; border: 1px solid #ca95ac; transform: rotate(45deg); }
+
+/* Petals are fixed ink on the edge of the page, never particles crossing dialogue. */
+html[data-character-theme] {
+  --shira-petals: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='300' viewBox='0 0 320 300'%3E%3Cg fill='%23ac5c7d' opacity='.13'%3E%3Cpath d='M281 29c-40-5-58 11-46 39 24-1 45-16 46-39Z'/%3E%3Cpath d='M300 67c-24 9-27 25-12 37 14-9 20-22 12-37Z'/%3E%3Cpath d='M220 111c-34-9-51 6-44 29 20 4 38-8 44-29Z'/%3E%3Cpath d='M279 176c-23-4-37 5-32 21 15 2 29-4 32-21Z'/%3E%3Cpath d='M141 209c-20-5-28 7-21 19 15-1 22-9 21-19Z'/%3E%3C/g%3E%3Cg fill='none' stroke='%23c290a7' opacity='.14' stroke-width='.7'%3E%3Cpath d='M310 0C292 89 208 151 226 267M293 60c-39-12-58 8-64 34M251 120c26-3 45 10 50 28M228 194c-27-13-44-7-58 12'/%3E%3C/g%3E%3C/svg%3E");
+  --shira-weave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M0 1h8M1 0v8' stroke='%23c998b3' stroke-opacity='.028' stroke-width='.5'/%3E%3C/svg%3E");
+}
+html[data-character-theme] .content { background-image: var(--shira-weave); }
+html[data-character-theme] .panel.is-active { background-image: var(--shira-petals), var(--shira-weave); background-repeat: no-repeat, repeat; background-position: right top, left top; background-size: 320px 300px, 8px 8px; }
+html[data-character-theme] .sidebar { background-image: var(--shira-weave); }
+html[data-character-theme] .topbar { border-bottom-color: #59394b; }
+html[data-character-theme] .chat-panel.is-active { padding: clamp(12px, 1.7vw, 28px); gap: clamp(16px, 2vw, 32px); }
+html[data-character-theme] #conversationSurface { background: #1e1922; border: 1px solid #4b3545; border-radius: 14px; box-shadow: none; }
+html[data-character-theme] #messages { background: var(--shira-petals) right bottom / 250px 235px no-repeat; padding-top: 24px; }
+html[data-character-theme] .message { line-height: 1.8; }
+html[data-character-theme] .conversation-toolbar { background: #29212c; border-bottom: 1px solid #533b4b; }
+html[data-character-theme] .chat-reply-mode-notice { color: #d9b889; }
+html[data-character-theme] :is(.composer, #chatForm) { background: #241c28; border-top-color: #533b4b; }
+html[data-character-theme] :is(.space-tab, .tab, .secondary-action) { border-color: transparent; }
+html[data-character-theme] .space-tab[aria-selected="true"] { border-color: #815369; }
+html[data-character-theme] .character-workspace-heading,
+html[data-character-theme] .page-heading { background-color: transparent; border-bottom-color: #543848; }
+html[data-character-theme] :is(.stack-card > h2, .character-editor-heading, .game-lounge-header, .portrait-relationship-heading) { position: relative; }
+html[data-character-theme] :is(.stack-card > h2, .character-editor-heading)::after {
+  content: ""; position: absolute; right: 0; top: 50%; width: 34px; height: 9px;
+  background: linear-gradient(90deg, transparent, #a66d85); opacity: .45;
+  clip-path: polygon(0 45%, 72% 45%, 86% 0, 100% 50%, 86% 100%, 72% 55%, 0 55%);
+  pointer-events: none;
+}
+html[data-character-theme] .portrait-backpack { border: 1px solid #503547; border-top-color: #87556d; background-image: var(--shira-weave); }
+html[data-character-theme] .shop-filter-card { background: var(--surface-subtle); }
+html[data-character-theme] .settings-panel .appearance-frame-toggle { background: var(--surface-subtle); }
+html[data-character-theme] .custom-role-create button { background: var(--shira-button); color: #fff0f5; }
+@media (min-width: 1500px) {
+  html[data-character-theme] .chat-panel.is-active { gap: 32px; padding: 26px 32px; }
+  html[data-character-theme] .messages { padding-inline: 32px; }
+}

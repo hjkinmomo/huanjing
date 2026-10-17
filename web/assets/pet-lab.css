@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light;
+  --ink: #2a2023;
+  --muted: #7e6a6e;
+  --line: #decfd3;
+  --paper: #fffaf7;
+  --stage: #f4ebe5;
+  --accent: #8f243b;
+  --gold: #b9904e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  font: 15px/1.45 "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(143, 36, 59, .07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(185, 144, 78, .07) 1px, transparent 1px),
+    var(--paper);
+  background-size: 44px 44px;
+}
+
+.lab {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+}
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  margin: 18px;
+  min-height: 0;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, .85), transparent 34%),
+    linear-gradient(180deg, #fff8f3, var(--stage));
+}
+
+.stage::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  height: 1px;
+  background: rgba(96, 65, 61, .18);
+}
+
+.rail {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 14px;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: var(--muted);
+}
+
+.rail strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+#stateLabel {
+  min-width: 92px;
+  text-align: right;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.pet {
+  position: absolute;
+  left: 120px;
+  bottom: 64px;
+  width: 200px;
+  height: 250px;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+  transform-origin: 50% 100%;
+  will-change: transform, left, bottom;
+}
+
+.pet.dragging { cursor: grabbing; }
+
+.pet img {
+  width: 200px;
+  height: 250px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  image-rendering: auto;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 18px 18px;
+}
+
+button {
+  min-width: 72px;
+  height: 36px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 7px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--gold);
+  color: var(--accent);
+}
+
+.log {
+  position: absolute;
+  left: 26px;
+  bottom: 72px;
+  z-index: 5;
+  width: min(420px, calc(100vw - 52px));
+  max-height: 128px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.log div {
+  margin-top: 4px;
+  padding: 4px 8px;
+  border-left: 2px solid rgba(143, 36, 59, .28);
+  background: rgba(255, 255, 255, .72);
+}

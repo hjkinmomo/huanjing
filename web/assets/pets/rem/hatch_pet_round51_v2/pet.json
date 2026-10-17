@@ -1,0 +1,19 @@
+{
+  "id": "hermes-rem-project5-v2",
+  "displayName": "Hermes Rem Project 5 v2",
+  "description": "Validated Rem desktop companion with native standard motion, care extension, and 16 look directions.",
+  "spriteVersionNumber": 2,
+  "spritesheetPath": "spritesheet.webp",
+  "atlas": {
+    "columns": 8,
+    "rows": 11,
+    "cellWidth": 192,
+    "cellHeight": 208,
+    "width": 1536,
+    "height": 2288
+  },
+  "nativeExtensions": {
+    "care": "../r17/rem_care_00.png",
+    "task": "../r64/rem_task_00.png"
+  }
+}

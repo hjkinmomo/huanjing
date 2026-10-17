@@ -1,0 +1,11 @@
+export function refreshStickerPolicy():void;
+export type StickerSprite={size:[number,number];rect:[number,number,number,number]};
+export type RoleSticker={kind:'sticker';text:string;src:string;sprite?:StickerSprite};
+export const STICKER_ROLES:ReadonlyArray<string>;
+export const STICKER_MOODS:Readonly<Record<string,{label:string;use:string}>>;
+export function hasRoleStickers(roleId:string):boolean;
+export function availableStickerMoods(roleId:string):string[];
+export function stickerFor(roleId:string,mood:string):RoleSticker|null;
+export function stickerPrompt(roleId:string):string|null;
+export function compactStickerPrompt(roleId:string):string|null;
+export function stickersAsText(text:unknown,roleId:string):string;

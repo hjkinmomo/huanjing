@@ -1,0 +1,8 @@
+{
+  "name":"hermes-role-card",
+  "private":true,
+  "type":"module",
+  "scripts":{"build":"esbuild viewer-source.js --bundle --minify --format=esm --outfile=viewer.js"},
+  "dependencies":{"three":"0.180.0"},
+  "devDependencies":{"esbuild":"0.27.7"}
+}

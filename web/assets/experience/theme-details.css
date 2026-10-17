@@ -1,0 +1,63 @@
+/* A shared component finish, with opt-in character materials. No theme owns layout or permissions. */
+.purchase-flight{position:fixed;z-index:1000;object-fit:contain;pointer-events:none;filter:drop-shadow(0 6px 12px #0002)}
+.tiles-board{position:relative}.tile-traveler{position:absolute;z-index:2;pointer-events:none;margin:0}
+[data-motion-managed=true] :is(.memory-card,.puzzle-cell,.tile,.game-result){animation:none!important}
+.gift-seal{position:absolute;left:13px;top:50%;width:62px;height:62px;margin-top:-31px;border:1px solid var(--accent);border-radius:50%;opacity:0;pointer-events:none;z-index:-1}.gift-seal::after{content:'';position:absolute;inset:7px;border:1px dashed var(--accent);border-radius:inherit}
+:root{--radius-control:10px;--radius-panel:18px;--radius-dialog:22px;--motif-image:none;--material-image:none;--motif-label:'';--control-line:color-mix(in srgb,var(--muted) 72%,var(--surface));--floating-shadow:0 16px 44px color-mix(in srgb,var(--ink) 16%,transparent)}
+*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--muted) 48%,var(--surface)) transparent}
+.page,.messages,dialog,.page textarea{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--muted) 48%,var(--surface)) transparent;overscroll-behavior:contain}
+*::-webkit-scrollbar{width:9px;height:9px}*::-webkit-scrollbar-track{background:transparent}*::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--muted) 45%,var(--surface));border:2px solid var(--bg);border-radius:10px}*::-webkit-scrollbar-thumb:hover{background:var(--muted)}*::-webkit-scrollbar-corner{background:transparent}
+button,input,select,textarea{border-radius:var(--radius-control)}dialog{border-radius:var(--radius-dialog);border:1px solid var(--control-line);box-shadow:var(--floating-shadow)}dialog::backdrop{background:color-mix(in srgb,var(--ink) 30%,transparent)}.composer,.bag-item,.memory-item{border-radius:var(--radius-panel)}.message[data-sender=user] .message-content{border-radius:16px 16px 5px 16px}
+/* Separators stay quiet; inputs and floating layers have a stronger boundary. */
+input:not([type=range]):not([type=checkbox]),select,textarea{border-color:var(--control-line)}
+.composer{border-color:var(--control-line)}.composer textarea{border:0;box-shadow:none}
+.app-header{background:var(--surface)}.app-header nav button[aria-current=page]{box-shadow:inset 0 0 0 1px var(--line)}
+.bag-item:hover:not(:disabled),.character-card:hover{border-color:var(--control-line)}
+.message[data-sender=user] .message-content{border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line))}
+dialog :is(input,select,textarea),.piano-toolbar select{border-color:var(--control-line)}
+.page :is(input,select,textarea):focus-visible{outline-offset:2px}
+button{transition:background .16s,color .16s,border-color .16s,transform .16s}button:active:not(:disabled){transform:scale(.97)}button:disabled{cursor:not-allowed}.composer:focus-within{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent)}
+.gift-receipt{position:relative;isolation:isolate}.gift-sparks{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1}.gift-sparks i{position:absolute;left:44px;top:50%;width:6px;height:6px;border:1px solid var(--accent);border-radius:1px;animation:gift-spark .85s ease-out both;animation-delay:var(--delay)}
+.puzzle-cell[data-changed=true]{animation:tile-settle .24s ease-out}.lights-board .puzzle-cell[data-changed=true]{animation:light-switch .32s ease-out}.memory-card[data-open=true]:not([data-matched=true]){animation:card-open .23s ease-out}
+@keyframes tile-settle{from{opacity:.6;transform:translateY(-5px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes light-switch{50%{transform:scale(.92);filter:brightness(1.3)}}
+@keyframes card-open{from{transform:perspective(500px) rotateY(65deg)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.puzzle-cell[data-changed=true],.memory-card[data-open=true]:not([data-matched=true]){animation:none}.game-pick-mark img{transition:none}.game-picks>button:hover .game-pick-mark img{transform:none}}
+:root[data-reduced=true] :is(.puzzle-cell[data-changed=true],.memory-card[data-open=true]:not([data-matched=true])){animation:none}:root[data-reduced=true] .game-pick-mark img{transition:none}:root[data-reduced=true] .game-picks>button:hover .game-pick-mark img{transform:none}
+:root[data-motif=shira]{--motif-label:'♡';--motif-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M60 46C21 20 46 7 60 25C74 7 99 20 60 46ZM47 26Q22 2 15 16Q28 15 29 32Q40 28 50 36M73 26Q98 2 105 16Q92 15 91 32Q80 28 70 36M8 50Q30 45 37 50M83 50Q90 45 112 50'/%3E%3C/g%3E%3C/svg%3E");--material-image:repeating-linear-gradient(128deg,transparent 0 32px,color-mix(in srgb,var(--accent) 3%,transparent) 33px,transparent 34px 65px)}
+:root[data-motif=koka]{--radius-panel:22px;--motif-label:'✿';--motif-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M53 28Q12 0 25 44Q36 51 54 35M67 28Q108 0 95 44Q84 51 66 35M54 27h12v10H54zM55 37l-9 18 12-4 3 6 4-20M68 38l9 15M6 18v8m-4-4h8M108 42v8m-4-4h8'/%3E%3C/g%3E%3C/svg%3E");--material-image:radial-gradient(color-mix(in srgb,var(--accent) 8%,transparent) .7px,transparent .9px)}
+:root[data-motif=shuyun]{--radius-panel:14px;--motif-label:'笺';--motif-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M10 48Q36 35 57 42M63 42Q86 35 110 48M60 17v30M15 16Q35 8 57 18v24Q35 31 15 39zM105 16Q85 8 63 18v24Q85 31 105 39zM24 22l24 3m-24 5 24 3m24-8 24-3m-24 11 24-3'/%3E%3C/g%3E%3C/svg%3E");--material-image:repeating-linear-gradient(0deg,transparent 0 27px,color-mix(in srgb,var(--accent) 5%,transparent) 28px,transparent 29px)}
+:root:not([data-motif=none]):not([data-theme-detail=quiet]) .page{background-image:var(--material-image);background-size:auto}
+:root[data-motif=koka]:not([data-theme-detail=quiet]) .page{background-size:16px 16px}
+:root:not([data-motif=none]):not([data-theme-detail=quiet]) :is(.leisure-top,.page-top,.conversation-header,.bag-top){position:relative}
+:root:not([data-motif=none]):not([data-theme-detail=quiet]) :is(.leisure-top,.page-top,.conversation-header,.bag-top)::after{content:'';position:absolute;bottom:-1px;left:50%;width:96px;height:46px;transform:translateX(-50%);background:var(--accent);mask:var(--motif-image) center/contain no-repeat;opacity:.34;pointer-events:none}
+:root[data-theme-detail=sticker]:not([data-motif=none]) .composer{position:relative}:root[data-theme-detail=sticker]:not([data-motif=none]) .composer::after{content:var(--motif-label);position:absolute;right:12px;top:-16px;width:28px;height:28px;display:grid;place-items:center;font-size:calc(var(--text-size,16px) * 0.8125);background:var(--raised);color:var(--accent);border:1px solid var(--line);border-radius:8px;transform:rotate(8deg);pointer-events:none}
+.theme-widget{grid-column:1/-1;max-width:620px;width:100%;text-align:left;padding:calc(18px * var(--space-scale,1)) calc(22px * var(--space-scale,1));border:1px solid var(--line);background:var(--surface);position:relative;overflow:hidden}.theme-widget strong{display:block;color:var(--accent);font-size:calc(var(--text-size,16px) * 0.9375);margin-bottom:6px}.theme-widget span{display:block;color:var(--muted);font-size:calc(var(--text-size,16px) * 0.75);line-height:1.8;padding-right:calc(90px * var(--space-scale,1))}.theme-widget small{display:block;font-size:calc(var(--text-size,16px) * 0.6875);margin-top:12px;color:var(--accent)}.theme-widget:after{content:'';position:absolute;right:20px;top:20px;width:80px;height:50px;background:var(--accent);mask:var(--motif-image) center/contain no-repeat;opacity:.4;pointer-events:none}
+:root[data-theme-detail=quiet] .theme-widget:after{display:none}
+:root:not([data-motif]) :is(.leisure-top,.page-top,.conversation-header,.bag-top)::after{display:none}
+@keyframes dialog-arrive{from{opacity:0;transform:translateY(7px) scale(.99)}to{opacity:1;transform:none}}@keyframes pair-found{50%{transform:scale(.95);background:var(--button);color:var(--button-ink)}}@keyframes gift-spark{from{opacity:0;transform:rotate(var(--angle)) translateX(15px)}25%{opacity:.7}to{opacity:0;transform:rotate(var(--angle)) translateX(65px) rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){dialog[open],.game-result,.memory-card[data-matched=true],.gift-sparks i{animation:none}.shop-art img,button{transition:none}.shop-product:hover .shop-art img{transform:none}}
+:root[data-reduced=true] :is(dialog[open],.game-result,.memory-card[data-matched=true],.gift-sparks i){animation:none}:root[data-reduced=true] :is(button,.shop-art img){transition:none}:root[data-reduced=true] .shop-product:hover .shop-art img{transform:none}
+@media(forced-colors:active){*{scrollbar-color:auto}.gift-sparks,.theme-widget:after{display:none}}
+@media(max-height:800px){.memory-board{width:min(100%,320px)}.memory-board[data-difficulty=challenge]{width:min(100%,480px)}}
+
+/* Character material follows the same semantic palette throughout the product. */
+:root[data-motif=shira]{--radius-panel:22px;--radius-control:11px;--scene-wash:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--surface)),var(--surface) 60%)}
+:root[data-motif=koka]{--radius-control:14px;--scene-wash:radial-gradient(ellipse at top right,color-mix(in srgb,var(--accent) 10%,var(--surface)),var(--surface) 70%)}
+:root[data-motif=shuyun]{--radius-control:7px;--scene-wash:linear-gradient(175deg,color-mix(in srgb,var(--accent) 7%,var(--surface)),var(--surface) 48%)}
+.conversation{box-shadow:0 12px 32px color-mix(in srgb,var(--ink) 3%,transparent)}
+:root:not([data-motif=none]) :is(.conversation-header,.manage-heading,.leisure-heading,.bag-heading){background:var(--scene-wash);border-radius:var(--radius-panel)}
+:root:not([data-motif=none]) :is(.leisure-heading,.bag-heading){padding:calc(22px * var(--space-scale,1)) calc(24px * var(--space-scale,1));margin-block:12px 18px;border:1px solid var(--line)}
+:root:not([data-motif=none]) .conversation-header{padding:calc(16px * var(--space-scale,1)) calc(18px * var(--space-scale,1));margin-bottom:8px}
+:root[data-motif=shira] :is(.shop-product,.story-card){border-radius:18px 6px 18px 6px}
+:root[data-motif=koka] :is(.shop-product,.story-card){border-radius:20px;border-style:dashed}
+:root[data-motif=shuyun] :is(.shop-product,.story-card){border-radius:6px;box-shadow:4px 4px 0 var(--raised)}
+:root[data-motif=shuyun] .story-dialogue{border-radius:0;border-left-width:2px}
+:root[data-motif=koka] .story-dialogue{border-radius:18px;border:1px dashed var(--line)}
+.companion-path{display:flex;align-items:center;flex-wrap:wrap;gap:calc(6px * var(--space-scale,1)) calc(16px * var(--space-scale,1));margin:0 0 20px;padding:calc(10px * var(--space-scale,1)) calc(16px * var(--space-scale,1));border:1px solid var(--line);border-radius:var(--radius-control);background:var(--surface);font-size:calc(var(--text-size,16px) * 0.75);line-height:1.6}
+.companion-path-name{color:var(--muted);padding-right:calc(14px * var(--space-scale,1));border-right:1px solid var(--line);font-size:calc(var(--text-size,16px) * 0.6875);letter-spacing:.08em}
+.companion-path a{color:var(--accent);padding:calc(8px * var(--space-scale,1)) 0;text-decoration:none;border-bottom:1px solid transparent}
+.companion-path a:hover{border-color:var(--accent)}.companion-path a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.theme-scope-note{font-size:calc(var(--text-size,16px) * 0.75);line-height:1.8;color:var(--muted);margin:0 0 12px}.theme-use-global{font-size:calc(var(--text-size,16px) * 0.75);color:var(--accent);padding:calc(10px * var(--space-scale,1)) 0;margin:8px 0}
+.game-story-link{display:block;width:fit-content;margin:22px auto 4px;padding:calc(12px * var(--space-scale,1)) 0;color:var(--accent);font-size:calc(var(--text-size,16px) * 0.8125);border-bottom:1px solid var(--line);text-decoration:none}
+@media(max-width:600px){.companion-path{gap:calc(4px * var(--space-scale,1)) calc(14px * var(--space-scale,1));padding:calc(8px * var(--space-scale,1)) calc(12px * var(--space-scale,1))}.companion-path-name{width:100%;border:0}.companion-path a{min-height:40px;display:flex;align-items:center}:root:not([data-motif=none]) :is(.leisure-heading,.bag-heading){padding:calc(16px * var(--space-scale,1))}.conversation-header{box-shadow:none}}

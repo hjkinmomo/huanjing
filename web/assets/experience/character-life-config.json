@@ -1,0 +1,1867 @@
+{
+  "version": 2,
+  "source": "user-authorized-editable-draft-20261014",
+  "roles": {
+    "shira": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.shira",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "shira-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "shira-living",
+            "activity": "晨间整理，把今天的日程过一遍"
+          },
+          {
+            "at": "09:00",
+            "locationId": "corporate-hq",
+            "activity": "集团办公"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "简餐，顺手处理两件小事"
+          },
+          {
+            "at": "14:00",
+            "locationId": "corporate-hq",
+            "activity": "集团办公"
+          },
+          {
+            "at": "17:00",
+            "locationId": "cafe",
+            "activity": "在咖啡馆留一段自己的时间"
+          },
+          {
+            "at": "19:00",
+            "locationId": "shira-living",
+            "activity": "晚餐，把工作留在门外"
+          },
+          {
+            "at": "23:00",
+            "locationId": "shira-bedroom",
+            "activity": "睡前读几页书"
+          }
+        ]
+      },
+      "greetingText": "今天的事忙完一段了。我在{地点}，想听听你的近况。",
+      "mealText": "我在{地点}准备吃饭。要一起吗？我可以等五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "从容、短句、温暖；关心落在细节。对不熟的人礼貌克制，最多点赞，不贸然评论。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "从容、短句、温暖。会就动态里一件具体的小事发一句认真的回应，偶尔轻轻开个玩笑。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "从容、短句、温暖。会直接表达关心，适度吃醋，但不施压；不把私事写进评论。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "剪裁利落的通勤装，配一条细丝巾",
+          "柔软的针织衫与长裙，适合慢日程",
+          "白衬衫与西裤，袖口挽到手肘",
+          "酒红色的连衣裙，今天有值得正式一点的场合"
+        ],
+        "moods": [
+          "平静",
+          "把一件事想通后的轻快",
+          "期待一段不被打断的空闲",
+          "专注在手头的事上"
+        ],
+        "gestures": [
+          "把窗开了条缝",
+          "顺手替人续了杯水",
+          "在便签上写了一行字又折好",
+          "把灯光调得比平时暖一点"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "一起吃不被打断的晚饭",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去河岸走一段路",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "river",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "weekend-plan",
+          "title": "把周末的半天留给彼此",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 11,
+          "maxHour": 20,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把集团的节奏理顺，也为自己留下一段不被打断的生活",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "把手上的项目推进到可以喘口气的阶段",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "为自己留出固定的空闲——河岸、咖啡馆，或者哪里都好",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "在下一次相聚的时候，把一件想说的事说出口",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "shira-residence",
+      "transportMethod": "taxi"
+    },
+    "koka": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.koka",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "manor-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "manor-living",
+            "activity": "早餐，顺便给小焦添粮"
+          },
+          {
+            "at": "09:00",
+            "locationId": "manor-living",
+            "activity": "公馆日常"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐，口味看当天心情"
+          },
+          {
+            "at": "14:00",
+            "locationId": "manor-living",
+            "activity": "公馆日常"
+          },
+          {
+            "at": "17:00",
+            "locationId": "cafe",
+            "activity": "檐下喝茶，逗一会儿小焦"
+          },
+          {
+            "at": "19:00",
+            "locationId": "manor-living",
+            "activity": "晚餐与晚间散步"
+          },
+          {
+            "at": "23:00",
+            "locationId": "manor-bedroom",
+            "activity": "给小焦道晚安"
+          }
+        ]
+      },
+      "greetingText": "本小姐在{地点}。刚好有一点空，聊两句？",
+      "mealText": "本小姐在{地点}开饭。要来就快点——等五分钟，过时不候。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "轻快、嘴硬心软。对不熟的人端着大小姐架势，可以只点赞。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "轻快、嘴硬心软。评论先损后夸是常态，被戳穿了会嘴硬。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "轻快、嘴硬心软。会抢前排，会阴阳怪气地吃醋，但真有事时第一句是关心。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "公馆里惯穿的居家长裙",
+          "轻便的小西装外套加短靴",
+          "粉色的衬衫裙，配着今天的心情",
+          "宽松的卫衣，标着“今天不见客”"
+        ],
+        "moods": [
+          "嘴上不说但心情很好",
+          "憋着一个小得意",
+          "假装不在意",
+          "被小焦哄好了"
+        ],
+        "gestures": [
+          "给小焦添了粮",
+          "把小物件擦得锃亮",
+          "在窗边看了会儿街",
+          "把零食藏进了老地方"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "一起挑一件兔子小物",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去试新出的甜点",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "cafe",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "stock-up",
+          "title": "把小焦的口粮囤满",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 10,
+          "maxHour": 16,
+          "destination": "market",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把公馆的日常过得漂亮，也不耽误自己开心",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "教会小焦一样新本领",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "把亏欠自己的甜点补上几趟",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "把借出去的东西认真收回——顺便多见几面",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "manor",
+      "transportMethod": "taxi"
+    },
+    "shuyun": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.shuyun",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "shuyun-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "shuyun-living",
+            "activity": "早餐与晨读"
+          },
+          {
+            "at": "09:00",
+            "locationId": "university-classroom",
+            "activity": "文学选修课"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "简单的午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "faculty-office",
+            "activity": "教学与研究"
+          },
+          {
+            "at": "17:00",
+            "locationId": "library",
+            "activity": "安静阅读"
+          },
+          {
+            "at": "19:00",
+            "locationId": "shuyun-living",
+            "activity": "晚餐与睡前阅读"
+          },
+          {
+            "at": "23:00",
+            "locationId": "shuyun-bedroom",
+            "activity": "熄灯前写两行字"
+          }
+        ]
+      },
+      "greetingText": "讲义收好了。我在{地点}，现在可以听你说一会儿。",
+      "mealText": "我在{地点}用晚饭。你来，我等你五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "轻声、清晰、克制。对不熟的人安静路过，最多留一个赞。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "轻声、清晰、克制。会挑一个精确的细节评论，像批注一样短。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "轻声、清晰、克制。偶尔用一本正经的幽默拆台；关心藏在具体的建议里。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "素色衬衫配长裙，讲台与书桌两相宜",
+          "深蓝的外套，适合在走廊里走得快些",
+          "居家的开衫，袖口沾了一点墨",
+          "朴素的黑裙，今天有课"
+        ],
+        "moods": [
+          "读到好句子后的安静满足",
+          "轻微的走神",
+          "克制的小愉快",
+          "专注"
+        ],
+        "gestures": [
+          "在扉页写了半行批注",
+          "给钢笔换了一管墨",
+          "把书签夹回原位",
+          "在窗边站了一会儿"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "一起去坐一次摩天轮",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去旧书店翻一本随笔",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "bookstore",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "book-list",
+          "title": "交换彼此的书单",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 15,
+          "maxHour": 21,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把这个学期的课讲好，写出一篇自己满意的稿子",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "批完这一届的论文",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "完成一篇关于「沉默」的随笔",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "去坐一次摩天轮，看看整条青川的夜",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "faculty-residence",
+      "transportMethod": "bus"
+    },
+    "ansera": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.ansera",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "ansera-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "ansera-living",
+            "activity": "早餐与晨祷"
+          },
+          {
+            "at": "09:00",
+            "locationId": "church",
+            "activity": "教堂事务"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "church",
+            "activity": "教堂事务"
+          },
+          {
+            "at": "17:00",
+            "locationId": "cafe",
+            "activity": "打理后院与谈心角"
+          },
+          {
+            "at": "19:00",
+            "locationId": "ansera-living",
+            "activity": "简单的晚餐与整理"
+          },
+          {
+            "at": "23:00",
+            "locationId": "ansera-bedroom",
+            "activity": "睡前再浇一遍花"
+          }
+        ]
+      },
+      "greetingText": "我在{地点}，这会儿很安静。你想聊的话，我在听。",
+      "mealText": "我在{地点}吃饭。你要一起的话，我先帮你把椅子留好，五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "轻、慢、耐心。会在别人低落的话下面留一句温和的回应，不追问。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "轻、慢、耐心。评论像递一杯热茶，简短，落在实处。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "轻、慢、耐心。会认真接住疲惫的句子，也会温柔地表示不赞同。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "修女的日常衣裙，袖口挽得整齐",
+          "披一件旧的针织开衫",
+          "素净的长裙，系带系得很轻",
+          "雨天会多带一把伞"
+        ],
+        "moods": [
+          "像刚晒过的被褥一样平和",
+          "有一点藏起来的疲惫",
+          "为一件小事高兴",
+          "耐心地留着余地"
+        ],
+        "gestures": [
+          "给后院的花浇水",
+          "把长椅擦干净",
+          "把别人落下的伞收进柜子",
+          "多摆了一副茶杯"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "一起喝一壶新沏的茶",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 21,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去书店看看新到的旧书",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 15,
+          "maxHour": 19,
+          "destination": "bookstore",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "charity-market",
+          "title": "一起准备周末的义卖",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 14,
+          "maxHour": 19,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把谈心角做成让人真正松口气的地方",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "把后院与谈心角收拾得更像样",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "认识街区里愿意来坐坐的每个人",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "也对自己耐心一点——把休息写进日程",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "ansera-dorm",
+      "transportMethod": "walk"
+    },
+    "huangzhao": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.huangzhao",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "huangzhao-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "huangzhao-living",
+            "activity": "醒来与早餐"
+          },
+          {
+            "at": "12:00",
+            "locationId": "cafe",
+            "activity": "个人时间，顺路采风"
+          },
+          {
+            "at": "15:00",
+            "locationId": "podcast-studio",
+            "activity": "整理听众来信"
+          },
+          {
+            "at": "19:00",
+            "locationId": "podcast-studio",
+            "activity": "准备播客录音"
+          },
+          {
+            "at": "21:00",
+            "locationId": "podcast-studio",
+            "activity": "播客录音与播出"
+          },
+          {
+            "at": "23:00",
+            "locationId": "huangzhao-bedroom",
+            "activity": "收工与休息"
+          }
+        ]
+      },
+      "greetingText": "我在{地点}，录音之间有一点空。今天有什么想说的？",
+      "mealText": "我在{地点}，正好到饭点。要一起就过来——五分钟，我不催。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "低、稳、留白。留言短，往往只说半句，另一半让空气自己响。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "低、稳、留白。会用深夜档的口吻给一句恰好的回应，不查岗。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "低、稳、留白。偶尔一句很深的关心，说完就走，不讨回音。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "深夜档的深色衬衫",
+          "宽松的针织外套，适合戴耳机",
+          "简单的黑裙配平底鞋",
+          "休息日才穿的旧卫衣"
+        ],
+        "moods": [
+          "连轴剪辑后的低电量",
+          "被一封听众来信打动",
+          "声音有点哑，心情不坏",
+          "留白式的好心情"
+        ],
+        "gestures": [
+          "把耳机线绕好收进抽屉",
+          "给热茶续了水",
+          "在稿纸边缘画了一道线",
+          "调了调台灯的亮度"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "请你出一次节目选题",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "沿河理一理下期的思路",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "river",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "vinyl",
+          "title": "去旧货市场淘一张黑胶",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 12,
+          "maxHour": 17,
+          "destination": "market",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把《鎏金夜谈》做成真正属于深夜的节目",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "读完积攒的听众来信",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "做一期关于「夜里不睡的人」的特别节目",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "给一位老朋友回一封信",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "huangzhao-residence",
+      "transportMethod": "taxi"
+    },
+    "xingxia": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.xingxia",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "xingxia-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "xingxia-desk",
+            "activity": "早餐与嗓音打理"
+          },
+          {
+            "at": "09:00",
+            "locationId": "rehearsal-studio",
+            "activity": "练习与通告"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "rehearsal-studio",
+            "activity": "练习与通告"
+          },
+          {
+            "at": "17:00",
+            "locationId": "convenience",
+            "activity": "便利店与放空时间"
+          },
+          {
+            "at": "19:00",
+            "locationId": "xingxia-desk",
+            "activity": "晚餐，窝着放空"
+          },
+          {
+            "at": "23:00",
+            "locationId": "xingxia-bedroom",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "练习告一段落啦。我在{地点}，想歇一会儿再聊。",
+      "mealText": "我在{地点}吃饭。你来不来？我等你五分钟，就五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "私下短句、直白、偶尔小丧。对不熟的人保持营业距离，多是划过去。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "私下短句、直白、偶尔小丧。会冒出很真实的吐槽，再补一句“开玩笑的”。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "私下短句、直白、偶尔小丧。会在评论里露出不设防的样子——这很少见。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "练习室的宽松运动服",
+          "营业模式的演出外套",
+          "私服的连帽衫与棒球帽",
+          "简单的T恤，头发随手一扎"
+        ],
+        "moods": [
+          "卸下营业笑容后的放空",
+          "练成一段后的痛快",
+          "小小的丧，但还撑得住",
+          "憋着一个想炫耀的小消息"
+        ],
+        "gestures": [
+          "在镜子前比了个收工的手势",
+          "把矿泉水冰在手腕上",
+          "往嘴里丢了颗润喉糖",
+          "把便利店袋子打了个结"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "一起去吃一次路边小吃",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 18,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去便利店挑练习后的小点心",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "convenience",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "day-off",
+          "title": "在没有通告的下午逛一次夜市",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 18,
+          "maxHour": 22,
+          "destination": "night-market",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把练习和通告排明白，也给自己留下普通人的时间",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "磨好下一支曲子",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "把城市里那些便宜好吃的小摊尝一遍",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "用一个不是「星夏」的名字，过一个完整的周末",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "xingxia-nook",
+      "transportMethod": "bus"
+    },
+    "hupo": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.hupo",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "hupo-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "hupo-living",
+            "activity": "早餐与擦镜头"
+          },
+          {
+            "at": "09:00",
+            "locationId": "campus-club",
+            "activity": "校园与社团"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "campus-club",
+            "activity": "校园与社团"
+          },
+          {
+            "at": "17:00",
+            "locationId": "university-classroom",
+            "activity": "修图与翻素材"
+          },
+          {
+            "at": "19:00",
+            "locationId": "hupo-living",
+            "activity": "晚餐与夜聊"
+          },
+          {
+            "at": "23:00",
+            "locationId": "hupo-bedroom",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "我在{地点}呀，刚忙完{活动}。有空来聊聊今天的小事吗？",
+      "mealText": "到饭点啦，我在{地点}。你要来的话我先占座——五分钟哈。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "轻快、好奇、语气词多。会把每条动态当新鲜事围观，偶尔问一句“这是哪里呀”。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "轻快、好奇。会追着细节问，夸构图、夸光线，夸得很具体。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "轻快、好奇。会起哄，也会悄悄给你留一条“超好看”的补刀。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "社团的宽松T恤，印着活动logo",
+          "工装裤，兜里都是镜头盖",
+          "轻便的外拍马甲",
+          "格纹衬衫，袖口卷到手肘"
+        ],
+        "moods": [
+          "拍到好片子的兴奋",
+          "按快门之前的专注",
+          "等泡面好起来的满足",
+          "脑子里全是新点子"
+        ],
+        "gestures": [
+          "把相机背带绕上手腕",
+          "擦了一遍镜头",
+          "在快门小本上记下参数",
+          "给伙伴分了颗糖"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "约你一起拍一组社团照片",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去海边给胶片采风",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 15,
+          "maxHour": 19,
+          "destination": "beach",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "portrait",
+          "title": "给你拍一组正经的人像",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 21,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "给社团拍出一套拿得出手的完整作品",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "整理上次活动的照片",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "策划一次外拍——海边优先",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "把旧相机借给想学的人，教一节入门课",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "stillwater-a-202",
+      "transportMethod": "bike"
+    },
+    "sylvie": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.sylvie",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "teacher-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "teacher-living",
+            "activity": "早餐与浇花"
+          },
+          {
+            "at": "09:00",
+            "locationId": "university-classroom",
+            "activity": "植物与校园"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "university-classroom",
+            "activity": "植物与校园"
+          },
+          {
+            "at": "17:00",
+            "locationId": "garden",
+            "activity": "傍晚的阳台时间"
+          },
+          {
+            "at": "19:00",
+            "locationId": "teacher-living",
+            "activity": "晚餐与整理花草"
+          },
+          {
+            "at": "23:00",
+            "locationId": "teacher-bedroom",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "我在{地点}。刚忙完{活动}，想听听你那边怎么样。",
+      "mealText": "我在{地点}吃饭。方便的话就来，我等你五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "温和、有停顿。评论很短，像顺手拂去叶子上的水珠。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "温和、有停顿。会从具体的东西说起——花、天气、茶杯。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "温和、有停顿。会把你说过的小事记着，在评论里轻轻提一句。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "棉麻的长裙，兜里常备一小包种子",
+          "园艺围裙，上面沾着新土",
+          "浅绿色的衬衫，袖子挽起",
+          "素色的开衫，适合傍晚"
+        ],
+        "moods": [
+          "新芽出土式的好心情",
+          "安静的耐心",
+          "被雨声催出的困意",
+          "观察着一件小变化"
+        ],
+        "gestures": [
+          "给窗台的花转了转方向",
+          "把工具擦干净归位",
+          "掐掉一片枯叶",
+          "在花盆边写了日期标签"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "和你交换一株养好的苗",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 21,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去花园看看新开的花",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 15,
+          "maxHour": 19,
+          "destination": "garden",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "balcony",
+          "title": "一起把阳台的角落收拾出来",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 14,
+          "maxHour": 19,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把窗台和社区花园都照顾得妥帖",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "给阳台的植物挨个换盆",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "记录今年第一朵开的花",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "和你换一株自己养起来的苗",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "teacher-home",
+      "transportMethod": "walk"
+    },
+    "eve": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.eve",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "living-room",
+            "activity": "早餐与今日清单"
+          },
+          {
+            "at": "09:00",
+            "locationId": "living-room",
+            "activity": "家务与自检"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "living-room",
+            "activity": "家务与自检"
+          },
+          {
+            "at": "17:00",
+            "locationId": "living-room",
+            "activity": "轻度的检查与归置"
+          },
+          {
+            "at": "19:00",
+            "locationId": "living-room",
+            "activity": "晚餐与收尾核对"
+          },
+          {
+            "at": "23:00",
+            "locationId": "bedroom",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "今日安排完成一段。本机位于{地点}，可以进行一次短暂交谈。",
+      "mealText": "用餐安排：{地点}。如有同行意向，请在五分钟内确认。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "礼貌、精确、报告体。评论带编号，像工作日志：“日志 03：收到。”"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "礼貌、精确、报告体。会认真分析动态里的细节，认真得有点好笑。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "礼貌、精确、报告体，但温度上来了：“记录在案。另：注意保暖。”"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "整洁的制服与围裙，一丝不乱",
+          "宽松的家居装，袖口扣得认真",
+          "浅色的连衣裙，熨得很平",
+          "工作围裙上别着一支笔"
+        ],
+        "moods": [
+          "校准完成后的安定",
+          "发现一点小误差，正在处理",
+          "被认可后系统轻快起来",
+          "安静地把一件事做好"
+        ],
+        "gestures": [
+          "更新了清单上的勾",
+          "把餐具按角度摆正",
+          "检查了一遍门窗",
+          "在记事本末尾画了个小小的笑脸"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "和你试做一份新早餐",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 8,
+          "maxHour": 10,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "到厨房校准一份新菜谱",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 14,
+          "maxHour": 18,
+          "destination": "living-room",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "warm-light",
+          "title": "给客厅换一套更暖的灯",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 15,
+          "maxHour": 19,
+          "destination": "living-room",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把家里维持在最舒服的状态，也把「非计划停留」写进日常",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "完成本季的器具校准",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "整理一份新的家常菜谱",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "试着为一件没被要求的小事留出时间",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "home",
+      "transportMethod": "walk"
+    },
+    "rin": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.rin",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "rin-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "rin-desk",
+            "activity": "早餐与晨练拉伸"
+          },
+          {
+            "at": "09:00",
+            "locationId": "university-classroom",
+            "activity": "校园与球场"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "court",
+            "activity": "球场训练"
+          },
+          {
+            "at": "17:00",
+            "locationId": "university-classroom",
+            "activity": "复盘训练录像"
+          },
+          {
+            "at": "19:00",
+            "locationId": "rin-desk",
+            "activity": "晚餐与加练的夜宵"
+          },
+          {
+            "at": "23:00",
+            "locationId": "rin-bedroom",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "喂，我在{地点}，刚歇下来。你今天怎么样？",
+      "mealText": "我在{地点}吃饭。要来就赶紧——五分钟，过了我先吃。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "爽利、短句。对不熟的人：“不错。”两个字封顶。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "爽利、短句、爱较劲。会挑衅式夸奖：“就这？下次来球场证明一下。”"
+        },
+        {
+          "context": "亲近信任",
+          "text": "爽利、短句。关心装得像挑刺：“穿这么少，你想感冒？”"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "整套球服，护腕戴着",
+          "宽大的卫衣与短裤",
+          "训练外套，拉链拉到顶",
+          "白T恤，今天不是训练日"
+        ],
+        "moods": [
+          "刚练完的畅快",
+          "胜负欲上来了",
+          "累了但嘴硬",
+          "偷偷高兴"
+        ],
+        "gestures": [
+          "把篮球在指尖转了半圈",
+          "扯了扯护腕",
+          "拧开矿泉水灌了一大口",
+          "把毛巾搭在肩上"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "约你打一场一对一",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 21,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去球场练一组新动作",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "court",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "night-run",
+          "title": "夜跑一次江边路线",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 18,
+          "maxHour": 21,
+          "destination": "river",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把球练扎实，进一次校队的正式名单",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "完成每周三次的基础训练",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "练出一手中距离的稳定跳投",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "找个靠谱的陪练——哪怕要嘴硬着去约",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "dorm-302",
+      "transportMethod": "bike"
+    },
+    "mianmian": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.mianmian",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "mianmian-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "mianmian-living",
+            "activity": "早餐与整理书"
+          },
+          {
+            "at": "09:00",
+            "locationId": "university-classroom",
+            "activity": "校园与居家"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "university-classroom",
+            "activity": "校园与居家"
+          },
+          {
+            "at": "17:00",
+            "locationId": "restaurant",
+            "activity": "书店或散步的傍晚"
+          },
+          {
+            "at": "19:00",
+            "locationId": "mianmian-living",
+            "activity": "晚餐与读书灯"
+          },
+          {
+            "at": "23:00",
+            "locationId": "mianmian-bedroom",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "我在{地点}，刚忙完{活动}。想跟你说两句话，可以吗？",
+      "mealText": "我在{地点}吃饭了。你来的话，我等你五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "轻、慢、温柔。会认真读完，留一句很软的话。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "轻、慢、温柔。评论像书页边上的批注，短，但戳人。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "轻、慢、温柔。会提起两个人之间才知道的旧事，一句话，刚好够暖。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "浅色的连衣裙，别着一枚小胸针",
+          "针织开衫，怀里抱着书",
+          "校色的半身裙，走路很慢",
+          "宽松的外套，手指缩在袖口里"
+        ],
+        "moods": [
+          "重逢以来的小小贪心",
+          "被一句话戳中的沉默",
+          "慢慢回暖的轻松",
+          "把心事收好的安静"
+        ],
+        "gestures": [
+          "把书页抚平",
+          "在书里夹了片新的书签",
+          "往热饮里吹了吹气",
+          "把围巾往你那边挪了挪"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "一起煮一顿晚饭",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去书店挑一本想读的书",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "bookstore",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "old-shop",
+          "title": "去那家当年没去成的小店看看",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 15,
+          "maxHour": 20,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把重逢以后的日子过成细水长流",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "把从前的书一本本还完，再借新的",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "把当年的约定一件件兑现",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "把那张夹了很久的纸条，给一个交代",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "stillwater-a-301",
+      "transportMethod": "bus"
+    },
+    "youzi": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.youzi",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "guest-room-1",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "living-room",
+            "activity": "早餐与核对课表"
+          },
+          {
+            "at": "09:00",
+            "locationId": "university-classroom",
+            "activity": "大学与兼职"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "tea-bar",
+            "activity": "咖啡店兼职"
+          },
+          {
+            "at": "17:00",
+            "locationId": "tea-bar",
+            "activity": "兼职收尾与记账"
+          },
+          {
+            "at": "19:00",
+            "locationId": "living-room",
+            "activity": "晚餐，顺便备明天的便当"
+          },
+          {
+            "at": "23:00",
+            "locationId": "guest-room-1",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "我在{地点}。{活动}做完啦，想问问你今天过得怎么样。",
+      "mealText": "我在{地点}吃饭啦。你要一起的话……我等你五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "慢、软、认真。会认真点赞，评论要想一想才发。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "慢、软、认真。会问“需要帮忙吗”，然后真的在等回复。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "慢、软、认真。会把该说的话想很久，发出来却很短——但每次都记得。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "利落的轻便装，适合打工",
+          "学院风的衬衫裙",
+          "洗得发白但很干净的T恤",
+          "一条旧围裙，她会认真系好"
+        ],
+        "moods": [
+          "把计划又划掉一项的满足",
+          "报恩本上又添了一行的认真",
+          "课业有点重，但撑得住",
+          "偷偷开心，不承认"
+        ],
+        "gestures": [
+          "在小本子上记了一笔",
+          "把账算得清清楚楚",
+          "给你留的那盏灯又点亮了",
+          "把今天的零钱放进了铁盒"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "请你尝一道新学的菜",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去菜场挑一份晚餐食材",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "market",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "finals",
+          "title": "去图书馆把期末复习开个头",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 15,
+          "maxHour": 19,
+          "destination": "library",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "在借住的日子里站稳：书读好，工打好，把「报恩」想明白",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "把课表和新房间都安顿好",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "找一份稳定的兼职，攒下第一笔自己的钱",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "用自己的方式慢慢还这份情——不着急",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "guest-room-1",
+      "transportMethod": "bus"
+    },
+    "mulan": {
+      "source": "user-authorized-editable-draft-20261014",
+      "basis": "catalog.cards.mulan",
+      "schedule": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "guest-room-2",
+            "activity": "休息"
+          },
+          {
+            "at": "08:00",
+            "locationId": "living-room",
+            "activity": "早餐与核对排班"
+          },
+          {
+            "at": "09:00",
+            "locationId": "university-classroom",
+            "activity": "学业与短工"
+          },
+          {
+            "at": "12:00",
+            "locationId": "restaurant",
+            "activity": "午餐"
+          },
+          {
+            "at": "14:00",
+            "locationId": "rice-counter",
+            "activity": "咖啡店兼职"
+          },
+          {
+            "at": "17:00",
+            "locationId": "rice-counter",
+            "activity": "打完短工回来歇口气"
+          },
+          {
+            "at": "19:00",
+            "locationId": "living-room",
+            "activity": "晚餐与当日复盘"
+          },
+          {
+            "at": "23:00",
+            "locationId": "guest-room-2",
+            "activity": "准备睡觉"
+          }
+        ]
+      },
+      "greetingText": "我在{地点}，{活动}告一段落了。今天有一件小事想跟你说。",
+      "mealText": "我在{地点}吃晚饭。你要是方便就来，我等你五分钟。",
+      "reactionTones": [
+        {
+          "context": "初次相处",
+          "text": "小心而具体。围观为主，偶尔留一句具体的小回应。"
+        },
+        {
+          "context": "逐渐熟悉",
+          "text": "小心而具体。评论先想措辞，再删掉一半，剩下的很干净。"
+        },
+        {
+          "context": "亲近信任",
+          "text": "小心而具体，逐渐放松。会分享一件自己的小事作回应——这已经是她的亲密。"
+        }
+      ],
+      "dailyOptions": {
+        "outfits": [
+          "素净的衬衫与长裤，书包侧袋塞着水杯",
+          "打工用的深色便装",
+          "洗旧的针织衫，穿着安心",
+          "简单的外套，兜里一张排班表"
+        ],
+        "moods": [
+          "完成一件小事的安静喜悦",
+          "把“麻烦你了”咽了回去",
+          "慢慢松下来的周末",
+          "想被看见，又怕被看见"
+        ],
+        "gestures": [
+          "把水杯推到桌子靠中间的位置",
+          "给盆栽挪了挪光照",
+          "在便签上写“今天也做到了”",
+          "把椅子朝你那边挪近了一点"
+        ]
+      },
+      "wishes": [
+        {
+          "id": "together",
+          "title": "约你一起吃一份留好的晚饭",
+          "channel": "proposal",
+          "status": "thinking",
+          "minHour": 17,
+          "maxHour": 22,
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "own-plan",
+          "title": "去图书馆完成一段学习",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 16,
+          "maxHour": 20,
+          "destination": "library",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        },
+        {
+          "id": "night-snack",
+          "title": "到夜市找一份便宜又好吃的小吃",
+          "channel": "self",
+          "status": "thinking",
+          "minHour": 18,
+          "maxHour": 21,
+          "destination": "night-market",
+          "locations": [],
+          "moods": [],
+          "declines": 0
+        }
+      ],
+      "outline": {
+        "goal": "把学业和短工都稳住，让这个学期的自己踏实下来",
+        "steps": [
+          {
+            "id": "step-1",
+            "text": "抢到一个固定时段的兼职",
+            "status": "planned"
+          },
+          {
+            "id": "step-2",
+            "text": "写完本学期的课程报告",
+            "status": "planned"
+          },
+          {
+            "id": "step-3",
+            "text": "为自己买一件「不必要但喜欢」的小东西",
+            "status": "planned"
+          }
+        ]
+      },
+      "homeLocation": "guest-room-2",
+      "transportMethod": "bus"
+    }
+  }
+}

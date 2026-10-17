@@ -1,0 +1,1 @@
+export function mayPlayNotification(p,hour,last,now,preview=false){return p.doNotDisturb!==true&&p.sound!==false&&Number(p.volume)>0&&now-last>=500&&(preview||p.quietHours===false||hour==null||hour>=8&&hour<23);}

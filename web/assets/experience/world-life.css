@@ -1,0 +1,74 @@
+/* The settings column has one scrolling owner. Former two-column sticky cards
+   must never attach to the same offset in the current vertical flow. */
+:root #page-settings .settings-layout>.settings-secondary{position:static;inset:auto;min-height:auto;flex:none;margin:0}
+:root #page-settings .settings-secondary :is(.mcp-add,.mcp-task){position:static;min-width:0}
+:root #page-settings .settings-secondary input:not([type=checkbox]),:root #page-settings .settings-secondary textarea{max-width:100%;box-sizing:border-box}
+:root .contact-surface{display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;position:relative}
+:root .contact-surface>.reading-area{flex:1;min-height:0}
+:root .contact-surface[data-channel=phone]{border:1px solid var(--line);border-radius:18px;background:color-mix(in srgb,var(--raised) 55%,var(--surface));padding:0 14px 10px;box-shadow:0 8px 22px #0000000c}
+:root .phone-contact-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 4px;border-bottom:1px solid var(--line);flex:none}
+:root .phone-contact-header>div{display:grid;grid-template-columns:32px 1fr;column-gap:9px;align-items:center}
+:root .phone-contact-icon{grid-row:span 2;font-size:calc(var(--text-size,16px)*1.2);color:var(--accent)}
+:root .phone-contact-header strong{font-size:calc(var(--text-size,16px)*.94);font-weight:600}
+:root .phone-contact-header small{font-size:calc(var(--text-size,16px)*.73);color:var(--muted);margin-top:3px}
+:root .phone-contact-header button,:root .location-gate button{border:1px solid var(--line);padding:7px 12px;border-radius:8px;font-size:calc(var(--text-size,16px)*.78);background:var(--surface)}
+:root .location-gate{margin:12px 0;padding:14px 16px;border:1px solid var(--line);background:var(--raised);border-radius:12px;flex:none;line-height:1.75;font-size:calc(var(--text-size,16px)*.82)}
+:root .location-gate strong{font-weight:500}
+:root .location-gate p{margin:4px 0 10px;color:var(--muted);font-size:calc(var(--text-size,16px)*.79)}
+:root .location-gate>div{display:flex;gap:8px;flex-wrap:wrap}
+:root .message-channel{font-size:calc(var(--text-size,16px)*.66);border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--accent)}
+:root .dock-view-tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);padding:10px 0 12px;margin-bottom:14px}
+:root .dock-view-tabs button{flex:1;border-radius:8px;padding:9px 12px;font-size:calc(var(--text-size,16px)*.82);color:var(--muted)}
+:root .dock-view-tabs button[aria-pressed=true]{background:var(--raised);color:var(--accent);box-shadow:inset 0 0 0 1px var(--line)}
+:root .dock-wallet{display:flex;align-items:baseline;gap:12px;padding:10px 0 18px;border-bottom:1px solid var(--line)}
+:root .dock-wallet>span{color:var(--muted);font-size:calc(var(--text-size,16px)*.8)}
+:root .dock-wallet strong{font-variant-numeric:tabular-nums;font-size:calc(var(--text-size,16px)*1.45);font-weight:500}
+:root .dock-wallet button{margin-left:auto;font-size:calc(var(--text-size,16px)*.76);color:var(--accent)}
+:root .dock-world-time{color:var(--muted);font-variant-numeric:tabular-nums}
+:root .dock-positions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+:root .dock-positions button{text-align:left;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--raised);min-width:0}
+:root .dock-positions :is(span,strong,small){display:block;overflow-wrap:anywhere}
+:root .dock-positions span,:root .dock-positions small{color:var(--muted);font-size:calc(var(--text-size,16px)*.74);line-height:1.8}
+:root .dock-positions strong{font-weight:500;font-size:calc(var(--text-size,16px)*.93);margin-block:6px}
+:root .dock-life-actions{display:flex;flex-wrap:wrap;gap:8px;margin-block:10px}
+:root .dock-life-actions button,:root .dock-schedule form button{border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-size:calc(var(--text-size,16px)*.78)}
+:root .dock-schedule,:root .dock-position-history{margin-block:18px;border-top:1px solid var(--line);padding-top:15px;font-size:calc(var(--text-size,16px)*.8)}
+:root .dock-schedule summary,:root .dock-position-history summary{cursor:pointer;color:var(--accent)}
+:root .schedule-row{display:grid;grid-template-columns:4em 1fr;gap:5px 12px;padding:10px 0;border-bottom:1px solid var(--line)}
+:root .schedule-row time{font-variant-numeric:tabular-nums;grid-row:span 2;color:var(--muted)}
+:root .schedule-row small{color:var(--muted)}
+:root .dock-schedule textarea{width:100%;box-sizing:border-box;margin-top:8px;font: .76rem/1.65 ui-monospace,monospace;border:1px solid var(--line);border-radius:8px;padding:12px;resize:vertical}
+:root .dock-status [role=status]{color:var(--accent);overflow-wrap:anywhere}
+:root .dock-bag-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+:root .dock-bag-grid button{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--raised);min-width:0;text-align:left}
+:root .dock-bag-grid img{width:100%;height:75px;object-fit:contain;display:block;margin-bottom:7px}
+:root .dock-bag-grid strong{font-weight:500;font-size:calc(var(--text-size,16px)*.79);display:block;line-height:1.65}
+:root .dock-bag-grid span{font-size:calc(var(--text-size,16px)*.75);color:var(--muted)}
+:root .dock-bag-manage{margin-top:18px;padding:9px 0;color:var(--accent);font-size:calc(var(--text-size,16px)*.8)}
+:root .dock-empty-bag{padding:30px 0;color:var(--muted)}
+:root .scene-dock-panel .world-tree-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:320px}
+:root .scene-dock-panel .world-tree-choices button{padding:12px}
+:root .city-atlas-v2{border-radius:12px;color:#373d35;overflow:hidden}
+:root .city-atlas-v2 .atlas-area-name{fill:#526255;font-size:15px;letter-spacing:2px}
+:root .atlas-route-line{fill:none;stroke:#657264;stroke-width:2;opacity:.3;stroke-dasharray:4 6;pointer-events:none}
+:root .atlas-destination{cursor:pointer;outline:none}
+:root .atlas-destination>circle{transition:stroke-width .15s}
+:root .atlas-destination:is(:hover,:focus-visible)>circle{stroke:#b97945;stroke-width:4}
+:root .atlas-place-name text{fill:#313831;font-size:17px;font-weight:500}
+:root .atlas-north text{font:14px Georgia,serif;fill:#424c42}
+:root .atlas-key{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:calc(var(--text-size,16px)*.73);color:var(--muted)}
+:root .atlas-key span{display:flex;align-items:center;gap:6px}
+:root .atlas-key i{width:9px;height:9px;border-radius:50%;background:#383b35}
+:root .atlas-key i[data-actor=user]{background:#317b9b}
+:root .atlas-key i[data-actor=character]{background:#b85965}
+:root .atlas-selection{font-size:calc(var(--text-size,16px)*.9);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:0}
+:root .atlas-selection small{font-size:calc(var(--text-size,16px)*.72);color:var(--muted);margin-left:auto}
+:root .world-directory-record :is(p,dd){line-height:1.8}
+:root .city-atlas-heading{margin:12px 0 8px}
+@media(max-width:700px){:root .phone-contact-header{padding:10px 0}:root .dock-bag-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){:root .atlas-destination>circle{transition:none}}
+
+:root .atlas-position-tools{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+:root .atlas-position-tools button{font-size:calc(var(--text-size,16px)*.76);padding:8px 12px;border:1px solid var(--line);border-radius:7px}
+:root .atlas-place-name[data-subtle=true] text{font-size:15px;fill:#4c584a}
+:root .atlas-place-name[data-subtle=true] rect{fill:#fffaf0;fill-opacity:.94;stroke:none}

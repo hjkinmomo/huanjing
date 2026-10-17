@@ -1,0 +1,129 @@
+/* Sketch-led Shira layout. Other characters and manually imported themes are untouched. */
+.character-top-actions:empty, .character-daynight[hidden], .message-user-avatar { display: none; }
+html[data-character-layout="shira"] { --shira-rail: clamp(248px, 24vw, 352px); --shira-sidebar: 176px; }
+html[data-character-layout="shira"] .shell { grid-template-columns: var(--shira-sidebar) minmax(0, 1fr); }
+html[data-character-layout="shira"] .sidebar { grid-template-rows: auto minmax(0, 1fr) auto; padding: 18px 12px; gap: 22px; }
+html[data-character-layout="shira"] .role-list { align-self: start; max-height: 100%; overflow: auto; }
+html[data-character-layout="shira"] .brand { min-height: 38px; }
+html[data-character-layout="shira"] .brand-mark { width: 32px; height: 32px; }
+html[data-character-layout="shira"] .brand small { display: none; }
+html[data-character-layout="shira"] .topbar { display: grid; grid-template-columns: minmax(180px, 1fr) auto; gap: 0 16px; padding: 12px 22px; min-height: 74px; }
+html[data-character-layout="shira"] .topbar-context { min-width: 0; }
+html[data-character-layout="shira"] .role-head h1 { font-size: 20px; }
+html[data-character-layout="shira"] #roleAvatar { width: 42px; height: 42px; }
+html[data-character-layout="shira"] .character-top-actions { display: flex; align-items: center; gap: 10px; }
+html[data-character-layout="shira"] .destination-nav { display: flex; flex-direction: row; gap: 4px; padding: 0; border: 0; }
+html[data-character-layout="shira"] .destination-nav .space-tab { min-height: 36px; width: auto; padding: 7px 10px; gap: 7px; font-weight: 500; }
+html[data-character-layout="shira"] .sidebar-utility { border: 0; padding: 0; }
+html[data-character-layout="shira"] .sidebar-utility .space-tab { min-height: 36px; padding: 7px 10px; }
+html[data-character-layout="shira"] #spaceSubnav { grid-column: 1 / -1; padding-top: 8px; justify-content: flex-end; }
+html[data-character-layout="shira"] #spaceSubnav[hidden] { display: none; }
+html[data-character-layout="shira"] .character-daynight { align-self: end; width: 100%; background: transparent; border-color: var(--divider); text-align: left; color: var(--text-secondary); }
+html[data-character-layout="shira"] .chat-panel.is-active { grid-template-columns: minmax(0, 1fr) var(--shira-rail); grid-template-areas: "conversation portrait"; padding: 18px 22px 20px; gap: 20px; }
+html[data-character-layout="shira"] .portrait-panel { min-height: 0; display: flex; flex-direction: column; gap: 12px; padding-bottom: 155px; position: relative; }
+html[data-character-layout="shira"] .role-portrait-panel { flex: 1; min-height: 150px; }
+html[data-character-layout="shira"] .portrait-relationship-card { height: 100%; min-height: 0; }
+html[data-character-layout="shira"] .portrait-backpack { flex: 0 0 auto; min-height: 54px; padding: 10px 12px; }
+html[data-character-layout="shira"] #conversationSurface { border-radius: 12px; border-color: var(--divider); }
+html[data-character-layout="shira"] #messages { padding: 24px 60px 24px 58px; }
+html[data-character-layout="shira"] .message { max-width: min(85%, 680px); padding: 12px 18px; line-height: 1.8; }
+html[data-character-layout="shira"] .message.role { padding-left: 18px; }
+html[data-character-layout="shira"] .message-avatar { left: -45px; top: 3px; width: 32px; height: 32px; border-radius: 50%; }
+html[data-character-layout="shira"] .message-user-avatar { display: grid; place-items: center; position: absolute; top: 3px; right: -44px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface-subtle); color: var(--text-primary); border: 1px solid var(--divider); font-size: 13px; }
+html[data-character-layout="shira"] .message-voice-button { position: static; float: right; margin-left: 10px; padding: 0 5px; min-height: 22px; font-size: 11px; }
+html[data-character-layout="shira"] #chatForm { display: flex; align-items: center; gap: 9px; padding: 12px 14px; }
+html[data-character-layout="shira"] #chatInput { flex: 1; min-width: 0; order: 1; border-radius: 12px; }
+html[data-character-layout="shira"] #expressionPickerButton { order: 0; }
+html[data-character-layout="shira"] #chatImageButton { order: 2; }
+html[data-character-layout="shira"] #chatSubmitButton { order: 3; border-radius: 12px; min-height: 40px; }
+html[data-character-layout="shira"] .chat-attachment-tray:not([hidden]),
+html[data-character-layout="shira"] #chatComposerHelp:not([hidden]) { flex-basis: 100%; }
+html[data-character-layout="shira"] #chatForm:has(.chat-attachment-tray:not([hidden])) { flex-wrap: wrap; }
+/* User's sketch reserves the lower right corner for the pet. Keep animation/menu, stop visual roaming. */
+html[data-character-layout="shira"] .shell:has(#chat.is-active) .pet-dock {
+  position: absolute; left: auto !important; top: auto !important;
+  right: calc(22px + (var(--shira-rail) - 140px) / 2); bottom: 22px;
+  width: 140px; height: 140px; transform: none !important;
+}
+html[data-character-layout="shira"] .shell:has(#chat.is-active) .pet-stage {
+  --pet-atlas-cell-w: 118px; --pet-atlas-cell-h: 128px;
+  width: 140px; height: 128px;
+}
+html[data-character-layout="shira"] .shell:has(#chat.is-active) #deskPet { width: 118px; height: 128px; }
+html[data-character-layout="shira"] .shell:has(#chat.is-active) .pet-label { font-size: 10px; }
+/* Base first: decorative assets stay unreferenced until reviewed in the real layout. */
+html[data-character-theme="shira-nocturne"] { --shira-petals: none; --shira-weave: none; }
+html[data-character-theme="shira-nocturne"] :is(.sidebar, .content, .panel.is-active, .portrait-backpack) { background-image: none; }
+html[data-character-theme="shira-nocturne"] #messages { background: linear-gradient(155deg, #25212b, #211e26); }
+html[data-character-theme="shira-nocturne"] #conversationSurface { position: relative; }
+html[data-character-theme="shira-nocturne"] #conversationSurface::before,
+html[data-character-theme="shira-nocturne"] #conversationSurface::after {
+  content: none;
+}
+html[data-character-theme="shira-nocturne"] .sidebar { background: #211d25; }
+html[data-character-theme="shira-nocturne"] :is(.sidebar, .portrait-backpack) {
+  background-image: none;
+}
+html[data-character-theme="shira-nocturne"] .message { background: #302934; border: 1px solid #514251; border-radius: 4px 16px 16px 16px; box-shadow: none; }
+html[data-character-theme="shira-nocturne"] .message.user { background: #4a3247; border-color: #72526d; border-radius: 16px 4px 16px 16px; }
+html[data-character-theme="shira-nocturne"] .message.is-sticker { border-color: transparent; background: transparent; box-shadow: none; }
+html[data-character-theme="shira-nocturne"] .portrait-wrap { border-color: #997388; }
+/* Modular accents v2. Color is separate from the PNG alpha; never paint behind dialogue. */
+html[data-character-theme="shira-nocturne"] {
+  --shira-ornament-color: #b19ac2;
+  --shira-ornament-opacity: .34;
+  --shira-corner-opacity: .20;
+  --shira-flower-opacity: .46;
+  --shira-flower-filter: saturate(.65);
+  --shira-divider-asset: url('./shira-materials/accents-v2/divider.png');
+  --shira-corner-asset: url('./shira-materials/accents-v2/corner.png');
+  --shira-horizontal-asset: url('./shira-materials/accents-v2/petals-horizontal.png');
+  --shira-diagonal-asset: url('./shira-materials/accents-v2/petals-diagonal.png');
+}
+html[data-character-theme="shira-nocturne"] #conversationSurface::before {
+  content: ""; position: absolute; z-index: 1; pointer-events: none;
+  right: 3px; bottom: 78px; width: 94px; height: 88px;
+  background: var(--shira-ornament-color);
+  -webkit-mask: var(--shira-corner-asset) center / contain no-repeat;
+  mask: var(--shira-corner-asset) center / contain no-repeat;
+  transform: rotate(90deg); opacity: var(--shira-corner-opacity);
+}
+html[data-character-theme="shira-nocturne"] #conversationSurface::after {
+  content: ""; position: absolute; z-index: 1; pointer-events: none;
+  right: 8px; top: 43%; width: 28px; height: 70px;
+  background: var(--shira-diagonal-asset) center / contain no-repeat;
+  opacity: var(--shira-flower-opacity); filter: var(--shira-flower-filter);
+  animation: shira-edge-petals 14s ease-in-out infinite;
+}
+html[data-character-theme="shira-nocturne"] #chatForm { position: relative; z-index: 2; }
+html[data-character-theme="shira-nocturne"] #chatForm::before {
+  content: ""; position: absolute; pointer-events: none;
+  width: 174px; height: 58px; top: -29px; left: calc(50% - 87px);
+  background: var(--shira-ornament-color); opacity: var(--shira-ornament-opacity);
+  -webkit-mask: var(--shira-divider-asset) center / contain no-repeat;
+  mask: var(--shira-divider-asset) center / contain no-repeat;
+}
+html[data-character-theme="shira-nocturne"] .character-daynight { position: relative; }
+html[data-character-theme="shira-nocturne"] .character-daynight::before {
+  content: ""; position: absolute; pointer-events: none;
+  bottom: calc(100% + 20px); left: calc(50% - 58px); width: 116px; height: 39px;
+  background: var(--shira-horizontal-asset) center / contain no-repeat;
+  opacity: var(--shira-flower-opacity); filter: var(--shira-flower-filter);
+}
+/* Content remains above corner ornament even for long conversations and open inspectors. */
+html[data-character-theme="shira-nocturne"] #messages > *,
+html[data-character-theme="shira-nocturne"] .conversation-toolbar { position: relative; z-index: 2; }
+@keyframes shira-edge-petals {
+  0%, 100% { transform: translate(0, -5px) rotate(-4deg); }
+  50% { transform: translate(-3px, 9px) rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-character-theme="shira-nocturne"] #conversationSurface::after { animation: none; }
+}
+@media (max-width: 1050px) {
+  html[data-character-layout="shira"] { --shira-sidebar: 150px; --shira-rail: 230px; }
+  html[data-character-layout="shira"] .topbar { padding-inline: 14px; gap: 10px; grid-template-columns: minmax(140px, 1fr) auto; }
+  html[data-character-layout="shira"] .destination-nav .space-tab { padding-inline: 7px; }
+  html[data-character-layout="shira"] .space-tab > span[aria-hidden] { display: none; }
+  html[data-character-layout="shira"] .chat-panel.is-active { padding-inline: 14px; gap: 14px; }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "hermes-story-cg/v1",
+  "generator": "built-in image_gen",
+  "assets": [
+    {
+      "id": "shira-evening-gift",
+      "file": "shira-evening-gift-v1.png",
+      "prompt": "Use case: illustration-story. Create ONE wide 16:9 visual novel event CG illustration for Hermes character companion project. Reference image 1 is the CHARACTER IDENTITY anchor: preserve recognizable hair, eyes, face, accessories and outfit color identity, but change pose naturally to the scene. Reference image 2 is the LOCATION and painterly mood anchor; do not copy its exact layout mechanically. Polished hand-painted 2D anime illustration, expressive but subtle face, believable hands and object interaction, matte materials, unified warm lamps and cool dusk, no glossy 3D look. One character only, user is implied by POV, no second person drawn. Medium environmental shot, character occupies roughly 40 percent of image and all of the head is visible. Bottom 18% stays visually quieter for separately rendered dialogue overlay, NOT a painted UI box. No text, speech bubbles, lettering, logos, UI, watermark. Scene: Shira, clearly an adult mature woman with burgundy hair, red eyes and elegant gold earrings, inside the neighborhood gift boutique choosing a small ribbon-wrapped gift box. Dress her in a tasteful burgundy wrap dress with dark lace sleeves matching the reference identity, natural non-explicit neckline, elegant and composed. She stands beside the counter holding one small gift box naturally with both hands, tilts her head slightly toward the viewer, a restrained playful knowing smile. Theme: a leisurely evening choosing a gift together; mature warm charm rather than pinup framing. Burgundy ribbon and walnut wood, intimate but uncluttered composition.",
+      "type": "event-cg",
+      "identityReference": "existing project character portrait",
+      "notLiveModelReply": true
+    },
+    {
+      "id": "koka-sweet-discovery",
+      "file": "koka-sweet-discovery-v1.png",
+      "prompt": "Use case: illustration-story. Create ONE wide 16:9 visual novel event CG illustration for Hermes character companion project. Reference image 1 is the CHARACTER IDENTITY anchor: preserve recognizable hair, eyes, face, accessories and outfit color identity, but change pose naturally to the scene. Reference image 2 is the LOCATION and painterly mood anchor; do not copy its exact layout mechanically. Polished hand-painted 2D anime illustration, expressive but subtle face, believable hands and object interaction, matte materials, unified warm lamps and cool dusk, no glossy 3D look. One character only, user is implied by POV, no second person drawn. Medium environmental shot, character occupies roughly 40 percent of image and all of the head is visible. Bottom 18% stays visually quieter for separately rendered dialogue overlay, NOT a painted UI box. No text, speech bubbles, lettering, logos, UI, watermark. Scene: Koka with blonde twin ponytails, cream-white bows and amber eyes, matching her reference pink cardigan and cream outfit with rabbit motif, strolling by a small sweet shop window on the same pedestrian shopping street before sunset. Youthful cheerful NON-SEXUAL slice-of-life tone. A small plush rabbit tucked in her arm; she excitedly holds up a little pastry paper bag to show the viewer, gentle mischievous smile rather than exaggerated open-mouth pose. Frame knees-up, head entirely visible. A modest shop display and paper bag support a story about choosing a treat or discovering a cute small object. Comfortable ordinary outing, no school setting, no sexualized pose.",
+      "type": "event-cg",
+      "identityReference": "existing project character portrait",
+      "notLiveModelReply": true
+    },
+    {
+      "id": "shuyun-bookshop-note",
+      "file": "shuyun-bookshop-note-v1.png",
+      "prompt": "Use case: illustration-story. Create ONE wide 16:9 visual novel event CG illustration for Hermes character companion project. Reference image 1 is the CHARACTER IDENTITY anchor: preserve recognizable hair, eyes, face, accessories and outfit color identity, but change pose naturally to the scene. Reference image 2 is the LOCATION and painterly mood anchor; do not copy its exact layout mechanically. Polished hand-painted 2D anime illustration, expressive but subtle face, believable hands and object interaction, matte materials, unified warm lamps and cool dusk, no glossy 3D look. One character only, user is implied by POV, no second person drawn. Medium environmental shot, character occupies roughly 40 percent of image and all of the head is visible. Bottom 18% stays visually quieter for separately rendered dialogue overlay, NOT a painted UI box. No text, speech bubbles, lettering, logos, UI, watermark. Scene: Shuyun, adult mature reserved woman with dark pinned-up hair, blue-gray eyes, delicate blue drop earrings and navy blue embroidered qipao matching reference, browsing a quiet neighborhood bookshop at dusk. Standing beside a low book display, she opens a book in one hand and gently points to an unlettered page with the other, looking toward the viewer with a calm thoughtful half smile. Frame knees-up with head visible. Literary and observational mood, restrained intimacy, soft window blue and walnut lamps. Theme: choosing a book and exchanging impressions, mature graceful writer, no exaggerated seductive pose.",
+      "type": "event-cg",
+      "identityReference": "existing project character portrait",
+      "notLiveModelReply": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hermes Pet Lab</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./assets/pet-lab.css">
+</head>
+<body>
+  <main class="lab">
+    <section class="stage" id="stage" aria-label="桌宠测试舞台">
+      <div class="rail">
+        <strong>希拉桌宠测试</strong>
+        <span id="stateLabel">idle</span>
+      </div>
+      <div class="pet" id="pet" role="button" aria-label="拖拽希拉桌宠，双击叫醒">
+        <img id="petSprite" alt="希拉桌宠">
+      </div>
+    </section>
+
+    <nav class="toolbar" aria-label="桌宠动作">
+      <button data-action="idle">待机</button>
+      <button data-action="walk">走动</button>
+      <button data-action="sleep">睡觉</button>
+      <button data-action="wake">叫醒</button>
+      <button data-action="drag">拖拽态</button>
+      <button data-action="fall">下落</button>
+      <button data-action="land">落地</button>
+      <button data-action="reset">回位</button>
+    </nav>
+
+    <aside class="log" id="log" aria-label="状态日志"></aside>
+  </main>
+  <script src="./assets/pet-lab.js?v=r03"></script>
+</body>
+</html>

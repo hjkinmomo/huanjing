@@ -1,0 +1,227 @@
+[
+  {
+    "id": "pork-rice",
+    "name": "龙江猪脚饭",
+    "price": 32,
+    "description": "卤香猪脚 · 米饭 · 时蔬",
+    "image": "/assets/experience/media/meitu-v1/pork-rice.png",
+    "merchantId": "rice",
+    "category": "主食"
+  },
+  {
+    "id": "steak",
+    "name": "香煎牛排套餐",
+    "price": 68,
+    "description": "牛排 · 烤土豆 · 西兰花",
+    "image": "/assets/experience/media/meitu-v1/steak.png",
+    "merchantId": "western",
+    "category": "主食"
+  },
+  {
+    "id": "pasta",
+    "name": "番茄罗勒意大利面",
+    "price": 38,
+    "description": "番茄酱 · 罗勒 · 帕尔马干酪",
+    "image": "/assets/experience/media/meitu-v1/pasta.png",
+    "merchantId": "western",
+    "category": "主食"
+  },
+  {
+    "id": "chicken-rice",
+    "name": "香菇鸡肉饭",
+    "price": 28,
+    "description": "嫩鸡 · 香菇 · 清炒时蔬",
+    "image": "/assets/experience/media/meitu-v1/chicken-rice.png",
+    "merchantId": "rice",
+    "category": "主食"
+  },
+  {
+    "id": "pearl-tea",
+    "name": "珍珠奶茶",
+    "price": 18,
+    "merchantId": "tea",
+    "category": "奶茶",
+    "description": "红茶与鲜奶，软糯珍珠",
+    "image": "/assets/experience/media/meitu-v2/pearl-tea.png"
+  },
+  {
+    "id": "brown-sugar-tea",
+    "name": "黑糖波波鲜奶",
+    "price": 24,
+    "merchantId": "tea",
+    "category": "奶茶",
+    "description": "黑糖珍珠与鲜奶",
+    "image": "/assets/experience/media/meitu-v2/brown-sugar-tea.png"
+  },
+  {
+    "id": "matcha-tea",
+    "name": "抹茶云顶",
+    "price": 25,
+    "merchantId": "tea",
+    "category": "奶茶",
+    "description": "抹茶、鲜奶与轻盈奶盖",
+    "image": "/assets/experience/media/meitu-v2/matcha-tea.png"
+  },
+  {
+    "id": "fruit-tea",
+    "name": "满杯橙柠百香",
+    "price": 22,
+    "merchantId": "tea",
+    "category": "果茶",
+    "description": "橙子、柠檬与百香果",
+    "image": "/assets/experience/media/meitu-v2/fruit-tea.png"
+  },
+  {
+    "id": "berry-tea",
+    "name": "草莓茉莉果茶",
+    "price": 24,
+    "merchantId": "tea",
+    "category": "果茶",
+    "description": "草莓与茉莉清茶",
+    "image": "/assets/experience/media/meitu-v2/berry-tea.png"
+  },
+  {
+    "id": "cola",
+    "name": "冰可乐",
+    "price": 8,
+    "merchantId": "western",
+    "category": "饮品",
+    "description": "冰块与气泡，可搭配主食",
+    "image": "/assets/experience/media/meitu-v2/cola.png"
+  },
+  {
+    "id": "fries",
+    "name": "金黄薯条",
+    "price": 16,
+    "merchantId": "snacks",
+    "category": "小吃",
+    "description": "炸薯条与番茄酱",
+    "image": "/assets/experience/media/meitu-v2/fries.png"
+  },
+  {
+    "id": "wings",
+    "name": "蜜汁烤鸡翅",
+    "price": 28,
+    "merchantId": "snacks",
+    "category": "小吃",
+    "description": "六只鸡翅，香甜酱汁",
+    "image": "/assets/experience/media/meitu-v2/wings.png"
+  },
+  {
+    "id": "pizza",
+    "name": "芝士披萨",
+    "price": 48,
+    "merchantId": "western",
+    "category": "主食",
+    "description": "芝士、番茄与罗勒，六寸",
+    "image": "/assets/experience/media/meitu-v2/pizza.png"
+  },
+  {
+    "id": "sandwich",
+    "name": "鸡肉鲜蔬三明治",
+    "price": 22,
+    "merchantId": "cafe",
+    "category": "轻食",
+    "description": "烤面包 · 鸡肉 · 生菜与番茄",
+    "image": "/assets/experience/media/meitu-v2/sandwich.png"
+  },
+  {
+    "id": "pepper-steak",
+    "name": "黑椒牛排套餐",
+    "price": 72,
+    "merchantId": "western",
+    "category": "主食",
+    "description": "牛排与黑椒汁，附时蔬",
+    "image": "/assets/experience/media/meitu-v1/steak.png"
+  },
+  {
+    "id": "cheese-pasta",
+    "name": "芝士番茄意面",
+    "price": 42,
+    "merchantId": "western",
+    "category": "主食",
+    "description": "番茄意面加双份芝士",
+    "image": "/assets/experience/media/meitu-v1/pasta.png"
+  },
+  {
+    "id": "snack-cola",
+    "name": "冰可乐",
+    "price": 8,
+    "merchantId": "snacks",
+    "category": "饮品",
+    "description": "350毫升",
+    "image": "/assets/experience/media/meitu-v2/cola.png"
+  },
+  {
+    "id": "cafe-pearl",
+    "name": "珍珠奶茶",
+    "price": 18,
+    "merchantId": "cafe",
+    "category": "饮品",
+    "description": "500毫升",
+    "image": "/assets/experience/media/meitu-v2/pearl-tea.png"
+  },
+  {
+    "id": "rice-fruit",
+    "name": "橙柠百香果茶",
+    "price": 22,
+    "merchantId": "rice",
+    "category": "饮品",
+    "description": "500毫升",
+    "image": "/assets/experience/media/meitu-v2/fruit-tea.png"
+  },
+  {
+    "id": "rice-wings",
+    "name": "蜜汁鸡翅双只",
+    "price": 12,
+    "merchantId": "rice",
+    "category": "小吃",
+    "description": "两只装",
+    "image": "/assets/experience/media/meitu-v2/wings.png"
+  },
+  {
+    "id": "western-fries",
+    "name": "金黄薯条",
+    "price": 16,
+    "merchantId": "western",
+    "category": "小吃",
+    "description": "附番茄酱",
+    "image": "/assets/experience/media/meitu-v2/fries.png"
+  },
+  {
+    "id": "snack-sandwich",
+    "name": "鸡肉鲜蔬三明治",
+    "price": 22,
+    "merchantId": "snacks",
+    "category": "轻食",
+    "description": "烤面包 · 鸡肉 · 生菜与番茄",
+    "image": "/assets/experience/media/meitu-v2/sandwich.png"
+  },
+  {
+    "id": "tea-fries",
+    "name": "小份薯条",
+    "price": 10,
+    "merchantId": "tea",
+    "category": "小吃",
+    "description": "小份装",
+    "image": "/assets/experience/media/meitu-v2/fries.png"
+  },
+  {
+    "id": "tea-sandwich",
+    "name": "鸡肉鲜蔬三明治",
+    "price": 22,
+    "merchantId": "tea",
+    "category": "轻食",
+    "description": "烤面包 · 鸡肉 · 生菜与番茄",
+    "image": "/assets/experience/media/meitu-v2/sandwich.png"
+  },
+  {
+    "id": "cafe-fruit",
+    "name": "橙柠百香果茶",
+    "price": 22,
+    "merchantId": "cafe",
+    "category": "饮品",
+    "description": "500毫升",
+    "image": "/assets/experience/media/meitu-v2/fruit-tea.png"
+  }
+]

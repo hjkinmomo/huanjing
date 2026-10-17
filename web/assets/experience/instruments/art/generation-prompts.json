@@ -1,0 +1,32 @@
+[
+  {
+    "id": "piano",
+    "prompt": "Use case: stylized-concept. Asset type: square instrument selector illustration for a refined companion game's music room. Subject: a small elegant grand piano with raised lid, pearl ivory lacquer and polished walnut inside, realistic black and white keys. One instrument only, complete instrument entirely visible with generous 12 percent margins, centered three-quarter perspective. Premium hand-painted game inventory art, detailed but clear at thumbnail size, delicate realistic materials, soft warm studio light, subtly luminous edges. Restrained ivory, walnut and champagne gold, muted teal accent. Solid very pale warm ivory background, soft contact shadow. No text, no letters, no UI, no border, no logo, no people, no extra props except those named. Square composition.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "id": "harp",
+    "prompt": "Use case: stylized-concept. Asset type: square instrument selector illustration for a refined companion game's music room. Subject: an elegant concert harp, curved golden neck, many clearly visible thin strings, carved pale maple soundboard. One instrument only, complete instrument entirely visible with generous 12 percent margins, centered three-quarter perspective. Premium hand-painted game inventory art, detailed but clear at thumbnail size, delicate realistic materials, soft warm studio light, subtly luminous edges. Restrained ivory, walnut and champagne gold, muted teal accent. Solid very pale warm ivory background, soft contact shadow. No text, no letters, no UI, no border, no logo, no people, no extra props except those named. Square composition.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "id": "guitar",
+    "prompt": "Use case: stylized-concept. Asset type: square instrument selector illustration for a refined companion game's music room. Subject: a beautiful classical acoustic guitar, warm walnut wood, visible six strings and sound hole, pale mother-of-pearl inlay. One instrument only, complete instrument entirely visible with generous 12 percent margins, centered three-quarter perspective. Premium hand-painted game inventory art, detailed but clear at thumbnail size, delicate realistic materials, soft warm studio light, subtly luminous edges. Restrained ivory, walnut and champagne gold, muted teal accent. Solid very pale warm ivory background, soft contact shadow. No text, no letters, no UI, no border, no logo, no people, no extra props except those named. Square composition.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "id": "flute",
+    "prompt": "Use case: stylized-concept. Asset type: square instrument selector illustration for a refined companion game's music room. Subject: an elegant silver concert flute, intricate realistic silver keys, angled diagonally from lower left to upper right. One instrument only, complete instrument entirely visible with generous 12 percent margins, centered three-quarter perspective. Premium hand-painted game inventory art, detailed but clear at thumbnail size, delicate realistic materials, soft warm studio light, subtly luminous edges. Restrained ivory, walnut and champagne gold, muted teal accent. Solid very pale warm ivory background, soft contact shadow. No text, no letters, no UI, no border, no logo, no people, no extra props except those named. Square composition.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "id": "cello",
+    "prompt": "Use case: stylized-concept. Asset type: square instrument selector illustration for a refined companion game's music room. Subject: an elegant cello in warm amber maple, four strings and delicate bridge, with its slender bow arranged beside it. One instrument only, complete instrument entirely visible with generous 12 percent margins, centered three-quarter perspective. Premium hand-painted game inventory art, detailed but clear at thumbnail size, delicate realistic materials, soft warm studio light, subtly luminous edges. Restrained ivory, walnut and champagne gold, muted teal accent. Solid very pale warm ivory background, soft contact shadow. No text, no letters, no UI, no border, no logo, no people, no extra props except those named. Square composition.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "id": "xylophone",
+    "prompt": "Use case: stylized-concept. Asset type: square instrument selector illustration for a refined companion game's music room. Subject: a delicate wooden xylophone on a miniature walnut frame, two neat rows of rosewood bars, two mallets beside it. One instrument only, complete instrument entirely visible with generous 12 percent margins, centered three-quarter perspective. Premium hand-painted game inventory art, detailed but clear at thumbnail size, delicate realistic materials, soft warm studio light, subtly luminous edges. Restrained ivory, walnut and champagne gold, muted teal accent. Solid very pale warm ivory background, soft contact shadow. No text, no letters, no UI, no border, no logo, no people, no extra props except those named. Square composition.",
+    "tool": "built-in image_gen"
+  }
+]

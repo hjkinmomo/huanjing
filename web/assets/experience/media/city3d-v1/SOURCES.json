@@ -1,0 +1,64 @@
+{
+  "license": "CC0-1.0",
+  "sources": {
+    "suburban": "https://kenney.nl/assets/city-kit-suburban",
+    "commercial": "https://kenney.nl/assets/city-kit-commercial"
+  },
+  "models": [
+    {
+      "file": "suburban/building-type-a.glb",
+      "pack": "suburban",
+      "sha256": "49f32e20b9dcd24b1c8f6d6488807b8c8cb684cbb595bfb0bb36ad903e470faa"
+    },
+    {
+      "file": "suburban/building-type-d.glb",
+      "pack": "suburban",
+      "sha256": "a41cd28265b2b224e700373c3a8356562619699998b7fa4d70ed41de629a6731"
+    },
+    {
+      "file": "suburban/building-type-h.glb",
+      "pack": "suburban",
+      "sha256": "b8b8eb7a50f85fa20b4862723e133157f553d69a0daad39b850ddbd2099ebb84"
+    },
+    {
+      "file": "suburban/tree-large.glb",
+      "pack": "suburban",
+      "sha256": "16d1f95c149bc727a953a473cf20bf21de9bf1a88747c4f9d2eeb4ac7d43e291"
+    },
+    {
+      "file": "suburban/tree-small.glb",
+      "pack": "suburban",
+      "sha256": "5f63359e5f392609d7617cc98070855ca1ffd4f4b4bc3978a5ff56ece88a58d6"
+    },
+    {
+      "file": "suburban/fence-1x3.glb",
+      "pack": "suburban",
+      "sha256": "b4f1b79a844381c29199df417dc4fe17c2eaa1b8aa719aaaa24a7f61687a3ca9"
+    },
+    {
+      "file": "commercial/building-a.glb",
+      "pack": "commercial",
+      "sha256": "5cf220f90ee3f21e7abe38055ca409a48aa8ef1d5ffab6e2deb99e5a5e1ed5e0"
+    },
+    {
+      "file": "commercial/building-e.glb",
+      "pack": "commercial",
+      "sha256": "edbe5b49858a3c83e72d3cf496129c06082ef3a3d6005769f8883138e275b456"
+    },
+    {
+      "file": "commercial/building-skyscraper-a.glb",
+      "pack": "commercial",
+      "sha256": "d8339bbb75944ff91d1ec9a70ec6dead71bd98b94a42d3dd0fc1f3b107ddbe85"
+    },
+    {
+      "file": "commercial/building-skyscraper-e.glb",
+      "pack": "commercial",
+      "sha256": "21b58a2f2b18d6a7cf8915e8b947bdb6a6a0706da6cffb5a01677c29f03b5935"
+    },
+    {
+      "file": "commercial/low-detail-building-g.glb",
+      "pack": "commercial",
+      "sha256": "f9bc2fe27ffc93689a317959542ad6d1c24aeeaa1efcfed59f7ba67423f65702"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "note": "沿用虚构历法；节假日默认为空，可按模式添加month/day/name及可选的新历year，不自动导入现实假日。",
+  "modes": {
+    "normal": {
+      "weekendDays": [
+        6,
+        7
+      ],
+      "holidays": []
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "generator": "OpenAI imagegen",
+  "date": "2026-10-06",
+  "transparent": true,
+  "sourceIds": {
+    "letter": "c195c5c2-f360-4031-b05a-71e0905c9401",
+    "lantern": "a64fd7a5-6313-412a-a1dd-700c7e13798e",
+    "notebook": "9321cdf1-108a-4bb4-af8d-999d18e2dd67"
+  },
+  "direction": {
+    "letter": "Isolated closed ivory envelope, burgundy rose wax seal, ribbon and antique gold pen; paper fibers, no lettering.",
+    "lantern": "Isolated ivory paper rabbit lantern, bent ear mended with rose paper string, warm interior light, paper fibers.",
+    "notebook": "Isolated indigo clothbound open blank notebook, pressed blue ginkgo leaf, silver pencil and navy ribbon."
+  },
+  "usage": "Fictional story prop inspection; no bitmap cropping or post-editing."
+}

@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-04",
+  "method": "built-in image generation with character reference",
+  "assets": [
+    {
+      "name": "shira-cafe-dessert",
+      "file": "shira-cafe-dessert-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: visual novel scene CG for an existing character companion app. Input image 1 is character identity and illustration style reference, not an edit target. Primary request: Same adult Shira, red hair, red eyes, gold teardrop earrings, burgundy wrap dress and black lace sleeves. She sits at a cozy cafe window table choosing between a dark chocolate tart and a berry dessert, elegant playful restrained smile, a porcelain tea cup, dusk rainy street outside. Wide medium shot showing character, table and environment. Preserve identity, outfit and hand-drawn anime illustration style of the reference. Natural hands and believable objects, clear foreground action, rich but calm environment. Landscape 16:9. No text, signs with readable lettering, captions, UI, logos or watermark. No extra main characters.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a009ad-a452-7be3-941f-92a7738f2fa5\\exec-9a616970-3b00-462a-a225-0337c66bf12b.png"
+    },
+    {
+      "name": "koka-market-trinket",
+      "file": "koka-market-trinket-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: visual novel scene CG for an existing character companion app. Input image 1 is character identity and illustration style reference, not an edit target. Primary request: Same Koka, blonde twin ponytails, cream hair bows, amber eyes, pink cardigan and cream outfit, rabbit plush held at elbow. Nonsexual youthful everyday mood. At a small street stationery stall she holds two sticker sheets for comparison, happy curious expression, rabbit-pattern stationery and pastel notebooks on wooden counter. Evening lantern street. Wide medium shot character and stall. Preserve identity, outfit and hand-drawn anime illustration style of the reference. Natural hands and believable objects, clear foreground action, rich but calm environment. Landscape 16:9. No text, signs with readable lettering, captions, UI, logos or watermark. No extra main characters.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a009ad-a452-7be3-941f-92a7738f2fa5\\exec-7504a7c9-48e4-4f8c-b61d-76094c65308b.png"
+    },
+    {
+      "name": "shuyun-tea-patisserie",
+      "file": "shuyun-tea-patisserie-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: visual novel scene CG for an existing character companion app. Input image 1 is character identity and illustration style reference, not an edit target. Primary request: Same adult mature composed Shuyun, dark pinned hair, blue drop earrings, navy embroidered qipao. In a quiet patisserie tea salon, she sits beside a window with a notebook, spoon near plate with pear tart, blue porcelain tea cup, calm attentive smile, soft evening blue light and warm lamps. Wide medium shot character, dessert table and surroundings. Preserve identity, outfit and hand-drawn anime illustration style of the reference. Natural hands and believable objects, clear foreground action, rich but calm environment. Landscape 16:9. No text, signs with readable lettering, captions, UI, logos or watermark. No extra main characters.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a009ad-a452-7be3-941f-92a7738f2fa5\\exec-5c7cc427-e54d-4fa3-bb1b-b6970ad5212b.png"
+    },
+    {
+      "name": "shira-night-street",
+      "file": "shira-night-street-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: visual novel walking chapter CG. Image 1 is identity and drawing style reference. Adult Shira in the same burgundy wrap dress, black lace sleeves, long deep red hair and gold earrings, relaxed walking pose under covered shopping arcade, one hand holding a small burgundy paper shopping bag, looking back warmly toward viewer. Mature elegant expression. Evening storefronts and rain reflections, full figure framed in an environment, not a portrait pasted on a background. Preserve facial identity and outfit. Landscape 16:9 hand-drawn anime illustration with natural perspective, coherent hands and objects, no extra main character, no text, captions, UI, logos, watermark. Less crowded than the interior reference, calm lighting and atmospheric depth.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a009ad-a452-7be3-941f-92a7738f2fa5\\exec-297638fb-5612-4b18-b3b4-7fd008138368.png"
+    },
+    {
+      "name": "koka-evening-street",
+      "file": "koka-evening-street-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: visual novel street chapter CG. Input image is ONLY Koka identity, outfit and drawing-style reference, NOT composition or pose reference. Create a genuinely different scene and camera angle: wide eye-level SIDE VIEW of the same blonde twin-ponytailed girl with cream hair bows, amber eyes, pink cardigan and cream outfit, taking a step from a tiny flower stall toward a street corner. Show the whole character about 45 percent of image height, both feet visible, looking at a hanging flower basket, rabbit plush tucked in a shoulder bag, hands relaxed, no raised pastry bag pose. Large environment view of warm lanterns, flower buckets, storefront awnings and a blue evening sky. Nonsexual everyday mood, hand-drawn anime illustration matching reference palette. Landscape 16:9. Preserve identity and outfit, change pose, location and composition completely. No text, UI, logos or watermark.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a009ad-a452-7be3-941f-92a7738f2fa5\\exec-51760c25-0976-4890-9338-d71abff95e59.png"
+    },
+    {
+      "name": "shuyun-street-observation",
+      "file": "shuyun-street-observation-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: visual novel walking chapter CG. Image 1 is identity and drawing style reference. Mature Shuyun with same pinned dark hair, blue earrings and navy embroidered qipao, walking past a warmly lit bookshop window, holding a closed small notebook at her waist and calmly looking at reflections in the window, composition includes her and the wide quiet blue-hour street. Preserve facial identity and outfit. Landscape 16:9 hand-drawn anime illustration with natural perspective, coherent hands and objects, no extra main character, no text, captions, UI, logos, watermark. Less crowded than the interior reference, calm lighting and atmospheric depth.",
+      "source": "C:\\Users\\User\\.codex\\generated_images\\01a009ad-a452-7be3-941f-92a7738f2fa5\\exec-e68eed3f-1e4c-45ce-b7c3-18da76537a56.png"
+    }
+  ],
+  "rejected": "First koka street candidate repeated the original pose; regenerated with a wider full-body scene."
+}

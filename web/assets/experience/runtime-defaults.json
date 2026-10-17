@@ -1,0 +1,5 @@
+{
+  "sharedGuidance": "",
+  "reasoningLanguagePrompt": "请使用简体中文进行推理分析，并将服务商 reasoning_content 字段中的推理写成简体中文。推理只进入专用字段，不写进正文、旁白或人物心里话。正文语言与代码内容仍遵循用户本轮要求。",
+  "reveal": {"intervalMs": 40, "sceneCharacters": 3, "dialogueDelayMs": 400}
+}

@@ -1,0 +1,158 @@
+/* Focused layout overrides; inherited controls and selectors stay connected. */
+:root body{zoom:var(--app-zoom,1);height:var(--app-height,100dvh);min-height:0}
+:root #stage{height:auto;min-height:0}
+:root dialog{max-height:calc(var(--app-height,100dvh) - 32px)}
+:root .manage-page{padding:24px clamp(20px,4vw,70px) 56px;overflow:auto}
+:root .manage-top,:root .manage-heading,:root .manage-body,:root #portable-save-status{max-width:1100px;margin-inline:auto}
+:root .manage-heading{align-items:center;margin-block:24px 32px;gap:24px}
+:root .manage-heading h1{font-size:1.85rem;margin:4px 0}
+:root .settings-kicker{color:var(--muted);font-size:.85rem;margin:0}
+:root .manage-body{display:flex;flex-direction:column;gap:28px;width:100%;padding:0}
+:root .manage-group{padding:0;border:0;background:transparent;min-width:0}
+:root .manage-group>header{display:flex;align-items:baseline;gap:20px;margin-bottom:12px;flex-wrap:wrap}
+:root .manage-group h2{font-size:1.06rem;letter-spacing:0;margin:0}
+:root .manage-group header p{font-size:.81rem;color:var(--muted);margin:0}
+:root .manage-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+:root .manage-list>a,:root .manage-list>button{min-height:76px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left}
+:root .manage-list strong{display:block;font-size:.96rem;font-weight:600;line-height:1.6}
+:root .manage-list small{display:block;color:var(--muted);font-size:.79rem;line-height:1.65;margin-top:4px}
+:root .manage-list>button:hover,:root .manage-list>a:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:var(--raised)}
+:root .manage-compat{padding-top:10px;border-top:1px solid var(--line)}
+:root .manage-compat summary{font-size:.85rem;color:var(--muted)}
+:root .manage-compat .manage-list{margin-top:14px}
+:root #page-settings{padding-inline:clamp(18px,4vw,68px)}
+:root .settings-heading,:root .preference-tabs,:root .settings-layout{max-width:1020px;margin-inline:auto}
+:root .preference-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:10px 0 20px;border:0}
+:root .preference-tabs button{padding:10px 16px;border:1px solid var(--line);border-radius:9px;font-size:.84rem}
+:root .preference-tabs button[aria-pressed=true]{background:var(--button);color:var(--button-ink);border-color:var(--button)}
+:root .settings-layout{display:flex;flex-direction:column;gap:22px;align-items:stretch}
+:root .persona-mode-setting{width:100%;margin:0;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--raised)}
+:root .settings-form{display:flex;flex-direction:column;gap:22px;max-width:none;width:100%;margin:0}
+:root .settings-form fieldset{min-width:0;margin:0;border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--surface)}
+:root .settings-form legend{padding-inline:9px;font-weight:600;font-size:1rem}
+:root .settings-group{margin:0;padding:20px 0;border-bottom:1px solid var(--line)}
+:root .settings-group:first-of-type{padding-top:4px}
+:root .settings-group:last-child{border-bottom:0;padding-bottom:0}
+:root .settings-group h3{font-size:.94rem;margin:0 0 14px;font-weight:600}
+:root .settings-group>.field-help{margin:0 0 14px;color:var(--muted);font-size:.8rem}
+:root .settings-form .setting-row{display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:.88rem;padding:11px 0;margin:0;min-height:48px;border:0}
+:root .settings-form .setting-row select{width:min(52%,360px);min-width:170px;margin:0}
+:root .settings-form .setting-row input[type=checkbox]{flex-shrink:0}
+:root .settings-form .field-help{line-height:1.75}
+:root .settings-advanced{padding:14px 0 0;color:var(--muted);font-size:.8rem}
+:root .settings-form .form-actions{gap:18px;align-items:center;flex-wrap:wrap}
+:root .app-scale-control{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+:root .app-scale-control input{min-width:130px;flex:1;padding:0;accent-color:var(--accent)}
+:root .app-scale-control output{font-variant-numeric:tabular-nums;min-width:4em;text-align:center}
+:root .app-scale-control button{border:1px solid var(--line);padding:8px 13px;border-radius:8px}
+:root .app-scale-control [data-scale-reset]{font-size:.8rem}
+:root .session-library{width:min(920px,calc(100vw - 40px));padding:24px;border-radius:17px}
+:root .session-library>header{padding-bottom:16px;border-bottom:1px solid var(--line);gap:14px}
+:root .session-library h2{margin:3px 0 0;font-size:1.35rem}
+:root .session-library [data-owner]{color:var(--accent);font-size:.8rem}
+:root .session-library-intro,:root .session-library-note{font-size:.82rem;color:var(--muted);line-height:1.75;margin:14px 0}
+:root .session-library-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+:root .session-library-tabs button{padding:8px 16px;border:1px solid var(--line);border-radius:8px;font-size:.83rem}
+:root .session-library-tabs [aria-pressed=true]{background:var(--button);color:var(--button-ink)}
+:root .session-library [data-search]{display:flex;gap:10px}
+:root .session-library [data-search] input{flex:1;min-width:0;margin:0}
+:root .session-library [data-search] button{border:1px solid var(--line);padding:8px 18px}
+:root .session-library [data-list]{display:grid;gap:12px}
+:root .session-library .workspace-session{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:18px;display:block}
+:root .session-card-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+:root .session-card-heading h3{font-size:.95rem;line-height:1.6;margin:0;overflow-wrap:anywhere}
+:root .session-mode-badge{font-size:.7rem;white-space:nowrap;background:var(--raised);color:var(--muted);padding:3px 9px;border-radius:6px}
+:root .session-card-meta{font-size:.74rem;color:var(--muted);margin:8px 0 12px}
+:root .session-card-snippet{font-size:.86rem;line-height:1.7;margin:8px 0 14px}
+:root .session-card-actions{display:flex;flex-wrap:wrap;gap:8px}
+:root .session-card-actions button{padding:7px 12px;border-radius:7px;border:1px solid var(--line);font-size:.78rem}
+:root .session-card-actions .workspace-session-open{background:var(--button);color:var(--button-ink);flex:none}
+:root .session-card-actions .session-delete{color:var(--muted);margin-left:auto}
+:root .session-rename,:root .session-delete-confirm{padding:14px;margin-top:14px;border:1px solid var(--line);border-radius:8px;background:var(--raised);font-size:.83rem}
+:root .session-rename{display:flex;gap:8px;flex-wrap:wrap}
+:root .session-rename input{flex:1;min-width:130px}
+:root .session-delete-confirm p{margin:0 0 12px;line-height:1.7}
+:root .session-delete-confirm button{padding:7px 13px;margin-right:8px;border:1px solid var(--line)}
+:root .world-navigator{margin:16px 0 24px}
+:root .city-atlas-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+:root .city-atlas-heading span,:root .city-atlas-heading small{font-size:.73rem;color:var(--muted)}
+:root .city-atlas-heading h3{font-size:.96rem;margin:4px 0}
+:root .city-atlas{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:18px;color:var(--ink);overflow:visible}
+:root .atlas-paper{fill:color-mix(in srgb,var(--surface) 87%,#eee4d1)}
+:root .atlas-district{fill:color-mix(in srgb,var(--accent) 9%,var(--surface));stroke:color-mix(in srgb,var(--line) 60%,transparent);stroke-width:2}
+:root .atlas-green{fill:color-mix(in srgb,#b4c7ad 45%,var(--surface))}
+:root .atlas-road{fill:none;stroke:var(--surface);stroke-width:13;stroke-linecap:round}
+:root .atlas-river{fill:none;stroke:#88b5c2;stroke-width:19}
+:root .atlas-river-edge{fill:none;stroke:#c7e2e5;stroke-width:3;stroke-dasharray:3 8}
+:root .atlas-sea{fill:color-mix(in srgb,#9dc7d4 73%,var(--surface))}
+:root .atlas-water-label,:root .atlas-map-note{font-size:15px;fill:var(--muted);letter-spacing:1px}
+:root .atlas-place{cursor:pointer;outline:none}
+:root .atlas-place>rect{fill:var(--surface);stroke:var(--line);stroke-width:2}
+:root .atlas-place>path{fill:none;stroke:var(--accent);stroke-width:2.3;stroke-linejoin:round}
+:root .atlas-place text{font-size:15px;fill:var(--ink);font-weight:500}
+:root .atlas-place .atlas-label-bg{fill:var(--surface);stroke:none}
+:root .atlas-place:hover>rect,:root .atlas-place:focus-visible>rect,:root .atlas-place[data-selected=true]>rect{stroke:var(--accent);stroke-width:3}
+:root .atlas-place[data-selected=true]>rect:first-of-type{fill:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+:root .atlas-compass path{fill:var(--accent)}
+:root .atlas-compass text{font-size:15px;fill:var(--muted)}
+:root .world-district-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+:root .world-district-tabs button{font-size:.75rem;border:1px solid var(--line);border-radius:7px;padding:6px 10px}
+:root .world-district-tabs [aria-pressed=true]{background:var(--raised);color:var(--accent);border-color:var(--accent)}
+:root .world-place-search{font-size:.8rem;margin:14px 0}
+:root .world-place-search input{margin-top:5px;padding:9px 12px}
+:root .world-breadcrumbs{display:flex;gap:4px;flex-wrap:wrap;align-items:center;margin:14px 0}
+:root .world-breadcrumbs span{display:inline-flex;align-items:center}
+:root .world-breadcrumbs i{font-style:normal;color:var(--muted)}
+:root .world-breadcrumbs button{font-size:.77rem;color:var(--accent);padding:4px 7px}
+:root .world-level-back{font-size:.76rem;color:var(--muted);margin-bottom:10px;padding:4px 0}
+:root .world-tree-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:340px;overflow:auto;padding:2px}
+:root .world-tree-choices button{display:flex;align-items:center;justify-content:flex-start;gap:12px;text-align:left;padding:12px;border:1px solid var(--line);border-radius:10px;min-width:0;background:var(--surface)}
+:root .world-tree-choices strong{font-size:.8rem;display:block;font-weight:500;overflow-wrap:anywhere}
+:root .world-tree-choices small{display:block;font-size:.68rem;color:var(--muted);margin-top:4px;line-height:1.65}
+:root .world-tree-choices button>span:last-child{margin-left:auto}
+:root .world-tree-choices .place-kind{margin:0;color:var(--accent);font-size:1.05rem}
+:root .world-tree-choices [aria-pressed=true]{border-color:var(--accent);background:var(--raised)}
+:root .world-directory-record{border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:20px}
+:root .world-directory-record h3{font-size:.95rem;margin-top:0}
+:root .world-directory-record code{font-size:.65rem;overflow-wrap:anywhere}
+:root .location-cascade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+:root .location-cascade label{font-size:.82rem;margin:0}
+:root .location-cascade select{display:block;margin-top:5px;width:100%;min-width:0}
+@media(max-width:700px){:root .manage-list{grid-template-columns:1fr}
+:root .manage-group>header{gap:5px;display:block}
+:root .manage-group header p{margin-top:6px}
+:root .settings-form fieldset{padding:16px}
+:root .session-library{padding:18px}
+:root .world-tree-choices{grid-template-columns:1fr}
+:root .location-cascade{grid-template-columns:1fr}
+:root .settings-form .setting-row{gap:12px}
+:root .settings-form .setting-row select{min-width:140px}
+:root .app-scale-control{gap:8px}
+:root .city-atlas-heading{display:block}
+}
+
+
+:root .manage-list{width:100%;max-width:none}
+:root[data-project-compact=true] .app-header nav button{font-size:0;padding:9px}
+:root[data-project-compact=true] .app-header nav button svg{width:18px;height:18px}
+:root[data-project-compact=true] .wordmark .edition{display:none}
+
+
+:root .settings-heading,:root .preference-tabs,:root .settings-layout{width:100%;max-width:1020px;min-width:0}
+:root .atlas-place text{font-size:calc(var(--text-size,16px)*.9375)}
+
+
+:root[data-project-compact=true] .app-header .nav-label,:root[data-project-compact=true] .return-main-chat span{display:none}
+:root[data-project-compact=true] .app-header nav{gap:4px;min-width:0}
+:root[data-project-compact=true] .app-header{gap:12px}
+
+
+:root .city-atlas-view{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:10px}
+:root .city-atlas-view summary{font-size:.8rem;color:var(--accent);cursor:pointer}
+:root .city-atlas-view summary span{font-size:.7rem;margin-left:12px;color:var(--muted)}
+:root .city-atlas-view[open] summary{margin-bottom:12px}
+:root .persona-bank-badge{font-size:.68rem;white-space:nowrap;padding:4px 9px;border:1px solid var(--line);border-radius:7px;color:var(--muted)}
+:root[data-persona-mode=special] .persona-bank-badge{border-color:#baa5c6;background:color-mix(in srgb,#bc93d2 14%,var(--surface));color:var(--ink)}
+
+
+:root .manage-body{align-items:stretch}:root .manage-group{width:100%}:root .session-library-tabs button[aria-pressed=true]{color:var(--button-ink)}

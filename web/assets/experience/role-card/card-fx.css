@@ -1,0 +1,56 @@
+/* The stage backdrop stays outside the CSS card's transform tree. */
+#card-stage{position:relative}
+.css-card{width:min(77%,calc((100vh - 84px)*.667));z-index:1}
+.fx-stage-backdrop{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;--fx-play:running}
+.fx-stage-backdrop:before{content:'';position:absolute;inset:4%;background:var(--fx-gradient);opacity:.20;filter:blur(22px);border-radius:50%;mask:radial-gradient(ellipse,transparent 42%,#000 74%,transparent 98%)}
+.fx-portal-art{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 0 5px var(--fx-0));opacity:.85;display:none}
+.fx-portal-runes{animation:fx-runes 28s linear infinite;animation-play-state:var(--fx-play)}
+.fx-bokeh{display:none;position:absolute;width:68%;height:44%;border-radius:50%;filter:blur(24px);opacity:.45;animation:fx-bokeh 16s ease-in-out infinite alternate;animation-play-state:var(--fx-play)}
+.fx-bokeh-0{left:-20%;top:20%;background:var(--fx-0)}
+.fx-bokeh-1{right:-18%;top:4%;background:var(--fx-1);animation-delay:-6s}
+.fx-bokeh-2{left:18%;bottom:-6%;background:var(--fx-2);animation-delay:-11s}
+.fx-backdrop-star{display:none;position:absolute;width:6px;height:6px;mask:url('./fx-assets/sparkle.png') center/contain no-repeat;animation:fx-twinkle 3.7s ease-in-out infinite alternate;animation-play-state:var(--fx-play)}
+#card-stage[data-fx-style=portal] .fx-portal-art{display:block}
+#card-stage[data-fx-style=flow] .fx-bokeh{display:block}
+#card-stage[data-fx-style=flow] .fx-stage-backdrop:before{mask:none;opacity:.08}
+#card-stage[data-fx-style=aurora] .fx-stage-backdrop:before{inset:-15%;border-radius:30%;mask:none;background:repeating-linear-gradient(140deg,transparent 0 12%,var(--fx-0) 16%,var(--fx-1) 20%,transparent 26%,var(--fx-2) 31%,transparent 36%);opacity:.33;filter:blur(15px);animation:fx-aurora 18s ease-in-out infinite alternate;animation-play-state:var(--fx-play)}
+#card-stage[data-fx-style=stars] .fx-backdrop-star{display:block}
+#card-stage[data-fx-style=stars] .fx-stage-backdrop:before{mask:radial-gradient(ellipse,#000,transparent 78%);opacity:.10}
+#card-stage[data-fx-style=none] .fx-stage-backdrop{display:none}
+.fx-css-border,.fx-css-spark{position:absolute;pointer-events:none;backface-visibility:visible}
+.fx-css-border{inset:-6px;transform:translateZ(-3px);border-radius:18px;filter:drop-shadow(0 0 6px var(--fx-0));opacity:var(--fx-energy,0)}
+.fx-css-border:before{content:'';position:absolute;inset:0;border-radius:inherit;padding:2px;background:var(--fx-gradient);background-size:150% 150%;background-position:var(--fx-phase,50%) 50%;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+.fx-css-spark{width:12px;height:12px;background:var(--fx-0);mask:url('./fx-assets/sparkle.png') center/contain no-repeat;transform:translate(-50%,-50%) translateZ(-2px);opacity:0}
+.css-card[data-fx-style=none] :is(.fx-css-border,.fx-css-spark){display:none}
+@keyframes fx-runes{to{stroke-dashoffset:-180}}
+@keyframes fx-bokeh{to{transform:translate(10%,18%) scale(1.12)}}
+@keyframes fx-twinkle{from{opacity:.22;scale:.7}to{opacity:.9;scale:1.1}}
+@keyframes fx-aurora{to{translate:4% 15%;rotate:12deg}}
+
+
+/* One complete generated plate; separate shimmer passes across its openwork. */
+.fx-portal-generated{display:none;position:absolute;inset:0;background:url('./fx-assets/portal-rounded-v3.png') center/100% 100% no-repeat;opacity:.92}
+#card-stage[data-fx-style=portal] .fx-portal-generated{display:block}
+#card-stage[data-fx-style=portal] .fx-portal-art,#card-stage[data-fx-style=portal] .fx-stage-backdrop:before{display:none}
+#card-stage[data-fx-style=portal] .fx-stage-backdrop:after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,var(--fx-1) 48%,#fff 50%,var(--fx-0) 52%,transparent 68%);background-size:300% 300%;mask:url('./fx-assets/portal-rounded-v3.png') center/100% 100% no-repeat;opacity:.52;mix-blend-mode:screen;animation:fx-portal-pass 7s linear infinite;animation-play-state:var(--fx-play)}
+#card-stage[data-fx-style=aurora] .fx-stage-backdrop{background:radial-gradient(ellipse,#c5d9d9b0,transparent 85%)}
+#card-stage[data-fx-style=aurora] .fx-stage-backdrop:before{opacity:.34;filter:blur(12px)}
+#card-stage[data-fx-style=stars] .fx-stage-backdrop:before{inset:0;border-radius:0;mask:none;filter:none;opacity:.62;background:radial-gradient(ellipse at 45% 40%,color-mix(in srgb,var(--fx-1) 24%,#e5e8ed),#9eb8cd 46%,transparent 83%)}
+#card-stage[data-fx-style=stars] .fx-backdrop-star{width:8px;height:8px;background:#fff!important;filter:drop-shadow(0 0 2px var(--fx-1))}
+#card-stage[data-fx-scheme=dark][data-fx-style=stars] .fx-stage-backdrop:before{background:radial-gradient(ellipse,#5b708988,#36445a88,transparent 83%)}
+#card-stage[data-fx-scheme=dark][data-fx-style=aurora] .fx-stage-backdrop{background:radial-gradient(ellipse,#50687570,transparent 85%)}
+@keyframes fx-portal-pass{from{background-position:160% 160%}to{background-position:-60% -60%}}
+
+/* Portal is a moving aperture, not a decorative second card frame. */
+#card-stage[data-fx-style=portal] .fx-portal-generated{display:none}
+#card-stage[data-fx-style=portal] .fx-stage-backdrop:after{inset:4% 8%;border-radius:50%;mask:none;background:repeating-conic-gradient(from 0deg,#b6ced266 0deg,transparent 18deg 50deg),radial-gradient(ellipse,#253950aa,transparent 64%,var(--fx-0) 70%,transparent 73%);background-size:100% 100%;opacity:.8;animation:fx-aperture 18s linear infinite;animation-play-state:var(--fx-play)}
+@keyframes fx-aperture{from{transform:rotate(0deg) scale(.98)}50%{transform:rotate(180deg) scale(1.02)}to{transform:rotate(360deg) scale(.98)}}
+
+#card-stage[data-fx-style=portal] .fx-stage-backdrop:before{display:block;content:'';position:absolute;inset:auto 5% 0;height:17%;border-radius:50%;background:repeating-conic-gradient(from 0deg,transparent 0deg 14deg,var(--fx-0) 15deg 17deg,transparent 18deg 36deg),radial-gradient(ellipse,transparent 53%,var(--fx-1) 55%,transparent 58% 73%,var(--fx-0) 75%,transparent 78%);opacity:.65;animation:fx-floor-runes 24s linear infinite;animation-play-state:var(--fx-play)}@keyframes fx-floor-runes{from{filter:hue-rotate(0deg);background-position:0 0}to{filter:hue-rotate(12deg);background-position:12px 0}}
+
+/* CSS fallback exposes the aperture inside the card instead of hiding it
+behind a second opaque portrait background. */
+.css-card[data-fx-style=portal] .card-background{display:none}
+.css-card[data-fx-style=portal] .card-front{background:radial-gradient(ellipse at 36% 52%,#142333 0%,#405a72 24%,#20354c 46%,#a5bad1 47%,#253d56 48%,#111e2d 54%)}
+.css-card[data-fx-style=portal] .card-front:before{content:'';position:absolute;inset:-35%;pointer-events:none;background:repeating-conic-gradient(from 0deg at 36% 52%,transparent 0deg 12deg,#b2d4dc35 16deg,transparent 24deg);animation:portal-inner-spin 16s linear infinite;animation-play-state:var(--fx-play,running)}
+@keyframes portal-inner-spin{to{transform:rotate(360deg)}}

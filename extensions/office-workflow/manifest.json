@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "office-workflow",
+  "name": "Office Workflow",
+  "version": "1.0.0",
+  "description": "Evidence-first planning instructions for desktop Office work through the approval broker.",
+  "type": "skill",
+  "riskLevel": "R1",
+  "defaultEnabled": true,
+  "capabilities": ["skill.instructions", "office.workflow"],
+  "skills": [
+    {
+      "id": "evidence-first-report",
+      "name": "Evidence-first report",
+      "description": "Research, structure, and request approval before creating a local Office artifact.",
+      "instructions": "For document, spreadsheet, or presentation requests: identify the requested deliverable, gather only declared evidence with read tools, summarize the proposed structure, then call action_propose with the matching office_create action. Never claim the file exists until the approval receipt reports executed.",
+      "suggestedTools": ["knowledge_search", "office_workspace_inventory", "action_propose", "action_proposal_list"]
+    }
+  ]
+}

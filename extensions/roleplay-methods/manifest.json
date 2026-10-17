@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "id": "roleplay-methods",
+  "name": "角色扮演衔接方法",
+  "version": "1.1.0",
+  "description": "按需衔接已有场景、共同经历与轻量工具；不提供新人格，不修改角色卡或世界书。",
+  "type": "skill",
+  "riskLevel": "R0",
+  "defaultEnabled": true,
+  "capabilities": [
+    "skill.instructions",
+    "roleplay.expression"
+  ],
+  "skills": [
+    {
+      "id": "scene-continuity",
+      "name": "场景衔接",
+      "description": "换地点、摆放物品、多人位置或连续动作不明确时，读取预写场景并接续当前情节。",
+      "instructionFile": "scene-continuity/SKILL.md",
+      "references": [
+        "scene-continuity/references/transition.md"
+      ],
+      "contexts": [
+        "chat",
+        "agent",
+        "story"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    },
+    {
+      "id": "relationship-history",
+      "name": "共同经历衔接",
+      "description": "提到旧约定、赠礼、纪念地点或共同往事时，区分实际记录、虚构设定与不确定信息。",
+      "instructionFile": "relationship-history/SKILL.md",
+      "contexts": [
+        "chat",
+        "agent",
+        "story"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    },
+    {
+      "id": "tool-world",
+      "name": "角色与轻量工具",
+      "description": "用户希望角色查资料、借工具完成事情或使用 MCP 时，保持人物表达并依据真实回执回应。",
+      "instructionFile": "tool-world/SKILL.md",
+      "contexts": [
+        "chat",
+        "agent"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    },
+    {
+      "id": "gentle-cute",
+      "name": "自然呆萌",
+      "description": "已有角色本来温软、呆萌或略迟钝时，组织自然反应；不能把其他角色改成甜妹。",
+      "instructionFile": "gentle-cute/SKILL.md",
+      "contexts": [
+        "chat",
+        "story",
+        "agent"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    },
+    {
+      "id": "reserved-mature",
+      "name": "含蓄与成熟",
+      "description": "已有角色偏成熟、克制或有分寸时，用潜台词和行动承接关系；不是给角色新增年龄或职业。",
+      "instructionFile": "reserved-mature/SKILL.md",
+      "contexts": [
+        "chat",
+        "story",
+        "agent"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    },
+    {
+      "id": "intense-fiction",
+      "name": "强烈情感与悬念",
+      "description": "仅当现有人格明确有病娇、执念或强烈依恋的虚构特征时，处理犹豫、反差和秘密线索；不能把普通角色改成病娇。",
+      "instructionFile": "intense-fiction/SKILL.md",
+      "contexts": [
+        "chat",
+        "story",
+        "agent"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    },
+    {
+      "id": "energetic-casual",
+      "name": "爽朗日常",
+      "description": "现有人格爽朗、运动型或直率时，以简短来回、自然玩笑与具体活动推动聊天。",
+      "instructionFile": "energetic-casual/SKILL.md",
+      "contexts": [
+        "chat",
+        "story",
+        "agent"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    },
+    {
+      "id": "plot-beat",
+      "name": "可续写的剧情节拍",
+      "description": "剧情停滞、出现新事件或多人互动时，一次只推进一个有因果的小节拍，保留用户选择。",
+      "instructionFile": "plot-beat/SKILL.md",
+      "contexts": [
+        "chat",
+        "story",
+        "agent"
+      ],
+      "personaModes": [
+        "normal"
+      ],
+      "suggestedTools": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "office-core",
+  "name": "Office Core",
+  "version": "1.0.0",
+  "description": "Create and inventory real Word, Excel, and PowerPoint artifacts inside the private Hermes workspace.",
+  "type": "plugin",
+  "riskLevel": "R1",
+  "defaultEnabled": true,
+  "capabilities": [
+    "office.inventory",
+    "office.create.docx",
+    "office.create.xlsx",
+    "office.create.pptx"
+  ],
+  "officeTemplates": [
+    {"id": "work-report", "label": "Work report", "format": "docx"},
+    {"id": "task-tracker", "label": "Task tracker", "format": "xlsx"},
+    {"id": "project-briefing", "label": "Project briefing", "format": "pptx"}
+  ]
+}

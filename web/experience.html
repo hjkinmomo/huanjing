@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>幻境 · 此刻与你</title>
+  <link rel="stylesheet" href="./assets/experience/experience.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/exchange.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/reading-tools.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/layer-shell.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/leisure.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/bond.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/theme-details.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/story.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/character-gallery.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/music.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/rhythm.css?v=proportional-plan-20261017">
+  <link rel="stylesheet" href="./assets/experience/chat-reading.css?v=proportional-plan-20261017">
+  <link rel="icon" type="image/svg+xml" href="./assets/experience/hermes-mark.svg">
+  <script type="module" src="./assets/experience/app.mjs?v=proportional-plan-20261017"></script>
+<link rel="stylesheet" href="./assets/experience/mcp-connections.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/theater.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/chat-finish.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/social-play.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/chat-workspace.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/user-panel.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/role-roster.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/card-stage.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/huanjing.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/structure-refinement.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/world-life.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/phone.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/phone-hub.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/experience-refinement.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/living-phone.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/phone-refinement.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/phone-depth.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/gap-closure.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/play-saves.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/phone-roster-repair.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/phone-system-panels.css?v=proportional-plan-20261017">
+<link rel="stylesheet" href="./assets/experience/floor-plan.css?v=proportional-plan-20261017">
+</head>
+<body>
+  <header class="app-header">
+    <a class="wordmark" href="#/chat" aria-label="幻境 聊天首页"><span class="brand-mark" aria-hidden="true">幻</span> 幻境 <span class="edition">与你 · 此刻</span></a>
+
+    <div class="play-system-actions" aria-label="游戏与整局存档"><button type="button" id="play-start" class="primary" disabled>开始游戏</button><button type="button" id="play-history" disabled>回顾存档</button></div>
+    <nav aria-label="主要导航">
+      <button type="button" id="open-display-tools" class="icon-nav" aria-label="显示与立绘" title="显示与立绘" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m4 17 5-5 4 4 3-3 5 5"/></svg><span class="nav-label" aria-hidden="true">显示与立绘</span></button>
+
+      <button type="button" data-go="life" data-layer-only="application" class="icon-nav" aria-label="同行与手记" title="同行与手记"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v13a4 4 0 0 0-4-2H4ZM20 4h-4a3 3 0 0 0-3 3M20 4v14h-4M7 8h3M7 11h3M16 8h2"/></svg><span class="nav-label" aria-hidden="true">同行与手记</span></button>
+      <button type="button" id="choose-character" data-go="characters" class="icon-nav" aria-label="选择角色" title="选择角色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 11-3m3-5 2 2 4-5"/></svg><span class="nav-label" aria-hidden="true">选择角色</span></button>
+      <button type="button" data-go="create" data-layer-only="application" class="icon-nav" aria-label="添加新角色" title="添加新角色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 19v-2a6 6 0 0 1 10-4M18 13v8m-4-4h8"/></svg><span class="nav-label" aria-hidden="true">添加新角色</span></button>
+      <button type="button" id="open-user-panel" data-go="profile" class="icon-nav" aria-label="我的资料" title="我的资料"><span class="user-nav-avatar" aria-hidden="true">你</span><span class="nav-label" aria-hidden="true">我的</span></button>
+      <button type="button" data-go="manage" class="icon-nav" aria-label="设置" title="设置"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></svg><span class="nav-label" aria-hidden="true">设置</span></button>
+    </nav>
+  </header>
+  <nav id="workspace-nav" class="workspace-nav" aria-label="页面返回导航" hidden><button type="button" data-back class="workspace-back">← 返回上一步</button><button type="button" id="return-main-chat" data-go="chat" class="return-main-chat" aria-label="回到主聊天" title="回到主聊天" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v11H9l-4 4V5Z"/><path d="M9 9h6M9 12h4"/></svg><span>回到聊天</span></button><span id="workspace-nav-label"></span></nav>
+  <main id="stage">
+    <section id="page-profile" class="page user-panel-page" hidden aria-labelledby="user-panel-title">
+      <header class="user-panel-top"><button type="button" data-back>← 返回聊天</button><h1 id="user-panel-title" tabindex="-1">我的生活</h1></header>
+      <div class="user-panel-layout">
+        <section class="user-identity-panel" aria-label="头像与名字"><h2>身份与共享</h2><form id="user-profile-form">
+          <div class="user-avatar-controls"><div class="user-avatar-preview" aria-hidden="true">你</div><div><label class="user-upload-label">上传头像<input class="sr-only" id="user-avatar-upload" type="file" accept="image/png,image/jpeg,image/webp" aria-label="上传用户头像"></label><button id="user-avatar-remove" type="button">移除头像</button></div></div>
+          <label for="user-display-name">你的名字</label><input id="user-display-name" name="name" type="text" maxlength="60" autocomplete="nickname" placeholder="希望角色怎么称呼你？">
+          <label class="user-share-label"><input id="user-name-sharing" type="checkbox">让所有角色知道这个名字</label>
+          <p class="user-panel-note">仅分享名字，不分享头像、其他角色的聊天或私人记忆。角色专属称呼仍可在“设置 → 记忆与资料”中填写。</p>
+          <div class="user-form-actions"><button id="user-save" class="primary" type="submit" disabled>保存资料</button><button id="user-profile-reload" type="button">撤销未保存修改</button></div><div id="user-draft-status" class="user-draft-status">尚未修改</div><p id="user-profile-feedback" class="user-profile-feedback" role="status" hidden></p>
+        </form></section>
+        <div class="user-possessions">
+          <div class="user-stats"><div><span>余额</span><strong id="user-coin-balance">—</strong><small>金币</small></div><div><span>背包</span><strong id="user-item-count">—</strong><small>件物品</small></div><div><span>游戏记录</span><strong id="user-game-count">—</strong><small>局已保存</small></div></div>
+          <section aria-labelledby="user-inventory-title"><div class="user-section-heading"><h2 id="user-inventory-title">我的背包</h2><button type="button" data-user-open="bag">打开背包 →</button></div><ul id="user-inventory" class="user-inventory"></ul><p id="user-inventory-empty" class="user-empty">背包还是空的。<button type="button" data-user-open="shop">去商店看看 →</button></p></section>
+          <section aria-labelledby="user-scores-title"><div class="user-section-heading"><h2 id="user-scores-title">游戏成绩</h2><button type="button" data-user-open="games">去游乐室 →</button></div><ul id="user-game-scores" class="user-game-scores"></ul><p id="user-scores-empty" class="user-empty">完成一局游戏后，成绩会出现在这里。</p></section>
+      <section class="user-history-section" aria-labelledby="user-history-title"><div class="user-section-heading"><h2 id="user-history-title">活动记录</h2><span id="user-history-count"></span></div><div class="user-history-filters" role="group" aria-label="筛选活动记录"><button type="button" data-history-filter="all" aria-pressed="true">全部</button><button type="button" data-history-filter="game" aria-pressed="false">游戏</button><button type="button" data-history-filter="purchase" aria-pressed="false">购买</button><button type="button" data-history-filter="gift" aria-pressed="false">赠礼</button></div><ol id="user-activity-list" class="user-activity-list"></ol><p id="user-history-empty" class="user-empty">还没有这类活动记录。</p><button id="user-history-more" class="user-history-more" type="button" hidden>加载更多</button><p class="user-panel-note">展示已保存的游戏、购买与赠礼记录；游戏最多保留最近 50 局，购买最多 100 条。聊天历史仍按角色分别查看。</p></section>
+        </div>
+      </div>
+    </section>
+    <section id="page-manage" class="page manage-page" hidden aria-labelledby="manage-title">
+<div class="manage-top"><button type="button" data-back>← 返回聊天</button></div>
+<header class="manage-heading"><div><p class="settings-kicker">按你要调整的内容进入</p><h1 id="manage-title" tabindex="-1">设置</h1></div><button type="button" data-manage-section="create">＋ 添加新角色</button></header>
+<div class="manage-body">
+<button type="button" id="theme-widget" class="theme-widget" data-go="memory" hidden><strong></strong><span></span><small></small></button>
+<section class="manage-group"><header><h2>角色与相处</h2><p>当前角色 <span id="manage-role-name"></span> · 人格、表达与记忆各有自己的入口</p></header><div class="manage-list">
+<button type="button" data-manage-section="voice"><span><strong>人格与角色设定</strong><small>背景、说话方式、开场白与情感指导</small></span><span aria-hidden="true">↗</span></button>
+<button type="button" data-manage-section="lore"><span><strong>角色世界书</strong><small>这位角色独有的设定与触发条目</small></span><span aria-hidden="true">↗</span></button>
+<button type="button" data-go="settings" data-preference-target="role"><span><strong>回复与相处模式</strong><small>表情、旁白、扮演技巧与人格模式</small></span><span aria-hidden="true">↗</span></button>
+<button type="button" data-go="settings" data-preference-target="memory"><span><strong>记忆与上下文</strong><small>记忆调用、自动归纳与模型窗口</small></span><span aria-hidden="true">↗</span></button>
+<button type="button" data-go="memory"><span><strong>记忆档案</strong><small>检查、纠正、确认与忘记具体记录</small></span><span aria-hidden="true">↗</span></button>
+</div></section>
+<section class="manage-group"><header><h2>界面与外观</h2><p>页面比例、排版与装饰独立调整</p></header><div class="manage-list">
+<button type="button" data-go="settings" data-preference-target="reading"><span><strong>界面与阅读</strong><small>项目缩放、字号、间距与输入快捷键</small></span><span aria-hidden="true">↗</span></button>
+<button type="button" data-go="settings" data-preference-target="appearance"><span><strong>主题与装饰</strong><small>主题配色、动画与悬浮按钮</small></span><span aria-hidden="true">↗</span></button>
+<a id="manage-assets" href="#/edit"><span><strong>头像与立绘</strong><small>上传、预览、替换与保存角色图片</small></span><span aria-hidden="true">↗</span></a>
+</div></section>
+<section class="manage-group"><header><h2>模型与世界</h2><p>连接服务与可扩展的数据包</p></header><div class="manage-list">
+<button type="button" data-go="settings" data-preference-target="connection"><span><strong>模型连接</strong><small>接口、密钥、推理与连接检查</small></span><span aria-hidden="true">↗</span></button>
+<button type="button" id="worldbook-pack-open"><span><strong>城市与场景资料</strong><small>编辑地点层级、场景与旁白数据包</small></span><span aria-hidden="true">↗</span></button>
+</div></section>
+<section class="manage-group manage-compat"><details><summary>高级工具与兼容入口</summary><div class="manage-list"><button type="button" data-go="diagnostics">角色提示与技能连接检查</button><a href="./index.html?return=settings">原版工具与扩展 ↗</a></div></details></section>
+</div></section>
+<section id="page-diagnostics" class="page inner-page" hidden aria-labelledby="diagnostic-title"><div class="page-top"><button type="button" data-back>← 返回</button></div><div class="page-heading"><div><h1 id="diagnostic-title" tabindex="-1">开发检查</h1><p id="diagnostic-connection" role="status"></p></div></div><div id="diagnostic-content"></div></section>
+    <section id="page-chat" class="page chat-page" aria-label="角色聊天">
+      <p role="status">正在载入对话…</p>
+    </section>
+    <section id="page-bag" class="page bag-page" hidden aria-labelledby="bag-title">
+      <div class="bag-top"><button type="button" data-back id="bag-back">← 返回聊天</button><a id="bag-shop" href="#/shop" aria-label="前往商店">逛逛商店 →</a></div>
+      <header class="bag-heading"><div><p class="bag-kicker">留一点心意在身边</p><h1 id="bag-title" tabindex="-1">随身背包</h1></div><span id="bag-total"></span></header>
+      <div id="bag-feedback" class="bag-feedback" role="status" hidden></div>
+      <section id="gift-receipt" class="gift-receipt" aria-label="最近送出的心意" hidden><img id="gift-receipt-image" alt=""><div><small>心意已送达</small><h2 id="gift-receipt-name"></h2><p id="gift-receipt-note"></p></div><button type="button" id="gift-receipt-response" class="primary" hidden>查看回应</button></section>
+      <div class="bag-layout">
+        <section class="bag-collection" aria-label="持有的礼物">
+          <div id="bag-grid" class="bag-grid"></div>
+          <div id="bag-empty" class="bag-empty" hidden><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 15V11a8 8 0 0 1 16 0v4M10 15h28l2 27H8l2-27Z M18 25c3 5 9 5 12 0"/></svg><h2>背包还是空的</h2><p>遇到合适的小礼物，再带回来。</p><a href="#/shop" class="bag-shop-link">去商店看看 →</a></div>
+        </section>
+        <aside class="bag-side" aria-label="收礼角色与赠礼记录">
+          <div class="bag-recipient"><img id="bag-avatar" alt="" hidden><div><span>送给</span><h2 id="bag-role-name">希拉</h2></div><button type="button" data-go="characters" aria-label="更换收礼角色">更换</button></div>
+          <div class="bag-bond"><span id="bag-tier">初识</span><span>好感 <strong id="bag-affection">0</strong></span></div>
+          <div class="bag-history-heading"><h2>最近赠礼</h2><span id="bag-history-count"></span></div>
+          <ol id="bag-history" class="bag-history"></ol>
+          <p class="bag-history-empty" id="bag-history-empty">还没有赠礼记录。</p>
+        </aside>
+      </div>
+    </section>
+    <section id="page-shop" class="page leisure-page" hidden aria-labelledby="shop-title">
+      <div class="leisure-top"><button type="button" data-back>← 返回聊天</button><div><button type="button" data-go="games">游乐室</button><button type="button" data-go="bag">打开背包 →</button></div></div>
+      <header class="leisure-heading"><div><span class="leisure-kicker">认真挑选的一点心意</span><h1 id="shop-title" tabindex="-1">淘乐乐</h1><p data-shop-role></p></div><div class="leisure-wallet"><small>我的金币</small><span class="coin-pill" data-coins></span></div></header>
+      <div class="shop-notice"><span class="shop-notice-mark" aria-hidden="true">✧</span><div><strong>小小的礼物，藏着认真挑选的心意。</strong><p>收进背包，再挑一个合适的时刻送给 TA。</p></div><button type="button" data-go="games">玩一局，攒点金币 →</button></div>
+      <div class="shop-toolbar"><div class="leisure-tabs" aria-label="商品筛选"><button type="button" data-shop-filter="all" aria-pressed="true">全部</button><button type="button" data-shop-filter="favorite" aria-pressed="false">角色偏爱</button><button type="button" data-shop-filter="affordable" aria-pressed="false">买得起</button></div><input data-shop-query type="search" aria-label="查找礼物" placeholder="查找礼物"></div>
+      <p data-shop-status class="leisure-feedback" role="status" hidden></p><div class="shop-products" data-products></div><p data-shop-empty class="leisure-empty" hidden>这里暂时没有合适的物品，换个筛选看看。</p>
+      <section class="shop-product-detail" data-product-detail hidden aria-labelledby="buy-title"><div data-buy-art></div><h2 id="buy-title" data-buy-name></h2><label>数量<select data-buy-count><option value="1">1 件</option><option value="2">2 件</option><option value="3">3 件</option><option value="5">5 件</option></select></label><p data-buy-total></p><p data-buy-effect></p><p data-buy-error role="alert" hidden></p><div class="leisure-dialog-actions"><button type="button" data-buy-cancel>返回商品列表</button><button type="button" class="primary" data-buy-confirm>确认购买</button></div></section>
+    </section>
+    <section id="page-games" class="page leisure-page" hidden aria-labelledby="games-title">
+      <div class="leisure-top"><button type="button" data-back>← 返回聊天</button><button type="button" data-go="shop">逛逛商店 →</button></div>
+      <header class="leisure-heading"><div><span class="leisure-kicker">闲下来，玩一会儿</span><h1 id="games-title" tabindex="-1">游乐室</h1><p data-play-role></p></div><div class="leisure-wallet"><small>我的金币</small><span class="coin-pill" data-coins></span></div></header>
+      <p data-play-status class="leisure-feedback" role="status" hidden></p>
+      <div class="arcade-layout"><div class="arcade-main"><div data-game-chooser><label class="game-difficulty">游玩模式<select data-game-difficulty><option value="calm">放松</option><option value="challenge">挑战</option></select></label><div class="game-picks"><button type="button" data-start-game="memory"><span class="game-pick-mark">✿</span><span><strong>记忆花园</strong><small>翻开、记住、找到另一半</small></span><span aria-hidden="true">↗</span></button><button type="button" data-start-game="tiles"><span class="game-pick-mark game-pick-number">2048</span><span><strong>2048</strong><small>滑动合并，把数字慢慢变大</small></span><span aria-hidden="true">↗</span></button></div></div><div data-game-area></div></div><aside class="arcade-aside"><div class="game-companion"><img data-game-avatar alt="" hidden><p data-game-companion></p></div><p data-game-response class="game-companion-response" role="status" hidden></p><h2>最近几局</h2><ol data-play-records></ol><p data-record-empty>还没有成绩，选一款开始吧。</p><div class="daily-game-reward"><p data-reward-limit></p><progress data-reward-progress max="60" value="0" aria-label="今日游戏金币奖励进度"></progress></div><small>游戏随操作保存。完成后可以提交成绩给本局角色。</small></aside></div>
+      <dialog class="leisure-dialog" aria-labelledby="abandon-title"><h2 id="abandon-title">放弃这一局？</h2><p>本局不结算奖励。已有成绩与金币不受影响。</p><div class="leisure-dialog-actions"><form method="dialog"><button>继续玩</button></form><button type="button" data-abandon-confirm>放弃本局</button></div></dialog>
+    </section>
+    <section id="page-memory" class="page leisure-page" hidden aria-labelledby="memory-title"><div class="leisure-top"><button type="button" data-back>← 返回</button><button type="button" data-go="settings" data-preference-target="role">记忆调用与上下文设置 →</button></div><header class="leisure-heading"><div><p data-memory-role></p><h1 id="memory-title" tabindex="-1">留在心里的事</h1></div><button type="button" data-memory-candidates>从对话整理</button><button type="button" data-memory-add class="primary">＋ 记一件事</button></header><p data-memory-feedback role="status"></p><div class="memory-toolbar"><label><input data-memory-archived type="checkbox">显示已归档</label><span>只编辑当前角色的记忆</span></div><div class="memory-entries" data-memory-candidate-list hidden></div><div class="memory-entries" data-memory-list></div><p data-memory-empty class="leisure-empty" hidden>还没有记忆。可以从一个偏好、一条边界或一件共同经历开始。</p><details class="context-details"><summary>本轮上下文</summary><p data-context-summary></p></details><dialog class="leisure-dialog" aria-labelledby="memory-edit-title"><h2 id="memory-edit-title">记一件事</h2><form data-memory-form><label>类别<select name="type"><option value="fact">事实与经历</option><option value="preference">偏好</option><option value="boundary">边界</option><option value="fiction">虚构设定</option></select></label><label class="memory-text-label">内容<textarea name="text" maxlength="1600" rows="5" required></textarea></label><label>常用记忆<input name="pinned" type="checkbox"></label><label>启用<input name="active" type="checkbox" checked></label><p data-memory-evidence class="field-help"></p><p data-memory-error role="alert"></p><div class="leisure-dialog-actions"><button type="button" data-memory-cancel>取消</button><button type="submit" class="primary">确认并保存</button></div></form></dialog></section>
+    <section id="page-characters" class="page inner-page" hidden aria-labelledby="characters-title">
+      <div class="page-top"><button type="button" data-back>← 返回聊天</button></div>
+      <div class="page-heading"><div><p class="overline">从相识开始</p><h1 id="characters-title" tabindex="-1">选择角色</h1><p>选择后加入左侧列表，再创建新聊天。</p></div><button type="button" data-go="create" class="primary">＋ 添加新角色</button></div>
+      <div id="character-list" class="character-list"></div>
+    </section>
+    <section id="page-edit" class="page role-editor-page" hidden aria-labelledby="edit-title">
+      <div class="editor-top"><button type="button" data-back>← 返回</button><span id="edit-draft-state" role="status">已保存的设定</span></div>
+      <div class="role-editor-layout">
+        <aside class="editor-identity"><div class="editor-portrait"><img id="edit-portrait" alt="" hidden><span id="edit-initial" aria-hidden="true"></span></div><p class="overline">角色工作室</p><h1 id="edit-title" tabindex="-1"></h1><p id="edit-subtitle"></p><nav class="studio-tabs" aria-label="角色编辑分区"><button type="button" data-studio="voice" aria-pressed="true">人格与相处<span>声音、经历与此刻</span></button><button type="button" data-studio="layers" aria-pressed="false">提示词与层级<span>人格优先，资料有出处</span></button><button type="button" data-studio="lore" aria-pressed="false">世界书<span>地点、偏好与世界设定</span></button></nav><a href="#/edit" id="edit-advanced">头像与立绘<span>自己的图片，自己的角色</span></a></aside>
+        <form id="edit-form" class="role-edit-form">
+          <fieldset><legend>人格底色</legend><label>人格与经历<textarea name="persona" rows="5" maxlength="8000" required></textarea></label><label>性格与偏好<textarea name="personality" rows="3" maxlength="4000" placeholder="偏爱什么，在意什么，又有什么小矛盾"></textarea></label></fieldset>
+          <fieldset><legend>如何相处</legend><label>说话方式<textarea name="speechStyle" rows="3" maxlength="4000" placeholder="称呼、语气、习惯的表达"></textarea></label><label>示例对白<select name="exampleMode"><option value="inherit">使用内置示例 · 服从当前人格</option><option value="custom">只用我的示例</option><option value="off">关闭示例对白</option></select></label><label>自定义示例对白<span>选择“只用我的示例”后生效；不作为真实聊天或用户记忆。可保留草稿后关闭。</span><textarea name="dialogueExamples" rows="4" maxlength="4000" placeholder="用户：今天有些累。&#10;角色：那就先歇一会儿，我听着。"></textarea></label><label>当前情境<textarea name="scenario" rows="3" maxlength="2000"></textarea></label><label>开场白<span>用于空白对话，不改写已有聊天</span><textarea name="greeting" rows="3" maxlength="2000"></textarea></label></fieldset>
+          <fieldset><legend>角色提示词与情感表达</legend><p class="field-help">系统提示词决定这个角色如何表达。可改写、清空；人格资料仍会保留。支持 {{char}} 与 {{user}}，不执行其他模板。</p><label>角色系统提示词<textarea name="systemPrompt" rows="5" maxlength="8000" placeholder="留空时遵循人格、性格与说话方式"></textarea></label><label>后置表达指令<span>放在历史之后，补充本轮表达；不覆盖当前系统提示词</span><textarea name="postHistoryInstructions" rows="3" maxlength="4000"></textarea></label><label>本轮表达辅助<select name="expressionMode"><option value="inherit">遵循角色 · 默认</option><option value="adaptive">按话题给辅助建议</option><option value="off">关闭情感表达辅助</option></select></label><label>情感表达规则<textarea name="emotionGuidance" rows="3" maxlength="2000" placeholder="例如：关心时保持简短；不描写身体动作。留空时遵循角色"></textarea></label><label>角色扮演辅助<select name="roleSkillMode"><option value="inherit">启用辅助 · 服从当前角色指令</option><option value="off">这位角色关闭扮演辅助</option></select></label><p class="field-help">此开关控制当前角色的扮演辅助与表达学习。希拉专属规则只用于希拉，其余技巧服从当前角色设定。情感表达辅助不测量情绪，也不改变关系阶段。</p></fieldset><details id="edit-comparison"><summary>查看当前已保存的设定</summary><dl id="edit-saved-values"></dl></details>
+          <section id="lore-editor" class="lore-editor" aria-labelledby="lore-title"><h2 id="lore-title"><span>世界书</span><small class="lore-count"></small></h2><div class="lore-content"><p class="lore-hint">按触发词调用，或设为始终启用。优先级高的先调用；历史扫描只读取本角色最近的有效对话（最多 12 条）。停用的条目仍会保留。</p><div class="lore-list"></div><p class="lore-empty" hidden>还没有条目，可以先记录一个地点、习惯或共同约定。</p><div class="lore-actions"><button class="lore-add" type="button">＋ 添加条目</button><button class="lore-save" type="button">保存世界书</button></div><p class="lore-feedback" role="status"></p></div></section>
+          <section id="role-layers" class="role-layers" hidden aria-labelledby="layers-title"><header><p class="overline" id="layer-role"></p><h2 id="layers-title">角色层级</h2></header><dl><div><dt>关系阶段</dt><dd id="layer-relationship"></dd></div><div><dt>记忆</dt><dd id="layer-memory"></dd></div><div><dt>世界知识</dt><dd id="layer-knowledge"></dd></div><div><dt>多模态</dt><dd id="layer-modalities"></dd></div></dl><p id="layer-expression"></p><h3>内置扮演能力</h3><p id="layer-skill-status" class="layer-status"></p><ul id="layer-skills"></ul><button type="button" id="preview-prompt">预览本轮提示词与资料</button><button type="button" data-go="settings" data-preference-target="role" class="layer-settings">记忆与扮演设置 ↗</button></section>
+          <section id="role-media-editor" class="role-media-editor" hidden aria-labelledby="media-title"><h2 id="media-title" data-media-role>角色图片</h2><p class="field-help">图片只存本浏览器，不发送给模型。支持 PNG、JPG、WebP，每张最多 8 MB。</p><div class="media-import-grid"><div><h3>头像</h3><label class="media-upload">选择头像<input type="file" accept="image/png,image/jpeg,image/webp" data-media-file="avatar" aria-label="选择角色头像"></label><img data-media-preview="avatar" class="media-avatar-preview" alt="新头像预览" hidden><button type="button" data-media-save="avatar" disabled>保存头像</button></div><div><h3>立绘</h3><label class="media-upload">添加立绘<input type="file" accept="image/png,image/jpeg,image/webp" data-media-file="portrait" aria-label="添加新角色立绘"></label><img data-media-preview="portrait" class="media-portrait-preview" alt="新立绘预览" hidden><button type="button" data-media-save="portrait" disabled>保存并使用立绘</button></div></div><button type="button" data-media-cancel>取消未保存的预览</button><p data-media-feedback role="status"></p><h3>已添加的立绘</h3><div class="media-saved-list" data-media-list></div><p class="field-help">聊天里的“显示与立绘”可切换已保存的图片。原素材不会被删除。</p></section>
+          <footer class="editor-savebar"><div id="edit-feedback" class="editor-feedback" role="status"></div><button type="button" id="edit-reload">放弃草稿</button><button type="button" id="edit-resolve" hidden>对照并处理冲突</button><button type="submit" id="edit-save" class="primary">保存并返回聊天 ↗</button></footer>
+        </form>
+      </div>
+    </section>
+    <dialog id="prompt-preview" class="leisure-dialog prompt-preview" aria-labelledby="prompt-preview-title"><h2 id="prompt-preview-title">本轮发送预览</h2><p>只在本机组装，不调用模型。未保存的角色草稿不会使用；这里显示当前角色已保存的资料。</p><label>试一句话<textarea id="prompt-preview-query" rows="2" maxlength="12000" placeholder="输入话题，查看实际会调用哪些记忆和世界书"></textarea></label><div class="leisure-dialog-actions"><button type="button" id="prompt-preview-refresh">更新预览</button><button type="button" id="prompt-preview-close">关闭</button></div><p id="prompt-preview-summary"></p><div id="prompt-preview-readable"></div><details><summary>查看完整模型消息（高级）</summary><pre id="prompt-preview-content" tabindex="0"></pre></details></dialog><section id="page-create" class="page inner-page" hidden aria-labelledby="create-title">
+      <div class="page-top"><button type="button" data-back>← 返回</button></div>
+      <div class="page-heading"><div><p class="overline">新朋友</p><h1 id="create-title" tabindex="-1">添加新角色</h1><p>写好身份与表达，让这位角色拥有自己的聊天、人格和记忆。</p></div></div>
+      <p id="create-persona-mode" class="field-help"></p>
+      <form id="create-form" class="character-create-layout">
+       <div class="create-fields">
+        <fieldset><legend><span>01</span> 身份与背景</legend><label>角色名字 <span>必填</span><input name="name" required maxlength="40" autocomplete="off" placeholder="如何称呼这位角色？"></label><label>一句介绍<input name="mood" maxlength="100" placeholder="在列表中显示的简介"></label><label>人格与背景 <span>必填</span><textarea name="persona" required rows="5" maxlength="8000" placeholder="身份、经历、性格、偏好与边界。留意具体细节，而不是堆叠形容词。"></textarea></label></fieldset>
+        <fieldset><legend><span>02</span> 表达与相遇</legend><label>说话方式<textarea name="speechStyle" rows="3" maxlength="2000" placeholder="语气、句子长度、常用表达。可稍后补充。"></textarea></label><label>相遇设定<textarea name="scenario" rows="3" maxlength="2000" placeholder="第一次见面的地点、人物关系与正在发生的事。"></textarea></label><label>开场白<textarea name="greeting" rows="2" maxlength="2000" placeholder="可留空，等你先开口。"></textarea></label></fieldset>
+        <div class="create-submit"><p id="create-feedback" role="status">草稿自动保存，返回也会保留。</p><button type="submit" class="primary">添加并完善资料</button></div>
+       </div>
+       <aside class="create-review" aria-label="新角色预览"><span class="create-review-initial" data-create-initial>＋</span><h2 data-create-name>新角色</h2><p data-create-intro>一句介绍会显示在角色列表里。</p><dl><div><dt>人格</dt><dd data-create-persona>等待填写</dd></div><div><dt>开场</dt><dd data-create-opening>由你先开口</dd></div></dl><p>每位角色独立保存人格与记忆；当前模式决定资料所属。</p><h3>添加后继续完善</h3><ul><li>上传头像和立绘</li><li>编辑世界书、情感与记忆</li><li>连接模型，再开启对话</li></ul></aside>
+      </form>
+    </section>
+    <section id="page-settings" class="page inner-page" hidden aria-labelledby="settings-title">
+      <div class="page-top"><button type="button" data-back>← 返回聊天</button></div>
+      <div class="page-heading settings-heading"><div><h1 id="settings-title" tabindex="-1">设置</h1></div></div>
+      <nav class="preference-tabs" aria-label="设置分类"><button type="button" data-preference="reading"><strong>阅读与布局</strong><small>字号、比例与间距</small></button><button type="button" data-preference="appearance"><strong>主题与动效</strong><small>配色、装饰与动画</small></button><button type="button" data-preference="connection"><strong>模型与工具</strong><small>服务、密钥与连接</small></button><button type="button" data-preference="role"><strong>角色与相处</strong><small>回复、表情与人格模式</small></button><button type="button" data-preference="memory"><strong>记忆与资料</strong><small>个人资料与长对话</small></button></nav>
+      <div class="settings-layout">
+
+      <form id="settings-form" class="settings-form" novalidate>
+<fieldset data-preference-panel="reading"><legend>界面与阅读</legend><section class="settings-group"><h3>页面比例</h3><p class="field-help">整体调整界面、卡片与按钮大小。只影响幻境，不改变浏览器或其他网页。</p><div class="app-scale-control"><button type="button" data-scale-step="-5" aria-label="缩小页面">−</button><input type="range" name="appScale" min="50" max="175" step="5" value="100" aria-label="项目页面缩放"><button type="button" data-scale-step="5" aria-label="放大页面">＋</button><output data-scale-value>100%</output><button type="button" data-scale-reset>还原 100%</button></div></section><section class="settings-group"><h3>文字与排版</h3><p class="field-help">字号和间距应用于聊天、场景、资料和设置。</p><label class="setting-row">文字大小<select name="fontScale"><option value="medium">标准</option><option value="large">大字</option><option value="small">小字</option></select></label><label class="setting-row">内容间距<select name="density"><option value="compact">紧凑</option><option value="comfortable">舒适</option><option value="airy">宽松</option></select></label></section><section class="settings-group"><h3>输入习惯</h3><label class="setting-row">发送快捷键<select name="sendKey"><option value="enter">Enter 发送</option><option value="ctrl-enter">Ctrl / ⌘ + Enter 发送</option></select></label></section><div class="reading-preview"><span>阅读预览</span><p>今天，想和角色聊些什么？</p><p>页面比例与文字大小可以分别调整。</p></div></fieldset><fieldset data-preference-panel="appearance" hidden><legend>主题与装饰</legend><section class="settings-group"><h3>主题</h3><label class="setting-row">整体主题<select name="theme"><optgroup label="通用"><option value="light">温馨白日 · 默认</option><option value="dark">柔和深色</option><option value="system">跟随系统</option></optgroup><optgroup label="角色与自定义"><option value="character">跟随当前角色 · 自选</option><option value="night">希拉 · 莓色夜间</option><option value="day">希拉 · 玫瑰日间</option><option value="shira-velvet">希拉 · 紫绒密语</option><option value="koka-day">可卡 · 奶油手帐</option><option value="koka-night">可卡 · 草莓晚灯</option><option value="shuyun-day">书韵 · 蓝笺午后</option><option value="shuyun-night">书韵 · 墨色夜读</option><option value="package">使用已启用的主题包</option></optgroup></select></label></section><section class="settings-group"><h3>视觉与动效</h3><label class="setting-row">主题装饰<select name="themeDetail"><option value="quiet">纯净 · 不加纹样</option><option value="pattern">材质与细线</option><option value="sticker">材质与贴纸</option></select></label><label class="setting-row switch-row">减少动态效果<input type="checkbox" name="reducedMotion" role="switch"></label><label class="setting-row" hidden>主题装饰便笺<input type="checkbox" name="themeWidget"></label></section></fieldset>
+        <fieldset data-preference-panel="connection" hidden><legend>聊天模型</legend><p id="model-status" role="status">正在检查本机服务…</p><button type="button" id="deepseek-preset" class="provider-preset">使用 DeepSeek 官方配置<span>最新 Flash · 日常聊天</span></button><p class="field-help">先填写模型，再保存密钥；验证成功会保存配置，并检查聊天使用的生成接口。</p><label class="setting-row switch-row">深度思考<input name="thinking" type="checkbox" role="switch"></label><p class="field-help">默认关闭，聊天更快。开启后为推理与正文至少预留 2048 输出 token，等待和用量可能增加；仅显示服务商实际返回的推理。</p><details class="provider-advanced"><summary>其他服务与高级配置</summary><div class="field-pair"><label>接口地址<input name="baseUrl" type="url" placeholder="https://api.deepseek.com" autocomplete="off" spellcheck="false"></label><label>模型名称<input name="model" maxlength="160" placeholder="deepseek-flash" autocomplete="off" spellcheck="false"></label></div><p class="field-help">仅需填写服务商提供的地址和模型，不要把密钥放进地址。</p></details><div class="provider-actions"><button type="button" id="test-model">验证并保存模型 · 一条短消息</button><button type="button" id="refresh-connection">检查本机服务</button></div><p id="model-test-feedback" role="status" class="field-help"></p></fieldset>
+        <fieldset id="role-settings" data-preference-panel="role" hidden><legend>角色表达</legend><section class="settings-group"><h3>对白风格</h3><p class="field-help">简单话题保持自然简短，需要解释时按内容展开。角色人格与本轮要求优先。</p><label class="setting-row">回复习惯<select name="replyStyle"><option value="natural">自然短聊 · 默认</option><option value="expanded">充分展开</option><option value="character">完全遵循角色</option></select></label></section><section class="settings-group"><h3>表情与叙事</h3><p class="field-help">旁白、心里话和表情辅助角色表达，不替换人格。</p><label class="setting-row switch-row">允许回复附带表情贴纸<input name="replyStickers" type="checkbox" role="switch"></label><label class="setting-row">动作与心里话<select name="replyNarration"><option value="off">纯对白</option><option value="scene">适时旁白 · 默认</option><option value="inner">旁白与心里话</option></select></label></section><section class="settings-group"><h3>扮演技巧</h3><p class="field-help">日常对话可按需读取扮演技能；任务能力在聊天中另行开启。</p><label class="setting-row switch-row">角色扮演辅助<input name="roleSkills" type="checkbox" role="switch"></label></section></fieldset><fieldset data-preference-panel="memory" hidden><legend>记忆与上下文</legend><section class="settings-group"><h3>长期记忆</h3><label class="setting-row switch-row">使用已确认的角色记忆<input name="memoryContext" type="checkbox" role="switch"></label><p class="field-help">只调用当前角色、当前人格模式的已保存记忆。删除聊天不等于忘记已确认的记忆。</p><button type="button" data-go="memory">查看与管理角色记忆</button></section><section class="settings-group"><h3>对话中的我</h3><button type="button" id="identity-jump">编辑我的资料与这段关系</button></section><section class="settings-group"><h3>上下文窗口</h3><p class="field-help">接近预算时归纳旧对话，保留原始记录与近期原话；压缩会调用当前模型。</p><label class="setting-row">模型上下文窗口<select name="contextWindow"><option value="8192">8K token · 小模型</option><option value="32768">32K token</option><option value="65536">64K token</option><option value="131072">128K token</option><option value="262144">256K token</option><option value="1048576">1M token · 默认</option></select></label><label class="setting-row switch-row">长对话自动归纳压缩<input name="contextCompression" type="checkbox" role="switch"></label></section><details class="settings-advanced"><summary>兼容与高级选项</summary><label class="setting-row" hidden>旧版字符预算<select name="contextBudget"><option value="8000">8,000 字符 · 轻量</option><option value="16000">16,000 字符 · 均衡</option><option value="24000">24,000 字符 · 完整</option></select></label></details></fieldset>
+        <div class="form-actions"><span id="settings-feedback" role="status">外观调整会立即生效。模型与记忆配置分别保存。</span><button type="submit" class="primary">保存设置</button></div>
+      </form>
+      <div class="settings-secondary" data-preference-panel="connection" hidden><form id="credential-form" class="settings-form" autocomplete="off">
+        <fieldset><legend>当前角色的聊天密钥</legend><label for="chat-secret">密钥（API Key）<input id="chat-secret" type="password" maxlength="8192" autocomplete="new-password" spellcheck="false" placeholder="粘贴服务商提供的密钥" required></label><p class="field-help">只存当前角色的本机加密槽。修改这里不会替换其他角色的密钥。</p><label class="setting-row" for="replace-chat-credential">允许保存或替换已有密钥<input id="replace-chat-credential" type="checkbox"></label></fieldset>
+        <div class="form-actions"><span role="status">已有密钥不会显示。</span><button type="submit">保存密钥</button></div>
+      </form>
+      </div>
+
+      <section id="mcp-connections" class="settings-secondary mcp-panel" data-preference-panel="connection" hidden aria-labelledby="mcp-heading">
+        <h2 id="mcp-heading">角色的外部工具</h2><p class="field-help">连接外部 MCP 服务，为角色任务补充资料。当前支持无需密钥的 HTTP 服务；每次调用会先显示参数，由你批准。</p>
+        <div class="mcp-actions"><button type="button" data-mcp-deepwiki>填入 DeepWiki 示例</button><button type="button" data-mcp-refresh>刷新连接与待批准调用</button></div>
+        <form class="mcp-add" data-mcp-add><label>连接名称<input name="name" maxlength="80" required placeholder="例如：开源项目资料"></label><label>服务地址<input name="url" type="url" maxlength="2048" required placeholder="https://mcp.deepwiki.com/mcp" autocomplete="off"></label><div><button type="submit">添加并发现工具</button></div></form>
+        <p data-mcp-feedback class="mcp-feedback" role="status"></p><div data-mcp-servers></div>
+        <div data-mcp-editor class="mcp-editor" hidden><h3 data-mcp-title></h3><label class="mcp-check"><input type="checkbox" data-mcp-enabled>启用这个连接</label><label class="mcp-check"><input type="checkbox" data-mcp-bind>允许 <span data-mcp-role>当前角色</span> 使用已选工具</label><div class="mcp-actions"><button type="button" data-mcp-discover>重新发现工具</button><button type="button" data-mcp-save class="primary">保存工具与角色授权</button></div><div data-mcp-tools></div>
+        <h3>准备一次工具调用</h3><form data-mcp-call><label>已选工具<select data-mcp-call-tool></select></label><div data-mcp-arguments></div><button type="submit">预览调用参数</button></form></div>
+        <form class="mcp-task" data-mcp-task><h3>交给当前角色处理</h3><p class="field-help">使用已保存的聊天模型。勾选的连接只用于这次任务；普通聊天不会自动调用工具。</p><div data-mcp-task-scope class="mcp-task-scope"></div><label>你要完成的事情<textarea data-mcp-query rows="3" maxlength="12000" required placeholder="例如：查看 NousResearch/hermes-agent 的模块结构，找出适合借鉴的记忆处理设计"></textarea></label><div class="mcp-actions"><button type="submit" data-mcp-task-start>开始角色任务</button><button type="button" data-mcp-task-stop hidden>停止任务</button></div><pre data-mcp-task-result aria-live="polite"></pre></form>
+        <h3>待批准的调用</h3><div data-mcp-approvals></div><button type="button" data-mcp-stop-call hidden>停止外部调用</button><p data-mcp-source class="field-help"></p><pre data-mcp-result aria-label="外部工具调用结果" aria-live="polite"></pre><button type="button" data-mcp-explain hidden>请角色解读结果 · 使用聊天模型</button><details><summary>查看调用原始数据</summary><pre data-mcp-result-json></pre></details>
+      </section>
+      <div data-preference-panel="memory" hidden><form id="identity-form" class="settings-form"><fieldset><legend>你给当前角色的资料</legend><p class="field-help">这份资料只用于当前角色。其他角色有各自的资料、人格、情感与记忆。</p><label>你的名字<input name="user.name" maxlength="60"></label><label>默认称呼<input name="user.preferredAddress" maxlength="60"></label><label>偏好与习惯<textarea name="user.preferences" rows="3" maxlength="800"></textarea></label><label>共同边界<textarea name="user.boundaries" rows="3" maxlength="800"></textarea></label><label class="setting-row switch-row">允许发送个人与关系文字资料<input name="user.shareWithModel" type="checkbox" role="switch"></label><p class="field-help">默认关闭。使用角色记忆是上方的独立开关；关系阶段属于角色相处设定，会用于提示词。</p></fieldset><fieldset><legend data-identity-role>你与当前角色的关系</legend><label>关系阶段<select name="relationship.stage"><option value="">沿用角色卡</option><option value="new">初识</option><option value="familiar">熟悉</option><option value="trusted">信赖</option><option value="intimate">亲密 · 由我明确选择</option></select></label><label>此刻的表达倾向<select name="relationship.emotionState"><option value="auto">随对话自然变化</option><option value="calm">放松</option><option value="bright">轻快</option><option value="warm">温柔陪伴</option><option value="thoughtful">专注认真</option><option value="reserved">含蓄克制</option></select></label><p class="field-help">状态只用于当前角色的表达，不是好感分值。关系不会因送礼或聊天次数自动升级；亲密程度仍服从你写下的关系与边界。</p><label>关系名称<input name="relationship.label" maxlength="60" placeholder="你决定怎样定义这段关系"></label><label>这位角色如何称呼你<input name="relationship.nickname" maxlength="60"></label><label>相遇背景<textarea name="relationship.origin" rows="2" maxlength="1000"></textarea></label><label>相处方式<textarea name="relationship.dynamic" rows="3" maxlength="1000"></textarea></label><label>这段关系的边界<textarea name="relationship.boundaries" rows="3" maxlength="800"></textarea></label><label>你在故事中的身份<span>虚构身份，只对当前角色有效；不会作为现实用户记忆</span><textarea name="relationship.userPersona" rows="3" maxlength="2000"></textarea></label></fieldset><div class="form-actions"><span data-identity-feedback role="status"></span><button type="button" data-identity-reload>重新载入已保存资料</button><button type="submit" class="primary">保存个人与关系资料</button></div></form></div></div>
+    </section>
+    <section id="page-life" class="page story-page" hidden aria-labelledby="story-title">
+      <div class="page-top"><button type="button" data-back>← 返回聊天</button><span class="eyebrow">一段散步，一张手记</span></div>
+      <header class="page-heading"><h1 id="story-title" tabindex="-1" data-story-role>一起去走一段。</h1></header>
+      <div class="story-mode-switch" aria-label="同行视图"><button type="button" data-story-mode="journey" aria-pressed="true">同行</button><button type="button" data-story-mode="journal" aria-pressed="false">手记</button></div>
+      <div class="story-main" data-story-main></div><p class="story-status" data-story-status role="status" hidden></p>
+    </section>
+<section id="page-moments" class="page moments-page" hidden aria-label="朋友圈"><div class="page-top"><button type="button" data-back>← 返回聊天</button><span>朋友圈 · 小小日常</span></div></section>
+  </main>
+  <dialog id="display-dialog" aria-labelledby="display-title">
+    <header class="display-heading"><div><h2 id="display-title">显示与立绘</h2><p data-display-role></p></div><form method="dialog"><button aria-label="关闭显示与立绘" title="关闭">×</button></form></header>
+    <div class="display-layout"><section class="display-preferences">
+      <h3>界面主题</h3><div data-theme-choices class="display-themes"></div>
+      <h3>文字大小</h3><div data-font-choices class="display-segments"></div>
+      <h3>聊天疏密度</h3><div data-density-choices class="display-segments"></div><h3>头像样式</h3><div data-avatar-choices class="display-segments"></div>
+      <h3>立绘大小</h3><div data-size-choices class="display-segments"></div>
+      <label class="setting-row">立绘适配<select data-portrait-fit aria-label="立绘适配"><option value="scene">融入场景 · 填满画幅</option><option value="full">完整显示 · 不裁切</option></select></label>
+      <label class="setting-row">立绘场景<select data-scene-mode aria-label="立绘场景"><option value="auto">自动 · 随对话场景</option><option value="casual">日常</option><option value="creative">创作</option><option value="work">工作</option><option value="comfort">陪伴</option></select></label>
+      <label class="setting-row switch-row">专注聊天<input type="checkbox" data-focus-mode role="switch"></label><label class="setting-row switch-row">减少动态效果<input type="checkbox" data-motion-mode role="switch"></label><p data-display-feedback role="status"></p>
+    </section><section class="display-gallery"><h3>角色立绘</h3><label class="setting-row switch-row">开放全部立绘<input type="checkbox" data-unlock-art data-display-focus="unlock-art" role="switch"></label><p class="field-help">对所有角色生效。开启后可自由选择；关闭后恢复相处解锁，不修改好感记录。</p><div data-portrait-choices class="portrait-choices"></div><p data-portrait-note></p></section></div>
+  </dialog>
+  <dialog id="gift-dialog" aria-labelledby="gift-dialog-title" aria-describedby="gift-dialog-description">
+    <form method="dialog" class="gift-dialog-close"><button aria-label="关闭赠礼确认">×</button></form>
+    <div class="gift-dialog-art"><img id="gift-dialog-image" alt="" hidden></div>
+    <p class="bag-kicker" id="gift-dialog-recipient"></p><h2 id="gift-dialog-title"></h2>
+    <p id="gift-dialog-description"></p><p id="gift-dialog-effect" class="gift-dialog-effect"></p>
+    <label class="gift-note-label">附一句话<textarea id="gift-note" rows="2" maxlength="300" placeholder="可留空"></textarea></label>
+    <p id="gift-dialog-error" class="gift-dialog-error" role="alert" hidden></p>
+    <div class="gift-dialog-actions"><form method="dialog"><button>先留着</button></form><button type="button" id="confirm-gift" class="primary">赠送 ×1</button></div>
+  </dialog>
+  <dialog id="edit-reload-dialog" class="editor-dialog" aria-labelledby="edit-reload-title"><h2 id="edit-reload-title">放弃这份草稿？</h2><p>重新载入已保存的设定。当前未保存的修改将被替换，聊天记录不受影响。</p><form method="dialog"><button value="cancel" autofocus>继续编辑</button><button value="reload" class="primary">放弃并重新载入</button></form></dialog>
+  <dialog id="edit-conflict-dialog" class="editor-dialog editor-conflict-dialog" aria-labelledby="edit-conflict-title"><h2 id="edit-conflict-title">选择保留哪份修改</h2><p>以下是你改过的字段；其他资料保持最新内容。</p><div id="edit-conflict-values"></div><form method="dialog"><button value="cancel" autofocus>暂不覆盖</button><button value="mine" class="primary">采用我的修改并保存</button></form></dialog>
+  <dialog id="save-help-dialog" aria-labelledby="save-help-title"><header><h2 id="save-help-title">保存与备份</h2><form method="dialog"><button aria-label="关闭保存与备份">×</button></form></header><p id="save-help-status" role="status"></p><p class="field-help">同步状态会保留在设置中。聊天导出包含当前已加载记录，可先把它存下来。</p><div><button id="save-help-retry" type="button">重新保存与同步</button><button id="save-help-export" type="button">导出当前聊天</button></div></dialog>
+  <div id="global-feedback" role="alert" class="global-feedback" hidden></div>
+  <noscript>请启用 JavaScript 以使用聊天。<a href="./index.html">返回旧入口</a></noscript>
+</body>
+</html>
+
+
+
+
+
+

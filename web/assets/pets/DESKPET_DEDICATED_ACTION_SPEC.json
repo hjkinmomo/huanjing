@@ -1,0 +1,77 @@
+{
+  "batch": "r17",
+  "extendsBatch": "r16",
+  "frameSize": [200, 250],
+  "purpose": "Round 15 role-dedicated desktop pet actions. These frames extend the r16 core action package and do not replace idle, walk, sleep, wake, drag, fall, land, edge, peek, return, or reminder.",
+  "naming": {
+    "folder": "assets/pets/{role}/r17/",
+    "frame": "{role}_{assetName}_{frameIndex:00}.png",
+    "contactSheet": "assets/generated/r17_{role}_{assetName}_contact_sheet.png",
+    "previewGif": "assets/generated/r17_deskpet_previews/{role}_{assetName}.gif"
+  },
+  "acceptance": {
+    "frameCountPerAction": 8,
+    "allFramesRgba": true,
+    "transparentBackgroundRequired": true,
+    "browserFrameSourceProofRequired": true,
+    "hiddenMenuRequired": true,
+    "roleSpecificMenuFilteringRequired": true
+  },
+  "actions": {
+    "shira": {
+      "coffee": {
+        "assetName": "coffee",
+        "frameCount": 8,
+        "frameDurationsMs": [180, 220, 280, 360, 520, 720, 980, 1320],
+        "motionRule": "hold coffee, sip, soften expression, and settle; calm work companion motion"
+      },
+      "work": {
+        "assetName": "work",
+        "frameCount": 8,
+        "frameDurationsMs": [150, 165, 180, 220, 300, 420, 640, 900],
+        "motionRule": "focused tablet/work stance with small readable hand and posture changes"
+      }
+    },
+    "koka": {
+      "rabbit": {
+        "assetName": "rabbit",
+        "frameCount": 8,
+        "frameDurationsMs": [200, 240, 320, 460, 680, 900, 1180, 1500],
+        "motionRule": "hold Xiaojiao rabbit plush; no detached fragments or background box"
+      },
+      "stomp": {
+        "assetName": "stomp",
+        "frameCount": 8,
+        "frameDurationsMs": [95, 110, 130, 180, 260, 380, 520, 760],
+        "motionRule": "tsundere foot stomp with transition poses and no dust, text, or effects"
+      }
+    },
+    "rikka": {
+      "ritual": {
+        "assetName": "ritual",
+        "frameCount": 8,
+        "frameDurationsMs": [180, 220, 280, 360, 480, 640, 860, 1180],
+        "motionRule": "dramatic ritual-like hand poses only; no symbols, magic circles, or detached glow"
+      }
+    },
+    "rem": {
+      "care": {
+        "assetName": "care",
+        "frameCount": 8,
+        "frameDurationsMs": [220, 260, 340, 460, 620, 860, 1180, 1600],
+        "motionRule": "gentle care tray/towel movement with warm settle; no white background or props outside the sprite"
+      }
+    }
+  },
+  "evidence": {
+    "pixelQa": "assets/generated/r17_dedicated_pet_actions_pixel_qa.json",
+    "browserQa": "assets/generated/r17_dedicated_pet_actions_chrome_cdp_evidence.json",
+    "qaSummary": "assets/generated/r17_dedicated_pet_actions_qa_summary.json",
+    "combinedContactSheet": "assets/generated/r17_dedicated_pet_actions_contact_sheet.png",
+    "browserScreenshot": "assets/generated/r17_dedicated_pet_actions_chrome_cdp_final.png"
+  },
+  "rejectedEvidence": [
+    "assets/generated/_rejected/r17_koka_rabbit_detached_hair_artifact/",
+    "assets/generated/_rejected/r17_koka_rabbit_slot_overlap_retry2/"
+  ]
+}

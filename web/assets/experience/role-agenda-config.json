@@ -1,0 +1,565 @@
+{
+  "schema": 1,
+  "note": "平日使用原角色life.schedule；周末/假日是可编辑初稿，只用于未被手改或保存覆盖的默认日程。",
+  "roles": {
+    "shira": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "shira-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "shira-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "shira-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "shira-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "shira-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "shira-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "koka": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "manor-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "manor-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "manor-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "manor-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "manor-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "manor-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "shuyun": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "shuyun-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "shuyun-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "shuyun-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "shuyun-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "shuyun-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "shuyun-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "ansera": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "ansera-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "ansera-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "ansera-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "ansera-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "ansera-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "ansera-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "huangzhao": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "huangzhao-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "huangzhao-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "huangzhao-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "huangzhao-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "huangzhao-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "huangzhao-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "xingxia": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "xingxia-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "xingxia-desk",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "xingxia-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "xingxia-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "xingxia-desk",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "xingxia-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "hupo": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "hupo-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "hupo-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "hupo-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "hupo-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "hupo-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "hupo-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "sylvie": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "teacher-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "teacher-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "teacher-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "teacher-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "teacher-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "teacher-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "eve": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "living-room",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "living-room",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "rin": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "rin-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "rin-desk",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "rin-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "rin-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "rin-desk",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "rin-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "mianmian": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "mianmian-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "mianmian-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "mianmian-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "mianmian-bedroom",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "mianmian-living",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "mianmian-bedroom",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "youzi": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "guest-room-1",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "guest-room-1",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "guest-room-1",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "guest-room-1",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "guest-room-1",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "guest-room-1",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    },
+    "mulan": {
+      "weekend": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "guest-room-2",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "guest-room-2",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "guest-room-2",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "holiday": {
+        "enabled": true,
+        "slots": [
+          {
+            "at": "00:00",
+            "locationId": "guest-room-2",
+            "activity": "休息"
+          },
+          {
+            "at": "09:00",
+            "locationId": "guest-room-2",
+            "activity": "自由安排"
+          },
+          {
+            "at": "23:00",
+            "locationId": "guest-room-2",
+            "activity": "准备休息"
+          }
+        ]
+      },
+      "source": "editable-location-only-draft-20261015"
+    }
+  }
+}

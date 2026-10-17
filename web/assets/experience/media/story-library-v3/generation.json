@@ -1,0 +1,242 @@
+{
+  "tool": "built-in image_gen",
+  "style": "refined anime, natural restrained locations, complete adult character cutouts",
+  "assets": [
+    {
+      "id": "street",
+      "prompt": "Use case: game scene background. A polished Japanese anime visual novel background of a quiet pedestrian street corner on a clear mild morning, landscape 16:9. Refined hand-painted anime illustration, coherent perspective, natural soft shadows, pale blue sky with a few white clouds, cream stucco and subdued sage storefronts. Medium richness of useful detail: a wooden bench clearly visible in left foreground around x23% y66%, a small flowerpot beside it, bicycle leaned near one shop, a cafe chalkboard without readable text, two restrained leafy trees framing edges. Enough inviting lived-in detail for looking around, not empty flat minimalism and not busy fantasy decoration. Leave a comfortable open walkway at middle and right for compositing a full-body character; do not make the street itself narrow. Avoid extreme golden sun, purple hues, excessive blooms, sparkling particles, ornate trims. Careful material painting of wood, paving and glass, soft precise linework and depth. No people, no character silhouettes, no text, no watermark, no UI.",
+      "file": "backgrounds/street.webp",
+      "sha256": "433e2b124b335f86b4859eecef1bab11eb314882765024d8fa2ca8a0966f8bc8",
+      "sourceImage": "exec-54f9132c-afb0-40bd-8432-342f52d66116.png"
+    },
+    {
+      "id": "boutique",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A small stationery and keepsake shop in late morning. Cream paper boxes and ribbons neatly grouped on a counter at left, one wrapped parcel clearly at x25% y53%, shelves with a handful of ceramics, window showing pale blue sky. Calm attractive everyday retail space, not luxurious jewellery palace.",
+      "file": "backgrounds/boutique.webp",
+      "sha256": "7ddfbdf2868b0c16d3416c87e19f4388bd603715af717057625a6d3f0b59cbd0",
+      "sourceImage": "exec-0b9f2340-0ffd-414e-9de4-590f1c429b3f.png"
+    },
+    {
+      "id": "cafe",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A neighborhood cafe in cool pale daylight. A round wooden table in left foreground with a small ivory cup at x28% y63%, book and simple chair, sage bench by large street-facing windows, three modest potted plants, clean aisles. Welcoming quiet space with useful details.",
+      "file": "backgrounds/cafe.webp",
+      "sha256": "f3ab252e625f65645480b5ec0023924dee66a23d4e491c6e368047214ca398e0",
+      "sourceImage": "exec-1435c6ea-87b8-4b8e-ae90-42de7a0729e7.png"
+    },
+    {
+      "id": "bookshop",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A small old independent bookshop in afternoon neutral daylight. Wooden shelves with believable books, a reading table in left foreground with an open book near x25% y63%, table lamp turned off and two chairs, pale window on right, a few labels without words. Subtle wear and beautiful bookbinding textures.",
+      "file": "backgrounds/bookshop.webp",
+      "sha256": "b1fb961ae33965b9209a27a609ad1471414d6cee6d180e908416efbe7602a12d",
+      "sourceImage": "exec-f9274e6c-5ad6-43b0-9ee0-477a477af828.png"
+    },
+    {
+      "id": "conservatory",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A modest glass conservatory on a cloudy bright morning. One wooden table and wicker chair left, potted green plants and fern with detailed leaves at x20% y58%, broad windows and a pale blue/white sky, small ceramic teapot and folded towel on table. Airy but pleasantly lived in, not a cathedral of flowers.",
+      "file": "backgrounds/conservatory.webp",
+      "sha256": "74e1d2418ffad1a6f75455d791bfa035181be4d11e92320eb8de0ced0dad25c8",
+      "sourceImage": "exec-1faa424d-5c6e-452e-b512-5ec88aaffafa.png"
+    },
+    {
+      "id": "piano-room",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A modest music room with a well-kept upright wooden piano on left, ivory sheet music and one sealed cream envelope on its music stand near x23% y53%, piano bench, small bookcase and daylight curtains. Bright soft natural light, comfortable clear right foreground. No magical glow.",
+      "file": "backgrounds/piano-room.webp",
+      "sha256": "f3fead5561e7f3e38f56169e5baa488c8c1c069bd67368930236dd4248944329",
+      "sourceImage": "exec-e287f193-ffbd-4e40-87f4-5732bdef2d1d.png"
+    },
+    {
+      "id": "rain-porch",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A sheltered porch just after light rain in late afternoon, gray-blue sky with soft daylight. An ordinary closed umbrella leaned near left wooden bench at x27% y65%, ceramic flowerpot, simple door and damp stone path outside, a few wet leaves. Cozy weather without golden sunset spectacle.",
+      "file": "backgrounds/rain-porch.webp",
+      "sha256": "498a8e9692541e8b4f6a60552afc8e16d67f96c44de3e3add61f142382060a4e",
+      "sourceImage": "exec-31349519-e91c-4bfb-87bf-32a1eb0f3416.png"
+    },
+    {
+      "id": "lantern-stall",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A small paper craft stall beside a quiet lane at blue-hour evening. A cream handmade rabbit-shaped paper lantern with one bent ear on left table near x23% y56%, paper scissors, spool and folded colored papers neatly grouped, three muted warm paper lanterns above, slate-blue sky, no crowds.",
+      "file": "backgrounds/lantern-stall.webp",
+      "sha256": "7b951eb6c6327a88da518c5f49087eb2edf75dc3c8fb1cd0e89da6921dab3a9f",
+      "sourceImage": "exec-abce7bef-7a70-4c35-88eb-6cf94429adae.png"
+    },
+    {
+      "id": "lantern-path",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A small wooded hillside footpath at early evening. Subdued blue sky through green foliage, simple wooden stair on left, small paper star hung from branch near x21% y35%, only two modest warm lanterns near edge, one bench and stones. Intimate clear path, not fantasy glowing forest.",
+      "file": "backgrounds/lantern-path.webp",
+      "sha256": "890c0c716b8f3734aad3191ec03b0c60c10b73edc20441848f6cd781390c01a2",
+      "sourceImage": "exec-eed97c40-10db-40a1-968e-3bc98b532f62.png"
+    },
+    {
+      "id": "lantern-overlook",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A simple hill overlook at a calm clear night, cool deep blue sky with a few subtle stars, wooden railing midground, distant small town window lights near x38% y45%, folded blanket on a bench left, two modest paper lanterns beside rail. Night is blue not pure black or purple; fine silhouettes visible.",
+      "file": "backgrounds/lantern-overlook.webp",
+      "sha256": "c72affa87428d06925059e74dccb33ce1add1cbbcb5c289ac047775e86ece902",
+      "sourceImage": "exec-61c276f3-269d-44e7-85b7-50045df58017.png"
+    },
+    {
+      "id": "station-reading",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A converted railway station reading room in mild afternoon light. A wooden table at left with pale manuscript photocopies near x23% y62%, ordinary bookshelf, two chairs, modest green desk lamp, broad station windows, cool pale sky. Carefully painted objects with slightly worn wood, no extravagant decoration.",
+      "file": "backgrounds/station-reading.webp",
+      "sha256": "10a7b30b44b948edc784865afb0453d39aaf718a4c825ac7f1b570143a04c629",
+      "sourceImage": "exec-93cb71cb-1908-40f0-93b3-ab575ba659ab.png"
+    },
+    {
+      "id": "old-platform",
+      "prompt": "Use case: game scene background. A polished hand-painted anime visual novel location, landscape 16:9, delicate precise lines, believable perspective, thoughtful material painting. Medium richness of lived-in detail: a few grouped functional objects rather than clutter or a blank showroom. Restrained cream, sage and natural wood palette, neutral daylight or cool blue night appropriate to location. No purple/golden fantasy wash, sparkles, excessive flowers, baroque ornament. Leave a comfortable clear space in middle/right for a composited full-body person. No people, silhouettes, readable text, watermark, UI. A deserted old railway platform on a lightly rainy blue night. Station clock clearly upper left near x23% y28%, shelter roof, wooden bench and simple warm lamp, damp stone with restrained reflections, railway line and misty trees. Plenty of readable blue-gray detail, not black, no neon, no people.",
+      "file": "backgrounds/old-platform.webp",
+      "sha256": "b42633d99c112268f0c8ee65d436086ebd36e790cd4575c3b54aeb56bde8bda7",
+      "sourceImage": "exec-84c868a8-bf74-4ac6-b105-723819149dbf.png"
+    },
+    {
+      "id": "koka-talk",
+      "role": "koka",
+      "pose": "talk",
+      "kind": "character",
+      "prompt": "Use case: character sprite, transparent cutout. Reference for recognizable adult character identity only. Redesign the SAME fictional adult woman age 22: blonde twin ponytails with cream ribbon bows, amber eyes, small rabbit brooch. Refined polished anime illustration with fine deliberate linework and painted fabric, natural adult proportions about 7 heads tall, face with expressive calm eyes and soft friendly smile, no chibi. Outfit: an elegant dusty pink knit cardigan over a cream casual blouse, tasteful pink gingham pleated skirt to mid-thigh, opaque ivory knee socks and cream low-heel Mary Jane shoes. Clothes have believable folds, stitching and modest small bows, not ornate layers everywhere. Standing relaxed with one knee gently bent but both feet down, one hand open in a conversational gesture, the other lightly holding a small closed ivory purse at hip. Arms form a balanced wider silhouette, entire hair and both shoes visible with margin, accurate hands and knees/ankles, softly even natural light suitable for a pale daylight street. Full-body neutral straight-on three-quarter composition, tasteful everyday clothing, natural anatomy, no exaggerated elongated legs, no sexualized pose or framing. REAL transparent alpha background; remove reference scenery completely. No floor, no furniture, no pedestal, no background glow, no shadow painted outside the silhouette, no text, no watermark. A finished reusable character sprite, not a scene.",
+      "file": "characters/koka/talk.png",
+      "sha256": "d0aff491fecb1a1853ec74282a75edb8deac8158896f0ecafa93efa17fe7ad20",
+      "sourceImage": "exec-8edac0a1-bcf2-47f3-a1d9-e05c172b17ec.png"
+    },
+    {
+      "id": "shira-talk",
+      "role": "shira",
+      "pose": "talk",
+      "kind": "character",
+      "prompt": "Use case: identity-preserving adult character sprite. Use reference only for recognizable identity: the SAME adult woman with long wavy burgundy hair, red eyes and small gold teardrop earrings. Refined polished anime illustration, fine confident linework, expressive natural face with a gentle attentive smile; natural adult proportions about seven heads tall. A NEW tasteful burgundy silk day dress: softly draped midi skirt ending just below knees, narrow black lace sleeve trim, fitted modest V neckline, small waist tie, burgundy low-heeled elegant shoes. Realistic painted fabric folds and fine stitching, no huge trailing dress. New pose: relaxed standing in a natural three-quarter view with balanced weight, one hand palm softly open in conversation and the other lightly touching waist tie; arms give silhouette breadth. Full head, both knees, ankles and shoes visible with margin; carefully accurate anatomy, no exaggerated slender length, no suggestive camera. Soft even daylight, consistent with a quiet pale natural street or cafe. One person only. REAL transparent alpha background; no chair, furniture, floor, scenery, gradient, glow, cast shadow outside silhouette, frame, text or watermark.",
+      "file": "characters/shira/talk.png",
+      "sha256": "d10bda548b16b1f53cbaed37bdaabfde67a9a610636be812c1a49a055c286420",
+      "sourceImage": "exec-7f502fab-f9f3-43f5-b47e-e847b70cb9e7.png"
+    },
+    {
+      "id": "shira-tea",
+      "role": "shira",
+      "pose": "tea",
+      "ref": "exec-7f502fab-f9f3-43f5-b47e-e847b70cb9e7.png",
+      "prompt": "Use case: identity-preserving transparent character sprite. SAME adult burgundy-haired red-eyed woman and SAME burgundy midi silk wrap dress with short black lace sleeves, side waist tie and burgundy buckle low heels as reference. Keep exact facial identity, costume and refined anime rendering. Change her action naturally: standing at a gentle three-quarter angle, comfortably holding a small ivory teacup and saucer at waist height with both hands, looking toward viewer with a calm warm smile. Natural balanced adult proportions, about seven heads tall, shoulders relaxed, full hair and both shoes in frame with margin, accurate fingers, ankles and believable cloth folds. Soft neutral daylight. REAL transparent alpha background, one person only, no chair, room, furniture, floor, gradient, glow, vignette, shadow outside silhouette, text or watermark. Complete reusable sprite.",
+      "kind": "character",
+      "file": "characters/shira/tea.png",
+      "sha256": "8952ea15687139987257b402aaca4ce46eef6f51e571394ef9fed93155265db4",
+      "sourceImage": "exec-66d077c4-7a4c-4e18-a042-bf77a6d18f64.png"
+    },
+    {
+      "id": "koka-lantern",
+      "role": "koka",
+      "pose": "lantern",
+      "ref": "exec-8edac0a1-bcf2-47f3-a1d9-e05c172b17ec.png",
+      "prompt": "Use case: identity-preserving transparent character sprite. SAME adult woman age22, blonde twin ponytails with cream bows, amber eyes, rabbit brooch, pink knit cardigan, cream casual blouse and pink gingham pleated skirt, ivory knee socks and cream bow Mary Jane shoes as reference. Keep exact face, clothes and refined anime illustration. New standing action: balanced stance with both shoes down, both hands delicately holding the cord handle and supporting a small ivory rabbit paper lantern with one gently bent ear hanging beside her hip. Friendly natural attentive smile, looking toward the lantern. Fine fabric folds, correct fingers and whole hair/body/shoes visible with margin; natural adult proportions, no exaggerated long limbs. Soft neutral light plus a restrained warm light on fingertips, not background aura. REAL transparent alpha background, no scenery, floor, furniture, gradient, glow outside silhouette, text, watermark. One complete character sprite.",
+      "kind": "character",
+      "file": "characters/koka/lantern.png",
+      "sha256": "e103796eaf592141558d9b4282602cfc65d2fcbc748d0b5822f3452d6b44630a",
+      "sourceImage": "exec-cd5e346c-0c1d-42dd-aa10-94e3d619c461.png"
+    },
+    {
+      "id": "shuyun-talk",
+      "kind": "character",
+      "role": "shuyun",
+      "pose": "talk",
+      "promptSummary": "Same adult character identity, navy embroidered midi dress, full-body natural standing notebook gesture or open-book reading action, real transparent alpha, no furniture.",
+      "file": "characters/shuyun/talk.png",
+      "sha256": "4415ce45befef4efc77d1c20c88d9389673e75e979c2ffb3e15075f85bd9bdd5",
+      "sourceImage": "exec-aac4a4de-cff7-4bf0-accc-6503747c50c8.png"
+    },
+    {
+      "id": "shuyun-read",
+      "kind": "character",
+      "role": "shuyun",
+      "pose": "read",
+      "promptSummary": "Same adult character identity, navy embroidered midi dress, full-body natural standing notebook gesture or open-book reading action, real transparent alpha, no furniture.",
+      "file": "characters/shuyun/read.png",
+      "sha256": "8adaea0a5e448eb3ee26b7401ff248442d50e02d58921ee014693716da81fbf0",
+      "sourceImage": "exec-b402252a-1cfa-4673-a932-10cbb2bfd832.png"
+    },
+    {
+      "id": "street-night",
+      "kind": "background",
+      "role": "",
+      "pose": "",
+      "promptSummary": "Shared same-location night lighting variant; preserve composition, readable blue ambient light and warm practical lamps, no people.",
+      "file": "backgrounds/street-night.webp",
+      "sha256": "90e436f9880afea3d2c7f04021f192d6c934f9755acf287b82625203ced60fe3",
+      "sourceImage": "exec-b6464959-7f53-41b1-b9dc-a71e2be03579.png"
+    },
+    {
+      "id": "cafe-night",
+      "kind": "background",
+      "role": "",
+      "pose": "",
+      "promptSummary": "Shared same-location night lighting variant; preserve composition, readable blue ambient light and warm practical lamps, no people.",
+      "file": "backgrounds/cafe-night.webp",
+      "sha256": "3239654c93b1aad945d9b2d56e76d5555ef888c57ba7d08a5544081e5462f5cd",
+      "sourceImage": "exec-3d7446aa-f8e5-432d-8a18-50b115378dc6.png"
+    },
+    {
+      "id": "station-reading-night",
+      "kind": "background",
+      "role": "",
+      "pose": "",
+      "promptSummary": "Shared same-location night lighting variant; preserve composition, readable blue ambient light and warm practical lamps, no people.",
+      "file": "backgrounds/station-reading-night.webp",
+      "sha256": "0aff11b18f48c271193694795dc09fb78448609307abe4663066d594514098f5",
+      "sourceImage": "exec-c552f58e-e47c-4263-bfa7-9172ee66482a.png"
+    },
+    {
+      "id": "water-arc",
+      "prompt": "Use case: transparent foreground game ornament. One elegant curved sweep of clear pale-blue water, a small graceful crescent splash with 7-10 suspended droplets at varying sizes. Refined Japanese anime painted illustration with delicate clean edges, translucent water highlights and restrained silver-blue reflection. Diagonal curved composition to frame the SIDE of a full-body character card, visually lightweight, no overwhelming spray, no magical sparkles. Entire splash inside square canvas with ample transparent margin. REAL transparent alpha background, no character, skin, feet, scenery, floor, surface pool, gradient background, text, border or watermark. Only the independent water splash ornament.",
+      "kind": "ornament",
+      "file": "ornaments/water-arc.png",
+      "sha256": "45afd8b4059c21bf71c46ab6370c7ef8667f9f061950ab528bea02e84fdc09a0",
+      "sourceImage": "exec-c51fc34e-18c1-4f7d-8ef4-068da6e5c98f.png"
+    },
+    {
+      "id": "paper-lantern",
+      "prompt": "Use case: transparent game ornament. One small ivory handmade paper lantern, softly round and gently pear-shaped, with delicate muted botanical pattern, a fine cord looping above and a short dusty pink tassel below. Restrained warm glow painted ONLY inside the lantern, realistic paper ribs, refined polished anime illustration, attractive quiet details. One object at a mild tilted three-quarter angle suitable as a floating ornament beside a character. Full cord and tassel inside square frame with ample empty margin. REAL transparent alpha background, no scene, people, furniture, ground, external glow or halo, particles, text, UI, watermark. Independent reusable lantern sprite.",
+      "kind": "ornament",
+      "file": "ornaments/paper-lantern.png",
+      "sha256": "d9eb963bb7983e4116a61636656b238d0d05e87d4225ffd1ad857e1b5dbad740",
+      "sourceImage": "exec-7e4bfa18-746a-4bfa-8ba1-c22565f11234.png"
+    },
+    {
+      "id": "paper-leaves",
+      "prompt": "Use case: transparent foreground game ornament. A graceful loose curved group of three ivory paper leaves/pages gently suspended with one tiny navy ribbon bookmark. Fine paper curling edges, subtle embossed botanical silver lines, no readable words. Refined Japanese anime hand-painted prop art, soft neutral light, delicate cream/navy/slate color scheme. Diagonal composition with distinct transparent gaps, designed to frame one SIDE of an adult literary character card without obscuring the face. Entire group in square canvas with generous transparent margin. REAL transparent alpha background. No characters, furniture, scene, floor, aura, glitter, text, border, watermark. Only the independent floating paper ornament.",
+      "kind": "ornament",
+      "file": "ornaments/paper-leaves.png",
+      "sha256": "28a49a1eb377863e210b998281f52e65b51aa42127279710fc1bac5efe61207a",
+      "sourceImage": "exec-ab908c75-ff26-4cae-a1d3-a91f01513403.png"
+    },
+    {
+      "id": "boutique-night",
+      "kind": "background",
+      "reference": "exec-0b9f2340-0ffd-414e-9de4-590f1c429b3f.png",
+      "prompt": "Use case: shared anime visual novel background, night variant. Keep the SAME EXACT room, objects and composition in the reference. Change time to a quiet rainy blue-hour evening: ALL windows and door views show cool dusky blue sky or dark blue outdoor street, remove ALL sunshine beams and sunny foliage. Soft readable cool ambient light and two or three restrained warm practical lamps softly illuminate the useful foreground objects. Maintain fine hand-painted anime illustration, beautiful natural wood/paper/glass material details and moderate everyday detail. Clear inviting balanced night scene, NOT black or purple, NO dramatic golden wash or sparkles, no new excessive decorations. Landscape 16:9, leave existing open standing area. No people, silhouettes, readable text, UI or watermark.",
+      "file": "backgrounds/boutique-night.webp",
+      "sha256": "395d9edf627f2d37bd486768d09c106f3314db9660785a988cb21b2c3192e3f4",
+      "sourceImage": "exec-78044910-bf5a-4d4d-b3b5-1c6b1dcfc71c.png"
+    },
+    {
+      "id": "bookshop-night",
+      "kind": "background",
+      "reference": "exec-f9274e6c-5ad6-43b0-9ee0-477a477af828.png",
+      "prompt": "Use case: shared anime visual novel background, night variant. Keep the SAME EXACT room, objects and composition in the reference. Change time to a quiet rainy blue-hour evening: ALL windows and door views show cool dusky blue sky or dark blue outdoor street, remove ALL sunshine beams and sunny foliage. Soft readable cool ambient light and two or three restrained warm practical lamps softly illuminate the useful foreground objects. Maintain fine hand-painted anime illustration, beautiful natural wood/paper/glass material details and moderate everyday detail. Clear inviting balanced night scene, NOT black or purple, NO dramatic golden wash or sparkles, no new excessive decorations. Landscape 16:9, leave existing open standing area. No people, silhouettes, readable text, UI or watermark.",
+      "file": "backgrounds/bookshop-night.webp",
+      "sha256": "a6a050441f47ab4cbb823e24ea498f4ab787574f403e162a1e02802a0d4a5a73",
+      "sourceImage": "exec-e8c1d24a-d5b2-4fc7-a413-f2859df4cb98.png"
+    },
+    {
+      "id": "conservatory-night",
+      "kind": "background",
+      "reference": "exec-1faa424d-5c6e-452e-b512-5ec88aaffafa.png",
+      "prompt": "Use case: shared anime visual novel background, night variant. Keep the SAME EXACT room, objects and composition in the reference. Change time to a quiet rainy blue-hour evening: ALL windows and door views show cool dusky blue sky or dark blue outdoor street, remove ALL sunshine beams and sunny foliage. Soft readable cool ambient light and two or three restrained warm practical lamps softly illuminate the useful foreground objects. Maintain fine hand-painted anime illustration, beautiful natural wood/paper/glass material details and moderate everyday detail. Clear inviting balanced night scene, NOT black or purple, NO dramatic golden wash or sparkles, no new excessive decorations. Landscape 16:9, leave existing open standing area. No people, silhouettes, readable text, UI or watermark.",
+      "file": "backgrounds/conservatory-night.webp",
+      "sha256": "1b5c288f5a582e62e2b073c95ad990865bc8bcf4ffdf8dd9bff4879d6ff3986a",
+      "sourceImage": "exec-dc5eeae9-4e08-4a01-89d9-77b806a37af3.png"
+    },
+    {
+      "id": "piano-room-night",
+      "kind": "background",
+      "reference": "exec-e287f193-ffbd-4e40-87f4-5732bdef2d1d.png",
+      "prompt": "Use case: shared anime visual novel background, night variant. Keep the SAME EXACT room, objects and composition in the reference. Change time to a quiet rainy blue-hour evening: ALL windows and door views show cool dusky blue sky or dark blue outdoor street, remove ALL sunshine beams and sunny foliage. Soft readable cool ambient light and two or three restrained warm practical lamps softly illuminate the useful foreground objects. Maintain fine hand-painted anime illustration, beautiful natural wood/paper/glass material details and moderate everyday detail. Clear inviting balanced night scene, NOT black or purple, NO dramatic golden wash or sparkles, no new excessive decorations. Landscape 16:9, leave existing open standing area. No people, silhouettes, readable text, UI or watermark.",
+      "file": "backgrounds/piano-room-night.webp",
+      "sha256": "5084c648aa0d4e3aa372a477a07be8193b579e12e16cb60fb18519d77d0d177c",
+      "sourceImage": "exec-50e2a469-b867-443a-b5d0-1d6b9f4f7d2e.png"
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-08",
+  "runtimeDependency": "project-local-files-only",
+  "adopted": [
+    {
+      "id": "shira_v5_stars",
+      "role": "shira",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.5059,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/shira_v5_stars/subject.png",
+          "sha256": "ed5db3dfdb7ac661c2fec1f722dcea3dd2021a41dc48550084309cb2081efa4e",
+          "prompt": "Use case: background-extraction with costume refinement. Edit the reference into a clean genuinely transparent full canvas character sprite for a fantasy card. Preserve the mature adult woman's natural face, burgundy hair, ruby eyes, curved horns, small bat wings, heart tipped tail, cheek-supporting pose, whole legs and both shoes, ivory armchair and exact framing. Refine her clothing into a tasteful opaque burgundy formal dress with a higher neckline and knee-length draped skirt, believable satin folds and fine restrained embroidery. A confident elegant adult fantasy demon character. Keep figure and chair as one continuous connected object. Remove ALL background, stars, floor, curtains, halo, shadow and glow. Remove only the free dangling narrow waist ribbon tails, keep the waist fastening. True RGBA transparency, crisp clean contours. No text or logo.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-510c1c5e-1e5a-41fb-b358-7a2daf6c4a35.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/shira_v5_stars/background.webp",
+          "sha256": "10bd9fb802e12118566ba25c0215d892d1affad2007bc4e7cf65c69b7756ee69",
+          "prompt": "Edit this complete illustration into a clean BACKGROUND PLATE ONLY. Remove the entire woman, entire chair, teacup, all burgundy ribbons and petals. Reconstruct the underlying continuous beautiful navy blue starry sky. Retain the original thin crescent moon at upper left, sparse delicate silver stars and soft painted blue clouds at bottom. No objects at the center, no humans, no furniture, no text. Fine Japanese animation background painting, gentle flat cel-painted sky, restrained and coherent. Portrait 1024x1536.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-da85c9e6-97a2-4e5c-b80c-806ad455ae0c.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/shira_v5_stars/ornaments.png",
+          "sha256": "1a0fa5d462f7555872faaa813a1063fad9d90432648d9452607620790ef41d5c",
+          "prompt": "Use case: precise-object-edit. Create ONLY TWO slim burgundy embroidered silk ribbon tails as a single transparent full 1024x1536 canvas sprite. They attach to the ruby waist clasp on the dress in the reference at approximately x=.575 y=.353. Keep their shared small root there, then drape gently down and outward: one toward x=.34 y=.76, another toward x=.80 y=.69. Understated natural fabric folds, thin silver edging matching the dress. Both tails fully visible. No body, no face, no chair, no dress or background. The root must remain in that exact place. True transparent RGBA. No glow or text.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-d2a0e081-c6e1-4ac3-b034-cbf5b360ec02.png"
+        }
+      ]
+    },
+    {
+      "id": "shira_v5_volley",
+      "role": "shira",
+      "composition": "complete-illustration",
+      "alphaClearFraction": 0.0,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/shira_v5_volley/subject.png",
+          "sha256": "7fad1743dca6dbcf088bc9aa27fe3c914e930cd98bb40a31d760d51ac3ca2c0e",
+          "prompt": "Use case: identity-preserve and framing repair. A tasteful fantasy beach volleyball illustration of the same mature adult horned woman with burgundy hair, ruby eyes, small bat wings and heart-tipped tail. Preserve her natural face and dynamic volleyball action but change outfit to an opaque burgundy athletic swim dress with short sleeves, a high neckline and a short skirt, comfortable practical beach sports clothing. Zoom the entire composition out by 25 percent so the ENTIRE volleyball, head, arms, body, both feet and water are inside the portrait frame with at least 8 percent margins. Character occupies 70-75 percent of height, no cropped extremities. Pale blue sky, gentle turquoise beach, splash only where feet contact shallow water. Refined illustrated anime art with natural anatomy, shading and material volume; no text or UI.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-3f2680e6-006c-40d1-8d4c-73f4bcf3af4d.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/shira_v5_volley/background.webp",
+          "sha256": "f8cc881eb4f4c566282a04afcb3417fc4c38954c0f744cb8df28708fa783ee80",
+          "prompt": "Use case: precise-object-edit. Create ONLY the beach environment from this reference. Remove the whole woman, horns/wings/tail, volleyball, water splashes and foreground palm branches. Reconstruct unobstructed sand and quiet shallow turquoise sea. Preserve pale blue sky, clouds, quiet natural beach mood, refined painted illustration rather than photo. Simplify decoration and shimmer, center open space for character sprite. Same portrait full canvas, no person or text.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-89f70a27-f380-420f-8aba-f9aede7f8cc6.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/shira_v5_volley/ornaments.png",
+          "sha256": "b079fa1d8513634a72fd5addc3a37808df45be66c83c5a18e503ee4881f73ba6",
+          "prompt": "Use case: background-extraction. Extract ONLY a few translucent bright water droplets and small low splash arcs near the lower-left and lower-right edges of this beach volleyball illustration, where feet contacted the sea. Preserve their original positions and scale on the full portrait canvas. Remove woman, volleyball, beach and every other pixel. Fully transparent RGBA, no opaque backdrop. Delicate plausible water, no central high splashes, no text.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-cd2c70e5-4bc3-438c-85f5-55c2c8c59ea3.png"
+        }
+      ]
+    },
+    {
+      "id": "shira_v5_lounger",
+      "role": "shira",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.4567,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/shira_v5_lounger/subject.png",
+          "sha256": "5d5c230626f517db1be18fe5d79d3942ce0745a781dc1249bad150b741cd2446",
+          "prompt": "Use case: background-extraction. Preserve the exact full canvas, character scale, adult natural face, opaque burgundy clothing, horns, wings, heart-tipped tail, all hands and ALL feet/toes from the reference. Keep connected whole body, and the entire beach chair and ivory shoulder shawl as ONE complete sprite. Remove sky, sea, ground, unheld side table, vegetation, water splash, shadows, halo and ALL background. True transparent RGBA. Do not change the pose or costume. No text.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-62a134fc-d6a2-4d0c-9b38-d8ff48893d0f.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/shira_v5_lounger/background.webp",
+          "sha256": "6f7c316291a484fc2f4db2add7c0dfd110543eed1f077b51f89fcd8fc0a37c73",
+          "prompt": "Use case: precise-object-edit. Create ONLY the beach environment from this reference. Remove the whole woman, horns/wings/tail, entire beach chair and side table and foreground palm branches. Reconstruct unobstructed sand and quiet shallow turquoise sea. Preserve pale blue sky, clouds, quiet natural beach mood, refined painted illustration rather than photo. Simplify decoration and shimmer, center open space for character sprite. Same portrait full canvas, no person or text.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-3f9cd155-e0eb-46a3-af8a-a99ef03d98e3.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/shira_v5_lounger/ornaments.png",
+          "sha256": "27af0ec66450bbca56102f8a688df2041fb68af8c7248d640d360a88861ced26",
+          "prompt": "A single small naturally painted ivory seashell with a pale pink inner lip, lying at a three-quarter angle. High-quality illustrated beach game card decoration, soft pale blue daylight shading, natural smooth shell ridges. Positioned at x=.83 y=.87 on a full portrait 1024x1536 canvas, width only 9 percent of canvas. EVERYTHING else is genuinely transparent RGBA. No sand, no ground, no water, no shadow patch, no glow, no background, no lettering.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-416352d9-eb18-4031-b988-a904a51845c9.png"
+        }
+      ]
+    },
+    {
+      "id": "koka_v5_stars",
+      "role": "koka",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.4692,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/koka_v5_stars/subject.png",
+          "sha256": "964cb384fba6028e8b0eeace01f096c663cabcdddbad69f9357133fa6ed8b6db",
+          "prompt": "Edit target into a clean transparent production sprite on original 1024x1536 registered canvas. Preserve the EXACT character identity, complete natural anatomy, entire pose, face, both hands, both feet/shoes, horn/wings/tail if present, garment detail, scale and placement. Keep her complete support chair AND any table she is resting forearms on together with her as ONE physically connected layer. Keep her held open book or held rabbit lamp, but exclude unattached SIDE tables and their props. Remove ALL background, floor, sky, shelves, architecture, all floating books, loose pages, detached paper lantern/stars/petals and magic light ring. For wine-red or pink star-chair artwork remove ONLY the two long free waist-ribbon tails, keeping the fastening bow/brooch and continuous main skirt fabric, restore the tiny fabric/chair area behind the removed tails. Do not remove wings, tail, body hair, clothing, boots or sword/sheath. For sword pose keep entire complete blade safely visible, extend blade tip inside canvas only if necessary. Retain exact original source coordinates; no new composition, no recentering. True clean RGBA alpha, no painted black background, no colored haze or vignette. No floor shadow, no text, no watermark.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-302661a8-337a-4260-9bdf-af6899b53171.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/koka_v5_stars/background.webp",
+          "sha256": "7d7662a31713cd260fabd97036c29df9bd500bea9f2458da9bb1de6b25b45e0d",
+          "prompt": "Edit this complete illustration into a clean BACKGROUND PLATE ONLY. Remove the entire woman, whole wicker chair, lantern, all ribbons and loose lights. Reconstruct the continuous deep blue anime night sky, keep original slim crescent in upper right and a few tiny warm star glows in the margins and subtle blue cloud painted at bottom. Leave center calm and empty. No person, no furniture, no text. Refined Japanese animation background painting, simple balanced 2D painted shapes, not photorealistic. Portrait 1024x1536.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-5ee2faa3-ee0e-4da2-b858-d7cc4ac9044e.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/koka_v5_stars/ornaments.png",
+          "sha256": "4e26a5c058119d0524444a4043a6020836feb3d02e7b9eb376b1bb381ba2a28d",
+          "prompt": "Use case: precise-object-edit. Create ONLY TWO flowing dusty-pink opaque satin ribbon tails on a true transparent 1024x1536 full canvas. Attach their shared root to the skirt waist bow from reference at x=.48 y=.347, then one gently flows down toward x=.17 y=.70, another toward x=.80 y=.68. Natural fabric folds and cream edge piping matching clothing, slender tails with restrained sway. No body, no face, no chair, no clothing or backdrop, no text. Accurate full-canvas registration and a small close-to-dress root, no upward floating tails.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-2bb9d20c-1b39-4589-9a6c-13aad2afa814.png"
+        }
+      ]
+    },
+    {
+      "id": "koka_v5_orbit",
+      "role": "koka",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.5971,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/koka_v5_orbit/subject.png",
+          "sha256": "b8e013b6fac0a49bc3885cb55b5ef767320fd61fb6542f68ffc57e8efd8f8677",
+          "prompt": "Use case: background-extraction. Remove the sky, stars, loose petals, paper lantern and ALL orbit decorations. Keep ONLY the connected adult woman with her opaque knee-length pink pleated skirt, ivory blouse, pink cardigan, blonde hair, ivory bows, exact face, gesture and both entire shoes. Match exact 1024x1536 canvas coordinates and scale of reference. A modest clothed adult fantasy heroine sprite. True transparent RGBA with no halo, backdrop, floor or shadow.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-be3cf6c6-5f2b-4353-a187-827cb7d0cc86.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/koka_v5_orbit/background.webp",
+          "sha256": "a131a002cc41b1ea6b9f41686beb36e50af021297ec21317463b4bb28775130b",
+          "prompt": "Edit this illustration into a clean BACKGROUND PLATE ONLY. Remove entire woman, whole chair, book, all ribbons and loose paper. Reconstruct the continuous calm deep midnight blue starry sky, retaining slim crescent at upper left, small faint constellation near upper right and soft blue painted clouds at bottom. Spacious uncluttered center. No human, no furniture, no object, no text. Fine Japanese animation background painting with delicate restrained 2D painted shapes. Portrait 1024x1536.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-68e257b4-b470-4c7e-b928-da56b35a1ec6.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/koka_v5_orbit/ornaments.png",
+          "sha256": "bc6b0999507c850b96c491d69a7dc9a6ce623366266eb1c6367740ed2b01a8db",
+          "prompt": "Use case: background-extraction. Keep ONLY the floating rabbit paper lantern at upper left, four paper star lamps around edges, and turquoise orbit arcs at their exact coordinates and scale on this portrait canvas. Remove woman, petals, background sky and every other pixel. All center pixels should be transparent. Genuine RGBA transparent sprite for a foreground card decoration, no background, no text.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-a8c28e7a-08d5-417d-9941-c5a1053d7b60.png"
+        }
+      ]
+    },
+    {
+      "id": "koka_v5_sword",
+      "role": "koka",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.6991,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/koka_v5_sword/subject.png",
+          "sha256": "ffae01488a79300cbbe16bd1438ed75e9212daf9bcad79f58505e4ca86978afe",
+          "prompt": "Edit target into a clean transparent production sprite on original 1024x1536 registered canvas. Preserve the EXACT character identity, complete natural anatomy, entire pose, face, both hands, both feet/shoes, horn/wings/tail if present, garment detail, scale and placement. Keep her complete support chair AND any table she is resting forearms on together with her as ONE physically connected layer. Keep her held open book or held rabbit lamp, but exclude unattached SIDE tables and their props. Remove ALL background, floor, sky, shelves, architecture, all floating books, loose pages, detached paper lantern/stars/petals and magic light ring. For wine-red or pink star-chair artwork remove ONLY the two long free waist-ribbon tails, keeping the fastening bow/brooch and continuous main skirt fabric, restore the tiny fabric/chair area behind the removed tails. Do not remove wings, tail, body hair, clothing, boots or sword/sheath. For sword pose keep entire complete blade safely visible, extend blade tip inside canvas only if necessary. Retain exact original source coordinates; no new composition, no recentering. True clean RGBA alpha, no painted black background, no colored haze or vignette. No floor shadow, no text, no watermark.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-b533e5af-f7ad-4858-8157-7ac9b7c1acad.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/koka_v5_sword/background.webp",
+          "sha256": "303a7c1ed5014df9a4140cb305811639f5399f5d1bf8e33d92b2818dfcbf9825",
+          "prompt": "Use case: precise-object-edit. Remove the whole woman, sword, sheath, floating petals and every magical wind line from this reference. Reconstruct the uninterrupted twilight stone garden and steps. Keep blue painted sky, distant small castle, restrained pink flowers, natural quiet evening light. Simplify foreground flowers slightly and clear the center for a character sprite. ONLY illustrated environment; no person or typography. Same portrait canvas.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-91882abe-b84f-49e9-9a91-15f8a7e8955e.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/koka_v5_sword/ornaments.png",
+          "sha256": "cc220133b42ee228efa7933ed1abfa806dfa197f1159a0bd69ed37cb6353c82a",
+          "prompt": "A transparent full portrait 1024x1536 foreground sprite for a refined illustrated fantasy garden card. ONLY five small soft pink flower petals along a gentle thin turquoise wind arc running from x=.08 y=.73 through x=.25 y=.81 then x=.84 y=.53. Empty transparent center so the actor remains visible. Delicate painted petals and soft restrained light, no giant trail or central spiral. True RGBA, no person, no background, no blade or typography.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-215e96e3-c578-45a9-838d-15e0d5216234.png"
+        }
+      ]
+    },
+    {
+      "id": "shuyun_v5_library",
+      "role": "shuyun",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.5816,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/shuyun_v5_library/subject.png",
+          "sha256": "3fd291fa562f1b7a8873153e9fe83883ccb1b714f6854e6c12be11615aac9e83",
+          "prompt": "Edit target into a clean transparent production sprite on original 1024x1536 registered canvas. Preserve the EXACT character identity, complete natural anatomy, entire pose, face, both hands, both feet/shoes, horn/wings/tail if present, garment detail, scale and placement. Keep her complete support chair AND any table she is resting forearms on together with her as ONE physically connected layer. Keep her held open book or held rabbit lamp, but exclude unattached SIDE tables and their props. Remove ALL background, floor, sky, shelves, architecture, all floating books, loose pages, detached paper lantern/stars/petals and magic light ring. For wine-red or pink star-chair artwork remove ONLY the two long free waist-ribbon tails, keeping the fastening bow/brooch and continuous main skirt fabric, restore the tiny fabric/chair area behind the removed tails. Do not remove wings, tail, body hair, clothing, boots or sword/sheath. For sword pose keep entire complete blade safely visible, extend blade tip inside canvas only if necessary. Retain exact original source coordinates; no new composition, no recentering. True clean RGBA alpha, no painted black background, no colored haze or vignette. No floor shadow, no text, no watermark.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-6faec174-222a-4ad8-9fe2-dc9ea8fa9872.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/shuyun_v5_library/background.webp",
+          "sha256": "a0a2bddee84739edf172373e10361b12f4ce43eff0c0cb67dbcfc458122dab17",
+          "prompt": "Use case: precise-object-edit. Create ONLY the quiet daytime library background plate from this reference, same portrait canvas, perspective and lighting. Remove woman, chair, side table, floating books and loose pages. Reconstruct uninterrupted wooden floor behind them. Simplify shelves and ornaments slightly; keep the soft pale blue daytime window and refined illustrated wood materials. No characters, no chairs or tables in foreground, no magical objects or text.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-f6efd6e1-53c9-4c74-b659-da8d4aa31345.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/shuyun_v5_library/ornaments.png",
+          "sha256": "5672a2b56470866075ee14109f9678599667d1b723a2ecfb623475e71eb3f760",
+          "prompt": "Use case: background-extraction. Extract ONLY the three loose floating open books with the delicate gold curved trails already surrounding them in this reference: upper left, upper right, middle right. Keep their exact original coordinates, scale, book perspective and natural page shading on the full 1024x1536 canvas. Remove woman, held book, chair, room, loose page and ALL other pixels. True RGBA fully transparent background, no backdrop or border. No typography.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-df372542-abdb-49b0-8ebb-5ce0502c7ce6.png"
+        }
+      ]
+    },
+    {
+      "id": "shuyun_v5_desk",
+      "role": "shuyun",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.5286,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/shuyun_v5_desk/subject.png",
+          "sha256": "66c27091a462b31d95eef41d1b800b41b2a7942b64506feab5c8595afa85a2c6",
+          "prompt": "Edit target into a clean transparent production sprite on original 1024x1536 registered canvas. Preserve the EXACT character identity, complete natural anatomy, entire pose, face, both hands, both feet/shoes, horn/wings/tail if present, garment detail, scale and placement. Keep her complete support chair AND any table she is resting forearms on together with her as ONE physically connected layer. Keep her held open book or held rabbit lamp, but exclude unattached SIDE tables and their props. Remove ALL background, floor, sky, shelves, architecture, all floating books, loose pages, detached paper lantern/stars/petals and magic light ring. For wine-red or pink star-chair artwork remove ONLY the two long free waist-ribbon tails, keeping the fastening bow/brooch and continuous main skirt fabric, restore the tiny fabric/chair area behind the removed tails. Do not remove wings, tail, body hair, clothing, boots or sword/sheath. For sword pose keep entire complete blade safely visible, extend blade tip inside canvas only if necessary. Retain exact original source coordinates; no new composition, no recentering. True clean RGBA alpha, no painted black background, no colored haze or vignette. No floor shadow, no text, no watermark.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-c7d641a8-597b-4743-8224-eee796957ff8.png"
+        },
+        {
+          "kind": "background",
+          "file": "web/assets/experience/role-card/collection/shuyun_v5_desk/background.webp",
+          "sha256": "1c55146afb76ffc9507fb646198ccbbbf02788ffe4e6495ae618328842770dc6",
+          "prompt": "Use case: precise-object-edit. Create ONLY the evening library background plate from this illustration. Remove woman, chair, WHOLE foreground writing desk and lamp, every floating book and loose page. Reconstruct unobstructed floor. Keep gentle deep blue evening window, softly lit bookcases, warm subtle ambience and illustrated paint style. Simplify ornaments, no people, no foreground furniture, no text. Portrait 1024x1536.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-fda69729-d238-4b32-8be5-2beb8cadf5fe.png"
+        },
+        {
+          "kind": "ornaments",
+          "file": "web/assets/experience/role-card/collection/shuyun_v5_desk/ornaments.png",
+          "sha256": "5672a2b56470866075ee14109f9678599667d1b723a2ecfb623475e71eb3f760",
+          "prompt": "Use case: background-extraction. Extract ONLY the three loose floating open books with the delicate gold curved trails already surrounding them in this reference: upper left, upper right, middle right. Keep their exact original coordinates, scale, book perspective and natural page shading on the full 1024x1536 canvas. Remove woman, held book, chair, room, loose page and ALL other pixels. True RGBA fully transparent background, no backdrop or border. No typography.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-df372542-abdb-49b0-8ebb-5ce0502c7ce6.png"
+        },
+        {
+          "kind": "note",
+          "file": "web/assets/experience/role-card/collection/shuyun_v5_desk/note.png",
+          "sha256": "01fee3804a20c68d867e8dae94985fcaabb873ed021477d9ff31ec5e6a3b0ec4",
+          "prompt": "A single loose ivory note page and a small blue silk bookmark as a refined illustrated fantasy card decoration. Full portrait 1024x1536 transparent RGBA canvas. Only at the lower-left corner, center x=.18 y=.77, gently curling tilted page 14 percent of canvas width, fine restrained pale gold edge, no legible text. Bookmark curves down beside the page, naturally suspended with subtle lighting. EVERY other pixel transparent. No people, no furniture, no background, no glow.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-5d43b9b3-fa1e-4c31-a49f-011173c63fc2.png"
+        }
+      ]
+    },
+    {
+      "id": "shira-vn-talk",
+      "role": "shira",
+      "composition": "connected-cutout",
+      "alphaClearFraction": 0.677,
+      "assets": [
+        {
+          "kind": "subject",
+          "file": "web/assets/experience/role-card/collection/poses/shira-talk.png",
+          "sha256": "07fbdafda04fbed44660c0be31690e76d35703548ec03b167d466c052ad4e51b",
+          "prompt": "Use case: character pose edit for a reusable visual novel sprite. Preserve the identity and refined anime illustration rendering of the adult succubus woman in the reference: mature natural face, burgundy wavy hair, ruby eyes, small curved horns, compact bat wings, fine heart-tipped tail, restrained gold earrings. Change the entire pose to natural standing conversation, three-quarter front facing the viewer, one relaxed hand open at waist level while the other rests lightly on her hip. Both feet planted on the same level. Keep an opaque high-neck burgundy knee-length satin formal dress with fine silver embroidery and believable layered folds; elegant matching closed-toe burgundy shoes. Natural balanced anatomy, volumetric soft light, gentle confident expression. FULL body including horns, all wing and tail tips, hands and both shoes with 8 percent clear margin. No chair, no furniture, no props, no scenery, no ground or glow. One intact connected figure on truly transparent RGBA background. No text or logo.",
+          "generator": "built-in imagegen",
+          "originFile": "exec-3654ab1a-7e13-46dd-9f90-09689b8f1c45.png"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    "shira_v5_lounger square-edged water ornament",
+    "koka_v5_orbit upper ring rendered in front of face",
+    "automatic seated chair pose on outdoor walking route"
+  ]
+}

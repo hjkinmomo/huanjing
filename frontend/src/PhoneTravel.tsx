@@ -1,0 +1,18 @@
+import {useEffect,useRef,useState} from 'react';
+import {UiIcon} from './UiIcon';
+import type {ChatSnapshot,ChatActions} from './chat-types';
+export function PhoneTravel({s,actions,initialDestination=''}:{s:ChatSnapshot;actions:ChatActions;initialDestination?:string}){
+ const [destination,setDestination]=useState(initialDestination),[method,setMethod]=useState('walk'),[quote,setQuote]=useState<any>(null),[busy,setBusy]=useState(false),[note,setNote]=useState('');const generation=useRef(0);const mode=s.personaMode||'normal';
+ useEffect(()=>setDestination(initialDestination),[initialDestination]);
+ useEffect(()=>{generation.current++;setQuote(null);setNote('');},[destination,method,mode]);
+ const transport=(s.worldLife as any)?.transport,current=transport?.current;const clock=(at:string)=>new Date(Date.parse(at)+(s.worldLife?.utcOffsetMinutes??480)*60000).toISOString().slice(11,16);
+ async function run(action:'quote'|'start'|'skip'){
+  if(busy)return;setBusy(true);setNote('');const seq=generation.current;
+  try{
+   if(action==='quote'){const target=destination.startsWith('role:')?{targetRoleId:destination.slice(5)}:{locationId:destination};const result=await actions.phoneLifeAction?.('world_transport_quote',{mode,method,requestId:crypto.randomUUID(),...target});if(seq===generation.current)setQuote(result);}
+   else if(action==='start'){await actions.phoneLifeAction?.('world_transport_start',{mode,id:quote.id},true);if(seq===generation.current){setQuote(null);setNote('已经出发。抵达时会通知你。');}}
+   else{await actions.phoneLifeAction?.('world_transport_skip',{mode,id:current.id});if(seq===generation.current)setNote('已度过剩余路程，世界里其他人的时间也同步向前。');}
+  }catch(e){if(seq===generation.current)setNote(e instanceof Error?e.message:'未能完成出行');}finally{setBusy(false);}
+ }
+ return <section className="phone-travel"><header><UiIcon name="car"/><h3>轻途出行</h3><p>步行、骑车、公交或打车，去见一个人，也可以去另一处地方。</p></header>{current?<article className="travel-current"><small>正在路上 · {current.methodName}</small><h3>{current.placeName}</h3><p>预计 {clock(current.dueAt)} 抵达 · 已支付 {current.fare} 金币</p><p>当前位置在抵达后更新。跳过路程会推进当前模式所有角色的共同时间。</p><button className="primary" disabled={busy} onClick={()=>run('skip')}>度过剩余路程</button></article>:<><label>目的地<select aria-label="出行目的地" value={destination} onChange={e=>setDestination(e.target.value)}><option value="">选择一个人或地点</option><optgroup label="去见角色">{s.worldLife?.actors?.map(a=><option value={'role:'+a.roleId} key={a.roleId}>{s.roleRoster?.find(r=>r.id===a.roleId)?.name||a.roleId} · 预计到达时的位置</option>)}</optgroup><optgroup label="地点">{s.worldMap?.locations.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</optgroup></select></label><fieldset><legend>出行方式</legend>{[['walk','步行','免费，慢慢走'],['bike','共享单车','轻便，费用低'],['bus','公交','便宜，有等车时间'],['taxi','打车','较快，费用较高']].map(([id,name,desc])=><label key={id}><input type="radio" name="travel-method" checked={method===id} onChange={()=>setMethod(id)}/><span><strong>{name}</strong><small>{desc}</small></span></label>)}</fieldset><button disabled={!destination||busy} onClick={()=>run('quote')}>查看路程</button>{quote&&<article className="travel-quote"><h3>{quote.placeName}</h3><p>{quote.methodName} · 预计 {quote.durationMinutes} 分钟 · {quote.fare===0?'免费':quote.fare+' 金币'}</p><p>预计 {clock(quote.dueAt)} 抵达。早晚高峰会影响公交和打车时间。</p><button disabled={busy} className="primary" onClick={()=>run('start')}>确认出发{quote.fare?'并支付':''}</button></article>}</>}{note&&<p role="status">{note}</p>}{transport?.trips?.filter((t:any)=>t.status==='arrived').slice(0,5).map((t:any)=><p className="travel-history" key={t.id}>{t.placeName} · {t.methodName} · 已抵达</p>)}</section>;
+}

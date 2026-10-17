@@ -1,0 +1,19 @@
+{
+  "id": "hermes-rikka-project5-v2",
+  "displayName": "Hermes Rikka Project 5 v2",
+  "description": "Validated Rikka desktop companion with native standard motion, ritual extension, and 16 look directions.",
+  "spriteVersionNumber": 2,
+  "spritesheetPath": "spritesheet.webp",
+  "atlas": {
+    "columns": 8,
+    "rows": 11,
+    "cellWidth": 192,
+    "cellHeight": 208,
+    "width": 1536,
+    "height": 2288
+  },
+  "nativeExtensions": {
+    "ritual": "../r17/rikka_ritual_00.png",
+    "task": "../r64/rikka_task_00.png"
+  }
+}

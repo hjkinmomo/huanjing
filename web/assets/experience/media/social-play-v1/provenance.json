@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-06",
+  "assets": [
+    {
+      "file": "shira-smile.png",
+      "origin": "OpenAI built-in image generation",
+      "generatedSource": "exec-cdd6a197-eb65-4291-95a6-110e7f4d91b0.png",
+      "reference": "../shira-pet-avatar-lora-v1.png",
+      "intendedUse": [
+        "chat sticker",
+        "optional chat avatar"
+      ],
+      "transparentBackground": true,
+      "sha256": "9232f2175362a036574265f748c89a2c5a569e4b98da64f9db7ad7e03a208552"
+    },
+    {
+      "file": "koka-smile.png",
+      "origin": "OpenAI built-in image generation",
+      "generatedSource": "exec-48952103-f74d-43db-a014-b3928093cc8d.png",
+      "reference": "../koka-avatar-v2.png",
+      "intendedUse": [
+        "chat sticker",
+        "optional chat avatar"
+      ],
+      "transparentBackground": true,
+      "sha256": "be40e30a68cb4b19475b3bd77e21001e29f6a44fc13fec058c7b061eaf20074c"
+    },
+    {
+      "file": "shuyun-smile.png",
+      "origin": "OpenAI built-in image generation",
+      "generatedSource": "exec-c7198bff-268b-4ae8-a135-ace59c7ee61b.png",
+      "reference": "../shuyun-avatar-v1.png",
+      "intendedUse": [
+        "chat sticker",
+        "optional chat avatar"
+      ],
+      "transparentBackground": true,
+      "sha256": "a3fe9c9f0d9caf11a5a6d4c27396541af8570d9f750ddac7bb1e409800332376"
+    },
+    {
+      "file": "ink-leaf.svg",
+      "origin": "Original vector illustration authored for Hermes Project 5",
+      "sha256": "ebd0320bdaebc61506796b443535a50883164280708731f2ad90edcf0ccb6a33"
+    },
+    {
+      "file": "klotski-entry.svg",
+      "origin": "Original vector illustration authored for Hermes Project 5",
+      "sha256": "a7399ea027425fc8a8dd0c12b2a6e8f87c3566d0801a9826efd6dd2bdc3ca4a7"
+    },
+    {
+      "file": "memory-back.svg",
+      "origin": "Original vector illustration authored for Hermes Project 5",
+      "sha256": "95042f173662f25a98e98553865f6fcf114eb99bae583eed9db8cefada004899"
+    },
+    {
+      "file": "piano-entry.svg",
+      "origin": "Original vector illustration authored for Hermes Project 5",
+      "sha256": "778c8ffadb2a05743c62a2b0500441abf7586cd9dc292a999447e9221e354b0d"
+    },
+    {
+      "file": "ribbon.svg",
+      "origin": "Original vector illustration authored for Hermes Project 5",
+      "sha256": "695916481e05843146b911346454198bffbbbb563056f052e10e3bbe05945102"
+    },
+    {
+      "file": "rose-seal.svg",
+      "origin": "Original vector illustration authored for Hermes Project 5",
+      "sha256": "f7d0181c0922f98502ca8f6c7cfd9fca6cb1bebe0a6ef56969bc5df8ea3e82b3"
+    }
+  ]
+}

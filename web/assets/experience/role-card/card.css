@@ -1,0 +1,35 @@
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}#card-stage{width:100%;height:100%;display:grid;place-items:center;perspective:1100px;touch-action:pan-y;cursor:grab;outline-offset:-6px;outline-color:#bca475}#card-stage:active{cursor:grabbing}canvas{display:block;max-width:100%}.css-card{position:relative;width:min(88%,calc((100vh - 30px)*.667));aspect-ratio:2/3;transform-style:preserve-3d}.card-front,.card-back{position:absolute;inset:0;border:2px solid #c9ac70;border-radius:14px;backface-visibility:hidden;overflow:hidden;background:#f1ede6;box-shadow:0 10px 18px #211c2222}.card-front{transform:translateZ(2px)}.card-front img{position:absolute;inset:0;width:100%;height:100%}.card-background{object-fit:cover;transform:translateZ(-1px)}.card-subject{z-index:1;object-fit:contain;padding:6%;transform:translateZ(8px)}.card-front:after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(120deg,#fff0 20%,#fff1 42%,#ffe6b509 58%,#fff0 75%)}[data-finish=original] .card-front:after{display:none}[data-finish=gold] .card-front:after{background:linear-gradient(120deg,#d9a33822,#ffddaa44,#c3852111)}[data-finish=silver] .card-front:after{background:linear-gradient(120deg,#fff0,#fff5,#9facbf22)}.card-label{position:absolute;z-index:2;inset:auto 0 0;padding:24px 12px 18px;font:26px 'KaiTi',serif;text-align:center;color:#fff;background:linear-gradient(#21172400,#21172499);overflow-wrap:anywhere}.card-back{transform:rotateY(180deg) translateZ(2px);display:grid;place-items:center;padding:24px;text-align:center;font:28px/1.8 'KaiTi',serif;white-space:pre-line;color:#545147}
+[data-fit=full] .card-subject{padding:12%}
+/* Native 3D geometry handles WebGL names; these are CSS fallback layers. */
+.css-card .foreground-art{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;object-fit:fill;pointer-events:none;backface-visibility:hidden;filter:drop-shadow(2px 3px 3px #25102140)}
+.css-card .floating-name{position:absolute;left:50%;top:86.5%;width:80%;font:30px/1.2 'KaiTi','Microsoft YaHei',serif;color:#fff3dc;text-align:center;overflow-wrap:anywhere;text-shadow:0 2px 5px #211629,0 0 2px #211629;transform:translate(-50%,-50%) translateZ(var(--name-depth,72px));backface-visibility:hidden;pointer-events:none;border-bottom:1px solid var(--name-accent,#d4ba8a);padding-bottom:7px}
+
+.css-card .floating-name[data-light=true]{color:#683d48;text-shadow:0 1px 3px #fff3df,0 0 2px #fff3df}
+.css-card .floating-name{white-space:nowrap;overflow:visible;text-overflow:clip;overflow-wrap:normal}
+.card-back{background:repeating-linear-gradient(28deg,#fff0 0 8px,#acb8bb08 8px 9px),linear-gradient(120deg,#f2f0e8,#edf1ef,#f5eceb)}
+.css-card .card-back{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;padding:24px 16px;white-space:normal;font:14px/1.55 'KaiTi','Microsoft YaHei',serif;overflow-wrap:anywhere}
+.card-back-name{font-size:clamp(20px,9vw,32px);line-height:1.2;margin-bottom:8px;max-width:100%}
+.card-back-relationship{max-width:100%;font-size:14px}
+.card-back-change,.card-back-edition{max-width:100%;font-size:11px}
+[data-finish=gold] .card-back{background:repeating-linear-gradient(28deg,#fff0 0 8px,#9472320a 8px 9px),linear-gradient(120deg,#f1e2ba,#fff5d7,#eee0b6)}
+[data-finish=silver] .card-back{background:repeating-linear-gradient(28deg,#fff0 0 8px,#697e950a 8px 9px),linear-gradient(120deg,#dce4ec,#f0f6f8,#dfe7ec)}
+[data-finish=original] .card-back{background:#f1ede6}
+
+.css-card .floating-name{opacity:1;background:rgba(30,31,40,.86);border:1px solid var(--name-accent,#d4ba8a);border-radius:9px;padding:4px 8px;color:#fff3dc}
+.css-card .floating-name[data-light=true]{background:rgba(255,247,233,.91);color:#683d48}
+.card-front .card-effects-behind{z-index:0;clip-path:inset(0 0 50% 0);pointer-events:none}
+.css-card .card-front:after{background-size:200% 100%;background-position:var(--foil-x,50%) 50%}
+.css-card .card-back:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,#fff0 15%,#fff5 45%,#d6b8e822 62%,#fff0 85%);background-size:200% 100%;background-position:var(--foil-x,50%) 50%}
+[data-finish=original] .css-card .card-back:after{display:none}
+.css-card .foreground-art{z-index:2}
+.css-card .floating-name{font-size:20px;width:68%;padding-bottom:4px}
+
+/* The display frame remains a sibling above the print, including CSS fallback. */
+.card-display-layer{position:absolute;inset:0;transform:translateZ(var(--display-depth,80px));backface-visibility:hidden;pointer-events:none;transform-style:preserve-3d}
+.card-display-layer canvas{position:absolute;inset:0;width:100%;height:100%;max-width:none}
+#card-stage[data-display]:not([data-display=none]) .floating-name,#card-stage[data-display]:not([data-display=none]) .card-label{display:none}
+[data-finish=pearl] .css-card .card-front:after{background-image:linear-gradient(120deg,#fff0 12%,#d5b7ed26 27%,#a5e7e94d 42%,#fff8ca66 50%,#cdd2ff33 62%,#fff0 80%)}
+[data-finish=silver] .css-card .card-front:after{background-image:linear-gradient(120deg,#a3b8cb22 12%,#d7e9ff44 30%,#ffffffaa 48%,#6788b22b 62%,#fff0 82%)}
+[data-finish=gold] .css-card .card-front:after{background-image:linear-gradient(120deg,#75522d22 12%,#ffdd8855 32%,#fff4ba88 48%,#d99a3e33 62%,#fff0 82%)}
+[data-finish=glitter] .css-card .card-front:after,[data-finish=glitter] .css-card .card-back:after{background-image:radial-gradient(circle,#fff 0 1px,transparent 2px),radial-gradient(circle,#ffe5ae 0 .7px,transparent 1.7px),linear-gradient(120deg,#fff0 12%,#b6d4ff55 42%,#ffe6db77 50%,#fff0 78%);background-size:27px 37px,43px 31px,200% 100%;background-position:var(--foil-x) 50%,var(--foil-x) 50%,var(--foil-x) 50%;opacity:.7}
+[data-finish=iridescent] .css-card .card-front:after,[data-finish=iridescent] .css-card .card-back:after{background-image:repeating-linear-gradient(115deg,#a5fff344 0%,#b4baff55 13%,#ffa8e355 26%,#fff0ac66 39%,#a5fff344 52%);background-size:200% 100%;mix-blend-mode:screen}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "western",
+    "name": "落日西餐馆",
+    "tagline": "牛排 · 意面 · 披萨",
+    "image": "/assets/experience/media/merchant-fronts-v1/western.png",
+    "minutes": 30,
+    "locationId": "luori-restaurant"
+  },
+  {
+    "id": "rice",
+    "name": "街坊饭铺",
+    "tagline": "猪脚饭 · 鸡肉饭 · 热饭",
+    "image": "/assets/experience/media/merchant-fronts-v1/rice.png",
+    "minutes": 25,
+    "locationId": "rice-kitchen"
+  },
+  {
+    "id": "tea",
+    "name": "兔耳茶事",
+    "tagline": "奶茶 · 果茶 · 小点心",
+    "image": "/assets/experience/media/merchant-fronts-v1/tea.png",
+    "minutes": 25,
+    "locationId": "tea-house"
+  },
+  {
+    "id": "snacks",
+    "name": "小食巷",
+    "tagline": "鸡翅 · 薯条 · 三明治",
+    "image": "/assets/experience/media/merchant-fronts-v1/snacks.png",
+    "minutes": 30,
+    "locationId": "snack-alley"
+  },
+  {
+    "id": "cafe",
+    "name": "午后轻食",
+    "tagline": "三明治 · 清茶 · 午后小憩",
+    "image": "/assets/experience/media/merchant-fronts-v1/cafe.png",
+    "minutes": 25,
+    "locationId": "cafe"
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-08",
+  "accepted": [
+    {
+      "id": "shira_v5_lounger",
+      "file": "web/assets/experience/role-card/collection/coherent-v6/shira_v5_lounger/master.png",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Camera/framing edit ONLY. Preserve this complete painting exactly in identity, dress, cross-legged rocking-chair pose, the raised foot sole facing outward, chair construction, beach lighting and color. Pull the camera BACK by 25 percent and extend the matching beach and sky around ALL SIDES. Do NOT enlarge the woman independently. Entire woman from horns to toes should occupy only about 50-55 percent of total picture height. Whole rocking chair including BOTH curved wooden rockers and right edge must be INSIDE the image with at least 10 percent side margins. Keep chair resting on sand, realistic contact shadows, chair and body together as one original scene. Maintain diagonal relaxed supported pose. Retain water glass at left and small existing beach details, no new ornate elements. Portrait 1024x1536, generous sky above, a quiet empty strip of sand below for a later dynamic name. No printed text or frame. Do not straighten the crossed legs or replace the rocker with a lounger.",
+      "sha256": "f58d7470351659b369831067ada9106ac02eef122fc409728bac9d7202410241",
+      "sourcePixelIdentity": true,
+      "layerMode": "complete print + floating name + foil, no independent body reconstruction"
+    },
+    {
+      "id": "shira_v5_stars",
+      "file": "web/assets/experience/role-card/collection/coherent-v6/shira_v5_stars/master.png",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Preserve adult Shira identity, mature face, horns/wings/tail, burgundy opaque dress and star-sky painting. Correct the floating pose: she must be weightless with knees curled up, lower legs lifted, and BOTH shoes tilted with TOES POINTING UPWARD rather than down toward an imaginary floor. Rotate the relaxed shin/ankle positions so both soles/shoes clearly rise upward with the bent knees, legs do not hang as if sitting on an invisible chair. Graceful diagonal curled airborne body, no furniture/floor/standing/contact support. Keep hands, face, torso intact, complete shoes. Pull camera back25 percent; whole silhouette including all hair, wings, ribbon ends and tail occupies ONLY central55 percent of portrait height, generous dark sky all sides. Minimal sparse stars and crescent retained, no added ornate effect. Full unified polished anime illustration, no text, frame or UI,1024x1536.",
+      "sha256": "587cc22b46b45d52ced36ada8ca1c33b5e1b42f24e876a11a6fffe5cd240e108",
+      "sourcePixelIdentity": true,
+      "layerMode": "complete print + floating name + foil, no independent body reconstruction"
+    },
+    {
+      "id": "koka_v5_stars",
+      "file": "web/assets/experience/role-card/collection/coherent-v6/koka_v5_stars/master.png",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Preserve this adult26 Koka's natural face, blonde twin tails/ivory bows, pink cardigan and opaque skirt, cross-legged seated pose, whole wicker chair and paper rabbit lantern. Replace unsupported empty star background with a calm small NIGHT BALCONY: stone tiled floor under all chair legs, low balustrade behind chair, deep-blue night sky visible beyond, moon high at right. Chair's FOUR legs rest naturally on the same stone plane with contact shadows. Feet are relaxed while seated, not supporting chair. Whole figure/whole chair/held lamp must occupy only central55 percent of1024x1536 picture height; pull camera back30 percent and keep entire chair legs and shoes with safe margins. Restrained moonlight/rabbit-lamp warmth; remove disconnected large paper stars and excessive sparkles, retain only two delicate tiny lamp moths near lamp if needed. Ivory/pink waist ribbons rest near skirt with natural drape. Lightly painted volumetric original anime illustration, physically coherent support, no floating chair or giant furniture, no labels/frame/UI/text.",
+      "sha256": "1d16b2321f791f385d86798677148b65725ad22025ac7a7efdcb2ca0d94ccbc0",
+      "sourcePixelIdentity": true,
+      "layerMode": "complete print + floating name + foil, no independent body reconstruction"
+    },
+    {
+      "id": "shira_v5_volley",
+      "file": "web/assets/experience/role-card/collection/coherent-v6/shira_v5_volley/master.png",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Camera zoom-out only. Preserve same adult succubus Shira identity, volleyball gesture, opaque high-neck burgundy athletic swim dress, horns/wings/tail, whole volleyball, both natural feet, pale-blue beach and water splashes ONLY at foot-water contact. Pull camera BACK30 percent, extend matching existing sea/sand/sky around sides. WHOLE figure and raised hand and ball together occupy only central55-60 percent of portrait height with10 percent side margins and plenty of sky/sand breathing room. No independent character resize pasted onto a different environment; entire scene has one viewpoint. Keep mature natural face and natural proportional body, restrained reflections. No new objects/decorative rings/text/UI/frame,1024x1536.",
+      "sha256": "4efedc715af1d2de971ed12888c56cdb9bbb846a87c7ffa8a614be0d3845350c",
+      "sourcePixelIdentity": true,
+      "layerMode": "complete print + floating name + foil, no independent body reconstruction"
+    },
+    {
+      "id": "koka_v5_sword",
+      "file": "web/assets/experience/role-card/collection/coherent-v6/koka_v5_sword/master.png",
+      "generator": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Strictly fix ARM OWNERSHIP in this back-view adult Koka illustration. REMOVE and redraw BOTH arm poses, keep her mature face looking IMAGE RIGHT in side profile, blonde hair/bows, opaque costume, back-facing torso, lifted rear leg, whole body small in garden. RIGHT ARM is on the IMAGE-RIGHT side of a back view: it must originate at the IMAGE-RIGHT shoulder, travel visibly down the image-right side, and its RIGHT HAND must grip the DRAWN SWORD HILT at x=.69,y=.46. The drawn BLADE then extends FROM THAT RIGHT-SIDE HAND diagonally ACROSS the lower silhouette toward the LOWER-LEFT tip x=.17,y=.72. The silver blade crosses diagonally in front of the skirt/legs; right wrist performs a forward sweeping draw. LEFT ARM comes from IMAGE-LEFT shoulder and its LEFT HAND at x=.39,y=.48 stabilizes the EMPTY SCABBARD at her left hip. There must be a clear continuous right shoulder-right sleeve-right forearm-right wrist-right sword grip on image-right. Do not put drawn sword into image-left hand again. One sword, one empty scabbard, two arms/two hands only. NO front-facing chest, no over-shoulder look toward viewer. Dynamic forward right-arm sweep with delicate motion line following blade, not static turning. Preserve head around y=.29, shoes near y=.81; body+weapon55 percent frameheight, same twilight garden, full portrait1024x1536, natural correctly connected anatomy, no text/frame/UI.",
+      "sha256": "eba9f29b3f1649becec64177fd69c96bfa9e77df61ef1d1d2bb72ae18c092f84",
+      "sourcePixelIdentity": true,
+      "layerMode": "complete print + floating name + foil, no independent body reconstruction"
+    }
+  ],
+  "rejected": [
+    "coherent_sword",
+    "coherent_sword_right",
+    "coherent_flight"
+  ],
+  "note": "Acceptance checks pose/support/camera in a complete painting before card rendering; technical health does not establish aesthetic approval.",
+  "superseded": [
+    "coherent_beach"
+  ]
+}
