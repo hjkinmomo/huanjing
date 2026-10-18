@@ -112,6 +112,10 @@ class ChatStreams:
         if not isinstance(messages,list) or not 1<=len(messages)<=4096:raise ValueError('provider_chat_payload_invalid')
         self.runtime._validate_chat_messages(messages)
         if body.get('tools') or body.get('n',1)!=1:raise ValueError('stream_tools_unsupported')
+        from current_character_context import add_current_character_context
+        body=add_current_character_context(self.runtime,body,role,payload.get('roleSkills'))
+        from role_skills import appointment_turn_options
+        payload={**payload,'roleSkills':appointment_turn_options(self.runtime,role,payload.get('roleSkills'),body['messages'])}
         turn = None
         if isinstance(payload.get('roleSkills'), dict) and payload['roleSkills'].get('enabled') is True:
             turn = RoleSkillTurn(self.runtime, role, payload['roleSkills'])

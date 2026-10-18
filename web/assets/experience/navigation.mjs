@@ -34,7 +34,7 @@ export function mountLayerNavigation({root,header,roleName,roleId,onOpen}){
 // the same escape route and let its existing close handlers release its state.
 export function mountDialogChatReturn({onChat}){
  const decorate=dialog=>{
-  if(dialog.dataset.systemNotice==='true'||dialog.id==='phone-window'||dialog.classList.contains('phone-app-transition')||dialog.classList.contains('phone-world-dialog'))return;
+  if(dialog.dataset.ownedNavigation==='true'||dialog.dataset.systemNotice==='true'||dialog.id==='phone-window'||dialog.classList.contains('phone-app-transition')||dialog.classList.contains('phone-world-dialog'))return;
   const existing=dialog.querySelector('.dialog-main-nav');if(existing){const busy=dialog.getAttribute('aria-busy')==='true';existing.querySelectorAll('button').forEach(n=>n.disabled=busy);return;}if(dialog.querySelector('.dialog-main-chat'))return;
   const bar=document.createElement('nav');bar.className='dialog-main-nav';bar.setAttribute('aria-label','窗口返回导航');
   const back=document.createElement('button');back.type='button';back.className='dialog-back';back.textContent='← 返回上一步';back.setAttribute('aria-label','返回上一步');back.addEventListener('click',()=>{if(dialog.getAttribute('aria-busy')!=='true')dialog.close('cancel');});

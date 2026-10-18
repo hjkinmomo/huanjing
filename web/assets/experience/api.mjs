@@ -95,6 +95,10 @@ export class HermesAPI {
     const endpoint=new URL(settings.baseUrl);if(!/\/chat\/completions\/?$/.test(endpoint.pathname))endpoint.pathname=endpoint.pathname.replace(/\/$/,'')+'/chat/completions';
     return this.tool('role_memory_process',{roleId,sessionId,userId,replyId,provider:{endpoint:endpoint.href,model:settings.model,credentialId:settings.credentialId||'chat'}});
   }
+  async resolveRoomReply(roleId,sessionId,userId,replyId,settings){
+    const endpoint=new URL(settings.baseUrl);if(!/\/chat\/completions\/?$/.test(endpoint.pathname))endpoint.pathname=endpoint.pathname.replace(/\/$/,'')+'/chat/completions';
+    return this.request('/v1/agent/tools/execute',{name:'world_room_reply',args:{roleId,sessionId,userId,replyId,provider:{endpoint:endpoint.href,model:settings.model,credentialId:settings.credentialId||'chat'}}},45000).then(v=>v.result);
+  }
   async idleActivity(role,phase,userId,replyId,settings,messages,roleHelpers){
     const args={roleId:role.id,phase,userId,...(replyId?{replyId}:{}),...(messages?{profile:idleProfile(settings,messages,{name:role.name,roleHelpers})}:{})};
     return this.tool('auto_moment_activity',args);

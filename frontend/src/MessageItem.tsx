@@ -1,3 +1,5 @@
+import {RoomMovementReceipt} from './RoomMovementReceipt';
+import {ScheduleChangeCard} from './ScheduleChangeCard';
 import {SCENE_NOTICES,normalizeSceneNotices} from '../../web/assets/experience/scene-notices.mjs';
 import {MessageContent, MessageAttachments} from './MessageContent';
 import {ReplyBubbles} from './ReplyBubbles';
@@ -8,8 +10,8 @@ import type {Message, ChatActions, ChatSnapshot} from './chat-types';
 import {parseUserSticker} from '../../web/assets/experience/user-stickers.mjs';
 import {StickerArt} from './StickerArt';
 
-export function MessageItem({message, name, avatar, userName='你', userAvatar='', actions, roleId,presentation=true,animate=false,reveal,utcOffsetMinutes=480,phoneView=false}: {
-  phoneView?:boolean;utcOffsetMinutes?:number;roleId: string; message: Message; name: string; avatar: string; userName?:string;userAvatar?:string; actions: ChatActions;presentation?:boolean;animate?:boolean;reveal?:ChatSnapshot['reveal'];
+export function MessageItem({message, name, avatar, userName='你', userAvatar='', actions, roleId,presentation=true,animate=false,reveal,utcOffsetMinutes=480,phoneView=false,scheduleChanges=[],roomMovements=[]}: {
+  roomMovements?:any[];scheduleChanges?:any[];phoneView?:boolean;utcOffsetMinutes?:number;roleId: string; message: Message; name: string; avatar: string; userName?:string;userAvatar?:string; actions: ChatActions;presentation?:boolean;animate?:boolean;reveal?:ChatSnapshot['reveal'];
 }) {
   const user = message.from === 'user';
   const notices=normalizeSceneNotices(message.sceneNotices);
@@ -25,6 +27,8 @@ export function MessageItem({message, name, avatar, userName='你', userAvatar='
       <div className="message-label" hidden={phoneView}><span>{user ? userName : name}</span>{!phoneView&&message.channel==='phone'&&<span className="message-channel">手机</span>}{message.incomplete&&<span className="reply-phase">{generating?'正在回复':'未完成'}</span>}</div>
       {!user&&!phoneView&&<ReasoningPanel message={message} actions={actions}/>}
       {user ? phoneView&&scoreCard?<div className="phone-score-card"><span>游戏战绩</span><strong>{scoreCard[1]}</strong><b>{scoreCard[2]}<small>分</small></b><footer>{scoreCard[3]} 步 · {scoreCard[4]} 级</footer></div>:sticker?<figure className="user-sticker-message"><StickerArt src={sticker.src} sprite={sticker.sprite} label={`${sticker.label}：${sticker.meaning}`} className="user-sticker-art"/><figcaption>{sticker.label}</figcaption></figure>:<MessageContent text={message.text || ''}/> : <ReplyBubbles phone={phoneView} text={message.text || ''} roleId={roleId} presentation={presentation} streaming={generating} animate={animate} reveal={reveal} onRevealDone={()=>actions.revealCompleted?.(message.id)}/>}
+      {!user&&roomMovements.map(r=><RoomMovementReceipt key={r.id} receipt={r}/>)}
+      {!user&&scheduleChanges.map(c=><ScheduleChangeCard key={c.id} change={c} actions={actions} offset={utcOffsetMinutes}/>)}
       {!user&&!message.text&&generating&&<div className="reply-waiting"><span className="reply-dots" aria-hidden="true"><i/><i/><i/></span><span className="sr-only">正在等待正文</span></div>}
       {!user&&!phoneView&&notices.length>0&&<details className="partial-disclosure scene-processing-notice"><summary>本条回复的场景处理说明</summary><ul>{notices.map(code=><li key={code}>{SCENE_NOTICES[code as keyof typeof SCENE_NOTICES]}</li>)}</ul></details>}
       {message.incomplete&&!generating&&<p className="partial-disclosure">此片段未进入正式历史，重试会重新生成。</p>}

@@ -29,7 +29,7 @@ export type ChatSnapshot = {
   shoppingParcels?:any[];
   phoneDraft?:string;phoneUnread?:boolean;activeContactChannel?:'offline'|'phone';
   activeGame?:null|{id:string;kind:string;status:string;paused?:boolean};
-  worldLife?:null|{enabled:boolean;commitments?:any[];worldLocations?:any[];agenda?:any;established?:boolean;enRoute?:any;lastArrival?:any;transport?:any;identityBank?:any;actors?:any[];userEconomy?:any;sharedRevision?:number;binding?:any;deliveries?:any[];workCatalog?:any[];workJobs?:any[];calendar?:any;lastAdvance?:any;valid?:boolean;coLocated?:boolean;worldTime?:string;worldUtc?:string;realUtc?:string;autonomy?:{enabled:boolean;outreach?:boolean;startedAt?:string;greetingText?:string;mealText?:string;pending?:any};journal?:{id:string;title:string;kind:string;locationId:string;together:boolean;worldUtc:string}[];utcOffsetMinutes?:number;revision?:number;catchUp?:string|null;elapsedSeconds?:number|null;user?:{locationId:string;name:string};character?:{locationId:string;name:string;activity:string};schedule?:{enabled:boolean;slots:{at:string;locationId:string;activity:string}[]};events?:{id:string;kind:string;locationId?:string;at:string}[]};
+  worldLife?:null|{enabled:boolean;roomMovements?:any[];commitments?:any[];worldLocations?:any[];agenda?:any;established?:boolean;enRoute?:any;lastArrival?:any;transport?:any;identityBank?:any;actors?:any[];userEconomy?:any;sharedRevision?:number;binding?:any;deliveries?:any[];workCatalog?:any[];workJobs?:any[];calendar?:any;lastAdvance?:any;valid?:boolean;coLocated?:boolean;worldTime?:string;worldUtc?:string;realUtc?:string;autonomy?:{enabled:boolean;outreach?:boolean;startedAt?:string;greetingText?:string;mealText?:string;pending?:any};journal?:{id:string;title:string;kind:string;locationId:string;together:boolean;worldUtc:string}[];utcOffsetMinutes?:number;revision?:number;catchUp?:string|null;elapsedSeconds?:number|null;user?:{locationId:string;name:string};character?:{locationId:string;name:string;activity:string};schedule?:{enabled:boolean;slots:{at:string;locationId:string;activity:string}[]};events?:{id:string;kind:string;locationId?:string;at:string}[]};
   contactChannel?:'offline'|'phone';
   lifeError?:string;
   bagItems?:{id:string;name:string;image:string;count:number;unknown:boolean}[];
@@ -79,6 +79,9 @@ export type ChatSnapshot = {
 };
 
 export type ChatActions = {
+  openWeekPlanner?:()=>void;
+  weekPlannerAction?:(name:string,args:any)=>Promise<any>;
+  savePlannerCredential?:(mode:string,secret:string)=>Promise<void>;
   moveNearbyRoom?:(request:import('../../web/assets/experience/nearby-room.mjs').NearbyRoomRequest)=>Promise<void>;
   applyPhoneBinding?:(roleId:string,sessionId:string)=>Promise<void>;
   closePhoneShopDetail?:()=>boolean;
@@ -86,6 +89,7 @@ export type ChatActions = {
   openPhoneContact?:(owner:'self'|'role')=>void;
   worldClockChanged?:(clock:{action:'next-day'}|{localDateTime:string}|{advanceMinutes:number}|{storyLocalDateTime:string})=>Promise<void>;
   worldAutonomyChanged?:(value:{enabled:boolean;outreach?:boolean;greetingText?:string;mealText?:string})=>Promise<void>;
+  retryDayPlan?:(id:string)=>Promise<void>;
   orderDelivery?:(id:string)=>Promise<void>;
   discussDelivery?:(id:string)=>void;
   openWorldEditor?:()=>void;

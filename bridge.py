@@ -69,6 +69,7 @@ class Bridge:
         if agent_runtime:
             agent_runtime.auto_moments.resolve_provider = lambda provider: self.resolve_provider_credential(provider, "chat")
             agent_runtime.role_workspace.resolve_provider = lambda provider: self.resolve_provider_credential(provider, "chat")
+            agent_runtime.world_life.weekly.resolve_provider = lambda mode,config: self.resolve_provider_credential({"endpoint":config["endpoint"],"model":config["model"],"credentialId":agent_runtime.world_life.weekly.slot(mode)},agent_runtime.world_life.weekly.slot(mode))
         self.sync_extension_credentials()
         try:
             from PIL import ImageGrab  # type: ignore
@@ -103,6 +104,7 @@ class Bridge:
         definitions = self.agent_runtime.extension_credential_definitions() if self.agent_runtime else {}
         role_definitions = self.agent_runtime.role_workspace.credential_definitions() if self.agent_runtime else {}
         definitions.update(role_definitions)
+        if self.agent_runtime:definitions.update(self.agent_runtime.world_life.weekly.credential_definitions())
         self.credential_vault.replace_extension_slots(definitions)
         self.credential_vault.migrate_role_slots(list(role_definitions))
 

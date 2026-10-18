@@ -1,13 +1,81 @@
 {
   "schema": 1,
-  "note": "沿用虚构历法；节假日默认为空，可按模式添加month/day/name及可选的新历year，不自动导入现实假日。",
+  "name": "夏城新历",
+  "note": "虚构世界生活规则：常规双休，节日休息，不调休；沿用既有故事纪元。",
   "modes": {
     "normal": {
       "weekendDays": [
         6,
         7
       ],
-      "holidays": []
+      "holidays": [
+        {
+          "month": 1,
+          "day": 1,
+          "name": "启岁节",
+          "rest": true
+        },
+        {
+          "month": 1,
+          "day": 2,
+          "name": "启岁节",
+          "rest": true
+        },
+        {
+          "month": 1,
+          "day": 3,
+          "name": "启岁节",
+          "rest": true
+        },
+        {
+          "month": 3,
+          "day": 12,
+          "name": "春灯节",
+          "rest": true
+        },
+        {
+          "month": 6,
+          "day": 21,
+          "name": "夏风节",
+          "rest": true
+        },
+        {
+          "month": 6,
+          "day": 22,
+          "name": "夏风节",
+          "rest": true
+        },
+        {
+          "month": 9,
+          "day": 15,
+          "name": "归家节",
+          "rest": true
+        },
+        {
+          "month": 10,
+          "day": 4,
+          "name": "夏城纪念日",
+          "rest": true
+        },
+        {
+          "month": 10,
+          "day": 5,
+          "name": "夏城纪念日",
+          "rest": true
+        },
+        {
+          "month": 10,
+          "day": 6,
+          "name": "夏城纪念日",
+          "rest": true
+        },
+        {
+          "month": 12,
+          "day": 31,
+          "name": "岁末夜",
+          "rest": true
+        }
+      ]
     }
   }
 }

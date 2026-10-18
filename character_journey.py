@@ -51,6 +51,14 @@ class CharacterJourney:
   key='arrival-'+hashlib.sha256((role+'|'+session+'|'+trip['id']).encode()).hexdigest()[:40]
   if db.execute('SELECT 1 FROM world_life_events WHERE role_id=? AND session_id=? AND event_id=?',(role,session,key)).fetchone():return
   self.life.event(db,role,session,key,'character-arrival',{'locationId':trip['destination'],'journeyId':trip['id'],'worldUtc':trip['dueAt']},stamp)
+  if trip.get('goalPlanId'):
+   living=self.life.living.state(db,role)
+   if not living.get('outline'):
+    content,_=self.life.living.content(db,role);living['outline']=content.get('life',{}).get('outline',{})
+   step=next((s for s in living['outline'].get('steps',[]) if s.get('id')==trip.get('outlineStepId')),None)
+   if step and step.get('status') in ['planned','reconsider']:step['status']='active';step['startedAt']=trip['dueAt']
+   living['events']=[{'kind':'goal-step-started','stepId':trip.get('outlineStepId'),'at':trip['dueAt'],'source':'recorded-arrival','planId':trip['goalPlanId']},*living.get('events',[])][:80]
+   living['lastGoalArrival']=trip['id'];self.life.living.store(db,role,living,stamp)
   self.life.journal.log(db,role,session,key,state,datetime.fromisoformat(trip['dueAt']),'抵达 '+next((p['name'] for p in self.life.shared.world(role_mode(role))['locations'] if p['id']==trip['destination']),trip['destination']),'character-arrival',trip['destination'])
-  if trip.get('source')!='routine' and hasattr(self.life.runtime,'character_events'):
+  if trip.get('source') not in ['routine','goal-plan','room-reply'] and hasattr(self.life.runtime,'character_events'):
    self.life.runtime.character_events.enqueue_in(db,role,session,'outreach',key,{'origin':'character-arrival-v1','contextGuidance':'角色已经实际抵达约定地点。依据当前对话自主联系用户，迟到处理时以实际到达时间为准，不复读平台通知。','destination':trip['destination'],'receivedWorldAt':trip['dueAt']},stamp)

@@ -1,3 +1,5 @@
+import {WeeklyPlanner} from './WeeklyPlanner';
+import {scheduleCards} from '../../web/assets/experience/schedule-cards.mjs';
 import {UiIcon} from './UiIcon';
 import {PhoneShell} from './PhoneShell';
 import {offlineMessages} from '../../web/assets/experience/phone-core.mjs';
@@ -45,6 +47,7 @@ export function ChatView({snapshot:s,actions,messageRef,messagesRef}:{
   }
   return <>
     <PhoneShell snapshot={s} actions={actions}/>
+    <WeeklyPlanner s={s} actions={actions}/>
     <RoleRoster snapshot={s} actions={actions}/>
     <div ref={conversationRef} className="conversation" data-selected={s.hasSelectedRole!==false} data-focused={focused} data-contact-channel={s.contactChannel||'offline'} data-memory-policy={s.memoryPolicy||'normal'}>
       <header className="conversation-header">
@@ -65,7 +68,7 @@ export function ChatView({snapshot:s,actions,messageRef,messagesRef}:{
         <div ref={contentRef} className="message-list-content">{s.openingPrehistory&&<details className="story-prehistory"><summary>到这一刻为止</summary><p>{s.openingPrehistory}</p></details>}
         {!displayed.length && s.hasSelectedRole!==false && <div className="empty-state"><Avatar key={`welcome:${s.avatar}`} src={s.avatar} name={s.name} className="welcome-avatar"/><h3>你好，{s.name}。</h3><p>{s.setupPending&&s.chatMode!=='assistant'?'立绘已就绪。人格、语气与情感设定暂时留白，填写后再开始角色对话。':s.greeting || '不必想好开场。从今天的一件小事，或此刻的心情开始。'}</p>{s.setupPending&&s.chatMode!=='assistant'&&<button type="button" className="connection-setup" onClick={()=>actions.navigate('edit')}>填写角色设定 →</button>}{!s.ready&&<button type="button" className="connection-setup" onClick={()=>actions.navigate('settings')}>连接聊天模型 →</button>}</div>}
         {query.trim()&&!matches.length&&<p className="search-empty">没有找到“{query}”。试试其他词。</p>}
-        {matches.map(message=><MessageItem key={`${s.roleId}:${message.id}`} message={message} utcOffsetMinutes={s.worldLife?.utcOffsetMinutes} roleId={s.roleId} name={s.name} avatar={s.avatar} userName={s.userName} userAvatar={s.userAvatar} actions={actions} presentation={s.chatMode!=='assistant'} reveal={s.reveal} animate={s.revealIds?.includes(message.id)&&(!message.incomplete||message.generating)}/>)}
+        {matches.map(message=><MessageItem key={`${s.roleId}:${message.id}`} message={message} roomMovements={(s.worldLife?.roomMovements||[]).filter(r=>r.replyId===message.id)} scheduleChanges={scheduleCards(s.messages,s.worldLife?.commitments,message.id)} utcOffsetMinutes={s.worldLife?.utcOffsetMinutes} roleId={s.roleId} name={s.name} avatar={s.avatar} userName={s.userName} userAvatar={s.userAvatar} actions={actions} presentation={s.chatMode!=='assistant'} reveal={s.reveal} animate={s.revealIds?.includes(message.id)&&(!message.incomplete||message.generating)}/>)}
         {!partialVisible&&<ReplyProgress roleId={s.roleId} name={s.name} avatar={s.avatar} busy={s.busy && s.activeContactChannel!=='phone' && !!s.canStop} partial={physicalPartial} chatMode={s.chatMode}/>}
         </div>
       </div>

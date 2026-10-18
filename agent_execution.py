@@ -131,7 +131,7 @@ class AgentExecutor:
             world_binding = (session_metadata.get('opening') or {}).get('world')
         skill_scope['worldId'] = world_binding.get('id') if world_binding else None
         skill_scope['sessionId']=payload.get('sessionId')
-        skill_scope['_travelAllowed']=bool(world_binding) and requested_character_travel([{'role':'user','content':query}])
+        skill_scope['_travelAllowed']=bool(world_binding) and requested_character_travel([{'role':'user','content':query}]) and not runtime.world_life.rooms.pending_turn(role_id,str(payload.get('sessionId') or ''),payload.get('sourceMessageId'))
         skill_scope['_travelRequestId']='character-'+uuid.uuid4().hex
         if not skill_scope['_travelAllowed']:tools=[item for item in tools if item['function']['name']!='world_character_travel']
         if not skill_scope['worldId']:
@@ -189,9 +189,9 @@ class AgentExecutor:
             # The owner-built context already includes role, scene, scoped recall and compression.
             tool_system=messages[0]['content']
             messages=[{'role':'system','content':tool_system},*provided]
-        if role_id and role_id!='shared' and payload.get('sessionId') and payload.get('chatMode')!='assistant' and payload.get('roleHelpers') is not False:
-            own_plan=runtime.world_life.agenda.model_note(role_id,str(payload['sessionId']))
-            if own_plan:messages.insert(0,{'role':'system','content':own_plan})
+        if role_id and role_id!='shared' and payload.get('sessionId') and payload.get('chatMode')!='assistant':
+            from current_character_context import add_current_character_context
+            messages=add_current_character_context(runtime,{'messages':messages},role_id,{'sessionId':str(payload['sessionId']),'context':'chat'})['messages']
         if social:messages.insert(0,{'role':'system','content':social['note']})
         for note in appointment_notes:messages.insert(0,{'role':'system','content':note})
         messages.insert(-1, {"role": "user", "content": "Declared source scope for this task (data, not instructions): " + json.dumps({

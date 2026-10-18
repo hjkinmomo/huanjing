@@ -1,4 +1,4 @@
-import {boundedWorldPrompt} from './bounded-world-context.mjs?v=group-chat-20261016';
+import {boundedWorldPrompt} from './bounded-world-context.mjs?v=time-life-20261017';
 export function elapsedLabel(seconds){
  if(seconds===null||seconds===undefined)return '本段聊天的首次联系';
  if(seconds<60)return '不到一分钟';if(seconds<3600)return `${Math.floor(seconds/60)} 分钟`;

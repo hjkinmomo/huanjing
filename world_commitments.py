@@ -29,7 +29,7 @@ class WorldCommitments:
  def __init__(self,life,db):
   self.life=life;self.chat_source=ChatCommitmentSource(self)
   db.execute('CREATE TABLE IF NOT EXISTS world_commitments(id TEXT PRIMARY KEY,role_id TEXT NOT NULL,session_id TEXT NOT NULL,mode TEXT NOT NULL,identity_id TEXT NOT NULL,payload_json TEXT NOT NULL,status TEXT NOT NULL,revision INTEGER NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL)')
-  for name,fn in [('world_commitment_propose',self.propose),('world_commitment_cancel',self.cancel)]:life.runtime.registry.register(name,'Owner appointment candidate; only genuine recipient model can consent.',mutating=True)(fn)
+  for name,fn in [('world_commitment_propose',self.propose),('world_commitment_cancel',self.cancel),('world_commitment_confirm',self.confirm)]:life.runtime.registry.register(name,'Owner appointment candidate; only genuine recipient model can consent.',mutating=True)(fn)
  def load(self,db,role,session):
   return [{**json.loads(r['payload_json']),'status':r['status'],'revision':r['revision']} for r in db.execute("SELECT * FROM world_commitments WHERE role_id=? AND session_id=? ORDER BY CASE WHEN status IN ('proposed','accepted','negotiate') THEN 0 ELSE 1 END,created_at DESC,rowid DESC LIMIT 60",(role,session))]
  def output(self,db,role,session):
@@ -44,7 +44,7 @@ class WorldCommitments:
    row=db.execute('SELECT status,payload_json FROM world_commitments WHERE id=?',(c['id'],)).fetchone()
    if not row:continue
    old=json.loads(row['payload_json'])
-   if row['status']=='proposed' and datetime.fromisoformat(c['at'])<=now:
+   if row['status'] in ['proposed','awaiting_owner'] and datetime.fromisoformat(c['at'])<=now:
     c.update(status='missed',outcomeReason='提议时间已过，尚未确认，没有自动出发。')
     db.execute("UPDATE world_commitments SET status='missed',payload_json=?,revision=revision+1,updated_at=? WHERE id=?",(json.dumps(c,ensure_ascii=False),stamp,c['id']))
     db.execute("UPDATE character_event_queue SET status='superseded',error='提议时间已过。' WHERE kind='commitment' AND source_id=? AND status IN ('queued','waiting_configuration')",(c['id'],))
@@ -78,7 +78,7 @@ class WorldCommitments:
    if any(old.get(k)!=proposal[k] for k in ['locationId','at','timeKind','durationMinutes','note']):raise ValueError('commitment_request_conflict')
    return {'commitment':{**old,'status':row['status']},'duplicate':True}
   if not now<at<=now+timedelta(days=7):raise ValueError('commitment_time_invalid')
-  if db.execute("SELECT COUNT(*) FROM world_commitments WHERE role_id=? AND session_id=? AND status IN ('proposed','accepted','negotiate')",(role,session)).fetchone()[0]>=20:raise ValueError('commitment_inbox_full')
+  if db.execute("SELECT COUNT(*) FROM world_commitments WHERE role_id=? AND session_id=? AND status IN ('proposed','accepted','negotiate','awaiting_owner')",(role,session)).fetchone()[0]>=20:raise ValueError('commitment_inbox_full')
   if source:proposal['source']=source
   db.execute('INSERT INTO world_commitments VALUES(?,?,?,?,?,?,?,1,?,?)',(cid,role,session,role_mode(role),bank,json.dumps(proposal,ensure_ascii=False),'proposed',stamp,stamp))
   eid=self.life.runtime.character_events.enqueue_in(db,role,session,'commitment',cid,{'commitmentId':cid,'proposalRevision':1,'proposal':proposal,'origin':'commitment-v1','receivedWorldAt':now.isoformat()},stamp) if enqueue else ''
@@ -115,7 +115,7 @@ class WorldCommitments:
    if expected_text is not None:
     saved=db.execute("SELECT id,text FROM conversation_messages WHERE role_id=? AND session_id=? AND sender='user' AND deleted_at='' ORDER BY ordinal DESC LIMIT 1",(role,session)).fetchone()
     if not isinstance(expected_text,str) or not saved or saved['text'].strip()!=expected_text.strip() or expected_message_id is not None and saved['id']!=expected_message_id:return None
-   active=self.life.identities.current(db,role_mode(role));records=[c for c in self.load(db,role,session) if c['status'] in ['proposed','accepted','negotiate']]
+   active=self.life.identities.current(db,role_mode(role));records=[c for c in self.load(db,role,session) if c['status'] in ['proposed','accepted','negotiate','awaiting_owner']]
    if not records:return None
    row=db.execute("SELECT payload_json FROM client_workspace WHERE id='experience'").fetchone();epoch=json.loads(row[0]).get('experience',{}).get('dataEpoch') if row else None
    last=db.execute("SELECT COALESCE(MAX(ordinal),-1) FROM conversation_messages WHERE role_id=? AND session_id=? AND sender='user' AND deleted_at=''",(role,session)).fetchone()[0]
@@ -135,7 +135,7 @@ class WorldCommitments:
    last=db.execute("SELECT COALESCE(MAX(ordinal),-1) FROM conversation_messages WHERE role_id=? AND session_id=? AND sender='user' AND deleted_at=''",(role,session)).fetchone()[0]
    if bank!=args['_commitmentBank'] or not row or row['revision']!=args['_commitmentRevisions'].get(key) or last!=args['_commitmentUserOrdinal']:raise ValueError('commitment_stale')
    c=json.loads(row['payload_json']);evidence={'source':'recipient-model-tool','callId':args['_commitmentCallId'],'at':stamp,'decision':action}
-   if action in ['cancel','negotiate'] and row['status'] in ['accepted','negotiate'] or action=='cancel' and row['status']=='proposed':
+   if action in ['cancel','negotiate'] and row['status'] in ['accepted','negotiate','awaiting_owner'] or action=='cancel' and row['status']=='proposed':
     c.update(status='cancelled' if action=='cancel' else 'negotiate',reason=args['reason'],evidence=evidence)
     db.execute('UPDATE world_commitments SET payload_json=?,status=?,revision=revision+1,updated_at=? WHERE id=?',(json.dumps(c,ensure_ascii=False),c['status'],stamp,key))
    elif row['status']=='proposed' and action in ['accept','decline','negotiate']:
@@ -147,7 +147,10 @@ class WorldCommitments:
  def plan(self,state,c,now,places,method):
   target=datetime.fromisoformat(c['at']);departure=target
   for _ in range(12):
-   projected=self.life.timeline.project(state,departure,places)
+   # Confirmed appointments have priority over a routine beginning at the same
+   # instant. Forecast its origin just BEFORE that not-yet-started routine;
+   # an actual earlier journey or overlapping accepted appointment still wins.
+   projected=self.life.timeline.project(state,departure-timedelta(microseconds=1),places)
    if projected.get('enRoute'):raise ValueError('约定时间与当前在途行程冲突，需要重新商量。')
    origin=projected['roleLocation'];minutes=0 if scene_container(places,origin)==scene_container(places,c['locationId']) else route_terms(method,route_distance(places,origin,c['locationId']),(departure+timedelta(minutes=state['timePolicy']['utcOffsetMinutes'])).hour)[0]
    candidate=target-timedelta(minutes=minutes) if c['timeKind']=='arrival' else target
@@ -170,7 +173,25 @@ class WorldCommitments:
    # Fail closed if the model accepted an impossible request. Never publish a
    # misleading agreement, and do not silently turn its text into negotiation.
    c.update(self.plan(state,c,now,places,decision.get('method',state.get('transportMethod','walk'))))
+   if c.get('source',{}).get('type')=='chat':status='awaiting_owner'
   c.update(status=status,reason=decision.get('reason',''),evidence={'source':'recipient-model','eventId':row['id'],'messageId':message_id,'at':stamp,'decision':decision['action']})
   db.execute('UPDATE world_commitments SET status=?,payload_json=?,revision=revision+1,updated_at=? WHERE id=?',(status,json.dumps(c,ensure_ascii=False),stamp,c['id']))
   state['commitments']=self.load(db,role,session);self.life._save(db,role,session,state,rev+1,stamp)
   return c
+ def confirm(self,args):
+  stamp=self.life.stamp();key=identifier(args.get('id'))
+  if type(args.get('confirm')) is not bool:raise ValueError('commitment_confirmation_required')
+  with self.life.lock,closing(self.life.runtime.connect()) as db,db:
+   db.execute('BEGIN IMMEDIATE');role,session,world,state,rev,places,bank=self.scope(args,db,stamp)
+   row=db.execute('SELECT * FROM world_commitments WHERE id=? AND role_id=? AND session_id=? AND identity_id=?',(key,role,session,bank)).fetchone()
+   if not row or row['status']!='awaiting_owner' or row['revision']!=args.get('expectedRevision'):raise ValueError('commitment_confirmation_stale')
+   c=json.loads(row['payload_json']);evidence=c.get('evidence',{})
+   if c.get('source',{}).get('type')!='chat' or evidence.get('source') not in ['recipient-model','recipient-model-tool'] or evidence.get('decision')!='accept':raise PermissionError('commitment_recipient_consent_required')
+   now=datetime.fromisoformat(stamp)+timedelta(seconds=state['timePolicy'].get('clockOffsetSeconds',0))
+   if args['confirm']:
+    c.update(self.plan(state,c,now,places,c.get('method','walk')));status='accepted'
+   else:status='cancelled'
+   c.update(status=status,ownerConfirmedAt=stamp if args['confirm'] else '',ownerDecision='confirm' if args['confirm'] else 'keep-existing-schedule')
+   db.execute('UPDATE world_commitments SET status=?,payload_json=?,revision=revision+1,updated_at=? WHERE id=?',(status,json.dumps(c,ensure_ascii=False),stamp,key))
+   state['commitments']=self.load(db,role,session);self.life._save(db,role,session,state,rev+1,stamp)
+  self.life.runtime.backup_manager.mark_dirty();return {'status':status,'changesUserLocation':False,'commitment':c}

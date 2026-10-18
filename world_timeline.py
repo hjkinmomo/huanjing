@@ -43,7 +43,7 @@ class WorldTimeline:
     when=local.replace(hour=int(slot['at'][:2]),minute=int(slot['at'][3:]))-zone
     if start<when<=at:
      dest=self.life.agenda.destination(state,slot,local,places)
-     events.append((when,1,'routine',{'locationId':dest,'activity':slot['activity'],'id':'routine-'+hashlib.sha256((state.get('scheduleActorId','')+when.isoformat()).encode()).hexdigest()[:24]}))
+     events.append((when,1,'routine',{'locationId':dest,'activity':slot['activity'],'id':'routine-'+hashlib.sha256((state.get('scheduleActorId','')+when.isoformat()).encode()).hexdigest()[:24],**{k:slot[k] for k in ['outlineStepId','goalPlanId','until'] if k in slot}}))
   commitments=state.get('commitments',[])
   ends=[c['endAt'] for c in commitments if c['status']=='accepted' and c.get('endAt')]
   if state.get('enRoute'):
@@ -88,12 +88,15 @@ class WorldTimeline:
    elif blocked:continue
    dest=item['locationId']
    try:
-    trip=self.life.journeys.start(state,real_stamp(when),places,dest,item['id'],item.get('method',state.get('transportMethod','walk')),item.get('activity','赴约'),kind)
+    trip=self.life.journeys.start(state,real_stamp(when),places,dest,item['id'],item.get('method',state.get('transportMethod','walk')),item.get('activity','赴约'),'goal-plan' if item.get('goalPlanId') else kind)
    except ValueError:
     if kind=='commitment':item.update(status='negotiate',outcomeReason='目的地或路线暂不可用。')
     continue
    if kind=='commitment':
     item['startedAt']=when.isoformat();trip['holdUntil']=item['endAt']
+   if item.get('goalPlanId'):
+    goal_end=(when+zone).replace(hour=int(item['until'][:2]),minute=int(item['until'][3:]))-zone
+    trip.update(goalPlanId=item['goalPlanId'],outlineStepId=item['outlineStepId'],holdUntil=goal_end.isoformat())
    remember(when)
    settle(when)
   settle(at);state['timeline']['cursor']=at.isoformat()

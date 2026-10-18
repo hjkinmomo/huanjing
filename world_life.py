@@ -5,7 +5,7 @@ and in-person turns retain the original conversation and channel ownership.
 """
 from contextlib import closing
 from datetime import datetime, timezone, timedelta
-import hashlib, json, threading
+import hashlib, json, threading, copy
 from role_workspace import identifier
 from persona_modes import role_mode
 from life_journal import LifeJournal
@@ -23,6 +23,9 @@ from daily_settlement import DailySettlement
 from character_social import CharacterSocial
 from world_timeline import WorldTimeline
 from world_commitments import WorldCommitments
+from day_planning import DayPlanning
+from world_weekly import WeeklyPlanner
+from room_movement import RoomMovement
 
 
 class WorldLife:
@@ -55,6 +58,9 @@ class WorldLife:
             self.commitments=WorldCommitments(self,db)
             self.day_journals=DailySettlement(self,db)
             self.social=CharacterSocial(self,db)
+            self.planning=DayPlanning(self,db)
+            self.weekly=WeeklyPlanner(self,db)
+            self.rooms=RoomMovement(self,db)
         for name,fn,write in [('world_life_get',self.get,True),('world_life_travel',self.travel,True),
                               ('world_life_schedule',self.schedule,True),('world_life_invite',self.invite,True),('world_life_clock',self.clock_change,True),('world_life_autonomy',self.autonomy,True)]:
             runtime.registry.register(name,'Owner UI fictional world ledger; not a model/MCP tool.',mutating=write)(fn)
@@ -129,6 +135,7 @@ class WorldLife:
             self.adopt_home_defaults(db,role,session,state,world)
             state=self.services.adopt_binding(db,role,self.shared.adopt(db,role,state,world,stamp))
             state['commitments']=self.commitments.load(db,role,session)
+            self.ensure_living_defaults(db,role,session,state,stamp)
             self.refine_position(state,self.places(role,session,world,db))
             self.agenda.prepare(db,role,session,state,world,stamp)
             return state,row['revision']
@@ -150,6 +157,7 @@ class WorldLife:
         self.adopt_home_defaults(db,role,session,state,world)
         state=self.services.adopt_binding(db,role,self.shared.adopt(db,role,state,world,stamp))
         state['commitments']=self.commitments.load(db,role,session)
+        self.ensure_living_defaults(db,role,session,state,stamp)
         self.agenda.prepare(db,role,session,state,world,stamp)
         self.timeline.seed(state,datetime.fromisoformat(stamp)+timedelta(seconds=state['timePolicy'].get('clockOffsetSeconds',0)))
         state['commitments']=self.commitments.load(db,role,session)
@@ -207,6 +215,7 @@ class WorldLife:
         return {'receivedGifts':self.runtime.character_events.gifts_in(db,role) if hasattr(self.runtime,'character_events') else [],'responseEvents':self.runtime.character_events.output_in(db,role_mode(role)) if hasattr(self.runtime,'character_events') else [],'transport':self.transport.output(db,role_mode(role)),'established':any(a['roleId']==role for a in actors),'phoneInbox':self.notifications.status_in(db,role_mode(role)),'living':self.living.output(db,role),'incomeReceipts':income_receipts,'enabled':True,'valid':valid,'roleId':role,'sessionId':session,'personaMode':role_mode(role),'worldId':world['id'],
                 'worldLocations':list(places.values()),'homeLocation':{'id':state.get('homeLocation'),'name':places.get(state.get('homeLocation'),{}).get('name')},'calendar':{'era':'新历','year':local.year-1700,'localDateTime':local.replace(tzinfo=None).isoformat()},'lastAdvance':state.get('lastAdvance'),'revision':revision,'worldTime':worldtime,'worldUtc':worldutc.isoformat(),'realUtc':stamp,'utcOffsetMinutes':state['timePolicy']['utcOffsetMinutes'],
                 'user':actor(state['userLocation'],''),'character':actor(state['roleLocation'],state['activity']) if established else {'locationId':'','name':'尚未创建新对话','activity':''},
+                'roomMovements':self.rooms.output(db,role,session),
                 'transportMethod':state.get('transportMethod','walk'),'enRoute':self.journeys.output(state,stamp),'lastArrival':state.get('lastArrival'),'coLocated':established and valid and self.co_located(state,places) and not self.transport.output(db,role_mode(role))['current'],'elapsedSeconds':elapsed,
                 'commitments':self.commitments.output(db,role,session),'agenda':self.agenda.output(state,stamp,places),'schedule':state['schedule'],'catchUp':state['catchUp'],'events':events,**self.journal.output(db,role,session,state),**self.services.output(db,role,session,state),'workCatalog':self.services.work_catalog(places),**self.shared.output(db,role,stamp,actors)}
 
@@ -327,6 +336,25 @@ class WorldLife:
                 self.journal.log(db,role,session,event,state,fictional_at,title,kind,dest)
             out=self._output(db,role,session,world,state,rev,places)
         self.runtime.backup_manager.mark_dirty();return out
+
+    def ensure_living_defaults(self,db,role,session,state,stamp):
+        # A live story must not depend on a particular UI creation callback or
+        # an optional explicit map binding. An explicit opt-out always wins.
+        if role in ['world-user','special.world-user'] or session==f'role:{role}:primary' or 'autonomy' in state:return
+        row=db.execute("SELECT s.mode,COALESCE(o.memory_policy,'normal') policy FROM role_sessions s LEFT JOIN chat_session_options o ON s.role_id=o.role_id AND s.session_id=o.session_id WHERE s.role_id=? AND s.session_id=? AND s.deleted_at=''",(role,session)).fetchone()
+        if not row or row['mode']!='character' or row['policy']=='readonly':return
+        identity=self.identities.current(db,role_mode(role));play=db.execute('SELECT started FROM play_mode_state WHERE mode=?',(role_mode(role),)).fetchone()
+        if not (identity and identity['profile'] or play and play[0]):return
+        if state.get('scheduleManual') and not state['schedule']['enabled']:return
+        config,_=self.living.content(db,role);prior=state['lastEvaluatedAt']
+        world_at=(datetime.fromisoformat(prior)+timedelta(seconds=state['timePolicy'].get('clockOffsetSeconds',0))).isoformat()
+        state['autonomy']={'enabled':True,'outreach':True,'startedAt':prior,'lastRealUtc':prior,'lastWorldUtc':world_at,'sentCount':0,'pending':None,'source':'story-lifecycle-v1'}
+        for key in ['greetingText','mealText']:
+            if config.get('life',{}).get(key):state['autonomy'][key]=config['life'][key]
+        if not state.get('scheduleManual'):
+            configured=self.configured_schedule(role,self.places(role,session,self.shared.world(role_mode(role)),db),db)
+            state['schedule']=copy.deepcopy(configured) if configured else {'enabled':True,'slots':[{'at':'00:00','locationId':state.get('homeLocation',state['roleLocation']),'activity':'自己的日常'}]}
+        state['personaScheduleVersion']=2
 
     def adopt_home_defaults(self,db,role,session,state,world):
         if role in ['world-user','special.world-user']:return

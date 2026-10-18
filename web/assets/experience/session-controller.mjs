@@ -3,7 +3,7 @@ import {roleHelpersEnabled} from './character-layers.mjs';
 import {conversationKey,primarySession,privateSource} from './conversation-state.mjs';
 import {rolePersonaReady} from './role-readiness.mjs';
 import {roleSkillBindings} from './api.mjs?v=group-chat-20261016';
-import {worldLifePrompt,contactScene,worldStamp} from './world-life.mjs?v=group-chat-20261016';
+import {worldLifePrompt,contactScene,worldStamp} from './world-life.mjs?v=time-life-20261017';
 
 // Session work owns a captured role; the view is notified, never queried or mutated.
 export function createSessionController({api,read,mutate,legacy,settings,ready,lock,changed,draftCleared,volatileReply,canUseSession=()=>true}) {
@@ -37,6 +37,7 @@ export function createSessionController({api,read,mutate,legacy,settings,ready,l
       });
       sendErrors.delete(id);await history(owner,{preserveReading:true,sessionId});
       const messages=read().messages[id]||[],reply=messages.findLast(m=>m.from==='role'&&m.inReplyTo&&!m.syncPending);
+      if(reply&&api.resolveRoomReply)try{await api.resolveRoomReply(owner,sessionId,reply.inReplyTo,reply.id,settings(owner));}catch{}
       if(reply&&messages.find(m=>m.id===reply.inReplyTo)?.tone!=='binding-application')try{await api.rememberTurn?.(owner,sessionId,reply.inReplyTo,reply.id,settings(owner));}catch{memoryErrors.set(id,'消息已同步，但记忆整理未排队。');}
     }catch(error){sendErrors.set(id,{text:`同步未完成：${error.message} 消息保留在本浏览器。`,retry:'sync'});}
     finally{busy.delete(id);changed(id);}
@@ -97,6 +98,10 @@ export function createSessionController({api,read,mutate,legacy,settings,ready,l
           mutate(s=>{(s.messages[id]||=[]).push(user);if(!preserveDraft){if(channel==='phone'){s.phoneDrafts||={};if(s.phoneDrafts[id]===text)s.phoneDrafts[id]='';}else s.drafts[id]='';}});if(!preserveDraft)draftCleared(id,channel);
         }
         phase='user-sync';await api.append(owner,[user],sessionId);
+        let roomOffer=null;
+        if(mode==='character'&&!readonly&&config.worldLife?.enabled&&api.tool){
+          try{roomOffer=await api.tool('world_room_offer',{roleId:owner,sessionId,userId:user.id});if(roomOffer?.candidate)config.worldStatePrompt+='\n'+roomOffer.note;}catch{}
+        }
         mutate(s=>{const item=s.messages[id]?.find(m=>m.id===user.id);if(item)item.syncPending=false;if(s.interruptedReplies)delete s.interruptedReplies[id];});
         changed(id,{bottom:true});
         signal.throwIfAborted();
@@ -147,6 +152,7 @@ export function createSessionController({api,read,mutate,legacy,settings,ready,l
         reply={id:replyId,from:'role',text:response,channel,worldUtc:worldStamp(config.worldLife),...(sceneNotices.length?{sceneNotices}:{}),...(reasoning?{reasoning,reasoningTruncated}:{}),sessionId,inReplyTo:user.id,createdAt:new Date().toISOString(),syncPending:true};
         phase='reply-save';mutate(s=>{(s.messages[id]||=[]).push(reply);if(s.interruptedReplies)delete s.interruptedReplies[id];const item=s.messages[id].find(m=>m.id===user.id);if(item)item.replyState='received';});partials.delete(id);
         phase='reply-sync';await api.append(owner,[reply],sessionId);
+        if(roomOffer?.candidate&&api.resolveRoomReply)try{await api.resolveRoomReply(owner,sessionId,user.id,reply.id,config);}catch{memoryErrors.set(id,'回复已保存；房间位置尚未核对完成，不能视为已经到达。');}
         if(config.worldLife?.enabled)await api.tool('world_life_get',{roleId:owner,sessionId}).catch(()=>{});
         if(metadata?.opening?.world)try{
           const {sceneFromReply}=await import('./scene-state.mjs');

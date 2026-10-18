@@ -11,7 +11,7 @@ import hashlib,json,re,copy
 from role_workspace import identifier
 from persona_modes import role_mode
 from phone_life_services import plain_binding_text
-from scene_locations import location_accessible
+from scene_locations import location_accessible,location_path
 
 @lru_cache(maxsize=1)
 def drafts():
@@ -134,7 +134,14 @@ class CharacterLiving:
     wish['status']='fulfilled';self.publish_wish(db,role,worldstate,stamp,arrival['id'],wish)
    state['lastWishArrival']=arrival['id']
   state['outline']=state.get('outline') or {**config.get('outline',{}),'source':'editable-persona-draft'}
-  if worldstate.get('autonomy',{}).get('enabled') and not worldstate.get('enRoute') and 8<=local.hour<23:
+  if arrival and arrival.get('goalPlanId') and state.get('lastGoalArrival')!=arrival['id']:
+   step=next((s for s in state['outline'].get('steps',[]) if s.get('id')==arrival.get('outlineStepId')),None)
+   if step and step.get('status') in ['planned','reconsider']:step['status']='active';step['startedAt']=arrival['dueAt']
+   state['events'].insert(0,{'kind':'goal-step-started','stepId':arrival.get('outlineStepId'),'at':arrival['dueAt'],'source':'recorded-arrival','planId':arrival['goalPlanId']})
+   state['lastGoalArrival']=arrival['id']
+  goal_active=arrival and arrival.get('goalPlanId') and arrival.get('holdUntil','')>world.isoformat() and worldstate['activity']==arrival.get('activity')
+  if worldstate.get('autonomy',{}).get('enabled') and not worldstate.get('enRoute') and not goal_active and 8<=local.hour<23:
+   own={p['id'] for p in location_path(places,worldstate['roleLocation'])}
    count=sum(1 for w in state['wishes'].values() if w.get('lastDay')==day)
    for draft in config.get('wishes',[]):
     wish=state['wishes'].setdefault(draft['id'],{**draft,'status':'thinking','declines':0})
@@ -142,7 +149,7 @@ class CharacterLiving:
      if field in draft:wish[field]=draft[field]
     if wish['status'] in ['fulfilled','shelved'] or wish.get('accepted') or wish.get('lastDay')==day:continue
     if wish['status']=='thinking':wish['status']='brewing';continue
-    if count>=1 or not draft['minHour']<=local.hour<=draft['maxHour'] or draft.get('locations') and own not in draft['locations'] or draft.get('moods') and state['daily'].get('moods') not in draft['moods']:continue
+    if count>=1 or not draft['minHour']<=local.hour<=draft['maxHour'] or draft.get('locations') and not own.intersection(draft['locations']) or draft.get('moods') and state['daily'].get('moods') not in draft['moods']:continue
     wish['status']='triggered';wish['lastDay']=day;wish['at']=world.isoformat();count+=1
     key='wish-'+draft['id']+'-'+day
     if draft['channel']=='proposal':self.life.journal.message(db,role,session,worldstate,stamp,key,'今天有个小想法：'+wish['title']+'。你愿意一起吗？')
@@ -164,7 +171,7 @@ class CharacterLiving:
     if relevant:
      target['declines']+=1;target['status']='shelved' if target['declines']>=2 else 'brewing';state['outline']['needsRevision']=True;state['outline']['rejectedWish']=target['title']
      db.execute('INSERT OR IGNORE INTO role_living_tasks VALUES(?,?,?,?,?,?)',('refusal-'+last['id'],role,'life-outline-rewrite',json.dumps({'rejectedWish':target['title']},ensure_ascii=False),'ready',stamp))
-  tasks=db.execute("SELECT * FROM role_living_tasks WHERE role_id=? AND status='ready' ORDER BY created_at LIMIT 4",(role,)).fetchall()
+  tasks=db.execute("SELECT * FROM role_living_tasks WHERE role_id=? AND kind IN ('life-outline','life-outline-rewrite') AND status='ready' ORDER BY created_at LIMIT 4",(role,)).fetchall()
   for task in tasks:
    payload=json.loads(task['payload_json'])
    if task['kind']=='life-outline':state['outline']={**payload,'source':'user-edited'}

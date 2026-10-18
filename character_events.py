@@ -94,7 +94,12 @@ class CharacterEvents:
     if not row['profile_json'] or row['profile_json']=='{}':db.execute("UPDATE character_event_queue SET status='waiting_configuration',error='角色已收到，模型连接尚未配置。' WHERE id=?",(row['id'],));continue
     if db.execute("SELECT 1 FROM tasks WHERE role_id=? AND status IN ('running','cancelling')",(row['role_id'],)).fetchone():continue
     chosen=dict(row);db.execute("UPDATE character_event_queue SET status='generating',attempt=attempt+1,error='' WHERE id=?",(row['id'],));break
-   if not chosen:return
+   if not chosen:
+    plan=self.runtime.world_life.weekly.claim(db) or self.runtime.world_life.planning.claim(db)
+    if not plan:return
+    chosen={**plan,'planningJob':True}
+  if chosen.get('planningJob'):
+   self.worker=threading.Thread(target=(self.runtime.world_life.weekly.generate if chosen['kind']=='week-plan' else self.runtime.world_life.planning.generate),args=(chosen,),daemon=True,name='hermes-day-plan');self.worker.start();return
   self.worker=threading.Thread(target=self.generate,args=(chosen,),daemon=True,name='hermes-character-event');self.worker.start()
  def generate(self,row):
   try:

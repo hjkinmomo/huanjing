@@ -24,7 +24,8 @@ class DailyAgenda:
       config=value['modes'][mode];days=config.get('weekendDays',[6,7]);holidays=config.get('holidays',[])
       if not isinstance(days,list) or len(days)>7 or any(type(d) is not int or not 1<=d<=7 for d in days) or not isinstance(holidays,list) or len(holidays)>64:raise ValueError('agenda_calendar_invalid')
       for h in holidays:
-       if not isinstance(h,dict) or set(h)-{'month','day','year','name'} or type(h.get('month')) is not int or type(h.get('day')) is not int or not isinstance(h.get('name'),str) or not 1<=len(h['name'])<=60:raise ValueError('agenda_holiday_invalid')
+       if not isinstance(h,dict) or set(h)-{'month','day','year','name','rest'} or type(h.get('month')) is not int or type(h.get('day')) is not int or not isinstance(h.get('name'),str) or not 1<=len(h['name'])<=60:raise ValueError('agenda_holiday_invalid')
+       if 'rest' in h and type(h['rest']) is not bool:raise ValueError('agenda_holiday_rest_invalid')
        if h.get('year') is not None and (type(h['year']) is not int or not 1<=h['year']<=999):raise ValueError('agenda_holiday_year_invalid')
        datetime(h['year']+1700 if h.get('year') else 2000,h['month'],h['day'])
     elif not isinstance(value.get('roles'),dict):raise ValueError('agenda_roles_invalid')
@@ -39,9 +40,9 @@ class DailyAgenda:
   holidays=config.get('holidays',[])
   if not isinstance(holidays,list) or len(holidays)>64:raise ValueError('agenda_holiday_config_invalid')
   holiday=next((h for h in holidays if h.get('month')==local.month and h.get('day')==local.day and (h.get('year') is None or h['year']==local.year-1700)),None)
-  kind='holiday' if holiday else 'weekend' if local.isoweekday() in config.get('weekendDays',[6,7]) else 'weekday'
+  kind='holiday' if holiday and holiday.get('rest',True) else 'weekend' if local.isoweekday() in config.get('weekendDays',[6,7]) else 'weekday'
   return local,kind,str((holiday or {}).get('name',''))[:60]
- def prepare(self,db,role,session,state,world,stamp):
+ def prepare(self,db,role,session,state,world,stamp,queue_planning=True):
   if role in ['world-user','special.world-user'] or session==f'role:{role}:primary':return
   from persona_modes import role_mode
   mode=role_mode(role);local,kind,holiday=self.day(state,stamp,mode);places=self.life.places(role,session,world,db)
@@ -57,25 +58,29 @@ class DailyAgenda:
      self.life.validate_schedule(chosen,places)
      if not self.issues:state['schedule']={**copy.deepcopy(chosen),'enabled':state['schedule']['enabled']}
     except (ValueError,TypeError,KeyError):self.issues.add('role-agenda-config.json')
-  schedule=state['schedule'];day=local.date().isoformat();entries=[]
+  managed=self.life.weekly.prepare(db,role,session,state,stamp,places,queue=queue_planning)
+  if not managed:self.life.planning.prepare(db,role,session,state,stamp,places,queue=queue_planning)
+  at=datetime.fromisoformat(stamp)+timedelta(seconds=state['timePolicy'].get('clockOffsetSeconds',0))
+  schedule=self.life.planning.schedule(state,state['schedule'],at);day=local.date().isoformat();entries=[]
   for slot in schedule['slots']:
    destination=self.destination(state,slot,local,places)
    at=local.replace(hour=int(slot['at'][:2]),minute=int(slot['at'][3:]),second=0,microsecond=0)-timedelta(minutes=state['timePolicy']['utcOffsetMinutes'])
-   entries.append({'id':'plan-'+day+'-'+slot['at'],'at':slot['at'],'worldUtc':at.isoformat(),'locationId':destination,'placeName':location_label(places,destination),'activity':slot['activity'],'kind':'plan'})
+   entries.append({'id':'plan-'+day+'-'+slot['at'],'at':slot['at'],'worldUtc':at.isoformat(),'locationId':destination,'placeName':location_label(places,destination),'activity':slot['activity'],'kind':'plan',**{k:slot[k] for k in ['outlineStepId','goalPlanId','until'] if k in slot}})
   self.merge(db,role,state,local,places,entries)
   value={'day':day,'displayDate':'新历'+str(local.year-1700)+local.strftime('年%m月%d日'),'weekday':local.isoweekday(),'dayKind':kind,'holidayName':holiday,'source':source,'enabled':schedule['enabled'],'entries':entries,'configWarning':'日历或作息初稿未读取，保留当前有效日程。' if self.issues else ''}
   signature=hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
   if (state.get('dailyAgenda') or {}).get('version')!=signature:state['dailyAgenda']={**value,'version':signature,'generatedAt':stamp,'scope':'current-day-plan-only'}
  def schedule_at(self,state,at,places):
   """Read-only future routine for delivery/route prediction; never changes today."""
-  if state.get('scheduleManual') or state.get('dailyAgenda',{}).get('source')!='default' or not state.get('autonomy',{}).get('enabled'):return state['schedule']
+  if state.get('scheduleManual') or not state.get('autonomy',{}).get('enabled'):return self.life.planning.schedule(state,state['schedule'],at)
+  if state.get('dailyAgenda',{}).get('source')!='default':return self.life.planning.schedule(state,state['schedule'],at)
   from persona_modes import role_mode
   role=state.get('scheduleActorId','');shifted={**state,'timePolicy':{**state['timePolicy'],'clockOffsetSeconds':0}}
   _,kind,_=self.day(shifted,at.isoformat(),role_mode(role));base=state.get('agendaRoutineBase') or state['schedule'];variants=self.config('role-agenda-config.json').get('roles',{}).get(role,{})
   candidate=base if kind=='weekday' else variants.get(kind) or base
   try:self.life.validate_schedule(candidate,places)
   except (ValueError,TypeError,KeyError):return state['schedule']
-  return {**candidate,'enabled':state['schedule']['enabled']} if not self.issues else state['schedule']
+  return self.life.planning.schedule(state,{**candidate,'enabled':state['schedule']['enabled']} if not self.issues else state['schedule'],at)
  def destination(self,state,slot,local,places):
   destination=slot['locationId'];default=state.get('defaultHomeLocation');home=state.get('homeLocation')
   if not state.get('scheduleManual') and default and home and home!=default and scene_container(places,destination)==scene_container(places,default):destination=home
@@ -87,7 +92,7 @@ class DailyAgenda:
   entries=[{**entry,'timePassed':datetime.fromisoformat(entry.get('endWorldUtc',entry['worldUtc']))<=now} for entry in cache['entries'] if shared or entry['kind']=='commitment']
   candidates=[v for v in entries if not v['timePassed'] and not v.get('conflict') and (v['kind']=='commitment' or cache['enabled'])]
   next_item=next(iter(sorted(candidates,key=lambda e:(e['kind']=='wish-window',e['worldUtc']))),None)
-  return {**{k:v for k,v in cache.items() if k not in ['entries','generatedAt']},'entries':entries,'sharingRequired':not shared,'next':next_item,'current':{'locationId':state['roleLocation'],'placeName':location_label(places,state['roleLocation']),'activity':state['activity'],'enRoute':bool(state.get('enRoute'))},'executionContract':'plan-is-not-arrival'}
+  return {**{k:v for k,v in cache.items() if k not in ['entries','generatedAt']},'planning':state.get('weekPlanning',{}) if state.get('weekManaged') else state.get('dayPlanning',{}),'entries':entries,'sharingRequired':not shared,'next':next_item,'current':{'locationId':state['roleLocation'],'placeName':location_label(places,state['roleLocation']),'activity':state['activity'],'enRoute':bool(state.get('enRoute'))},'executionContract':'plan-is-not-arrival'}
  def merge(self,db,role,state,local,places,entries):
   zone=timedelta(minutes=state['timePolicy']['utcOffsetMinutes']);day=local.date();accepted=[]
   for c in state.get('commitments',[]):
@@ -114,7 +119,7 @@ class DailyAgenda:
   with self.life.lock,closing(self.life.runtime.connect()) as db:
    row=db.execute('SELECT state_json FROM world_life_instances WHERE role_id=? AND session_id=?',(role,session)).fetchone()
    if not row:return ''
-   state=json.loads(row[0]);world=self.life.shared.world(role_mode(role));stamp=self.life.stamp();state['commitments']=self.life.commitments.load(db,role,session);self.prepare(db,role,session,state,world,stamp)
+   state=json.loads(row[0]);world=self.life.shared.world(role_mode(role));stamp=self.life.stamp();state['commitments']=self.life.commitments.load(db,role,session);self.prepare(db,role,session,state,world,stamp,queue_planning=False)
    now=datetime.fromisoformat(stamp)+timedelta(seconds=state['timePolicy'].get('clockOffsetSeconds',0));entries=state.get('dailyAgenda',{}).get('entries',[])
    candidates=[e for e in entries if datetime.fromisoformat(e.get('endWorldUtc',e['worldUtc']))>now and not e.get('conflict') and (e['kind']=='commitment' or state['schedule']['enabled'])]
    next_item=next(iter(sorted(candidates,key=lambda e:(e['kind']=='wish-window',e['worldUtc']))),None)

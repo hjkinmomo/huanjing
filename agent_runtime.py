@@ -2669,6 +2669,12 @@ class AgentRuntime:
             if not str(body.get("prompt") or body.get("input") or "").strip():
                 raise ValueError("provider_image_payload_invalid")
             response_limit = MAX_IMAGE_RESPONSE_BYTES
+        if route=='chat':
+            from current_character_context import add_current_character_context
+            body=add_current_character_context(self,body,str(request_payload.get('roleId') or ''),request_payload.get('roleSkills'))
+        if route=='chat':
+            from role_skills import appointment_turn_options
+            request_payload={**request_payload,'roleSkills':appointment_turn_options(self,str(request_payload.get('roleId') or ''),request_payload.get('roleSkills'),body['messages'])}
         turn = None
         if route == 'chat' and isinstance(request_payload.get('roleSkills'), dict) and request_payload['roleSkills'].get('enabled') is True:
             turn = RoleSkillTurn(self, str(request_payload.get('roleId') or ''), request_payload['roleSkills'])

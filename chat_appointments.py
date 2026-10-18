@@ -31,9 +31,9 @@ def intent(text):
  if re.search(r'别.{0,3}(?:去|来|约)|不(?:会|想|打算|准备)?(?:去|来|见面|赴约)',checked):return ''
  if not re.search(r'你|我们|咱们|一起|陪我|见面|碰头|会合',value):return ''
  if not re.search(r'来|去|见面|在.{1,35}见|(?:我们|咱们).{0,60}见[。！？吧]?\s*$|碰头|会合|集合|陪|一起.{0,8}(?:吃|喝|散步|看|逛|聊)',value):return ''
- if not re.search(r'明天|后天|今天|今晚|今早|今夜|周|星期|月.+[日号]|点|时|\d:\d|分钟后|小时后',value):return ''
+ if not re.search(r'明天|后天|今天|今晚|今早|今夜|周|星期|月.+[日号]|点|时|\d:\d|分钟后|小时后|下班|放学',value):return ''
  return value
-def timed_intent(text):return bool(re.search(r'今天|明天|后天|今晚|今早|周|星期|月.+[日号]|下午|晚上|\d[:：]\d|'+NUM+r'[点时]|小时后|分钟后|稍后|晚点|待会|一会儿',plain(text)))
+def timed_intent(text):return bool(re.search(r'今天|明天|后天|今晚|今早|周|星期|月.+[日号]|下午|晚上|\d[:：]\d|'+NUM+r'[点时]|小时后|分钟后|稍后|晚点|待会|一会儿|下班|放学',plain(text)))
 
 def time_kind(text,start,end):
  tail=text[end:end+14];depart=re.search(r'出发|动身|启程',tail);arrival=re.search(r'到|见|抵达|碰头|会合|集合',tail)
@@ -116,7 +116,23 @@ def extract(text,anchor,offset,state,places):
  value=intent(text)
  if not value:return {'eligible':False,'reason':'not_explicit_request'}
  timing,reason=when(value,anchor,offset)
+ if not timing and reason=='time_missing' and re.search('下班|放学',value):
+  timing,reason=after_work(value,anchor,offset,state)
  if not timing:return {'eligible':False,'reason':reason,'needsClarification':True}
  pid,reason=destination(value,state,places)
  if not pid:return {'eligible':False,'reason':reason,'needsClarification':True}
  return {'eligible':True,**timing,'locationId':pid,'durationMinutes':60}
+
+def after_work(text,anchor,offset,state):
+ """Use a saved, dated routine; never guess that everyone finishes at 18:00."""
+ local=anchor+timedelta(minutes=offset);delta=2 if '后天' in text else 1 if '明天' in text else 0
+ if re.search(r'周|星期|月.+[日号]',text):return None,'time_missing'
+ date=(local+timedelta(days=delta)).date().isoformat();slots=state.get('_appointmentRoutines',{}).get(date)
+ if slots is None:slots=next((d['slots'] for p in state.get('weeklyPlans',[]) for d in p['days'] if d['date']==date),None)
+ if not slots:return None,'time_missing'
+ from day_planning import protected
+ ends=[slots[i+1]['at'] for i,s in enumerate(slots[:-1]) if protected(s['activity']) and not re.search('睡|就寝',s['activity'])]
+ if not ends:return None,'time_missing'
+ end=ends[-1];target=datetime.fromisoformat(date+'T'+end+':00').replace(tzinfo=anchor.tzinfo)-timedelta(minutes=offset)
+ if target<=anchor:return None,'time_elapsed'
+ return {'at':target.isoformat(),'timeKind':'departure'},''

@@ -80,7 +80,7 @@ class WorldIdentities:
   wallet={k:copy.deepcopy(payload.get('legacy',{}).get(k)) for k in WALLET_FIELDS if k in payload.get('legacy',{})}
   return {'version':1,'mode':mode,'records':records,'columns':columns,'clientMaps':maps,'wallet':wallet,'capturedAt':self.life.stamp()}
  def busy(self,db,mode):
-  for table,statuses in [('phone_group_receipts',['generating']),('tasks',['running','cancelling']),('role_memory_jobs',['queued','running']),('chat_context_jobs',['running']),('auto_moment_roles',['generating']),('moment_reaction_queue',['generating']),('character_event_queue',['generating'])]:
+  for table,statuses in [('phone_group_receipts',['generating']),('tasks',['running','cancelling']),('role_memory_jobs',['queued','running']),('chat_context_jobs',['running']),('auto_moment_roles',['generating']),('moment_reaction_queue',['generating']),('character_event_queue',['generating']),('role_living_tasks',['running'])]:
    if table not in self.tables(db):continue
    where,args=self.scope_sql('role_id',mode);sql='SELECT 1 FROM "'+table+'" WHERE '+where+' AND status IN ('+','.join('?' for _ in statuses)+') LIMIT 1'
    if db.execute(sql,[*args,*statuses]).fetchone():raise ValueError('identity_mode_busy')
